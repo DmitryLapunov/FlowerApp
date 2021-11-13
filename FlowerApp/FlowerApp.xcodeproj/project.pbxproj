@@ -1,0 +1,525 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5DDFC96AE44A47F94D8111BC /* Pods_FlowerApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE8CB9B2E865292D811F91E2 /* Pods_FlowerApp.framework */; };
+		8982F137273F328200FB79E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8982F136273F328200FB79E8 /* AppDelegate.swift */; };
+		8982F139273F328200FB79E8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8982F138273F328200FB79E8 /* SceneDelegate.swift */; };
+		8982F13E273F328200FB79E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8982F13C273F328200FB79E8 /* Main.storyboard */; };
+		8982F140273F328300FB79E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8982F13F273F328300FB79E8 /* Assets.xcassets */; };
+		8982F143273F328300FB79E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8982F141273F328300FB79E8 /* LaunchScreen.storyboard */; };
+		8982F153273F33D100FB79E8 /* CatalogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8982F151273F33D100FB79E8 /* CatalogVC.swift */; };
+		8982F154273F33D100FB79E8 /* CatalogVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8982F152273F33D100FB79E8 /* CatalogVC.xib */; };
+		8982F15C273F352500FB79E8 /* OCT55.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8982F156273F352500FB79E8 /* OCT55.otf */; };
+		8982F15D273F352500FB79E8 /* OCT85.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8982F157273F352500FB79E8 /* OCT85.otf */; };
+		8982F15E273F352500FB79E8 /* OCT86.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8982F158273F352500FB79E8 /* OCT86.otf */; };
+		8982F15F273F352500FB79E8 /* OCT56.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8982F159273F352500FB79E8 /* OCT56.otf */; };
+		8982F160273F352500FB79E8 /* OpenSans-VariableFont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8982F15A273F352500FB79E8 /* OpenSans-VariableFont.ttf */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		10B83A1A918906EF7FA39CC1 /* Pods-FlowerApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlowerApp.release.xcconfig"; path = "Target Support Files/Pods-FlowerApp/Pods-FlowerApp.release.xcconfig"; sourceTree = "<group>"; };
+		3C235F7C2C1D2127AC5EE758 /* Pods-FlowerApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlowerApp.debug.xcconfig"; path = "Target Support Files/Pods-FlowerApp/Pods-FlowerApp.debug.xcconfig"; sourceTree = "<group>"; };
+		8982F133273F328200FB79E8 /* FlowerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlowerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8982F136273F328200FB79E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8982F138273F328200FB79E8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		8982F13D273F328200FB79E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8982F13F273F328300FB79E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8982F142273F328300FB79E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8982F144273F328300FB79E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8982F151273F33D100FB79E8 /* CatalogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogVC.swift; sourceTree = "<group>"; };
+		8982F152273F33D100FB79E8 /* CatalogVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CatalogVC.xib; sourceTree = "<group>"; };
+		8982F156273F352500FB79E8 /* OCT55.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = OCT55.otf; path = Resources/Fonts/OCT55.otf; sourceTree = SOURCE_ROOT; };
+		8982F157273F352500FB79E8 /* OCT85.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = OCT85.otf; path = Resources/Fonts/OCT85.otf; sourceTree = SOURCE_ROOT; };
+		8982F158273F352500FB79E8 /* OCT86.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = OCT86.otf; path = Resources/Fonts/OCT86.otf; sourceTree = SOURCE_ROOT; };
+		8982F159273F352500FB79E8 /* OCT56.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = OCT56.otf; path = Resources/Fonts/OCT56.otf; sourceTree = SOURCE_ROOT; };
+		8982F15A273F352500FB79E8 /* OpenSans-VariableFont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-VariableFont.ttf"; path = "Resources/Fonts/OpenSans-VariableFont.ttf"; sourceTree = SOURCE_ROOT; };
+		AE8CB9B2E865292D811F91E2 /* Pods_FlowerApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlowerApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8982F130273F328200FB79E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DDFC96AE44A47F94D8111BC /* Pods_FlowerApp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8982F12A273F328200FB79E8 = {
+			isa = PBXGroup;
+			children = (
+				8982F135273F328200FB79E8 /* FlowerApp */,
+				8982F14F273F339F00FB79E8 /* Fonts */,
+				8982F134273F328200FB79E8 /* Products */,
+				91E7C5CD6880390624272CC9 /* Pods */,
+				C54DA66551EAE16582D491DA /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		8982F134273F328200FB79E8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8982F133273F328200FB79E8 /* FlowerApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8982F135273F328200FB79E8 /* FlowerApp */ = {
+			isa = PBXGroup;
+			children = (
+				8982F14E273F339600FB79E8 /* ViewControllers */,
+				8982F14D273F339200FB79E8 /* Cells */,
+				8982F14C273F338900FB79E8 /* NetworkTools */,
+				8982F14B273F337E00FB79E8 /* RealmData */,
+				8982F14A273F337500FB79E8 /* Extensions */,
+				8982F136273F328200FB79E8 /* AppDelegate.swift */,
+				8982F138273F328200FB79E8 /* SceneDelegate.swift */,
+				8982F13C273F328200FB79E8 /* Main.storyboard */,
+				8982F13F273F328300FB79E8 /* Assets.xcassets */,
+				8982F141273F328300FB79E8 /* LaunchScreen.storyboard */,
+				8982F144273F328300FB79E8 /* Info.plist */,
+			);
+			path = FlowerApp;
+			sourceTree = "<group>";
+		};
+		8982F14A273F337500FB79E8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8982F14B273F337E00FB79E8 /* RealmData */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RealmData;
+			sourceTree = "<group>";
+		};
+		8982F14C273F338900FB79E8 /* NetworkTools */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NetworkTools;
+			sourceTree = "<group>";
+		};
+		8982F14D273F339200FB79E8 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		8982F14E273F339600FB79E8 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				8982F151273F33D100FB79E8 /* CatalogVC.swift */,
+				8982F152273F33D100FB79E8 /* CatalogVC.xib */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		8982F14F273F339F00FB79E8 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8982F156273F352500FB79E8 /* OCT55.otf */,
+				8982F159273F352500FB79E8 /* OCT56.otf */,
+				8982F157273F352500FB79E8 /* OCT85.otf */,
+				8982F158273F352500FB79E8 /* OCT86.otf */,
+				8982F15A273F352500FB79E8 /* OpenSans-VariableFont.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		91E7C5CD6880390624272CC9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3C235F7C2C1D2127AC5EE758 /* Pods-FlowerApp.debug.xcconfig */,
+				10B83A1A918906EF7FA39CC1 /* Pods-FlowerApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C54DA66551EAE16582D491DA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AE8CB9B2E865292D811F91E2 /* Pods_FlowerApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8982F132273F328200FB79E8 /* FlowerApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8982F147273F328300FB79E8 /* Build configuration list for PBXNativeTarget "FlowerApp" */;
+			buildPhases = (
+				07A0102518DF9AF411B7CFE6 /* [CP] Check Pods Manifest.lock */,
+				8982F12F273F328200FB79E8 /* Sources */,
+				8982F130273F328200FB79E8 /* Frameworks */,
+				8982F131273F328200FB79E8 /* Resources */,
+				1BDDD61E8A826DD7B03328BB /* [CP] Embed Pods Frameworks */,
+				27B46453BF2D521D4F6BE941 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FlowerApp;
+			productName = FlowerApp;
+			productReference = 8982F133273F328200FB79E8 /* FlowerApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8982F12B273F328200FB79E8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1300;
+				TargetAttributes = {
+					8982F132273F328200FB79E8 = {
+						CreatedOnToolsVersion = 13.0;
+					};
+				};
+			};
+			buildConfigurationList = 8982F12E273F328200FB79E8 /* Build configuration list for PBXProject "FlowerApp" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8982F12A273F328200FB79E8;
+			productRefGroup = 8982F134273F328200FB79E8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8982F132273F328200FB79E8 /* FlowerApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8982F131273F328200FB79E8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8982F160273F352500FB79E8 /* OpenSans-VariableFont.ttf in Resources */,
+				8982F15C273F352500FB79E8 /* OCT55.otf in Resources */,
+				8982F15D273F352500FB79E8 /* OCT85.otf in Resources */,
+				8982F143273F328300FB79E8 /* LaunchScreen.storyboard in Resources */,
+				8982F15F273F352500FB79E8 /* OCT56.otf in Resources */,
+				8982F15E273F352500FB79E8 /* OCT86.otf in Resources */,
+				8982F140273F328300FB79E8 /* Assets.xcassets in Resources */,
+				8982F154273F33D100FB79E8 /* CatalogVC.xib in Resources */,
+				8982F13E273F328200FB79E8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		07A0102518DF9AF411B7CFE6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FlowerApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1BDDD61E8A826DD7B03328BB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FlowerApp/Pods-FlowerApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FlowerApp/Pods-FlowerApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FlowerApp/Pods-FlowerApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		27B46453BF2D521D4F6BE941 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FlowerApp/Pods-FlowerApp-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FlowerApp/Pods-FlowerApp-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FlowerApp/Pods-FlowerApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8982F12F273F328200FB79E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8982F137273F328200FB79E8 /* AppDelegate.swift in Sources */,
+				8982F153273F33D100FB79E8 /* CatalogVC.swift in Sources */,
+				8982F139273F328200FB79E8 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8982F13C273F328200FB79E8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8982F13D273F328200FB79E8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8982F141273F328300FB79E8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8982F142273F328300FB79E8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8982F145273F328300FB79E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8982F146273F328300FB79E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8982F148273F328300FB79E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C235F7C2C1D2127AC5EE758 /* Pods-FlowerApp.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 97L2996NM5;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FlowerApp/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "-21.FlowerApp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		8982F149273F328300FB79E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 10B83A1A918906EF7FA39CC1 /* Pods-FlowerApp.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 97L2996NM5;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FlowerApp/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "-21.FlowerApp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8982F12E273F328200FB79E8 /* Build configuration list for PBXProject "FlowerApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8982F145273F328300FB79E8 /* Debug */,
+				8982F146273F328300FB79E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8982F147273F328300FB79E8 /* Build configuration list for PBXNativeTarget "FlowerApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8982F148273F328300FB79E8 /* Debug */,
+				8982F149273F328300FB79E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8982F12B273F328200FB79E8 /* Project object */;
+}
