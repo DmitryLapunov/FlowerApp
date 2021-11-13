@@ -11,5 +11,6 @@ class CatalogVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+      
     }
 }
