@@ -76,25 +76,36 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         navTabContacts.tabBarItem = item3
         navTabShopping.tabBarItem = item4
         
-        tabBarController.tabBar.backgroundColor = .lightGray
+        tabBarConfiguration()
         
         window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
         
         func navigationBarConfiguration(_ controller: UINavigationController) {
             if #available(iOS 13.0, *) {
-                        let navBarAppearance = UINavigationBarAppearance()
-                        navBarAppearance.configureWithOpaqueBackground()
-                        navBarAppearance.backgroundColor = UIColor.lightGray
-                        controller.navigationBar.standardAppearance = navBarAppearance
-                        controller.navigationBar.scrollEdgeAppearance = navBarAppearance
-                    } else {
-                        controller.edgesForExtendedLayout = []
-                    }
+                let navBarAppearance = UINavigationBarAppearance()
+                navBarAppearance.configureWithOpaqueBackground()
+                navBarAppearance.backgroundColor = UIColor(named: "CustomGreenColor")
+                controller.navigationBar.standardAppearance = navBarAppearance
+                controller.navigationBar.scrollEdgeAppearance = navBarAppearance
+            } else {
+                controller.edgesForExtendedLayout = []
+            }
         }
+        
+        func tabBarConfiguration() {
+            if #available(iOS 13.0, *) {
+                let tabBarAppearance: UITabBarAppearance = UITabBarAppearance()
+                tabBarAppearance.configureWithDefaultBackground()
+                tabBarAppearance.backgroundColor = UIColor(named: "CustomGreenColor")
+                UITabBar.appearance().standardAppearance = tabBarAppearance
 
+                if #available(iOS 15.0, *) {
+                    UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
+                }
+            }
+        }
     }
-    
 }
 
 

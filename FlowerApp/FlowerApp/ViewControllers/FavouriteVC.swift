@@ -11,5 +11,6 @@ class FavouriteVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Избранное"
     }
 }
