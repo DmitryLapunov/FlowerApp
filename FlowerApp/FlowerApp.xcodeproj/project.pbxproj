@@ -142,14 +142,10 @@
 		8982F14E273F339600FB79E8 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				8982F151273F33D100FB79E8 /* CatalogVC.swift */,
-				8982F152273F33D100FB79E8 /* CatalogVC.xib */,
-				933F0CD2273FBF8900482A9F /* FavouriteVC.swift */,
-				933F0CD3273FBF8900482A9F /* FavouriteVC.xib */,
-				933F0CD6273FBFB900482A9F /* ContactsVC.swift */,
-				933F0CD7273FBFB900482A9F /* ContactsVC.xib */,
-				933F0CDA273FC05500482A9F /* ShoppingCartVC.swift */,
-				933F0CDB273FC05500482A9F /* ShoppingCartVC.xib */,
+				93A3B06927412C97008DF823 /* ShopingCartController */,
+				93A3B06827412C82008DF823 /* CatalogController */,
+				93A3B06727412893008DF823 /* ContactsController */,
+				93A3B0662741283D008DF823 /* FavouriteController */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -190,6 +186,42 @@
 				10B83A1A918906EF7FA39CC1 /* Pods-FlowerApp.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		93A3B0662741283D008DF823 /* FavouriteController */ = {
+			isa = PBXGroup;
+			children = (
+				933F0CD2273FBF8900482A9F /* FavouriteVC.swift */,
+				933F0CD3273FBF8900482A9F /* FavouriteVC.xib */,
+			);
+			path = FavouriteController;
+			sourceTree = "<group>";
+		};
+		93A3B06727412893008DF823 /* ContactsController */ = {
+			isa = PBXGroup;
+			children = (
+				933F0CD6273FBFB900482A9F /* ContactsVC.swift */,
+				933F0CD7273FBFB900482A9F /* ContactsVC.xib */,
+			);
+			path = ContactsController;
+			sourceTree = "<group>";
+		};
+		93A3B06827412C82008DF823 /* CatalogController */ = {
+			isa = PBXGroup;
+			children = (
+				8982F151273F33D100FB79E8 /* CatalogVC.swift */,
+				8982F152273F33D100FB79E8 /* CatalogVC.xib */,
+			);
+			path = CatalogController;
+			sourceTree = "<group>";
+		};
+		93A3B06927412C97008DF823 /* ShopingCartController */ = {
+			isa = PBXGroup;
+			children = (
+				933F0CDA273FC05500482A9F /* ShoppingCartVC.swift */,
+				933F0CDB273FC05500482A9F /* ShoppingCartVC.xib */,
+			);
+			path = ShopingCartController;
 			sourceTree = "<group>";
 		};
 		C54DA66551EAE16582D491DA /* Frameworks */ = {
