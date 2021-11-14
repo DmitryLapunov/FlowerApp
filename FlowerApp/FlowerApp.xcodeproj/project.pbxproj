@@ -20,6 +20,9 @@
 		8982F15E273F352500FB79E8 /* OCT86.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8982F158273F352500FB79E8 /* OCT86.otf */; };
 		8982F15F273F352500FB79E8 /* OCT56.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8982F159273F352500FB79E8 /* OCT56.otf */; };
 		8982F160273F352500FB79E8 /* OpenSans-VariableFont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8982F15A273F352500FB79E8 /* OpenSans-VariableFont.ttf */; };
+		8982F16B2740ADCC00FB79E8 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8982F16A2740ADCC00FB79E8 /* Enums.swift */; };
+		8982F16F2740ADFB00FB79E8 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8982F16D2740ADFB00FB79E8 /* CategoryCell.swift */; };
+		8982F1702740ADFB00FB79E8 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8982F16E2740ADFB00FB79E8 /* CategoryCell.xib */; };
 		933F0CD4273FBF8900482A9F /* FavouriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933F0CD2273FBF8900482A9F /* FavouriteVC.swift */; };
 		933F0CD5273FBF8900482A9F /* FavouriteVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 933F0CD3273FBF8900482A9F /* FavouriteVC.xib */; };
 		933F0CD8273FBFB900482A9F /* ContactsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933F0CD6273FBFB900482A9F /* ContactsVC.swift */; };
@@ -45,6 +48,9 @@
 		8982F158273F352500FB79E8 /* OCT86.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = OCT86.otf; path = Resources/Fonts/OCT86.otf; sourceTree = SOURCE_ROOT; };
 		8982F159273F352500FB79E8 /* OCT56.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = OCT56.otf; path = Resources/Fonts/OCT56.otf; sourceTree = SOURCE_ROOT; };
 		8982F15A273F352500FB79E8 /* OpenSans-VariableFont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-VariableFont.ttf"; path = "Resources/Fonts/OpenSans-VariableFont.ttf"; sourceTree = SOURCE_ROOT; };
+		8982F16A2740ADCC00FB79E8 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		8982F16D2740ADFB00FB79E8 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		8982F16E2740ADFB00FB79E8 /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 		933F0CD2273FBF8900482A9F /* FavouriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteVC.swift; sourceTree = "<group>"; };
 		933F0CD3273FBF8900482A9F /* FavouriteVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavouriteVC.xib; sourceTree = "<group>"; };
 		933F0CD6273FBFB900482A9F /* ContactsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsVC.swift; sourceTree = "<group>"; };
@@ -93,6 +99,7 @@
 				8982F14C273F338900FB79E8 /* NetworkTools */,
 				8982F14B273F337E00FB79E8 /* RealmData */,
 				8982F14A273F337500FB79E8 /* Extensions */,
+				8982F1692740ADBD00FB79E8 /* Enums */,
 				8982F136273F328200FB79E8 /* AppDelegate.swift */,
 				8982F138273F328200FB79E8 /* SceneDelegate.swift */,
 				8982F13C273F328200FB79E8 /* Main.storyboard */,
@@ -127,6 +134,7 @@
 		8982F14D273F339200FB79E8 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				8982F16C2740ADEE00FB79E8 /* CategoryCell */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -156,6 +164,23 @@
 				8982F15A273F352500FB79E8 /* OpenSans-VariableFont.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		8982F1692740ADBD00FB79E8 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				8982F16A2740ADCC00FB79E8 /* Enums.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		8982F16C2740ADEE00FB79E8 /* CategoryCell */ = {
+			isa = PBXGroup;
+			children = (
+				8982F16D2740ADFB00FB79E8 /* CategoryCell.swift */,
+				8982F16E2740ADFB00FB79E8 /* CategoryCell.xib */,
+			);
+			path = CategoryCell;
 			sourceTree = "<group>";
 		};
 		91E7C5CD6880390624272CC9 /* Pods */ = {
@@ -240,6 +265,7 @@
 				933F0CD9273FBFB900482A9F /* ContactsVC.xib in Resources */,
 				8982F15C273F352500FB79E8 /* OCT55.otf in Resources */,
 				8982F15D273F352500FB79E8 /* OCT85.otf in Resources */,
+				8982F1702740ADFB00FB79E8 /* CategoryCell.xib in Resources */,
 				8982F143273F328300FB79E8 /* LaunchScreen.storyboard in Resources */,
 				933F0CD5273FBF8900482A9F /* FavouriteVC.xib in Resources */,
 				933F0CDD273FC05500482A9F /* ShoppingCartVC.xib in Resources */,
@@ -320,7 +346,9 @@
 				933F0CDC273FC05500482A9F /* ShoppingCartVC.swift in Sources */,
 				8982F137273F328200FB79E8 /* AppDelegate.swift in Sources */,
 				8982F153273F33D100FB79E8 /* CatalogVC.swift in Sources */,
+				8982F16F2740ADFB00FB79E8 /* CategoryCell.swift in Sources */,
 				933F0CD4273FBF8900482A9F /* FavouriteVC.swift in Sources */,
+				8982F16B2740ADCC00FB79E8 /* Enums.swift in Sources */,
 				8982F139273F328200FB79E8 /* SceneDelegate.swift in Sources */,
 				933F0CD8273FBFB900482A9F /* ContactsVC.swift in Sources */,
 			);
