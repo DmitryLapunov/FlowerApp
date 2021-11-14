@@ -63,10 +63,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         tabBarController.viewControllers = [navTabCatalog, navTabFavourite, navTabContacts, navTabShopping]
                 
-        let item1 = UITabBarItem(title: "Каталог", image: UIImage(systemName: "list.bullet"), tag: 0)
-        let item2 = UITabBarItem(title: "Избранное", image: UIImage(systemName: "star"), tag: 1)
-        let item3 = UITabBarItem(title: "Контакты", image: UIImage(systemName: "phone.bubble.left"), tag: 2)
-        let item4 = UITabBarItem(title: "Корзина", image: UIImage(systemName: "cart"), tag: 3)
+        let item1 = UITabBarItem(title: "Каталог", image: UIImage(named: "icon_flower"), tag: 0)
+        let item2 = UITabBarItem(title: "Избранное", image: UIImage(named: "icon_bookmark"), tag: 1)
+        let item3 = UITabBarItem(title: "Контакты", image: UIImage(named: "icon_info"), tag: 2)
+        let item4 = UITabBarItem(title: "Корзина", image: UIImage(named: "icon_cart"), tag: 3)
         
         navTabCatalog.tabBarItem = item1
         navTabFavourite.tabBarItem = item2
@@ -74,7 +74,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         navTabShopping.tabBarItem = item4
         
         tabBarController.tabBar.tintColor = UIColor(named: "MainColor")
-        tabBarController.tabBar.unselectedItemTintColor = UIColor(named: "CustomGreenColor")
         window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
         
@@ -86,9 +85,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let tabBarItemAppearance = UITabBarItemAppearance()
             
             tabBarAppearance.configureWithDefaultBackground()
-            tabBarAppearance.backgroundColor = .secondarySystemBackground
+            tabBarAppearance.backgroundColor = UIColor(named: "TertiaryColor")
             
-            if let font = UIFont(name: "Open Sans", size: 11) {
+            if let font = UIFont(name: "Open Sans", size: 10), let color = UIColor(named: "SecondaryLabelColor") {
+                tabBarItemAppearance.normal.iconColor = color
+                tabBarItemAppearance.normal.titleTextAttributes = [NSAttributedString.Key.foregroundColor: color]
                 tabBarItemAppearance.normal.titleTextAttributes = [NSAttributedString.Key.font: font]
                 tabBarItemAppearance.selected.titleTextAttributes = [NSAttributedString.Key.font: font]
             }
@@ -108,7 +109,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let navigationBarAppearance = UINavigationBarAppearance()
             navigationBarAppearance.configureWithDefaultBackground()
             navigationBarAppearance.shadowColor = .clear
-            navigationBarAppearance.backgroundColor = .secondarySystemBackground
+            navigationBarAppearance.backgroundColor = UIColor(named: "TertiaryColor")
             
             if let font = UIFont(name: "Open Sans", size: 20) {
                 navigationBarAppearance.titleTextAttributes = [NSAttributedString.Key.font: font]

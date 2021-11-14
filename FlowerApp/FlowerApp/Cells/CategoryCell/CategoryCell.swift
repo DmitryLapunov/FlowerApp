@@ -21,6 +21,16 @@ class CategoryCell: UICollectionViewCell {
         cellBackgroundView.layer.cornerRadius = 10
         categoryImageView.layer.cornerRadius = 10
         categoryTitleView.layer.cornerRadius = 10
+        
+        categoryTitleView.layer.shadowColor = UIColor.black.cgColor
+        categoryTitleView.layer.shadowOpacity = 0.25
+        categoryTitleView.layer.shadowRadius = 3
+        categoryTitleView.layer.shadowOffset = CGSize(width: 0, height: 2)
+        
+        cellBackgroundView.layer.shadowColor = UIColor.black.cgColor
+        cellBackgroundView.layer.shadowOpacity = 0.15
+        cellBackgroundView.layer.shadowRadius = 2
+        cellBackgroundView.layer.shadowOffset = CGSize(width: 0, height: 2)
     }
     
     override func prepareForReuse() {
