@@ -13,7 +13,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
-        configurTabBar()
+        configureTabBar()
         configureNavBar()
         createNavigationTabBar()
     }
@@ -59,11 +59,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let navTabContacts = UINavigationController(rootViewController: ContactsVC(nibName: String(describing: ContactsVC.self), bundle: nil))
         let navTabShopping = UINavigationController(rootViewController: ShoppingCartVC(nibName: String(describing: ShoppingCartVC.self), bundle: nil))
     
-        
         let tabBarController = UITabBarController()
         
         tabBarController.viewControllers = [navTabCatalog, navTabFavourite, navTabContacts, navTabShopping]
-        
+                
         let item1 = UITabBarItem(title: "Каталог", image: UIImage(systemName: "list.bullet"), tag: 0)
         let item2 = UITabBarItem(title: "Избранное", image: UIImage(systemName: "star"), tag: 1)
         let item3 = UITabBarItem(title: "Контакты", image: UIImage(systemName: "phone.bubble.left"), tag: 2)
@@ -74,18 +73,26 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         navTabContacts.tabBarItem = item3
         navTabShopping.tabBarItem = item4
         
-
-        
         window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
         
     }
     
-    private func configurTabBar() {
+    private func configureTabBar() {
         if #available(iOS 13.0, *) {
             let tabBarAppearance: UITabBarAppearance = UITabBarAppearance()
+            let tabBarItemAppearance = UITabBarItemAppearance()
+            
             tabBarAppearance.configureWithDefaultBackground()
             tabBarAppearance.backgroundColor = .secondarySystemBackground
+            
+            if let font = UIFont(name: "Open Sans", size: 11) {
+                tabBarItemAppearance.normal.titleTextAttributes = [NSAttributedString.Key.font: font]
+                tabBarItemAppearance.selected.titleTextAttributes = [NSAttributedString.Key.font: font]
+            }
+            
+            tabBarAppearance.stackedLayoutAppearance = tabBarItemAppearance
+                        
             UITabBar.appearance().standardAppearance = tabBarAppearance
 
             if #available(iOS 15.0, *) {
@@ -100,6 +107,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             navigationBarAppearance.configureWithDefaultBackground()
             navigationBarAppearance.shadowColor = .clear
             navigationBarAppearance.backgroundColor = .secondarySystemBackground
+            
+            if let font = UIFont(name: "Open Sans", size: 20) {
+                navigationBarAppearance.titleTextAttributes = [NSAttributedString.Key.font: font]
+            }
+            
             UINavigationBar.appearance().standardAppearance = navigationBarAppearance
             UINavigationBar.appearance().compactAppearance = navigationBarAppearance
             UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance

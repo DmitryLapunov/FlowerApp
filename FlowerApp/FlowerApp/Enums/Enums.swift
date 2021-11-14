@@ -14,12 +14,12 @@ enum CategoryType: String, CaseIterable {
     case bouquets = "Букеты"
     case driedFlowersBouquets = "Букеты из сухоцветов"
     case flowersInABox = "Цветы в коробке"
-    case forLovers = "Для влюбленных"
+    case forLovers = "Для Влюблённых"
     case marchEight = "8 Марта"
     case edibleBouquets = "Съедобные букеты"
     case balloons = "Воздушные шары"
     case presents = "Подарки"
-    case christmasAndNewYear = "Рождество и Новый год"
+    case christmasAndNewYear = "Рождество Новый год"
     
     init?(id: Int) {
         switch id {

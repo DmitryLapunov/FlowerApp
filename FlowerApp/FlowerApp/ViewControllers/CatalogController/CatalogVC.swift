@@ -16,8 +16,6 @@ class CatalogVC: UIViewController {
         super.viewDidLoad()
         title = "Каталог"
         setupCollectionView()
-        
-        print(categories.count)
     }
     
     func setupCollectionView() {
@@ -80,6 +78,7 @@ extension CatalogVC: UICollectionViewDataSource, UICollectionViewDelegate {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: CategoryCell.self), for: indexPath)
         guard let categoryCell = cell as? CategoryCell else { return cell }
         categoryCell.setupCategoryCell(category: categories[indexPath.row])
+        categoryCell.category = categories[indexPath.row]
         return categoryCell
     }
     
