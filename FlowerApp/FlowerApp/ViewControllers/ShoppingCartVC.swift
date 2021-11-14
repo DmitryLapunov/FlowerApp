@@ -11,6 +11,6 @@ class ShoppingCartVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        title = "Корзина"
     }
 }

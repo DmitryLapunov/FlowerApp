@@ -14,6 +14,7 @@ class CatalogVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Каталог"
         setupCollectionView()
         
         print(categories.count)
