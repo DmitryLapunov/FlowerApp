@@ -73,6 +73,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         navTabContacts.tabBarItem = item3
         navTabShopping.tabBarItem = item4
         
+        tabBarController.tabBar.tintColor = UIColor(named: "MainColor")
+        tabBarController.tabBar.unselectedItemTintColor = UIColor(named: "CustomGreenColor")
         window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
         
