@@ -13,6 +13,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
+        configurTabBar()
+        configureNavBar()
         createNavigationTabBar()
     }
     
@@ -56,11 +58,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let navTabFavourite = UINavigationController(rootViewController: FavouriteVC(nibName: String(describing: FavouriteVC.self), bundle: nil))
         let navTabContacts = UINavigationController(rootViewController: ContactsVC(nibName: String(describing: ContactsVC.self), bundle: nil))
         let navTabShopping = UINavigationController(rootViewController: ShoppingCartVC(nibName: String(describing: ShoppingCartVC.self), bundle: nil))
-        
-        navigationBarConfiguration(navTabCatalog)
-        navigationBarConfiguration(navTabFavourite)
-        navigationBarConfiguration(navTabContacts)
-        navigationBarConfiguration(navTabShopping)
+    
         
         let tabBarController = UITabBarController()
         
@@ -76,34 +74,35 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         navTabContacts.tabBarItem = item3
         navTabShopping.tabBarItem = item4
         
-        tabBarConfiguration()
+
         
         window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
         
-        func navigationBarConfiguration(_ controller: UINavigationController) {
-            if #available(iOS 13.0, *) {
-                let navBarAppearance = UINavigationBarAppearance()
-                navBarAppearance.configureWithOpaqueBackground()
-                navBarAppearance.backgroundColor = UIColor(named: "CustomGreenColor")
-                controller.navigationBar.standardAppearance = navBarAppearance
-                controller.navigationBar.scrollEdgeAppearance = navBarAppearance
-            } else {
-                controller.edgesForExtendedLayout = []
+    }
+    
+    private func configurTabBar() {
+        if #available(iOS 13.0, *) {
+            let tabBarAppearance: UITabBarAppearance = UITabBarAppearance()
+            tabBarAppearance.configureWithDefaultBackground()
+            tabBarAppearance.backgroundColor = .secondarySystemBackground
+            UITabBar.appearance().standardAppearance = tabBarAppearance
+
+            if #available(iOS 15.0, *) {
+                UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
             }
         }
-        
-        func tabBarConfiguration() {
-            if #available(iOS 13.0, *) {
-                let tabBarAppearance: UITabBarAppearance = UITabBarAppearance()
-                tabBarAppearance.configureWithDefaultBackground()
-                tabBarAppearance.backgroundColor = UIColor(named: "CustomGreenColor")
-                UITabBar.appearance().standardAppearance = tabBarAppearance
-
-                if #available(iOS 15.0, *) {
-                    UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
-                }
-            }
+    }
+    
+    private func configureNavBar() {
+        if #available(iOS 15.0, *) {
+            let navigationBarAppearance = UINavigationBarAppearance()
+            navigationBarAppearance.configureWithDefaultBackground()
+            navigationBarAppearance.shadowColor = .clear
+            navigationBarAppearance.backgroundColor = .secondarySystemBackground
+            UINavigationBar.appearance().standardAppearance = navigationBarAppearance
+            UINavigationBar.appearance().compactAppearance = navigationBarAppearance
+            UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
         }
     }
 }
