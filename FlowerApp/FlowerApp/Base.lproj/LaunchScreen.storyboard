@@ -15,15 +15,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchScreen" translatesAutoresizingMaskIntoConstraints="NO" id="Mwz-0S-162">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchScreen" translatesAutoresizingMaskIntoConstraints="NO" id="mGK-ti-NV2">
                                 <rect key="frame" x="82" y="283" width="250" height="250"/>
+                                <color key="backgroundColor" red="0.39932972189999999" green="0.52190846199999996" blue="0.044656313959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="250" id="0ZX-vk-sNe"/>
-                                    <constraint firstAttribute="width" constant="250" id="AKr-nk-z8F"/>
+                                    <constraint firstAttribute="height" constant="250" id="9Cy-R1-R8D"/>
+                                    <constraint firstAttribute="width" constant="250" id="k5H-6v-iHj"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vgosti.by" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ARA-Rs-KSK">
-                                <rect key="frame" x="82" y="532" width="250" height="61"/>
+                                <rect key="frame" x="82" y="523" width="250" height="61"/>
                                 <color key="backgroundColor" red="0.4008702636" green="0.5211336017" blue="0.045704834159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="SnellRoundhand-Bold" family="Snell Roundhand" pointSize="48"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -33,11 +34,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.4008702636" green="0.5211336017" blue="0.045704834159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Mwz-0S-162" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="25O-bl-dN0"/>
-                            <constraint firstItem="Mwz-0S-162" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-40" id="5Nj-vd-Dlr"/>
-                            <constraint firstItem="ARA-Rs-KSK" firstAttribute="trailing" secondItem="Mwz-0S-162" secondAttribute="trailing" id="IYB-qT-FIy"/>
-                            <constraint firstItem="ARA-Rs-KSK" firstAttribute="leading" secondItem="Mwz-0S-162" secondAttribute="leading" id="VrC-ae-pii"/>
-                            <constraint firstItem="ARA-Rs-KSK" firstAttribute="top" secondItem="Mwz-0S-162" secondAttribute="bottom" constant="-1" id="bVh-Vg-Zab"/>
+                            <constraint firstItem="ARA-Rs-KSK" firstAttribute="leading" secondItem="mGK-ti-NV2" secondAttribute="leading" id="IIT-Jk-Zj0"/>
+                            <constraint firstItem="ARA-Rs-KSK" firstAttribute="top" secondItem="mGK-ti-NV2" secondAttribute="bottom" constant="-10" id="XTH-GQ-9Cw"/>
+                            <constraint firstItem="mGK-ti-NV2" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Y7u-ds-ZQ6"/>
+                            <constraint firstItem="mGK-ti-NV2" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-40" id="hfb-xg-wiG"/>
+                            <constraint firstItem="ARA-Rs-KSK" firstAttribute="trailing" secondItem="mGK-ti-NV2" secondAttribute="trailing" id="zSv-Nx-tqh"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -47,6 +48,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="launchScreen" width="1024" height="1023"/>
+        <image name="launchScreen" width="250" height="250"/>
     </resources>
 </document>
