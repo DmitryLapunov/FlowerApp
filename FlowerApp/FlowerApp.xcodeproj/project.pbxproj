@@ -24,6 +24,7 @@
 		8982F16F2740ADFB00FB79E8 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8982F16D2740ADFB00FB79E8 /* CategoryCell.swift */; };
 		8982F1702740ADFB00FB79E8 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8982F16E2740ADFB00FB79E8 /* CategoryCell.xib */; };
 		8982F1722741410800FB79E8 /* OpenSans-Italic-VariableFont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8982F1712741410800FB79E8 /* OpenSans-Italic-VariableFont.ttf */; };
+		9339181F274300B000FF162F /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9339181E274300B000FF162F /* TabBarController.swift */; };
 		933F0CD4273FBF8900482A9F /* FavouriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933F0CD2273FBF8900482A9F /* FavouriteVC.swift */; };
 		933F0CD5273FBF8900482A9F /* FavouriteVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 933F0CD3273FBF8900482A9F /* FavouriteVC.xib */; };
 		933F0CD8273FBFB900482A9F /* ContactsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933F0CD6273FBFB900482A9F /* ContactsVC.swift */; };
@@ -53,6 +54,7 @@
 		8982F16D2740ADFB00FB79E8 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		8982F16E2740ADFB00FB79E8 /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 		8982F1712741410800FB79E8 /* OpenSans-Italic-VariableFont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Italic-VariableFont.ttf"; path = "Resources/Fonts/OpenSans-Italic-VariableFont.ttf"; sourceTree = SOURCE_ROOT; };
+		9339181E274300B000FF162F /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		933F0CD2273FBF8900482A9F /* FavouriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteVC.swift; sourceTree = "<group>"; };
 		933F0CD3273FBF8900482A9F /* FavouriteVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavouriteVC.xib; sourceTree = "<group>"; };
 		933F0CD6273FBFB900482A9F /* ContactsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsVC.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 		8982F14E273F339600FB79E8 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				9339181D2743009C00FF162F /* TabBarController */,
 				93A3B06827412C82008DF823 /* CatalogController */,
 				93A3B0662741283D008DF823 /* FavouriteController */,
 				93A3B06727412893008DF823 /* ContactsController */,
@@ -189,6 +192,14 @@
 				10B83A1A918906EF7FA39CC1 /* Pods-FlowerApp.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		9339181D2743009C00FF162F /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				9339181E274300B000FF162F /* TabBarController.swift */,
+			);
+			path = TabBarController;
 			sourceTree = "<group>";
 		};
 		93A3B0662741283D008DF823 /* FavouriteController */ = {
@@ -382,6 +393,7 @@
 				933F0CDC273FC05500482A9F /* ShoppingCartVC.swift in Sources */,
 				8982F137273F328200FB79E8 /* AppDelegate.swift in Sources */,
 				8982F153273F33D100FB79E8 /* CatalogVC.swift in Sources */,
+				9339181F274300B000FF162F /* TabBarController.swift in Sources */,
 				8982F16F2740ADFB00FB79E8 /* CategoryCell.swift in Sources */,
 				933F0CD4273FBF8900482A9F /* FavouriteVC.swift in Sources */,
 				8982F16B2740ADCC00FB79E8 /* Enums.swift in Sources */,

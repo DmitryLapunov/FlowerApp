@@ -59,7 +59,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let navTabContacts = UINavigationController(rootViewController: ContactsVC(nibName: String(describing: ContactsVC.self), bundle: nil))
         let navTabShopping = UINavigationController(rootViewController: ShoppingCartVC(nibName: String(describing: ShoppingCartVC.self), bundle: nil))
     
-        let tabBarController = UITabBarController()
+        let tabBarController = TabViewController()
         
         tabBarController.viewControllers = [navTabCatalog, navTabFavourite, navTabContacts, navTabShopping]
                 
