@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "icon_bookmark.pdf",
+      "filename" : "icon_bookmark_25x.pdf",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "icon_bookmark-1.pdf",
+      "filename" : "icon_bookmark_50x.pdf",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "icon_bookmark-2.pdf",
+      "filename" : "icon_bookmark_75x.pdf",
       "idiom" : "universal",
       "scale" : "3x"
     }
@@ -19,9 +19,5 @@
   "info" : {
     "author" : "xcode",
     "version" : 1
-  },
-  "properties" : {
-    "auto-scaling" : "auto",
-    "preserves-vector-representation" : true
   }
 }
