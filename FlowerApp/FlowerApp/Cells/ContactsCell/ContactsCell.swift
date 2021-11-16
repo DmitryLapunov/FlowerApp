@@ -71,8 +71,14 @@ func openApplication(application: Application) {
         }
         
     case .googleMap:
-        print("google")
-        
+        let application = UIApplication.shared
+        let appURL = URL(string: "comgooglemaps://?saddr=&daddr=53.913147,27.593101&directionsmode=driving")!
+        if application.canOpenURL(appURL) {
+            application.open(appURL, options: [:], completionHandler: nil)
+        } else {
+            let webURL = URL(string: "https://www.google.co.in/maps/dir/?saddr=&daddr=53.913147,27.593101&directionsmode=driving")!
+                    application.open(webURL)
+        }
     case .phoneGor:
         guard let url = URL(string: "telprompt://+375173963666"),
                 UIApplication.shared.canOpenURL(url) else {
