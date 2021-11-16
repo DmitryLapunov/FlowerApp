@@ -8,11 +8,11 @@
 import UIKit
 
 enum Application: String {
-    case telegram = "Telegram"
-    case instagram = "Instagram"
-    case facebook = "Facebook"
-    case viber = "+375(29)817-49-83"
-    case vk = "Вконтакте"
+    case telegram
+    case instagram
+    case facebook
+    case viber
+    case vk
     case phone
     case googleMap
 }
