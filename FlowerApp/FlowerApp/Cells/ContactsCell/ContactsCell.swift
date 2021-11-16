@@ -53,7 +53,7 @@ func openApplication(application: Application) {
         
     case .vk:
         let application = UIApplication.shared
-        let appURL = URL(string: "vk://vk.com/idvgostiby")!
+        let appURL = URL(string: "vk://vk.com/vgostiby")!
         if application.canOpenURL(appURL) {
             application.open(appURL, options: [:], completionHandler: nil)
         } else {
