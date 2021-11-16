@@ -23,7 +23,7 @@ func openApplication(application: Application) {
         
     case .facebook:
         let application = UIApplication.shared
-        let appURL = URL(string: "fb://profile/vgosti.by")!
+        let appURL = URL(string: "fb://page/?id=vgosti.by")!
         if application.canOpenURL(appURL) {
             application.open(appURL, options: [:], completionHandler: nil)
         } else {
