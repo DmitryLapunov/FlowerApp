@@ -34,6 +34,10 @@
 	<string>UIStatusBarStyleDefault</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
+		<string>viber</string>
+		<string>telprompt</string>
+		<string>vk</string>
+		<string>tg</string>
 		<string>instagram</string>
 		<string>fb</string>
 	</array>

@@ -20,29 +20,82 @@ class ContactsCell: UITableViewCell {
 
 func openApplication(application: Application) {
     switch application {
+        
     case .facebook:
-        print("Facebook")
-    case .instagram:
         let application = UIApplication.shared
-        let appURL = URL(string: "instagram://user?username=zhorawow")!
+        let appURL = URL(string: "fb://profile/vgosti.by")!
         if application.canOpenURL(appURL) {
             application.open(appURL, options: [:], completionHandler: nil)
         } else {
-            let webURL = URL(string: "https://instagram.com/zhorawow/")!
+            let webURL = URL(string: "https://www.facebook.com/vgosti.by/")!
                     application.open(webURL)
         }
         
-        print("insta")
+    case .instagram:
+        let application = UIApplication.shared
+        let appURL = URL(string: "instagram://user?username=vgosti.by")!
+        if application.canOpenURL(appURL) {
+            application.open(appURL, options: [:], completionHandler: nil)
+        } else {
+            let webURL = URL(string: "https://instagram.com/vgosti.by/")!
+                    application.open(webURL)
+        }
+        
     case .telegram:
-        print("telega")
+        let application = UIApplication.shared
+        let appURL = URL(string: "tg://resolve?domain=VgostiByBot")!
+        if application.canOpenURL(appURL) {
+            application.open(appURL, options: [:], completionHandler: nil)
+        } else {
+            let webURL = URL(string: "https://web.telegram.org/z/#1101369569")!
+                    application.open(webURL)
+        }
+        
     case .vk:
-        print("vk")
+        let application = UIApplication.shared
+        let appURL = URL(string: "vk://vk.com/idvgostiby")!
+        if application.canOpenURL(appURL) {
+            application.open(appURL, options: [:], completionHandler: nil)
+        } else {
+            let webURL = URL(string: "https://vk.com/vgostiby")!
+                    application.open(webURL)
+        }
+        
     case .viber:
-        print("viber")
+        let application = UIApplication.shared
+        let appURL = URL(string: "viber://contact?number=+375291611666")!
+        if application.canOpenURL(appURL) {
+            application.open(appURL, options: [:], completionHandler: nil)
+        } else {
+           return
+        }
+        
     case .googleMap:
         print("google")
-    case .phone:
-        print("call")
+        
+    case .phoneGor:
+        guard let url = URL(string: "telprompt://+375173963666"),
+                UIApplication.shared.canOpenURL(url) else {
+                return
+            }
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        
+    case .phoneMTS:
+        guard let url = URL(string: "telprompt://+375297511777"),
+                UIApplication.shared.canOpenURL(url) else {
+                return
+            }
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        print("MTS")
+        
+    case .phoneA1:
+        guard let url = URL(string: "telprompt://+375296683965"),
+                UIApplication.shared.canOpenURL(url) else {
+                return
+            }
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        print("A1")
+        
     }
 }
 }

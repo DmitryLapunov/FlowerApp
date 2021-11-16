@@ -15,11 +15,11 @@ class ContactsVC: UIViewController {
     
     let section = ["Наши телефоны", "Мы в соцсетях", "Как добраться"]
     
-    let tableViewSettings = [["+375(29)817-49-83", "+375(29)817-49-83", "+375(29)817-49-83", "+375(29)817-49-83"],
+    let tableViewSettings = [["+375(17)396-36-66", "+375(29)668-39-65", "+375(29)751-17-77", "+375(29)161-16-66"],
                              ["Вконтакте", "Telegram", "Instagram", "Facebook"],
                              ["Google Maps"]]
     
-    let arrayOfEnum: [[Application]] = [[.phone, .phone, .phone, .viber],
+    let arrayOfEnum: [[Application]] = [[.phoneGor, .phoneA1, .phoneMTS, .viber],
                                         [.vk, .telegram, .instagram, .facebook],
                                         [.googleMap]]
     

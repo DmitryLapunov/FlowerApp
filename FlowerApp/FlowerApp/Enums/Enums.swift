@@ -57,6 +57,8 @@ enum Application: String {
     case facebook
     case viber
     case vk
-    case phone
+    case phoneGor
+    case phoneA1
+    case phoneMTS
     case googleMap
 }
