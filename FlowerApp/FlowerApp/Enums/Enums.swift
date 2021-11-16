@@ -50,3 +50,13 @@ enum CategoryType: String, CaseIterable {
         }
     }
 }
+
+enum Application: String {
+    case telegram
+    case instagram
+    case facebook
+    case viber
+    case vk
+    case phone
+    case googleMap
+}
