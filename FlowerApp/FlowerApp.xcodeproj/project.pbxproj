@@ -24,6 +24,8 @@
 		8982F16F2740ADFB00FB79E8 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8982F16D2740ADFB00FB79E8 /* CategoryCell.swift */; };
 		8982F1702740ADFB00FB79E8 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8982F16E2740ADFB00FB79E8 /* CategoryCell.xib */; };
 		8982F1722741410800FB79E8 /* OpenSans-Italic-VariableFont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8982F1712741410800FB79E8 /* OpenSans-Italic-VariableFont.ttf */; };
+		89B9E10D27431FC300C0F43B /* JsonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B9E10C27431FC300C0F43B /* JsonData.swift */; };
+		89B9E10F274324B900C0F43B /* MappableClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B9E10E274324B900C0F43B /* MappableClasses.swift */; };
 		933F0CD4273FBF8900482A9F /* FavouriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933F0CD2273FBF8900482A9F /* FavouriteVC.swift */; };
 		933F0CD5273FBF8900482A9F /* FavouriteVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 933F0CD3273FBF8900482A9F /* FavouriteVC.xib */; };
 		933F0CD8273FBFB900482A9F /* ContactsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933F0CD6273FBFB900482A9F /* ContactsVC.swift */; };
@@ -53,6 +55,8 @@
 		8982F16D2740ADFB00FB79E8 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		8982F16E2740ADFB00FB79E8 /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 		8982F1712741410800FB79E8 /* OpenSans-Italic-VariableFont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Italic-VariableFont.ttf"; path = "Resources/Fonts/OpenSans-Italic-VariableFont.ttf"; sourceTree = SOURCE_ROOT; };
+		89B9E10C27431FC300C0F43B /* JsonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonData.swift; sourceTree = "<group>"; };
+		89B9E10E274324B900C0F43B /* MappableClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappableClasses.swift; sourceTree = "<group>"; };
 		933F0CD2273FBF8900482A9F /* FavouriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteVC.swift; sourceTree = "<group>"; };
 		933F0CD3273FBF8900482A9F /* FavouriteVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavouriteVC.xib; sourceTree = "<group>"; };
 		933F0CD6273FBFB900482A9F /* ContactsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsVC.swift; sourceTree = "<group>"; };
@@ -129,6 +133,8 @@
 		8982F14C273F338900FB79E8 /* NetworkTools */ = {
 			isa = PBXGroup;
 			children = (
+				89B9E10B27431FAF00C0F43B /* JsonTest */,
+				89B9E10E274324B900C0F43B /* MappableClasses.swift */,
 			);
 			path = NetworkTools;
 			sourceTree = "<group>";
@@ -180,6 +186,14 @@
 				8982F16E2740ADFB00FB79E8 /* CategoryCell.xib */,
 			);
 			path = CategoryCell;
+			sourceTree = "<group>";
+		};
+		89B9E10B27431FAF00C0F43B /* JsonTest */ = {
+			isa = PBXGroup;
+			children = (
+				89B9E10C27431FC300C0F43B /* JsonData.swift */,
+			);
+			path = JsonTest;
 			sourceTree = "<group>";
 		};
 		91E7C5CD6880390624272CC9 /* Pods */ = {
@@ -379,9 +393,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89B9E10F274324B900C0F43B /* MappableClasses.swift in Sources */,
 				933F0CDC273FC05500482A9F /* ShoppingCartVC.swift in Sources */,
 				8982F137273F328200FB79E8 /* AppDelegate.swift in Sources */,
 				8982F153273F33D100FB79E8 /* CatalogVC.swift in Sources */,
+				89B9E10D27431FC300C0F43B /* JsonData.swift in Sources */,
 				8982F16F2740ADFB00FB79E8 /* CategoryCell.swift in Sources */,
 				933F0CD4273FBF8900482A9F /* FavouriteVC.swift in Sources */,
 				8982F16B2740ADCC00FB79E8 /* Enums.swift in Sources */,
