@@ -8,7 +8,7 @@
 import UIKit
 
 class ContactsVC: UIViewController {
-
+    
     let imageName = [[UIImage(systemName: "phone"), UIImage(named: "icon_a1"), UIImage(named: "icon_mts"), UIImage(named: "icon_viber")],
                      [UIImage(named: "icon_vkontakte"), UIImage(named: "icon_telegram"), UIImage(named: "icon_instagram"), UIImage(named: "icon_facebook")],
                      [UIImage(named: "icon_google_maps")]]
@@ -32,6 +32,12 @@ class ContactsVC: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
+        tableView.layer.masksToBounds = false
+        tableView.layer.shadowColor = UIColor.black.cgColor
+        tableView.layer.shadowOpacity = 0.15
+        tableView.layer.shadowRadius = 2
+        tableView.layer.shadowOffset = CGSize(width: 0, height: 2)
+        
         let nib = UINib(nibName: String(describing: ContactsCell.self), bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: String(describing: ContactsCell.self))
         
@@ -47,9 +53,15 @@ extension ContactsVC: UITableViewDataSource {
         return section.count
     }
     
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let header = view as! UITableViewHeaderFooterView
+        header.textLabel?.textColor = UIColor(named: "MainColor")
+        header.textLabel?.font = UIFont(name: "Octava-Regular", size: 16)
+    }
+        
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let section = self.section[section]
-        return section
+        let title = self.section[section]
+        return title
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -59,6 +71,7 @@ extension ContactsVC: UITableViewDataSource {
         contactsCell.imageCell.image = imageName[indexPath.section][indexPath.row]
         return contactsCell
     }
+    
 }
 
 extension ContactsVC: UITableViewDelegate {
@@ -72,7 +85,4 @@ extension ContactsVC: UITableViewDelegate {
             navigationController?.pushViewController(GoogleMapVC(nibName: String(describing: GoogleMapVC.self), bundle: nil), animated: true)
         }
     }
-    
-    
-    
 }

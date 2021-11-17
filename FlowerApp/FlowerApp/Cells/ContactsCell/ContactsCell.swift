@@ -16,8 +16,7 @@ class ContactsCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
-
+                        
 func openApplication(application: Application) {
     switch application {
         
