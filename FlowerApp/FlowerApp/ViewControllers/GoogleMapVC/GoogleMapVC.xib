@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GoogleMapVC" customModule="FlowerApp" customModuleProvider="target">
+            <connections>
+                <outlet property="makeTripButton" destination="394-BU-nQv" id="wFZ-MG-gnt"/>
+                <outlet property="mapView" destination="6cV-PT-hub" id="Lyy-Ei-JI1"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6cV-PT-hub" customClass="GMSMapView">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="394-BU-nQv">
+                    <rect key="frame" x="344" y="792" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="Ghy-Kl-gwy"/>
+                        <constraint firstAttribute="height" constant="50" id="hC0-cw-oep"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal">
+                        <imageReference key="image" image="arrow.triangle.turn.up.right.circle.fill" catalog="system" symbolScale="medium"/>
+                    </state>
+                    <connections>
+                        <action selector="makeTripAction:" destination="-1" eventType="touchUpInside" id="x3x-2S-M66"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="6cV-PT-hub" secondAttribute="bottom" id="3wj-In-r1i"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="394-BU-nQv" secondAttribute="bottom" constant="20" id="PdA-Ux-r99"/>
+                <constraint firstItem="6cV-PT-hub" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="WSV-55-N6S"/>
+                <constraint firstItem="6cV-PT-hub" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="pGq-GN-ft1"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="394-BU-nQv" secondAttribute="trailing" constant="20" id="tPG-jU-WXC"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6cV-PT-hub" secondAttribute="trailing" id="zFz-MJ-55S"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="117"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="arrow.triangle.turn.up.right.circle.fill" catalog="system" width="128" height="121"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

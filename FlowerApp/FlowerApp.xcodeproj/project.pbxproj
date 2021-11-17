@@ -34,6 +34,8 @@
 		933F0CD9273FBFB900482A9F /* ContactsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 933F0CD7273FBFB900482A9F /* ContactsVC.xib */; };
 		933F0CDC273FC05500482A9F /* ShoppingCartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933F0CDA273FC05500482A9F /* ShoppingCartVC.swift */; };
 		933F0CDD273FC05500482A9F /* ShoppingCartVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 933F0CDB273FC05500482A9F /* ShoppingCartVC.xib */; };
+		9392CF6F27447AA3007A20B1 /* GoogleMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9392CF6D27447AA3007A20B1 /* GoogleMapVC.swift */; };
+		9392CF7027447AA3007A20B1 /* GoogleMapVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9392CF6E27447AA3007A20B1 /* GoogleMapVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +69,8 @@
 		933F0CD7273FBFB900482A9F /* ContactsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactsVC.xib; sourceTree = "<group>"; };
 		933F0CDA273FC05500482A9F /* ShoppingCartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartVC.swift; sourceTree = "<group>"; };
 		933F0CDB273FC05500482A9F /* ShoppingCartVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShoppingCartVC.xib; sourceTree = "<group>"; };
+		9392CF6D27447AA3007A20B1 /* GoogleMapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapVC.swift; sourceTree = "<group>"; };
+		9392CF6E27447AA3007A20B1 /* GoogleMapVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoogleMapVC.xib; sourceTree = "<group>"; };
 		AE8CB9B2E865292D811F91E2 /* Pods_FlowerApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlowerApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -159,6 +163,7 @@
 				93A3B0662741283D008DF823 /* FavouriteController */,
 				93A3B06727412893008DF823 /* ContactsController */,
 				93A3B06927412C97008DF823 /* ShopingCartController */,
+				9392CF7127447AB0007A20B1 /* GoogleMapVC */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -217,6 +222,15 @@
 				933918222743076B00FF162F /* ContactsCell.xib */,
 			);
 			path = ContactsCell;
+			sourceTree = "<group>";
+		};
+		9392CF7127447AB0007A20B1 /* GoogleMapVC */ = {
+			isa = PBXGroup;
+			children = (
+				9392CF6D27447AA3007A20B1 /* GoogleMapVC.swift */,
+				9392CF6E27447AA3007A20B1 /* GoogleMapVC.xib */,
+			);
+			path = GoogleMapVC;
 			sourceTree = "<group>";
 		};
 		93A3B0662741283D008DF823 /* FavouriteController */ = {
@@ -328,6 +342,7 @@
 				933F0CD9273FBFB900482A9F /* ContactsVC.xib in Resources */,
 				8982F15C273F352500FB79E8 /* OCT55.otf in Resources */,
 				8982F15D273F352500FB79E8 /* OCT85.otf in Resources */,
+				9392CF7027447AA3007A20B1 /* GoogleMapVC.xib in Resources */,
 				8982F1702740ADFB00FB79E8 /* CategoryCell.xib in Resources */,
 				8982F143273F328300FB79E8 /* LaunchScreen.storyboard in Resources */,
 				8982F1722741410800FB79E8 /* OpenSans-Italic-VariableFont.ttf in Resources */,
@@ -416,6 +431,7 @@
 				9339181F274300B000FF162F /* TabBarController.swift in Sources */,
 				8982F16F2740ADFB00FB79E8 /* CategoryCell.swift in Sources */,
 				933F0CD4273FBF8900482A9F /* FavouriteVC.swift in Sources */,
+				9392CF6F27447AA3007A20B1 /* GoogleMapVC.swift in Sources */,
 				8982F16B2740ADCC00FB79E8 /* Enums.swift in Sources */,
 				8982F139273F328200FB79E8 /* SceneDelegate.swift in Sources */,
 				933F0CD8273FBFB900482A9F /* ContactsVC.swift in Sources */,

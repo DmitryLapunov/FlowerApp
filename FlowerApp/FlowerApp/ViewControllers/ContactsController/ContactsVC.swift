@@ -67,6 +67,10 @@ extension ContactsVC: UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ContactsCell.self), for: indexPath)
         guard let contactsCell = cell as? ContactsCell else { return }
         contactsCell.openApplication(application: arrayOfEnum[indexPath.section][indexPath.row])
+        
+        if arrayOfEnum[indexPath.section][indexPath.row] == .googleMap {
+            navigationController?.pushViewController(GoogleMapVC(nibName: String(describing: GoogleMapVC.self), bundle: nil), animated: true)
+        }
     }
     
     
