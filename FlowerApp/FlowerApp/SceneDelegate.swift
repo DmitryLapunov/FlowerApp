@@ -6,11 +6,13 @@
 //
 
 import UIKit
+import GoogleMaps
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var window: UIWindow?
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        GMSServices.provideAPIKey("AIzaSyCDBXkOzdmk097j5wcdV_YrunQL9XCfYrs")
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
         configureTabBar()

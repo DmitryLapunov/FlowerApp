@@ -35,6 +35,11 @@
 		8982F16F2740ADFB00FB79E8 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8982F16D2740ADFB00FB79E8 /* CategoryCell.swift */; };
 		8982F1702740ADFB00FB79E8 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8982F16E2740ADFB00FB79E8 /* CategoryCell.xib */; };
 		8982F1722741410800FB79E8 /* OpenSans-Italic-VariableFont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8982F1712741410800FB79E8 /* OpenSans-Italic-VariableFont.ttf */; };
+		89DBE89227475C7C00B7C96D /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DBE89127475C7C00B7C96D /* TabBarController.swift */; };
+		89DBE89627475C8C00B7C96D /* ContactsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DBE89427475C8C00B7C96D /* ContactsCell.swift */; };
+		89DBE89727475C8C00B7C96D /* ContactsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89DBE89527475C8C00B7C96D /* ContactsCell.xib */; };
+		89DBE89B27475CC900B7C96D /* GoogleMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DBE89927475CC900B7C96D /* GoogleMapVC.swift */; };
+		89DBE89C27475CC900B7C96D /* GoogleMapVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89DBE89A27475CC900B7C96D /* GoogleMapVC.xib */; };
 		933F0CD4273FBF8900482A9F /* FavouriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933F0CD2273FBF8900482A9F /* FavouriteVC.swift */; };
 		933F0CD5273FBF8900482A9F /* FavouriteVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 933F0CD3273FBF8900482A9F /* FavouriteVC.xib */; };
 		933F0CD8273FBFB900482A9F /* ContactsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933F0CD6273FBFB900482A9F /* ContactsVC.swift */; };
@@ -75,6 +80,11 @@
 		8982F16D2740ADFB00FB79E8 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		8982F16E2740ADFB00FB79E8 /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 		8982F1712741410800FB79E8 /* OpenSans-Italic-VariableFont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Italic-VariableFont.ttf"; path = "Resources/Fonts/OpenSans-Italic-VariableFont.ttf"; sourceTree = SOURCE_ROOT; };
+		89DBE89127475C7C00B7C96D /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		89DBE89427475C8C00B7C96D /* ContactsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsCell.swift; sourceTree = "<group>"; };
+		89DBE89527475C8C00B7C96D /* ContactsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactsCell.xib; sourceTree = "<group>"; };
+		89DBE89927475CC900B7C96D /* GoogleMapVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleMapVC.swift; sourceTree = "<group>"; };
+		89DBE89A27475CC900B7C96D /* GoogleMapVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GoogleMapVC.xib; sourceTree = "<group>"; };
 		933F0CD2273FBF8900482A9F /* FavouriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteVC.swift; sourceTree = "<group>"; };
 		933F0CD3273FBF8900482A9F /* FavouriteVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavouriteVC.xib; sourceTree = "<group>"; };
 		933F0CD6273FBFB900482A9F /* ContactsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsVC.swift; sourceTree = "<group>"; };
@@ -198,6 +208,7 @@
 		8982F14D273F339200FB79E8 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				89DBE89327475C8C00B7C96D /* ContactsCell */,
 				8982F16C2740ADEE00FB79E8 /* CategoryCell */,
 				893086A627434B3B000339B0 /* ProductCell */,
 				893086FC27472809000339B0 /* ProductImageCell */,
@@ -208,6 +219,8 @@
 		8982F14E273F339600FB79E8 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				89DBE89827475CC900B7C96D /* GoogleMapVC */,
+				89DBE89027475C7C00B7C96D /* TabBarController */,
 				93A3B06827412C82008DF823 /* CatalogController */,
 				93A3B0662741283D008DF823 /* FavouriteController */,
 				93A3B06727412893008DF823 /* ContactsController */,
@@ -244,6 +257,33 @@
 				8982F16E2740ADFB00FB79E8 /* CategoryCell.xib */,
 			);
 			path = CategoryCell;
+			sourceTree = "<group>";
+		};
+		89DBE89027475C7C00B7C96D /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				89DBE89127475C7C00B7C96D /* TabBarController.swift */,
+			);
+			path = TabBarController;
+			sourceTree = "<group>";
+		};
+		89DBE89327475C8C00B7C96D /* ContactsCell */ = {
+			isa = PBXGroup;
+			children = (
+				89DBE89427475C8C00B7C96D /* ContactsCell.swift */,
+				89DBE89527475C8C00B7C96D /* ContactsCell.xib */,
+			);
+			path = ContactsCell;
+			sourceTree = "<group>";
+		};
+		89DBE89827475CC900B7C96D /* GoogleMapVC */ = {
+			isa = PBXGroup;
+			children = (
+				89DBE89927475CC900B7C96D /* GoogleMapVC.swift */,
+				89DBE89A27475CC900B7C96D /* GoogleMapVC.xib */,
+			);
+			name = GoogleMapVC;
+			path = ../../../../Desktop/Backup/GoogleMapVC;
 			sourceTree = "<group>";
 		};
 		91E7C5CD6880390624272CC9 /* Pods */ = {
@@ -365,6 +405,7 @@
 				933F0CD9273FBFB900482A9F /* ContactsVC.xib in Resources */,
 				8982F15C273F352500FB79E8 /* OCT55.otf in Resources */,
 				8982F15D273F352500FB79E8 /* OCT85.otf in Resources */,
+				89DBE89727475C8C00B7C96D /* ContactsCell.xib in Resources */,
 				8982F1702740ADFB00FB79E8 /* CategoryCell.xib in Resources */,
 				8982F143273F328300FB79E8 /* LaunchScreen.storyboard in Resources */,
 				893086A527434B1E000339B0 /* CategoryVC.xib in Resources */,
@@ -376,6 +417,7 @@
 				8982F15E273F352500FB79E8 /* OCT86.otf in Resources */,
 				8982F140273F328300FB79E8 /* Assets.xcassets in Resources */,
 				893086FB27471CBD000339B0 /* ProductVC.xib in Resources */,
+				89DBE89C27475CC900B7C96D /* GoogleMapVC.xib in Resources */,
 				8982F154273F33D100FB79E8 /* CatalogVC.xib in Resources */,
 				8930869E274340C6000339B0 /* vgosti.json in Resources */,
 				8982F13E273F328200FB79E8 /* Main.storyboard in Resources */,
@@ -449,9 +491,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89DBE89B27475CC900B7C96D /* GoogleMapVC.swift in Sources */,
 				893086A427434B1E000339B0 /* CategoryVC.swift in Sources */,
 				893086FF27472838000339B0 /* ProductImageCell.swift in Sources */,
 				893086FA27471CBD000339B0 /* ProductVC.swift in Sources */,
+				89DBE89227475C7C00B7C96D /* TabBarController.swift in Sources */,
 				893086A927434B7B000339B0 /* ProductCell.swift in Sources */,
 				933F0CDC273FC05500482A9F /* ShoppingCartVC.swift in Sources */,
 				8982F137273F328200FB79E8 /* AppDelegate.swift in Sources */,
@@ -460,6 +504,7 @@
 				8982F16F2740ADFB00FB79E8 /* CategoryCell.swift in Sources */,
 				893086F6274715FC000339B0 /* Extensions.swift in Sources */,
 				933F0CD4273FBF8900482A9F /* FavouriteVC.swift in Sources */,
+				89DBE89627475C8C00B7C96D /* ContactsCell.swift in Sources */,
 				8982F16B2740ADCC00FB79E8 /* Enums.swift in Sources */,
 				8982F139273F328200FB79E8 /* SceneDelegate.swift in Sources */,
 				933F0CD8273FBFB900482A9F /* ContactsVC.swift in Sources */,
