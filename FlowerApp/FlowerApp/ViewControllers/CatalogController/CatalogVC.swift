@@ -11,11 +11,26 @@ class CatalogVC: UIViewController {
     @IBOutlet weak var catalogCollectionView: UICollectionView!
     
     let categories = CategoryType.allCases
+    var parsedJSON: ParsedJSON?
+    var products: [Product] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Каталог"
         setupCollectionView()
+        parseJSON()
+    }
+    
+    private func parseJSON() {
+        guard let path = Bundle.main.path(forResource: "vgosti", ofType: "json") else { return }
+        let url = URL(fileURLWithPath: path)
+        do {
+            let jsonData = try Data(contentsOf: url)
+            parsedJSON = try JSONDecoder().decode(ParsedJSON.self, from: jsonData)
+        }
+        catch {
+            print("Error: \(error)")
+        }
     }
     
     func setupCollectionView() {
@@ -83,6 +98,17 @@ extension CatalogVC: UICollectionViewDataSource, UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let parsedProducts = self.parsedJSON {
+            self.products = parsedProducts.data
+        }
         
+        let filteredProducts = self.products.filter {
+            product in product.category == categories[indexPath.row].rawValue
+        }
+        
+        let categoryVC = CategoryVC(nibName: String(describing: CategoryVC.self), bundle: nil)
+        categoryVC.products = filteredProducts
+        categoryVC.title = "\(categories[indexPath.row].rawValue)"
+        navigationController?.pushViewController(categoryVC, animated: true)
     }
 }
