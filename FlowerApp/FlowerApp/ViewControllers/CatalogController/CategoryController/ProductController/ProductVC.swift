@@ -29,6 +29,9 @@ class ProductVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        scrollViewHeightConstraint.constant = productCompositionLabel.frame.height + productPackageLabel.frame.height + productSizeLabel.frame.height + productAboutItemLabel.frame.height + 40
+        print(productCompositionLabel.frame.height)
+        
         navigationItem.rightBarButtonItem = UIBarButtonItem().menuButton(target: self, action: #selector(addToFavorites), imageName: "bookmark")
         
         productImagesBackgroundView.layer.cornerRadius = 10
