@@ -39,6 +39,7 @@ class GoogleMapVC: UIViewController {
     
     func createPin() {
         let pin = GMSMarker(position: CLLocationCoordinate2D(latitude: 53.913147, longitude: 27.593101))
+        pin.title = "г. Минск, ул. Гикало 7А"
         pin.map = mapView
         centered()
         
