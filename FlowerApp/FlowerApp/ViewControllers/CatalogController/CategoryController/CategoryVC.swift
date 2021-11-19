@@ -16,6 +16,9 @@ class CategoryVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        
+        navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "")
+        navigationItem.rightBarButtonItem = UIBarButtonItem().menuButton(target: self, action: #selector(filterProducts), imageName: "slider.horizontal.3")
     }
     
     private func setupTableView() {
@@ -25,6 +28,10 @@ class CategoryVC: UIViewController {
         tableView.register(nib, forCellReuseIdentifier: String(describing: ProductCell.self))
         tableView.separatorStyle = .none
         tableView.backgroundColor = UIColor(named: "TertiaryColor")
+    }
+    
+    @objc func filterProducts() {
+        
     }
 }
 
@@ -39,14 +46,29 @@ extension CategoryVC: UITableViewDelegate, UITableViewDataSource {
         
         productCell.selectionStyle = .none
         productCell.productNameLabel.text = products[indexPath.row].itemName
-        productCell.productDescriptionLabel.text = products[indexPath.row].description?.package
+        
+        if let aboutItem = products[indexPath.row].description?.aboutItem, !aboutItem.isEmpty {
+            productCell.productDescriptionLabel.text = aboutItem
+        } else if let itemPackage = products[indexPath.row].description?.package, !itemPackage.isEmpty {
+            productCell.productDescriptionLabel.text = itemPackage
+        } else {
+            productCell.productDescriptionLabel.text = "Товар без описания"
+        }
+        
         if let productPrice = products[indexPath.row].costByn {
             productCell.productPriceLabel.text = productPrice + " РУБ."
         }
+        
         if let productImages = products[indexPath.row].photos {
             productCell.productImageView.sd_setImage(with: URL(string: "\(productImages[0])"))
         }
         
         return productCell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let productVC = ProductVC(nibName: String(describing: ProductVC.self), bundle: nil)
+        productVC.product = products[indexPath.row]
+        navigationController?.pushViewController(productVC, animated: true)
     }
 }
