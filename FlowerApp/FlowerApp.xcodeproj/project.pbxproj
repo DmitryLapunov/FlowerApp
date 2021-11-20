@@ -46,6 +46,10 @@
 		933F0CD9273FBFB900482A9F /* ContactsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 933F0CD7273FBFB900482A9F /* ContactsVC.xib */; };
 		933F0CDC273FC05500482A9F /* ShoppingCartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933F0CDA273FC05500482A9F /* ShoppingCartVC.swift */; };
 		933F0CDD273FC05500482A9F /* ShoppingCartVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 933F0CDB273FC05500482A9F /* ShoppingCartVC.xib */; };
+		9396BC5F274881BB00DA4FC8 /* FavouriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9396BC5D274881BB00DA4FC8 /* FavouriteCell.swift */; };
+		9396BC60274881BB00DA4FC8 /* FavouriteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9396BC5E274881BB00DA4FC8 /* FavouriteCell.xib */; };
+		9396BC6227488F3300DA4FC8 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9396BC6127488F3200DA4FC8 /* RealmManager.swift */; };
+		9396BC65274890C300DA4FC8 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9396BC64274890C300DA4FC8 /* Product.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,6 +95,10 @@
 		933F0CD7273FBFB900482A9F /* ContactsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactsVC.xib; sourceTree = "<group>"; };
 		933F0CDA273FC05500482A9F /* ShoppingCartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartVC.swift; sourceTree = "<group>"; };
 		933F0CDB273FC05500482A9F /* ShoppingCartVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShoppingCartVC.xib; sourceTree = "<group>"; };
+		9396BC5D274881BB00DA4FC8 /* FavouriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteCell.swift; sourceTree = "<group>"; };
+		9396BC5E274881BB00DA4FC8 /* FavouriteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavouriteCell.xib; sourceTree = "<group>"; };
+		9396BC6127488F3200DA4FC8 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		9396BC64274890C300DA4FC8 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		AE8CB9B2E865292D811F91E2 /* Pods_FlowerApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlowerApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -180,6 +188,7 @@
 				8982F14B273F337E00FB79E8 /* RealmData */,
 				893086F4274715EE000339B0 /* Extensions */,
 				8982F1692740ADBD00FB79E8 /* Enums */,
+				9396BC63274890A000DA4FC8 /* Models */,
 				8982F136273F328200FB79E8 /* AppDelegate.swift */,
 				8982F138273F328200FB79E8 /* SceneDelegate.swift */,
 				8982F13C273F328200FB79E8 /* Main.storyboard */,
@@ -193,6 +202,7 @@
 		8982F14B273F337E00FB79E8 /* RealmData */ = {
 			isa = PBXGroup;
 			children = (
+				9396BC6127488F3200DA4FC8 /* RealmManager.swift */,
 			);
 			path = RealmData;
 			sourceTree = "<group>";
@@ -208,6 +218,7 @@
 		8982F14D273F339200FB79E8 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				9396BC5C2748819A00DA4FC8 /* FavouriteCell */,
 				89DBE89327475C8C00B7C96D /* ContactsCell */,
 				8982F16C2740ADEE00FB79E8 /* CategoryCell */,
 				893086A627434B3B000339B0 /* ProductCell */,
@@ -292,6 +303,23 @@
 				10B83A1A918906EF7FA39CC1 /* Pods-FlowerApp.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		9396BC5C2748819A00DA4FC8 /* FavouriteCell */ = {
+			isa = PBXGroup;
+			children = (
+				9396BC5D274881BB00DA4FC8 /* FavouriteCell.swift */,
+				9396BC5E274881BB00DA4FC8 /* FavouriteCell.xib */,
+			);
+			path = FavouriteCell;
+			sourceTree = "<group>";
+		};
+		9396BC63274890A000DA4FC8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9396BC64274890C300DA4FC8 /* Product.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		93A3B0662741283D008DF823 /* FavouriteController */ = {
@@ -401,6 +429,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8982F160273F352500FB79E8 /* OpenSans-VariableFont.ttf in Resources */,
+				9396BC60274881BB00DA4FC8 /* FavouriteCell.xib in Resources */,
 				933F0CD9273FBFB900482A9F /* ContactsVC.xib in Resources */,
 				8982F15C273F352500FB79E8 /* OCT55.otf in Resources */,
 				8982F15D273F352500FB79E8 /* OCT85.otf in Resources */,
@@ -501,10 +530,13 @@
 				8982F153273F33D100FB79E8 /* CatalogVC.swift in Sources */,
 				893086A027434851000339B0 /* CodableClasses.swift in Sources */,
 				8982F16F2740ADFB00FB79E8 /* CategoryCell.swift in Sources */,
+				9396BC6227488F3300DA4FC8 /* RealmManager.swift in Sources */,
 				893086F6274715FC000339B0 /* Extensions.swift in Sources */,
 				933F0CD4273FBF8900482A9F /* FavouriteVC.swift in Sources */,
+				9396BC5F274881BB00DA4FC8 /* FavouriteCell.swift in Sources */,
 				89DBE89627475C8C00B7C96D /* ContactsCell.swift in Sources */,
 				8982F16B2740ADCC00FB79E8 /* Enums.swift in Sources */,
+				9396BC65274890C300DA4FC8 /* Product.swift in Sources */,
 				8982F139273F328200FB79E8 /* SceneDelegate.swift in Sources */,
 				933F0CD8273FBFB900482A9F /* ContactsVC.swift in Sources */,
 			);

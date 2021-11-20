@@ -61,6 +61,7 @@ extension CategoryVC: UITableViewDelegate, UITableViewDataSource {
         
         if let productImages = products[indexPath.row].photos {
             productCell.productImageView.sd_setImage(with: URL(string: "\(productImages[0])"))
+            productCell.productImageForFavourite = productImages[0]
         }
         
         return productCell

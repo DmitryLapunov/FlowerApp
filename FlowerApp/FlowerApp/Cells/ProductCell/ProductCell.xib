@@ -42,6 +42,9 @@
                                     <imageReference key="image" image="bookmark" catalog="system" symbolScale="large"/>
                                     <color key="baseForegroundColor" name="MainColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="addToFavourite:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="wSk-kg-YdR"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SjL-K2-0nI">
                                 <rect key="frame" x="403" y="65" width="55" height="55"/>

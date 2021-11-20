@@ -15,6 +15,8 @@ class ProductCell: UITableViewCell {
     @IBOutlet weak var productCellBackgroundView: UIView!
     @IBOutlet weak var productPriceBackgroundView: UIView!
     
+    var productImageForFavourite = ""
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -32,4 +34,9 @@ class ProductCell: UITableViewCell {
         productCellBackgroundView.layer.shadowRadius = 2
         productCellBackgroundView.layer.shadowOffset = CGSize(width: 0, height: 2)
     }
+    
+    @IBAction func addToFavourite(_ sender: Any) {
+        RealmManager.shared.writeProduct(product: ProductObject(productName: productNameLabel.text ?? "Нет названия", productDescriprion: productDescriptionLabel.text ?? "Нет описания", productPrice: productPriceLabel.text ?? "Нет цены", productImage: productImageForFavourite))
+    }
+    
 }
