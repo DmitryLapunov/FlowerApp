@@ -180,7 +180,7 @@
                     </constraints>
                 </view>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TFD-VE-W2c">
-                    <rect key="frame" x="0.0" y="466" width="414" height="331.5"/>
+                    <rect key="frame" x="0.0" y="456" width="414" height="341.5"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ZL-be-bnI">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
@@ -277,7 +277,7 @@
                 <constraint firstItem="ytA-fc-nKA" firstAttribute="centerY" secondItem="fro-ol-k5e" secondAttribute="centerY" id="8HK-Tk-Fd5"/>
                 <constraint firstAttribute="trailing" secondItem="QVs-I8-MF7" secondAttribute="trailing" constant="20" id="AS5-yo-HUd"/>
                 <constraint firstItem="8ZL-be-bnI" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="EmW-R0-SbN"/>
-                <constraint firstItem="TFD-VE-W2c" firstAttribute="top" secondItem="fro-ol-k5e" secondAttribute="bottom" constant="10" id="FmI-dP-OAt"/>
+                <constraint firstItem="TFD-VE-W2c" firstAttribute="top" secondItem="fro-ol-k5e" secondAttribute="bottom" id="FmI-dP-OAt"/>
                 <constraint firstItem="QVs-I8-MF7" firstAttribute="leading" secondItem="Ddq-N6-rZ6" secondAttribute="trailing" constant="10" id="I8a-LW-O9n"/>
                 <constraint firstItem="TFD-VE-W2c" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="MGS-Yl-hJc"/>
                 <constraint firstItem="bvU-LR-JCT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Pdv-O0-uyw"/>

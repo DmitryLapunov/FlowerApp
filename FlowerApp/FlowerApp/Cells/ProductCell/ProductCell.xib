@@ -97,8 +97,8 @@
                             <constraint firstItem="kK0-CJ-vUZ" firstAttribute="leading" secondItem="Jaz-ge-xeC" secondAttribute="leading" constant="5" id="oCw-Uw-Wiw"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bno-84-xmC">
-                        <rect key="frame" x="140" y="35.5" width="273" height="19.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bno-84-xmC">
+                        <rect key="frame" x="140" y="30.5" width="273" height="19.5"/>
                         <fontDescription key="fontDescription" name="OpenSansRoman-CondensedRegular" family="Open Sans" pointSize="14"/>
                         <color key="textColor" name="SecondaryLabelColor"/>
                         <nil key="highlightedColor"/>
@@ -111,7 +111,7 @@
                     <constraint firstAttribute="trailing" secondItem="Qm0-e0-CQF" secondAttribute="trailing" constant="60" id="GtS-XM-sf7"/>
                     <constraint firstItem="IJL-F4-5Ll" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="MkK-hi-oqq"/>
                     <constraint firstAttribute="bottom" secondItem="IJL-F4-5Ll" secondAttribute="bottom" constant="5" id="U6S-3P-0iI"/>
-                    <constraint firstItem="bno-84-xmC" firstAttribute="top" secondItem="Qm0-e0-CQF" secondAttribute="bottom" constant="5" id="duV-CD-Yb3"/>
+                    <constraint firstItem="bno-84-xmC" firstAttribute="top" secondItem="Qm0-e0-CQF" secondAttribute="bottom" id="duV-CD-Yb3"/>
                     <constraint firstItem="Qm0-e0-CQF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="hoX-Op-a7n"/>
                     <constraint firstItem="rmf-DJ-Jzi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="jJP-er-iYK"/>
                     <constraint firstItem="rmf-DJ-Jzi" firstAttribute="right" secondItem="Jaz-ge-xeC" secondAttribute="right" constant="5" id="jRU-fZ-Pwn"/>

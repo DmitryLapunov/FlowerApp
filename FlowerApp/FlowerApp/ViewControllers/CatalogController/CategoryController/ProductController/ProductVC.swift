@@ -25,12 +25,9 @@ class ProductVC: UIViewController {
     var product: Product?
     var productImages: [String] = []
     var productAmount: Int?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        scrollViewHeightConstraint.constant = productCompositionLabel.frame.height + productPackageLabel.frame.height + productSizeLabel.frame.height + productAboutItemLabel.frame.height + 40
-        print(productCompositionLabel.frame.height)
         
         navigationItem.rightBarButtonItem = UIBarButtonItem().menuButton(target: self, action: #selector(addToFavorites), imageName: "bookmark")
         
@@ -57,6 +54,14 @@ class ProductVC: UIViewController {
         guard let productItem = product else { return }
         setupProductPage(product: productItem)
         setupCollectionView()
+        
+        if let font = UIFont(name: "Open Sans", size: 17.0),
+           let compositionText = productCompositionLabel.text,
+           let packageText = productPackageLabel.text,
+           let sizeText = productSizeLabel.text,
+           let aboutItemText = productAboutItemLabel.text {
+            scrollViewHeightConstraint.constant = compositionText.height(withConstrainedWidth: productCompositionLabel.frame.width, font: font) + packageText.height(withConstrainedWidth: productPackageLabel.frame.width, font: font) + sizeText.height(withConstrainedWidth: productSizeLabel.frame.width, font: font) + aboutItemText.height(withConstrainedWidth: productAboutItemLabel.frame.width, font: font) + 90
+        }
     }
     
     @IBAction func addToCartAction(_ sender: Any) {
