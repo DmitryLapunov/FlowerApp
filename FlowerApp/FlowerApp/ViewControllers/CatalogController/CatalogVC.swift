@@ -21,6 +21,13 @@ class CatalogVC: UIViewController {
         title = "Каталог"
         setupCollectionView()
         parseJSON()
+        writeGlobalAraay()
+    }
+    
+    private func writeGlobalAraay() {
+        if let parsedProducts = parsedJSON {
+            arrayGlobalProducts = parsedProducts.data
+        }
     }
     
     private func parseJSON() {
@@ -102,7 +109,6 @@ extension CatalogVC: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let parsedProducts = self.parsedJSON {
             self.products = parsedProducts.data
-            arrayGlobalProducts = parsedProducts.data
         }
         
         let filteredProducts = self.products.filter {

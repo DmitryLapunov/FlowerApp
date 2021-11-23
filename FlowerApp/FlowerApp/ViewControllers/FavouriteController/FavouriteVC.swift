@@ -11,7 +11,7 @@ class FavouriteVC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var arrayProducts: [ProductObject] = [] {
+    var arrayProductsObject: [ProductObject] = [] {
         didSet {
             tableView.reloadData()
         }
@@ -29,28 +29,44 @@ class FavouriteVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        arrayProducts.removeAll()
-        arrayProducts = RealmManager.shared.getProducts()
+        arrayProductsObject.removeAll()
+        arrayProductsObject = RealmManager.shared.getProducts()
     }
-    
-    
 }
 
 extension FavouriteVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrayProducts.count
+        return arrayProductsObject.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: FavouriteCell.self),for: indexPath)
         guard let favouriteCell = cell as? FavouriteCell else { return cell }
-        favouriteCell.productNameLabel.text = arrayProducts[indexPath.row].productName
+        
+        var arrayProducts: [Product] = []
+        
+        for i in 0...arrayProductsObject.count - 1 {
+           let name = arrayProductsObject[i].productName
+            if let product = arrayGlobalProducts.first(where: { $0.itemName == name}) {
+                arrayProducts.append(product)
+            }
+        }
+        
+        favouriteCell.priceLabel.text = arrayProducts[indexPath.row].costByn
+        favouriteCell.productNameLabel.text = arrayProducts[indexPath.row].itemName
+        
+        if let productDescription = arrayProducts[indexPath.row].description {
+            favouriteCell.productDescriptionLabel.text = productDescription.aboutItem ?? "описание не указано"
+        }
+        
+        if let productImages = arrayProducts[indexPath.row].photos {
+            favouriteCell.productImage.sd_setImage(with: URL(string: "\(productImages[0])"))
+        }
+        
+        favouriteCell.productNameLabel.text = arrayProductsObject[indexPath.row].productName
         favouriteCell.delegate = self
         return favouriteCell
     }
-    
-    
-    
 }
 
 extension FavouriteVC: UITableViewDelegate {
@@ -61,8 +77,6 @@ extension FavouriteVC: UITableViewDelegate {
 
 extension FavouriteVC: ReloadCellFavourite {
     func reloadCell() {
-        arrayProducts = RealmManager.shared.getProducts()
+        arrayProductsObject = RealmManager.shared.getProducts()
     }
-    
-    
 }
