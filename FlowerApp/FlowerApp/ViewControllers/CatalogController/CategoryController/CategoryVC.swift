@@ -86,6 +86,7 @@ extension CategoryVC: UITableViewDelegate, UITableViewDataSource {
         }
         
         productCell.delegate = self
+        productCell.alertDelegate = self
         
         return productCell
     }
@@ -100,6 +101,7 @@ extension CategoryVC: UITableViewDelegate, UITableViewDataSource {
             productVC.imageName = "bookmark.fill"
         }
         
+        productVC.alertDelegate = self
         productVC.product = products[indexPath.row]
         navigationController?.pushViewController(productVC, animated: true)
     }
@@ -109,6 +111,10 @@ extension CategoryVC: ReloadCellCategory {
     func reloadCell() {
         productRealm = RealmManager.shared.getProducts()
     }
-    
-    
+}
+
+extension CategoryVC: AlertShowerProduct {
+    func showAlert(alert: UIAlertController) {
+        present(alert, animated: true, completion: nil)
+    }
 }

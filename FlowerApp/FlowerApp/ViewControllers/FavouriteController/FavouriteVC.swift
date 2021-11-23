@@ -52,7 +52,10 @@ extension FavouriteVC: UITableViewDataSource {
             }
         }
         
-        favouriteCell.priceLabel.text = arrayProducts[indexPath.row].costByn
+        if let price = arrayProducts[indexPath.row].costByn {
+            favouriteCell.priceLabel.text = price + " РУБ."
+        }
+       
         favouriteCell.productNameLabel.text = arrayProducts[indexPath.row].itemName
         
         if let productDescription = arrayProducts[indexPath.row].description {
@@ -65,6 +68,8 @@ extension FavouriteVC: UITableViewDataSource {
         
         favouriteCell.productNameLabel.text = arrayProductsObject[indexPath.row].productName
         favouriteCell.delegate = self
+        favouriteCell.alertDelegate = self
+        
         return favouriteCell
     }
 }
@@ -86,4 +91,14 @@ extension FavouriteVC: ReloadCellFavourite {
     func reloadCell() {
         arrayProductsObject = RealmManager.shared.getProducts()
     }
+}
+
+extension FavouriteVC: AlertShowerFavourite {
+    func showAlert(alert: UIAlertController) {
+        present(alert, animated: true, completion: nil)
+    }
+    
+   
+    
+    
 }

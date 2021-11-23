@@ -5,13 +5,17 @@
 //  Created by Дмитрий Лапунов on 16.11.21.
 //
 
-import UIKit
-import Realm
-import RealmSwift
+protocol AlertShowerProduct {
+    func showAlert(alert: UIAlertController )
+}
 
 protocol ReloadCellCategory: AnyObject {
     func reloadCell()
 }
+
+import UIKit
+import Realm
+import RealmSwift
 
 class ProductCell: UITableViewCell {
     @IBOutlet weak var productNameLabel: UILabel!
@@ -22,7 +26,8 @@ class ProductCell: UITableViewCell {
     @IBOutlet weak var productPriceBackgroundView: UIView!
     @IBOutlet weak var addToFavouriteButtonOutlet: UIButton!
     
-    weak var delegate: ReloadCellCategory?
+    var alertDelegate: AlertShowerProduct?
+    var delegate: ReloadCellCategory?
     var product: ProductObject?
     
     override func awakeFromNib() {
@@ -50,9 +55,17 @@ class ProductCell: UITableViewCell {
             RealmManager.shared.writeProduct(product: product)
             delegate?.reloadCell()
         } else {
+            
             guard let name = productNameLabel.text else { return }
-            RealmManager.shared.deleteProduct(productName: name)
-            delegate?.reloadCell()
+            let alert = UIAlertController(title: "Подтвердите действие", message: "Вы действительно хотите удалить «\(name)» из избранного", preferredStyle: .alert)
+            let noAction = UIAlertAction(title: "Нет", style: .destructive, handler: nil)
+            let yesAction = UIAlertAction(title: "Да", style: .default, handler: { action in
+                RealmManager.shared.deleteProduct(productName: name)
+                self.delegate?.reloadCell()
+            })
+            alert.addAction(yesAction)
+            alert.addAction(noAction)
+            self.alertDelegate?.showAlert(alert: alert)
         }
         
     }

@@ -31,12 +31,12 @@ class ProductVC: UIViewController {
     var productImages: [String] = []
     var productAmount: Int?
     var imageName = ""
+    var alertDelegate: AlertShowerProduct?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         scrollViewHeightConstraint.constant = productCompositionLabel.frame.height + productPackageLabel.frame.height + productSizeLabel.frame.height + productAboutItemLabel.frame.height + 40
-        print(productCompositionLabel.frame.height)
         
         
         
@@ -143,10 +143,17 @@ class ProductVC: UIViewController {
             imageName = "bookmark.fill"
             navigationItem.rightBarButtonItem = UIBarButtonItem().menuButton(target: self, action: #selector(addToFavorites), imageName: "bookmark.fill")
         } else {
-                guard let name = productNameLabel.text else { return }
+            guard let name = productNameLabel.text else { return }
+            let alert = UIAlertController(title: "Подтвердите действие", message: "Вы действительно хотите удалить «\(name)» из избранного", preferredStyle: .alert)
+            let noAction = UIAlertAction(title: "Нет", style: .destructive, handler: nil)
+            let yesAction = UIAlertAction(title: "Да", style: .default, handler: { action in
                 RealmManager.shared.deleteProduct(productName: name)
-            imageName = "bookmark"
-            navigationItem.rightBarButtonItem = UIBarButtonItem().menuButton(target: self, action: #selector(addToFavorites), imageName: "bookmark")
+                self.imageName = "bookmark"
+                self.navigationItem.rightBarButtonItem = UIBarButtonItem().menuButton(target: self, action: #selector(self.addToFavorites), imageName: "bookmark")
+            })
+            alert.addAction(yesAction)
+            alert.addAction(noAction)
+            self.alertDelegate?.showAlert(alert: alert) 
         }
     }
     

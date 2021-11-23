@@ -5,6 +5,10 @@
 //  Created by Евгений on 20.11.21.
 //
 
+protocol AlertShowerFavourite {
+    func showAlert(alert: UIAlertController )
+}
+
 protocol ReloadCellFavourite: AnyObject {
     func reloadCell()
 }
@@ -22,6 +26,7 @@ class FavouriteCell: UITableViewCell {
     @IBOutlet weak var productNameLabel: UILabel!
     
     var delegate: ReloadCellFavourite?
+    var alertDelegate: AlertShowerFavourite?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -46,8 +51,15 @@ class FavouriteCell: UITableViewCell {
     
     @IBAction func deleteFromFavourite(_ sender: Any) {
         guard let name = productNameLabel.text else { return }
-        RealmManager.shared.deleteProduct(productName: name)
-        delegate?.reloadCell()
+        let alert = UIAlertController(title: "Подтвердите действие", message: "Вы действительно хотите удалить «\(name)» из избранного", preferredStyle: .alert)
+        let noAction = UIAlertAction(title: "Нет", style: .destructive, handler: nil)
+        let yesAction = UIAlertAction(title: "Да", style: .default, handler: { action in
+            RealmManager.shared.deleteProduct(productName: name)
+            self.delegate?.reloadCell()
+        })
+        alert.addAction(yesAction)
+        alert.addAction(noAction)
+        self.alertDelegate?.showAlert(alert: alert)
     }
     
     @IBAction func addToCart(_ sender: Any) {
