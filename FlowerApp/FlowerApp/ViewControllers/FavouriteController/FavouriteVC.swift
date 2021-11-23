@@ -72,6 +72,13 @@ extension FavouriteVC: UITableViewDataSource {
 extension FavouriteVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let productVC = ProductVC(nibName: String(describing: ProductVC.self), bundle: nil)
+        
+        let filterProduct = arrayGlobalProducts.first{ $0.itemName == arrayProductsObject[indexPath.row].productName}
+        
+        productVC.product = filterProduct
+        navigationController?.pushViewController(productVC, animated: true)
+        
     }
 }
 
