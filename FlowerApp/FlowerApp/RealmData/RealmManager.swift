@@ -29,4 +29,11 @@ class RealmManager {
             realm.deleteAll()
         }
     }
+    
+    func deleteProduct(productName: String) {
+        try! realm.write {
+            realm.delete(realm.objects(ProductObject.self).filter("productName=%@", productName))
+        }
+    }
+    
 }

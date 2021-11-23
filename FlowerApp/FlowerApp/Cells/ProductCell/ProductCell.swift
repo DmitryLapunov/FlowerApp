@@ -6,6 +6,12 @@
 //
 
 import UIKit
+import Realm
+import RealmSwift
+
+protocol ReloadCellCategory: AnyObject {
+    func reloadCell()
+}
 
 class ProductCell: UITableViewCell {
     @IBOutlet weak var productNameLabel: UILabel!
@@ -14,8 +20,10 @@ class ProductCell: UITableViewCell {
     @IBOutlet weak var productPriceLabel: UILabel!
     @IBOutlet weak var productCellBackgroundView: UIView!
     @IBOutlet weak var productPriceBackgroundView: UIView!
+    @IBOutlet weak var addToFavouriteButtonOutlet: UIButton!
     
-    var productImageForFavourite = ""
+    weak var delegate: ReloadCellCategory?
+    var product: ProductObject?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -36,7 +44,17 @@ class ProductCell: UITableViewCell {
     }
     
     @IBAction func addToFavourite(_ sender: Any) {
-        RealmManager.shared.writeProduct(product: ProductObject(productName: productNameLabel.text ?? "Нет названия", productDescriprion: productDescriptionLabel.text ?? "Нет описания", productPrice: productPriceLabel.text ?? "Нет цены", productImage: productImageForFavourite))
+        
+        if addToFavouriteButtonOutlet.imageView?.image == UIImage(systemName: "bookmark") {
+            guard let product = product else { return }
+            RealmManager.shared.writeProduct(product: product)
+            delegate?.reloadCell()
+        } else {
+            guard let name = productNameLabel.text else { return }
+            RealmManager.shared.deleteProduct(productName: name)
+            delegate?.reloadCell()
+        }
+        
     }
     
 }

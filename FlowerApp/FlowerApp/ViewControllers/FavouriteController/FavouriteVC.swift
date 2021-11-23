@@ -43,18 +43,26 @@ extension FavouriteVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: FavouriteCell.self),for: indexPath)
-        guard let favouriteVC = cell as? FavouriteCell else { return cell }
-        favouriteVC.priceLabel.text = "\(arrayProducts[indexPath.row].productPrice)"
-        favouriteVC.productDescriptionLabel.text = arrayProducts[indexPath.row].productDescriprion
-        favouriteVC.productImage.sd_setImage(with: URL(string: arrayProducts[indexPath.row].productImage))
-        favouriteVC.productNameLabel.text = arrayProducts[indexPath.row].productName
-        
-        return favouriteVC
+        guard let favouriteCell = cell as? FavouriteCell else { return cell }
+        favouriteCell.productNameLabel.text = arrayProducts[indexPath.row].productName
+        favouriteCell.delegate = self
+        return favouriteCell
     }
+    
+    
+    
 }
 
 extension FavouriteVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
+}
+
+extension FavouriteVC: ReloadCellFavourite {
+    func reloadCell() {
+        arrayProducts = RealmManager.shared.getProducts()
+    }
+    
+    
 }

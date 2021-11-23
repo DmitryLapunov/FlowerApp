@@ -5,6 +5,8 @@
 //  Created by Дмитрий Лапунов on 13.11.21.
 //
 
+var arrayGlobalProducts: [Product] = []
+
 import UIKit
 
 class CatalogVC: UIViewController {
@@ -100,6 +102,7 @@ extension CatalogVC: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let parsedProducts = self.parsedJSON {
             self.products = parsedProducts.data
+            arrayGlobalProducts = parsedProducts.data
         }
         
         let filteredProducts = self.products.filter {

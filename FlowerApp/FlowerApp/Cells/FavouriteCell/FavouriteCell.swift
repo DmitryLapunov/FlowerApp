@@ -5,6 +5,10 @@
 //  Created by Евгений on 20.11.21.
 //
 
+protocol ReloadCellFavourite: AnyObject {
+    func reloadCell()
+}
+
 import UIKit
 
 class FavouriteCell: UITableViewCell {
@@ -16,6 +20,8 @@ class FavouriteCell: UITableViewCell {
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var productDescriptionLabel: UILabel!
     @IBOutlet weak var productNameLabel: UILabel!
+    
+    var delegate: ReloadCellFavourite?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -39,7 +45,9 @@ class FavouriteCell: UITableViewCell {
     }
     
     @IBAction func deleteFromFavourite(_ sender: Any) {
-        RealmManager.shared.clearRealm()
+        guard let name = productNameLabel.text else { return }
+        RealmManager.shared.deleteProduct(productName: name)
+        delegate?.reloadCell()
     }
     
     @IBAction func addToCart(_ sender: Any) {
