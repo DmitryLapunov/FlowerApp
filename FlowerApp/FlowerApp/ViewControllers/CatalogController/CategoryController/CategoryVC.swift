@@ -92,6 +92,14 @@ extension CategoryVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let productVC = ProductVC(nibName: String(describing: ProductVC.self), bundle: nil)
+        
+        let filter = productRealm.first { $0.productName == products[indexPath.row].itemName}
+        if filter == nil {
+            productVC.imageName = "bookmark"
+        } else {
+            productVC.imageName = "bookmark.fill"
+        }
+        
         productVC.product = products[indexPath.row]
         navigationController?.pushViewController(productVC, animated: true)
     }
