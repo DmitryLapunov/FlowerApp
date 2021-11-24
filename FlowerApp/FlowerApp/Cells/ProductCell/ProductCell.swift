@@ -58,8 +58,8 @@ class ProductCell: UITableViewCell {
             
             guard let name = productNameLabel.text else { return }
             let alert = UIAlertController(title: "Подтвердите действие", message: "Вы действительно хотите удалить «\(name)» из избранного", preferredStyle: .alert)
-            let noAction = UIAlertAction(title: "Нет", style: .destructive, handler: nil)
-            let yesAction = UIAlertAction(title: "Да", style: .default, handler: { action in
+            let noAction = UIAlertAction(title: "Нет", style: .default, handler: nil)
+            let yesAction = UIAlertAction(title: "Да", style: .destructive, handler: { action in
                 RealmManager.shared.deleteProduct(productName: name)
                 self.delegate?.reloadCell()
             })
