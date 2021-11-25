@@ -56,11 +56,13 @@ class ProductVC: UIViewController {
         setupCollectionView()
         
         if let font = UIFont(name: "Open Sans", size: 17.0),
+           let secondFont = UIFont(name: "Octava", size: 20.0),
+           let nameText = productNameLabel.text,
            let compositionText = productCompositionLabel.text,
            let packageText = productPackageLabel.text,
            let sizeText = productSizeLabel.text,
            let aboutItemText = productAboutItemLabel.text {
-            scrollViewHeightConstraint.constant = compositionText.height(withConstrainedWidth: productCompositionLabel.frame.width, font: font) + packageText.height(withConstrainedWidth: productPackageLabel.frame.width, font: font) + sizeText.height(withConstrainedWidth: productSizeLabel.frame.width, font: font) + aboutItemText.height(withConstrainedWidth: productAboutItemLabel.frame.width, font: font) + 90
+            scrollViewHeightConstraint.constant = nameText.height(withConstrainedWidth: productNameLabel.frame.width, font: secondFont) + (productImagesBackgroundView.frame.width / 1.5) + compositionText.height(withConstrainedWidth: productCompositionLabel.frame.width, font: font) + packageText.height(withConstrainedWidth: productPackageLabel.frame.width, font: font) + sizeText.height(withConstrainedWidth: productSizeLabel.frame.width, font: font) + aboutItemText.height(withConstrainedWidth: productAboutItemLabel.frame.width, font: font) + 190
         }
     }
     
