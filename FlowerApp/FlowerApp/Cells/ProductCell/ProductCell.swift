@@ -53,6 +53,7 @@ class ProductCell: UITableViewCell {
         if addToFavouriteButtonOutlet.imageView?.image == UIImage(systemName: "bookmark") {
             guard let product = product else { return }
             RealmManager.shared.writeProduct(product: product)
+            PopupController.showPopup()
             delegate?.reloadCell()
         } else {
             

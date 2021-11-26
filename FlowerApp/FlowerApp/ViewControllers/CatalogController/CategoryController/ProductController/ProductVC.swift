@@ -142,6 +142,7 @@ class ProductVC: UIViewController {
             RealmManager.shared.writeProduct(product: ProductObject(productName: name))
             imageName = "bookmark.fill"
             navigationItem.rightBarButtonItem = UIBarButtonItem().menuButton(target: self, action: #selector(addToFavorites), imageName: "bookmark.fill")
+            PopupController.showPopup()
         } else {
             guard let name = productNameLabel.text else { return }
             let alert = UIAlertController(title: "Подтвердите действие", message: "Вы действительно хотите удалить «\(name)» из избранного", preferredStyle: .alert)
