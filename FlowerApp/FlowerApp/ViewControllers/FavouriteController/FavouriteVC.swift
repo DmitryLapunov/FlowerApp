@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FavouriteVC: UIViewController {
+class FavouriteVC: UIViewController, AlertShowerProduct {
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -81,6 +81,7 @@ extension FavouriteVC: UITableViewDelegate {
         
         let filterProduct = arrayGlobalProducts.first{ $0.itemName == arrayProductsObject[indexPath.row].productName}
         
+        productVC.alertDelegate = self
         productVC.product = filterProduct
         navigationController?.pushViewController(productVC, animated: true)
         
@@ -97,8 +98,4 @@ extension FavouriteVC: AlertShowerFavourite {
     func showAlert(alert: UIAlertController) {
         present(alert, animated: true, completion: nil)
     }
-    
-   
-    
-    
 }
