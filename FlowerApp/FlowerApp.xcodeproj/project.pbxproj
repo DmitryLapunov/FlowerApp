@@ -39,6 +39,7 @@
 		89DBE89727475C8C00B7C96D /* ContactsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89DBE89527475C8C00B7C96D /* ContactsCell.xib */; };
 		89DBE8A02747614B00B7C96D /* GoogleMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DBE89E2747614B00B7C96D /* GoogleMapVC.swift */; };
 		89DBE8A12747614B00B7C96D /* GoogleMapVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89DBE89F2747614B00B7C96D /* GoogleMapVC.xib */; };
+		9320364A2752A76F00E68921 /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932036492752A76F00E68921 /* UIApplication+Extensions.swift */; };
 		933F0CD4273FBF8900482A9F /* FavouriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933F0CD2273FBF8900482A9F /* FavouriteVC.swift */; };
 		933F0CD5273FBF8900482A9F /* FavouriteVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 933F0CD3273FBF8900482A9F /* FavouriteVC.xib */; };
 		933F0CD8273FBFB900482A9F /* ContactsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933F0CD6273FBFB900482A9F /* ContactsVC.swift */; };
@@ -50,7 +51,6 @@
 		9396BC60274881BB00DA4FC8 /* FavouriteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9396BC5E274881BB00DA4FC8 /* FavouriteCell.xib */; };
 		9396BC6227488F3300DA4FC8 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9396BC6127488F3200DA4FC8 /* RealmManager.swift */; };
 		9396BC65274890C300DA4FC8 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9396BC64274890C300DA4FC8 /* Product.swift */; };
-		93AD6D4727515A6900211D96 /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AD6D4627515A6900211D96 /* UIApplication+Extensions.swift */; };
 		93AD6D4B27515B6A00211D96 /* PopupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AD6D4927515B6A00211D96 /* PopupController.swift */; };
 		93AD6D4C27515B6A00211D96 /* PopupController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93AD6D4A27515B6A00211D96 /* PopupController.xib */; };
 /* End PBXBuildFile section */
@@ -91,6 +91,7 @@
 		89DBE89527475C8C00B7C96D /* ContactsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactsCell.xib; sourceTree = "<group>"; };
 		89DBE89E2747614B00B7C96D /* GoogleMapVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleMapVC.swift; sourceTree = "<group>"; };
 		89DBE89F2747614B00B7C96D /* GoogleMapVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GoogleMapVC.xib; sourceTree = "<group>"; };
+		932036492752A76F00E68921 /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
 		933F0CD2273FBF8900482A9F /* FavouriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteVC.swift; sourceTree = "<group>"; };
 		933F0CD3273FBF8900482A9F /* FavouriteVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavouriteVC.xib; sourceTree = "<group>"; };
 		933F0CD6273FBFB900482A9F /* ContactsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsVC.swift; sourceTree = "<group>"; };
@@ -102,7 +103,6 @@
 		9396BC5E274881BB00DA4FC8 /* FavouriteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavouriteCell.xib; sourceTree = "<group>"; };
 		9396BC6127488F3200DA4FC8 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		9396BC64274890C300DA4FC8 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
-		93AD6D4627515A6900211D96 /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
 		93AD6D4927515B6A00211D96 /* PopupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupController.swift; sourceTree = "<group>"; };
 		93AD6D4A27515B6A00211D96 /* PopupController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopupController.xib; sourceTree = "<group>"; };
 		AE8CB9B2E865292D811F91E2 /* Pods_FlowerApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlowerApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,7 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				893086F5274715FC000339B0 /* Extensions.swift */,
-				93AD6D4627515A6900211D96 /* UIApplication+Extensions.swift */,
+				932036492752A76F00E68921 /* UIApplication+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -537,6 +537,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9320364A2752A76F00E68921 /* UIApplication+Extensions.swift in Sources */,
 				89DBE8A02747614B00B7C96D /* GoogleMapVC.swift in Sources */,
 				893086A427434B1E000339B0 /* CategoryVC.swift in Sources */,
 				893086FF27472838000339B0 /* ProductImageCell.swift in Sources */,
@@ -552,7 +553,6 @@
 				93AD6D4B27515B6A00211D96 /* PopupController.swift in Sources */,
 				893086F6274715FC000339B0 /* Extensions.swift in Sources */,
 				933F0CD4273FBF8900482A9F /* FavouriteVC.swift in Sources */,
-				93AD6D4727515A6900211D96 /* UIApplication+Extensions.swift in Sources */,
 				9396BC5F274881BB00DA4FC8 /* FavouriteCell.swift in Sources */,
 				89DBE89627475C8C00B7C96D /* ContactsCell.swift in Sources */,
 				8982F16B2740ADCC00FB79E8 /* Enums.swift in Sources */,

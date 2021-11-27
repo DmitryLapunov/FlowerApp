@@ -33,8 +33,6 @@ class PopupController: UIViewController {
         labelOutlet.textColor = textColor
         mainView.backgroundColor = backgroundColor
         mainView.alpha = 0.9
-        mainView.layer.borderWidth = 1
-        mainView.layer.borderColor = UIColor(named: "MainColor")?.cgColor
         if useShadow {
             mainView.layer.shadowColor = UIColor.black.cgColor
             mainView.layer.shadowOpacity = 0.15
