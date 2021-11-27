@@ -11,5 +11,6 @@ target 'FlowerApp' do
   pod 'SDWebImage'
   pod 'TPKeyboardAvoiding'
   pod 'GoogleMaps'
+  pod 'MultiSlider'
 
 end

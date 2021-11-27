@@ -40,6 +40,8 @@
 		89DBE89727475C8C00B7C96D /* ContactsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89DBE89527475C8C00B7C96D /* ContactsCell.xib */; };
 		89DBE8A02747614B00B7C96D /* GoogleMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DBE89E2747614B00B7C96D /* GoogleMapVC.swift */; };
 		89DBE8A12747614B00B7C96D /* GoogleMapVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89DBE89F2747614B00B7C96D /* GoogleMapVC.xib */; };
+		89DBE917275059F000B7C96D /* FilterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DBE915275059F000B7C96D /* FilterVC.swift */; };
+		89DBE918275059F000B7C96D /* FilterVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89DBE916275059F000B7C96D /* FilterVC.xib */; };
 		933F0CD4273FBF8900482A9F /* FavouriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933F0CD2273FBF8900482A9F /* FavouriteVC.swift */; };
 		933F0CD5273FBF8900482A9F /* FavouriteVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 933F0CD3273FBF8900482A9F /* FavouriteVC.xib */; };
 		933F0CD8273FBFB900482A9F /* ContactsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933F0CD6273FBFB900482A9F /* ContactsVC.swift */; };
@@ -85,6 +87,8 @@
 		89DBE89527475C8C00B7C96D /* ContactsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactsCell.xib; sourceTree = "<group>"; };
 		89DBE89E2747614B00B7C96D /* GoogleMapVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleMapVC.swift; sourceTree = "<group>"; };
 		89DBE89F2747614B00B7C96D /* GoogleMapVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GoogleMapVC.xib; sourceTree = "<group>"; };
+		89DBE915275059F000B7C96D /* FilterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterVC.swift; sourceTree = "<group>"; };
+		89DBE916275059F000B7C96D /* FilterVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterVC.xib; sourceTree = "<group>"; };
 		933F0CD2273FBF8900482A9F /* FavouriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteVC.swift; sourceTree = "<group>"; };
 		933F0CD3273FBF8900482A9F /* FavouriteVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavouriteVC.xib; sourceTree = "<group>"; };
 		933F0CD6273FBFB900482A9F /* ContactsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsVC.swift; sourceTree = "<group>"; };
@@ -285,6 +289,15 @@
 			path = GoogleMapVC;
 			sourceTree = "<group>";
 		};
+		89DBE914275059AC00B7C96D /* FilterController */ = {
+			isa = PBXGroup;
+			children = (
+				89DBE915275059F000B7C96D /* FilterVC.swift */,
+				89DBE916275059F000B7C96D /* FilterVC.xib */,
+			);
+			path = FilterController;
+			sourceTree = "<group>";
+		};
 		91E7C5CD6880390624272CC9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -318,6 +331,7 @@
 				8982F151273F33D100FB79E8 /* CatalogVC.swift */,
 				8982F152273F33D100FB79E8 /* CatalogVC.xib */,
 				893086A127434B03000339B0 /* CategoryController */,
+				89DBE914275059AC00B7C96D /* FilterController */,
 			);
 			path = CatalogController;
 			sourceTree = "<group>";
@@ -400,6 +414,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89DBE918275059F000B7C96D /* FilterVC.xib in Resources */,
 				8982F160273F352500FB79E8 /* OpenSans-VariableFont.ttf in Resources */,
 				933F0CD9273FBFB900482A9F /* ContactsVC.xib in Resources */,
 				8982F15C273F352500FB79E8 /* OCT55.otf in Resources */,
@@ -502,6 +517,7 @@
 				893086A027434851000339B0 /* CodableClasses.swift in Sources */,
 				8982F16F2740ADFB00FB79E8 /* CategoryCell.swift in Sources */,
 				893086F6274715FC000339B0 /* Extensions.swift in Sources */,
+				89DBE917275059F000B7C96D /* FilterVC.swift in Sources */,
 				933F0CD4273FBF8900482A9F /* FavouriteVC.swift in Sources */,
 				89DBE89627475C8C00B7C96D /* ContactsCell.swift in Sources */,
 				8982F16B2740ADCC00FB79E8 /* Enums.swift in Sources */,

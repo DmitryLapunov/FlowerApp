@@ -27,6 +27,9 @@ class CatalogVC: UIViewController {
         do {
             let jsonData = try Data(contentsOf: url)
             parsedJSON = try JSONDecoder().decode(ParsedJSON.self, from: jsonData)
+            if let parsedProducts = self.parsedJSON {
+                self.products = parsedProducts.data
+            }
         }
         catch {
             print("Error: \(error)")
@@ -98,10 +101,6 @@ extension CatalogVC: UICollectionViewDataSource, UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let parsedProducts = self.parsedJSON {
-            self.products = parsedProducts.data
-        }
-        
         let filteredProducts = self.products.filter {
             product in product.category == categories[indexPath.row].rawValue
         }

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-VariableFont.ttf">
+            <string>OpenSans-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FilterVC" customModule="FlowerApp" customModuleProvider="target">
+            <connections>
+                <outlet property="applyFiltersButton" destination="7Yf-1U-ROw" id="98J-RV-RKA"/>
+                <outlet property="closeFiltersButton" destination="xaY-I1-Ggo" id="p8e-Ff-TJX"/>
+                <outlet property="discardFiltersButton" destination="qrC-pn-7ol" id="Oqb-AJ-rDJ"/>
+                <outlet property="filterBackgroundView" destination="K5V-v1-cGn" id="tNS-j7-cCD"/>
+                <outlet property="sliderBackgroundView" destination="k4C-yo-eMW" id="KnT-f3-3lY"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K5V-v1-cGn">
+                    <rect key="frame" x="20" y="64" width="374" height="778"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Oe3-4K-gRO">
+                            <rect key="frame" x="10" y="733.5" width="354" height="34.5"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qrC-pn-7ol">
+                                    <rect key="frame" x="0.0" y="0.0" width="172" height="34.5"/>
+                                    <color key="tintColor" name="MainColor"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="Сбросить фильтры" cornerStyle="large">
+                                        <fontDescription key="titleFontDescription" name="OpenSansRoman-CondensedRegular" family="Open Sans" pointSize="15"/>
+                                    </buttonConfiguration>
+                                    <connections>
+                                        <action selector="discardFiltersAction:" destination="-1" eventType="touchUpInside" id="0Bh-tu-Eu7"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Yf-1U-ROw">
+                                    <rect key="frame" x="182" y="0.0" width="172" height="34.5"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="filled" title="  Применить фильтры" cornerStyle="large">
+                                        <fontDescription key="titleFontDescription" name="OpenSansRoman-CondensedRegular" family="Open Sans" pointSize="15"/>
+                                    </buttonConfiguration>
+                                    <connections>
+                                        <action selector="applyFiltersAction:" destination="-1" eventType="touchUpInside" id="8IL-X0-9dm"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ценовой диапазон" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="su7-M6-lFt">
+                            <rect key="frame" x="10" y="10" width="354" height="20.5"/>
+                            <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="15"/>
+                            <color key="textColor" name="MainLabelColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k4C-yo-eMW">
+                            <rect key="frame" x="10" y="40.5" width="354" height="80"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="80" id="w1u-c1-Z72"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xaY-I1-Ggo">
+                            <rect key="frame" x="339" y="8" width="25" height="25"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="25" id="Ch6-QA-4VW"/>
+                                <constraint firstAttribute="width" constant="25" id="OEW-p8-mB0"/>
+                                <constraint firstAttribute="width" secondItem="xaY-I1-Ggo" secondAttribute="height" multiplier="1:1" id="TGQ-MY-EMl"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="filled" cornerStyle="large">
+                                <imageReference key="image" image="xmark" catalog="system" symbolScale="small"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="closeFiltersAction:" destination="-1" eventType="touchUpInside" id="S8J-uG-Ntx"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" name="TertiaryColor"/>
+                    <constraints>
+                        <constraint firstItem="su7-M6-lFt" firstAttribute="top" secondItem="K5V-v1-cGn" secondAttribute="top" constant="10" id="01M-L5-TYx"/>
+                        <constraint firstItem="k4C-yo-eMW" firstAttribute="top" secondItem="su7-M6-lFt" secondAttribute="bottom" constant="10" id="536-D6-RiI"/>
+                        <constraint firstAttribute="trailing" secondItem="su7-M6-lFt" secondAttribute="trailing" constant="10" id="BIk-dK-xDA"/>
+                        <constraint firstAttribute="trailing" secondItem="xaY-I1-Ggo" secondAttribute="trailing" constant="10" id="F7d-lL-qcB"/>
+                        <constraint firstItem="xaY-I1-Ggo" firstAttribute="centerY" secondItem="su7-M6-lFt" secondAttribute="centerY" id="Goo-e9-oDa"/>
+                        <constraint firstItem="Oe3-4K-gRO" firstAttribute="leading" secondItem="K5V-v1-cGn" secondAttribute="leading" constant="10" id="Woj-KP-rby"/>
+                        <constraint firstAttribute="bottom" secondItem="Oe3-4K-gRO" secondAttribute="bottom" constant="10" id="ff1-du-0vS"/>
+                        <constraint firstItem="su7-M6-lFt" firstAttribute="leading" secondItem="K5V-v1-cGn" secondAttribute="leading" constant="10" id="hgs-YU-Ica"/>
+                        <constraint firstAttribute="trailing" secondItem="Oe3-4K-gRO" secondAttribute="trailing" constant="10" id="nuM-Ea-Fdz"/>
+                        <constraint firstItem="k4C-yo-eMW" firstAttribute="leading" secondItem="K5V-v1-cGn" secondAttribute="leading" constant="10" id="p3s-P5-kms"/>
+                        <constraint firstItem="k4C-yo-eMW" firstAttribute="centerX" secondItem="K5V-v1-cGn" secondAttribute="centerX" id="qjM-Ja-glT"/>
+                        <constraint firstAttribute="trailing" secondItem="k4C-yo-eMW" secondAttribute="trailing" constant="10" id="vtf-eC-5AY"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="K5V-v1-cGn" secondAttribute="trailing" constant="20" id="4Yr-Hh-ty4"/>
+                <constraint firstItem="K5V-v1-cGn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="8eg-Es-Urs"/>
+                <constraint firstItem="K5V-v1-cGn" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="9vH-AA-x5e"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="K5V-v1-cGn" secondAttribute="bottom" constant="20" id="lSc-0W-QRF"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="113.83928571428571"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="xmark" catalog="system" width="128" height="113"/>
+        <namedColor name="MainColor">
+            <color red="0.40000000596046448" green="0.5220000147819519" blue="0.046999998390674591" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="MainLabelColor">
+            <color red="0.29800000786781311" green="0.25499999523162842" blue="0.3449999988079071" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TertiaryColor">
+            <color red="0.95300000905990601" green="0.9570000171661377" blue="0.96799999475479126" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

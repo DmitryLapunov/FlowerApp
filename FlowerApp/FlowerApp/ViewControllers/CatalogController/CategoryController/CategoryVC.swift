@@ -31,7 +31,27 @@ class CategoryVC: UIViewController {
     }
     
     @objc func filterProducts() {
+        let filterVC = FilterVC(nibName: String(describing: FilterVC.self), bundle: nil)
+
+        filterVC.modalTransitionStyle = .crossDissolve
+        filterVC.modalPresentationStyle = .overFullScreen
         
+        products.sort {
+            guard let pricePreviousIndex = $0.costByn,
+                  let pricePreviousIndexDouble = Double(pricePreviousIndex),
+                  let priceNextIndex = $1.costByn,
+                  let priceNextIndexDouble = Double(priceNextIndex) else { return false }
+            return pricePreviousIndexDouble < priceNextIndexDouble
+        }
+        
+        if let lowestPriceString = products[0].costByn, let lowestPrice = Double(lowestPriceString) {
+            filterVC.lowestPrice = lowestPrice
+        }
+        if let highestPriceString = products[products.count - 1].costByn, let highestPrice = Double(highestPriceString) {
+            filterVC.highestPrice = highestPrice
+        }
+        
+        present(filterVC, animated: true, completion: nil)
     }
 }
 
@@ -55,7 +75,7 @@ extension CategoryVC: UITableViewDelegate, UITableViewDataSource {
             productCell.productDescriptionLabel.text = "Товар без описания"
         }
         
-        if let productPrice = products[indexPath.row].costByn {
+        if let productPrice = products[indexPath.row].costByn, !productPrice.isEmpty {
             productCell.productPriceLabel.text = productPrice + " РУБ."
         }
         
