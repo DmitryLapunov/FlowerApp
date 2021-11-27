@@ -22,14 +22,23 @@ class ProductVC: UIViewController {
     @IBOutlet weak var productAboutItemLabel: UILabel!
     @IBOutlet weak var scrollViewHeightConstraint: NSLayoutConstraint!
     
+    var productRealm: [ProductObject] = [] {
+        didSet{
+            navigationItem.rightBarButtonItem = UIBarButtonItem().menuButton(target: self, action: #selector(addToFavorites), imageName: imageName)
+        }
+    }
     var product: Product?
     var productImages: [String] = []
     var productAmount: Int?
-
+    var imageName = ""
+    var alertDelegate: AlertShowerProduct?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem().menuButton(target: self, action: #selector(addToFavorites), imageName: "bookmark")
+        scrollViewHeightConstraint.constant = productCompositionLabel.frame.height + productPackageLabel.frame.height + productSizeLabel.frame.height + productAboutItemLabel.frame.height + 40
+        
+        
         
         productImagesBackgroundView.layer.cornerRadius = 10
         productImageView.layer.cornerRadius = 10
@@ -55,6 +64,20 @@ class ProductVC: UIViewController {
         setupProductPage(product: productItem)
         setupCollectionView()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        productRealm = RealmManager.shared.getProducts()
+        let filter = productRealm.first { $0.productName == productNameLabel.text}
+        if filter == nil {
+            navigationItem.rightBarButtonItem = UIBarButtonItem().menuButton(target: self, action: #selector(addToFavorites), imageName: "bookmark")
+            imageName = "bookmark"
+        } else {
+            navigationItem.rightBarButtonItem = UIBarButtonItem().menuButton(target: self, action: #selector(addToFavorites), imageName: "bookmark.fill")
+            imageName = "bookmark.fill"
+        }
+    }
+    
     
     @IBAction func addToCartAction(_ sender: Any) {
         
@@ -109,10 +132,30 @@ class ProductVC: UIViewController {
             productSizeLabel.text = productDescription.size ?? "не указан"
             productAboutItemLabel.text = productDescription.aboutItem ?? "описание не указано"
         }
+        
+        
     }
     
     @objc func addToFavorites() {
-        
+        if imageName == "bookmark" {
+            guard let name = productNameLabel.text else { return }
+            RealmManager.shared.writeProduct(product: ProductObject(productName: name))
+            imageName = "bookmark.fill"
+            navigationItem.rightBarButtonItem = UIBarButtonItem().menuButton(target: self, action: #selector(addToFavorites), imageName: "bookmark.fill")
+            PopupController.showPopup()
+        } else {
+            guard let name = productNameLabel.text else { return }
+            let alert = UIAlertController(title: "Подтвердите действие", message: "Вы действительно хотите удалить «\(name)» из избранного?", preferredStyle: .alert)
+            let noAction = UIAlertAction(title: "Нет", style: .default, handler: nil)
+            let yesAction = UIAlertAction(title: "Да", style: .destructive, handler: { action in
+                RealmManager.shared.deleteProduct(productName: name)
+                self.imageName = "bookmark"
+                self.navigationItem.rightBarButtonItem = UIBarButtonItem().menuButton(target: self, action: #selector(self.addToFavorites), imageName: "bookmark")
+            })
+            alert.addAction(yesAction)
+            alert.addAction(noAction)
+            self.alertDelegate?.showAlert(alert: alert) 
+        }
     }
     
     @objc func removeFromFavorites() {

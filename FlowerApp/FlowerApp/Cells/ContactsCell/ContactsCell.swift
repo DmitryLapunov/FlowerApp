@@ -86,7 +86,6 @@ func openApplication(application: Application) {
                 return
             }
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
-        print("MTS")
         
     case .phoneA1:
         guard let url = URL(string: "telprompt://+375296683965"),
@@ -94,7 +93,6 @@ func openApplication(application: Application) {
                 return
             }
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
-        print("A1")
         
     }
 }

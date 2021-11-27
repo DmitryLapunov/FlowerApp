@@ -5,6 +5,8 @@
 //  Created by Дмитрий Лапунов on 13.11.21.
 //
 
+var arrayGlobalProducts: [Product] = []
+
 import UIKit
 
 class CatalogVC: UIViewController {
@@ -19,6 +21,13 @@ class CatalogVC: UIViewController {
         title = "Каталог"
         setupCollectionView()
         parseJSON()
+        writeGlobalAraay()
+    }
+    
+    private func writeGlobalAraay() {
+        if let parsedProducts = parsedJSON {
+            arrayGlobalProducts = parsedProducts.data
+        }
     }
     
     private func parseJSON() {
