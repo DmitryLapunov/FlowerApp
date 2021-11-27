@@ -7,11 +7,17 @@
 
 import UIKit
 import SDWebImage
+import Realm
 
 class CategoryVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var products: [Product] = []
+    var productRealm: [ProductObject] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +25,11 @@ class CategoryVC: UIViewController {
         
         navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "")
         navigationItem.rightBarButtonItem = UIBarButtonItem().menuButton(target: self, action: #selector(filterProducts), imageName: "slider.horizontal.3")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        productRealm = RealmManager.shared.getProducts()
     }
     
     private func setupTableView() {
@@ -63,12 +74,47 @@ extension CategoryVC: UITableViewDelegate, UITableViewDataSource {
             productCell.productImageView.sd_setImage(with: URL(string: "\(productImages[0])"))
         }
         
+        if let name = products[indexPath.row].itemName {
+            productCell.product = ProductObject(productName: name)
+        }
+        
+        let filter = productRealm.first { $0.productName == products[indexPath.row].itemName}
+        if filter == nil {
+            productCell.addToFavouriteButtonOutlet.setImage(UIImage(systemName: "bookmark"), for: .normal)
+        } else {
+            productCell.addToFavouriteButtonOutlet.setImage(UIImage(systemName: "bookmark.fill"), for: .normal)
+        }
+        
+        productCell.delegate = self
+        productCell.alertDelegate = self
+        
         return productCell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let productVC = ProductVC(nibName: String(describing: ProductVC.self), bundle: nil)
+        
+        let filter = productRealm.first { $0.productName == products[indexPath.row].itemName}
+        if filter == nil {
+            productVC.imageName = "bookmark"
+        } else {
+            productVC.imageName = "bookmark.fill"
+        }
+        
+        productVC.alertDelegate = self
         productVC.product = products[indexPath.row]
         navigationController?.pushViewController(productVC, animated: true)
+    }
+}
+
+extension CategoryVC: ReloadCellCategory {
+    func reloadCell() {
+        productRealm = RealmManager.shared.getProducts()
+    }
+}
+
+extension CategoryVC: AlertShowerProduct {
+    func showAlert(alert: UIAlertController) {
+        present(alert, animated: true, completion: nil)
     }
 }

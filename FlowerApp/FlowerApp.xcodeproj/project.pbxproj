@@ -21,7 +21,6 @@
 		8930870027472838000339B0 /* ProductImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 893086FE27472838000339B0 /* ProductImageCell.xib */; };
 		8982F137273F328200FB79E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8982F136273F328200FB79E8 /* AppDelegate.swift */; };
 		8982F139273F328200FB79E8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8982F138273F328200FB79E8 /* SceneDelegate.swift */; };
-		8982F13E273F328200FB79E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8982F13C273F328200FB79E8 /* Main.storyboard */; };
 		8982F140273F328300FB79E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8982F13F273F328300FB79E8 /* Assets.xcassets */; };
 		8982F143273F328300FB79E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8982F141273F328300FB79E8 /* LaunchScreen.storyboard */; };
 		8982F153273F33D100FB79E8 /* CatalogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8982F151273F33D100FB79E8 /* CatalogVC.swift */; };
@@ -40,12 +39,20 @@
 		89DBE89727475C8C00B7C96D /* ContactsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89DBE89527475C8C00B7C96D /* ContactsCell.xib */; };
 		89DBE8A02747614B00B7C96D /* GoogleMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DBE89E2747614B00B7C96D /* GoogleMapVC.swift */; };
 		89DBE8A12747614B00B7C96D /* GoogleMapVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89DBE89F2747614B00B7C96D /* GoogleMapVC.xib */; };
+		9320364A2752A76F00E68921 /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932036492752A76F00E68921 /* UIApplication+Extensions.swift */; };
 		933F0CD4273FBF8900482A9F /* FavouriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933F0CD2273FBF8900482A9F /* FavouriteVC.swift */; };
 		933F0CD5273FBF8900482A9F /* FavouriteVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 933F0CD3273FBF8900482A9F /* FavouriteVC.xib */; };
 		933F0CD8273FBFB900482A9F /* ContactsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933F0CD6273FBFB900482A9F /* ContactsVC.swift */; };
 		933F0CD9273FBFB900482A9F /* ContactsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 933F0CD7273FBFB900482A9F /* ContactsVC.xib */; };
 		933F0CDC273FC05500482A9F /* ShoppingCartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933F0CDA273FC05500482A9F /* ShoppingCartVC.swift */; };
 		933F0CDD273FC05500482A9F /* ShoppingCartVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 933F0CDB273FC05500482A9F /* ShoppingCartVC.xib */; };
+		935D8949274EB93F00106DE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 935D8948274EB93F00106DE0 /* Main.storyboard */; };
+		9396BC5F274881BB00DA4FC8 /* FavouriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9396BC5D274881BB00DA4FC8 /* FavouriteCell.swift */; };
+		9396BC60274881BB00DA4FC8 /* FavouriteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9396BC5E274881BB00DA4FC8 /* FavouriteCell.xib */; };
+		9396BC6227488F3300DA4FC8 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9396BC6127488F3200DA4FC8 /* RealmManager.swift */; };
+		9396BC65274890C300DA4FC8 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9396BC64274890C300DA4FC8 /* Product.swift */; };
+		93AD6D4B27515B6A00211D96 /* PopupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AD6D4927515B6A00211D96 /* PopupController.swift */; };
+		93AD6D4C27515B6A00211D96 /* PopupController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93AD6D4A27515B6A00211D96 /* PopupController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,7 +72,6 @@
 		8982F133273F328200FB79E8 /* FlowerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlowerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8982F136273F328200FB79E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8982F138273F328200FB79E8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8982F13D273F328200FB79E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8982F13F273F328300FB79E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8982F142273F328300FB79E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8982F144273F328300FB79E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -85,12 +91,20 @@
 		89DBE89527475C8C00B7C96D /* ContactsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactsCell.xib; sourceTree = "<group>"; };
 		89DBE89E2747614B00B7C96D /* GoogleMapVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleMapVC.swift; sourceTree = "<group>"; };
 		89DBE89F2747614B00B7C96D /* GoogleMapVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GoogleMapVC.xib; sourceTree = "<group>"; };
+		932036492752A76F00E68921 /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
 		933F0CD2273FBF8900482A9F /* FavouriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteVC.swift; sourceTree = "<group>"; };
 		933F0CD3273FBF8900482A9F /* FavouriteVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavouriteVC.xib; sourceTree = "<group>"; };
 		933F0CD6273FBFB900482A9F /* ContactsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsVC.swift; sourceTree = "<group>"; };
 		933F0CD7273FBFB900482A9F /* ContactsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactsVC.xib; sourceTree = "<group>"; };
 		933F0CDA273FC05500482A9F /* ShoppingCartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartVC.swift; sourceTree = "<group>"; };
 		933F0CDB273FC05500482A9F /* ShoppingCartVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShoppingCartVC.xib; sourceTree = "<group>"; };
+		935D8948274EB93F00106DE0 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		9396BC5D274881BB00DA4FC8 /* FavouriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteCell.swift; sourceTree = "<group>"; };
+		9396BC5E274881BB00DA4FC8 /* FavouriteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavouriteCell.xib; sourceTree = "<group>"; };
+		9396BC6127488F3200DA4FC8 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		9396BC64274890C300DA4FC8 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		93AD6D4927515B6A00211D96 /* PopupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupController.swift; sourceTree = "<group>"; };
+		93AD6D4A27515B6A00211D96 /* PopupController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopupController.xib; sourceTree = "<group>"; };
 		AE8CB9B2E865292D811F91E2 /* Pods_FlowerApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlowerApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -129,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				893086F5274715FC000339B0 /* Extensions.swift */,
+				932036492752A76F00E68921 /* UIApplication+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -180,11 +195,12 @@
 				8982F14B273F337E00FB79E8 /* RealmData */,
 				893086F4274715EE000339B0 /* Extensions */,
 				8982F1692740ADBD00FB79E8 /* Enums */,
+				9396BC63274890A000DA4FC8 /* Models */,
 				8982F136273F328200FB79E8 /* AppDelegate.swift */,
 				8982F138273F328200FB79E8 /* SceneDelegate.swift */,
-				8982F13C273F328200FB79E8 /* Main.storyboard */,
 				8982F13F273F328300FB79E8 /* Assets.xcassets */,
 				8982F141273F328300FB79E8 /* LaunchScreen.storyboard */,
+				935D8948274EB93F00106DE0 /* Main.storyboard */,
 				8982F144273F328300FB79E8 /* Info.plist */,
 			);
 			path = FlowerApp;
@@ -193,6 +209,7 @@
 		8982F14B273F337E00FB79E8 /* RealmData */ = {
 			isa = PBXGroup;
 			children = (
+				9396BC6127488F3200DA4FC8 /* RealmManager.swift */,
 			);
 			path = RealmData;
 			sourceTree = "<group>";
@@ -208,6 +225,7 @@
 		8982F14D273F339200FB79E8 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				9396BC5C2748819A00DA4FC8 /* FavouriteCell */,
 				89DBE89327475C8C00B7C96D /* ContactsCell */,
 				8982F16C2740ADEE00FB79E8 /* CategoryCell */,
 				893086A627434B3B000339B0 /* ProductCell */,
@@ -219,6 +237,7 @@
 		8982F14E273F339600FB79E8 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				93AD6D4827515B4D00211D96 /* Popup Controller */,
 				89DBE89D2747614B00B7C96D /* GoogleMapVC */,
 				89DBE89027475C7C00B7C96D /* TabBarController */,
 				93A3B06827412C82008DF823 /* CatalogController */,
@@ -294,6 +313,23 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		9396BC5C2748819A00DA4FC8 /* FavouriteCell */ = {
+			isa = PBXGroup;
+			children = (
+				9396BC5D274881BB00DA4FC8 /* FavouriteCell.swift */,
+				9396BC5E274881BB00DA4FC8 /* FavouriteCell.xib */,
+			);
+			path = FavouriteCell;
+			sourceTree = "<group>";
+		};
+		9396BC63274890A000DA4FC8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9396BC64274890C300DA4FC8 /* Product.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		93A3B0662741283D008DF823 /* FavouriteController */ = {
 			isa = PBXGroup;
 			children = (
@@ -329,6 +365,15 @@
 				933F0CDB273FC05500482A9F /* ShoppingCartVC.xib */,
 			);
 			path = ShopingCartController;
+			sourceTree = "<group>";
+		};
+		93AD6D4827515B4D00211D96 /* Popup Controller */ = {
+			isa = PBXGroup;
+			children = (
+				93AD6D4927515B6A00211D96 /* PopupController.swift */,
+				93AD6D4A27515B6A00211D96 /* PopupController.xib */,
+			);
+			path = "Popup Controller";
 			sourceTree = "<group>";
 		};
 		C54DA66551EAE16582D491DA /* Frameworks */ = {
@@ -401,9 +446,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8982F160273F352500FB79E8 /* OpenSans-VariableFont.ttf in Resources */,
+				9396BC60274881BB00DA4FC8 /* FavouriteCell.xib in Resources */,
 				933F0CD9273FBFB900482A9F /* ContactsVC.xib in Resources */,
 				8982F15C273F352500FB79E8 /* OCT55.otf in Resources */,
 				8982F15D273F352500FB79E8 /* OCT85.otf in Resources */,
+				935D8949274EB93F00106DE0 /* Main.storyboard in Resources */,
 				89DBE89727475C8C00B7C96D /* ContactsCell.xib in Resources */,
 				8982F1702740ADFB00FB79E8 /* CategoryCell.xib in Resources */,
 				8982F143273F328300FB79E8 /* LaunchScreen.storyboard in Resources */,
@@ -419,7 +466,7 @@
 				89DBE8A12747614B00B7C96D /* GoogleMapVC.xib in Resources */,
 				8982F154273F33D100FB79E8 /* CatalogVC.xib in Resources */,
 				8930869E274340C6000339B0 /* vgosti.json in Resources */,
-				8982F13E273F328200FB79E8 /* Main.storyboard in Resources */,
+				93AD6D4C27515B6A00211D96 /* PopupController.xib in Resources */,
 				8930870027472838000339B0 /* ProductImageCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -490,6 +537,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9320364A2752A76F00E68921 /* UIApplication+Extensions.swift in Sources */,
 				89DBE8A02747614B00B7C96D /* GoogleMapVC.swift in Sources */,
 				893086A427434B1E000339B0 /* CategoryVC.swift in Sources */,
 				893086FF27472838000339B0 /* ProductImageCell.swift in Sources */,
@@ -501,10 +549,14 @@
 				8982F153273F33D100FB79E8 /* CatalogVC.swift in Sources */,
 				893086A027434851000339B0 /* CodableClasses.swift in Sources */,
 				8982F16F2740ADFB00FB79E8 /* CategoryCell.swift in Sources */,
+				9396BC6227488F3300DA4FC8 /* RealmManager.swift in Sources */,
+				93AD6D4B27515B6A00211D96 /* PopupController.swift in Sources */,
 				893086F6274715FC000339B0 /* Extensions.swift in Sources */,
 				933F0CD4273FBF8900482A9F /* FavouriteVC.swift in Sources */,
+				9396BC5F274881BB00DA4FC8 /* FavouriteCell.swift in Sources */,
 				89DBE89627475C8C00B7C96D /* ContactsCell.swift in Sources */,
 				8982F16B2740ADCC00FB79E8 /* Enums.swift in Sources */,
+				9396BC65274890C300DA4FC8 /* Product.swift in Sources */,
 				8982F139273F328200FB79E8 /* SceneDelegate.swift in Sources */,
 				933F0CD8273FBFB900482A9F /* ContactsVC.swift in Sources */,
 			);
@@ -513,14 +565,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		8982F13C273F328200FB79E8 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8982F13D273F328200FB79E8 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		8982F141273F328300FB79E8 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -656,7 +700,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 97L2996NM5;
+				DEVELOPMENT_TEAM = 5RNZY2B8VP;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FlowerApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -665,6 +709,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -686,7 +731,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 97L2996NM5;
+				DEVELOPMENT_TEAM = 5RNZY2B8VP;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FlowerApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -695,6 +740,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
