@@ -36,20 +36,23 @@ class CategoryVC: UIViewController {
         filterVC.modalTransitionStyle = .crossDissolve
         filterVC.modalPresentationStyle = .overFullScreen
         
-        products.sort {
-            guard let pricePreviousIndex = $0.costByn,
-                  let pricePreviousIndexDouble = Double(pricePreviousIndex),
-                  let priceNextIndex = $1.costByn,
-                  let priceNextIndexDouble = Double(priceNextIndex) else { return false }
-            return pricePreviousIndexDouble < priceNextIndexDouble
-        }
+//        let productsSortedByPrice = products.sorted {
+//            guard let pricePreviousIndex = $0.costByn,
+//                  let pricePreviousIndexDouble = Double(pricePreviousIndex),
+//                  let priceNextIndex = $1.costByn,
+//                  let priceNextIndexDouble = Double(priceNextIndex) else { return false }
+//            return pricePreviousIndexDouble < priceNextIndexDouble
+//        }
         
-        if let lowestPriceString = products[0].costByn, let lowestPrice = Double(lowestPriceString) {
-            filterVC.lowestPrice = lowestPrice
-        }
-        if let highestPriceString = products[products.count - 1].costByn, let highestPrice = Double(highestPriceString) {
-            filterVC.highestPrice = highestPrice
-        }
+//        if let lowestPriceString = productsSortedByPrice[0].costByn, let lowestPrice = Double(lowestPriceString) {
+//            filterVC.lowestPrice = lowestPrice
+//        }
+//        if let highestPriceString = productsSortedByPrice[productsSortedByPrice.count - 1].costByn, let highestPrice = Double(highestPriceString) {
+//            filterVC.highestPrice = highestPrice
+//        }
+        let filtered = products.sorted(by: { $0.cost ?? 0.0 < $1.cost ?? 0.0}).filter({ $0.cost != 0.0})
+        filterVC.lowestPrice = filtered.first!.cost!
+        filterVC.highestPrice = filtered.last!.cost!
         
         present(filterVC, animated: true, completion: nil)
     }

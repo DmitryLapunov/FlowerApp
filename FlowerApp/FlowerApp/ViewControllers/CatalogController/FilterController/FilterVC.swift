@@ -14,6 +14,12 @@ class FilterVC: UIViewController {
     @IBOutlet weak var closeFiltersButton: UIButton!
     @IBOutlet weak var discardFiltersButton: UIButton!
     @IBOutlet weak var sliderBackgroundView: UIView!
+    @IBOutlet weak var priceSortBackgroundView: UIView!
+    @IBOutlet weak var sortByPriceDescButton: UIButton!
+    @IBOutlet weak var sortByPriceAscButton: UIButton!
+    @IBOutlet weak var nameSortBackgroundView: UIView!
+    @IBOutlet weak var sortByNameDescButton: UIButton!
+    @IBOutlet weak var sortByNameAscButton: UIButton!
     
     var lowestPrice = 0.0
     var highestPrice = 0.0
@@ -22,12 +28,19 @@ class FilterVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        applyFiltersButton.addShadowAndTintColor()
         filterBackgroundView.addShadowAndCornerRadius()
         sliderBackgroundView.addShadowAndCornerRadius()
+        priceSortBackgroundView.addShadowAndCornerRadius()
+        nameSortBackgroundView.addShadowAndCornerRadius()
+        
+        applyFiltersButton.addShadowAndTintColor()
         discardFiltersButton.addShadowAndTintColor()
         closeFiltersButton.addShadowAndTintColor()
-        
+        sortByPriceDescButton.isNormalState()
+        sortByPriceAscButton.isNormalState()
+        sortByNameDescButton.isNormalState()
+        sortByNameAscButton.isNormalState()
+                
         discardFiltersButton.layer.borderColor = UIColor(named: "MainColor")?.cgColor
         discardFiltersButton.layer.borderWidth = 1
         discardFiltersButton.layer.cornerRadius = 10
@@ -84,6 +97,8 @@ class FilterVC: UIViewController {
     @IBAction func closeFiltersAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    
     
     @IBAction func discardFiltersAction(_ sender: Any) {
         multiSlider.value = [multiSlider.minimumValue, multiSlider.maximumValue]
