@@ -20,6 +20,8 @@ class FilterVC: UIViewController {
     @IBOutlet weak var nameSortBackgroundView: UIView!
     @IBOutlet weak var sortByNameDescButton: UIButton!
     @IBOutlet weak var sortByNameAscButton: UIButton!
+    @IBOutlet weak var chooseCompositionButton: UIButton!
+    @IBOutlet weak var chooseCompositionBackgroundView: UIView!
     
     var lowestPrice = 0.0
     var highestPrice = 0.0
@@ -32,6 +34,7 @@ class FilterVC: UIViewController {
         sliderBackgroundView.addShadowAndCornerRadius()
         priceSortBackgroundView.addShadowAndCornerRadius()
         nameSortBackgroundView.addShadowAndCornerRadius()
+        chooseCompositionBackgroundView.addShadowAndCornerRadius()
         
         applyFiltersButton.addShadowAndTintColor()
         discardFiltersButton.addShadowAndTintColor()
@@ -98,7 +101,9 @@ class FilterVC: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    
+    @IBAction func chooseCompositionAction(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     @IBAction func discardFiltersAction(_ sender: Any) {
         multiSlider.value = [multiSlider.minimumValue, multiSlider.maximumValue]
