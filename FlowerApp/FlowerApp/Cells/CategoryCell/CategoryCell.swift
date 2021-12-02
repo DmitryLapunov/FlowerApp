@@ -31,6 +31,7 @@ class CategoryCell: UICollectionViewCell {
         cellBackgroundView.layer.shadowOpacity = 0.15
         cellBackgroundView.layer.shadowRadius = 2
         cellBackgroundView.layer.shadowOffset = CGSize(width: 0, height: 2)
+        
     }
     
     override func prepareForReuse() {
