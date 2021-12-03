@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5DDFC96AE44A47F94D8111BC /* Pods_FlowerApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE8CB9B2E865292D811F91E2 /* Pods_FlowerApp.framework */; };
+		7F9B67DD275A8339009A742E /* CatalogVC+Configure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9B67DC275A8339009A742E /* CatalogVC+Configure.swift */; };
 		8930869E274340C6000339B0 /* vgosti.json in Resources */ = {isa = PBXBuildFile; fileRef = 8930869D274340C6000339B0 /* vgosti.json */; };
 		893086A027434851000339B0 /* CodableClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8930869F27434851000339B0 /* CodableClasses.swift */; };
 		893086A427434B1E000339B0 /* CategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893086A227434B1E000339B0 /* CategoryVC.swift */; };
@@ -60,6 +61,7 @@
 /* Begin PBXFileReference section */
 		10B83A1A918906EF7FA39CC1 /* Pods-FlowerApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlowerApp.release.xcconfig"; path = "Target Support Files/Pods-FlowerApp/Pods-FlowerApp.release.xcconfig"; sourceTree = "<group>"; };
 		3C235F7C2C1D2127AC5EE758 /* Pods-FlowerApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlowerApp.debug.xcconfig"; path = "Target Support Files/Pods-FlowerApp/Pods-FlowerApp.debug.xcconfig"; sourceTree = "<group>"; };
+		7F9B67DC275A8339009A742E /* CatalogVC+Configure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CatalogVC+Configure.swift"; sourceTree = "<group>"; };
 		8930869D274340C6000339B0 /* vgosti.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = vgosti.json; sourceTree = "<group>"; };
 		8930869F27434851000339B0 /* CodableClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableClasses.swift; sourceTree = "<group>"; };
 		893086A227434B1E000339B0 /* CategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryVC.swift; sourceTree = "<group>"; };
@@ -124,12 +126,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7F9B67DE275A8812009A742E /* Catalog */ = {
+			isa = PBXGroup;
+			children = (
+				93A3B06827412C82008DF823 /* CatalogController */,
+				893086A127434B03000339B0 /* CategoryController */,
+				893086F727471C96000339B0 /* ProductController */,
+				89DBE914275059AC00B7C96D /* FilterController */,
+			);
+			path = Catalog;
+			sourceTree = "<group>";
+		};
 		893086A127434B03000339B0 /* CategoryController */ = {
 			isa = PBXGroup;
 			children = (
 				893086A227434B1E000339B0 /* CategoryVC.swift */,
 				893086A327434B1E000339B0 /* CategoryVC.xib */,
-				893086F727471C96000339B0 /* ProductController */,
 			);
 			path = CategoryController;
 			sourceTree = "<group>";
@@ -244,7 +256,7 @@
 				93AD6D4827515B4D00211D96 /* Popup Controller */,
 				89DBE89D2747614B00B7C96D /* GoogleMapVC */,
 				89DBE89027475C7C00B7C96D /* TabBarController */,
-				93A3B06827412C82008DF823 /* CatalogController */,
+				7F9B67DE275A8812009A742E /* Catalog */,
 				93A3B0662741283D008DF823 /* FavouriteController */,
 				93A3B06727412893008DF823 /* ContactsController */,
 				93A3B06927412C97008DF823 /* ShopingCartController */,
@@ -364,10 +376,9 @@
 		93A3B06827412C82008DF823 /* CatalogController */ = {
 			isa = PBXGroup;
 			children = (
+				7F9B67DC275A8339009A742E /* CatalogVC+Configure.swift */,
 				8982F151273F33D100FB79E8 /* CatalogVC.swift */,
 				8982F152273F33D100FB79E8 /* CatalogVC.xib */,
-				893086A127434B03000339B0 /* CategoryController */,
-				89DBE914275059AC00B7C96D /* FilterController */,
 			);
 			path = CatalogController;
 			sourceTree = "<group>";
@@ -565,6 +576,7 @@
 				893086A027434851000339B0 /* CodableClasses.swift in Sources */,
 				8982F16F2740ADFB00FB79E8 /* CategoryCell.swift in Sources */,
 				9396BC6227488F3300DA4FC8 /* RealmManager.swift in Sources */,
+				7F9B67DD275A8339009A742E /* CatalogVC+Configure.swift in Sources */,
 				93AD6D4B27515B6A00211D96 /* PopupController.swift in Sources */,
 				893086F6274715FC000339B0 /* Extensions.swift in Sources */,
 				89DBE917275059F000B7C96D /* FilterVC.swift in Sources */,

@@ -20,37 +20,10 @@ enum CategoryType: String, CaseIterable {
     case balloons = "Воздушные шары"
     case presents = "Подарки"
     case christmasAndNewYear = "Рождество Новый год"
-    
-    init?(id: Int) {
-        switch id {
-        case 1:
-            self = .basketsWithFlowers
-        case 2:
-            self = .bridalBouquet
-        case 3:
-            self = .bouquets
-        case 4:
-            self = .driedFlowersBouquets
-        case 5:
-            self = .flowersInABox
-        case 6:
-            self = .forLovers
-        case 7:
-            self = .marchEight
-        case 8:
-            self = .edibleBouquets
-        case 9:
-            self = .balloons
-        case 10:
-            self = .presents
-        case 11:
-            self = .christmasAndNewYear
-        default:
-            return nil
-        }
-    }
 }
 
+
+//переименовать и вынести в отдельный файл 
 enum Application: String {
     case telegram
     case instagram

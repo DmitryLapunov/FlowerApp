@@ -47,7 +47,7 @@ class CategoryVC: UIViewController {
         filterVC.modalTransitionStyle = .crossDissolve
         filterVC.modalPresentationStyle = .overFullScreen
         
-        let filtered = products.sorted(by: { $0.cost ?? 0.0 < $1.cost ?? 0.0}).filter({ $0.cost != 0.0})
+        let filtered = products.filter({$0.cost != nil }).filter({ $0.cost != 0.0}).sorted(by: { $0.cost ?? 0.0 < $1.cost ?? 0.0})
         filterVC.lowestPrice = filtered.first!.cost!
         filterVC.highestPrice = filtered.last!.cost!
         
@@ -103,13 +103,9 @@ extension CategoryVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let productVC = ProductVC(nibName: String(describing: ProductVC.self), bundle: nil)
         
-        let filter = productRealm.first { $0.productName == products[indexPath.row].itemName}
-        if filter == nil {
-            productVC.imageName = "bookmark"
-        } else {
-            productVC.imageName = "bookmark.fill"
-        }
-        
+        let filter = productRealm.first{ $0.productName == products[indexPath.row].itemName}
+        productVC.imageName = filter == nil ? "bookmark" : "bookmark.fill"
+
         productVC.alertDelegate = self
         productVC.product = products[indexPath.row]
         navigationController?.pushViewController(productVC, animated: true)
