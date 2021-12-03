@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="OCT85.otf">
+            <string>Octava-Bold</string>
+        </array>
+        <array key="OpenSans-VariableFont.ttf">
+            <string>OpenSansRoman-Bold</string>
+            <string>OpenSansRoman-CondensedRegular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="163" id="KGk-i7-Jjw" customClass="FavouriteCell" customModule="FlowerApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="590" height="163"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="590" height="163"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Lb-08-BCr">
+                        <rect key="frame" x="5" y="5" width="580" height="125"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bi3-k0-taF">
+                                <rect key="frame" x="0.0" y="0.0" width="125" height="125"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="125" id="kX5-ZW-Bpw"/>
+                                    <constraint firstAttribute="width" constant="125" id="oar-fV-3ei"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bff-Ib-5fI">
+                                <rect key="frame" x="5" y="90" width="115" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rXs-wr-6cI">
+                                        <rect key="frame" x="5" y="4" width="105" height="22"/>
+                                        <fontDescription key="fontDescription" name="OpenSansRoman-Bold" family="Open Sans" pointSize="16"/>
+                                        <color key="textColor" name="MainLabelColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="TertiaryColor"/>
+                                <constraints>
+                                    <constraint firstItem="rXs-wr-6cI" firstAttribute="leading" secondItem="bff-Ib-5fI" secondAttribute="leading" constant="5" id="Fp9-Te-shd"/>
+                                    <constraint firstAttribute="height" constant="30" id="SJI-F8-YU3"/>
+                                    <constraint firstAttribute="trailing" secondItem="rXs-wr-6cI" secondAttribute="trailing" constant="5" id="cb4-V3-8g0"/>
+                                    <constraint firstItem="rXs-wr-6cI" firstAttribute="centerY" secondItem="bff-Ib-5fI" secondAttribute="centerY" id="rPW-fS-jYw"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="74Y-Ry-7sz">
+                                <rect key="frame" x="520" y="5" width="55" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="Ybb-Zw-OFz"/>
+                                    <constraint firstAttribute="width" constant="55" id="xld-si-jYa"/>
+                                </constraints>
+                                <color key="tintColor" name="MainColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="bookmark.slash" catalog="system"/>
+                                <connections>
+                                    <action selector="deleteFromFavourite:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Jai-eg-hfe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f58-Xr-tWb">
+                                <rect key="frame" x="520" y="65" width="55" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="EjH-gL-iDt"/>
+                                    <constraint firstAttribute="width" constant="55" id="keZ-Xz-3T3"/>
+                                </constraints>
+                                <color key="tintColor" name="MainColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="cart.badge.plus" catalog="system"/>
+                                <connections>
+                                    <action selector="addToCart:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Fdh-dz-wmB"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NgI-tT-E8I">
+                                <rect key="frame" x="135" y="10" width="375" height="20.5"/>
+                                <fontDescription key="fontDescription" name="Octava-Bold" family="Octava" pointSize="16"/>
+                                <color key="textColor" name="MainLabelColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iDj-09-oOk">
+                                <rect key="frame" x="135" y="35.5" width="375" height="19.5"/>
+                                <fontDescription key="fontDescription" name="OpenSansRoman-CondensedRegular" family="Open Sans" pointSize="14"/>
+                                <color key="textColor" name="SecondaryLabelColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Bi3-k0-taF" firstAttribute="top" secondItem="5Lb-08-BCr" secondAttribute="top" id="5go-sG-RBn"/>
+                            <constraint firstItem="NgI-tT-E8I" firstAttribute="top" secondItem="5Lb-08-BCr" secondAttribute="top" constant="10" id="FoH-qa-EOI"/>
+                            <constraint firstAttribute="trailing" secondItem="74Y-Ry-7sz" secondAttribute="trailing" constant="5" id="HIF-SK-K6z"/>
+                            <constraint firstItem="bff-Ib-5fI" firstAttribute="trailing" secondItem="Bi3-k0-taF" secondAttribute="trailing" constant="-5" id="Suw-y7-IJV"/>
+                            <constraint firstItem="iDj-09-oOk" firstAttribute="top" secondItem="NgI-tT-E8I" secondAttribute="bottom" constant="5" id="VsA-Sg-wX1"/>
+                            <constraint firstAttribute="bottom" secondItem="bff-Ib-5fI" secondAttribute="bottom" constant="5" id="XAk-G5-0ih"/>
+                            <constraint firstItem="74Y-Ry-7sz" firstAttribute="leading" secondItem="iDj-09-oOk" secondAttribute="trailing" constant="10" id="bAS-sT-hpM"/>
+                            <constraint firstAttribute="height" constant="125" id="bR5-1w-ozg"/>
+                            <constraint firstItem="74Y-Ry-7sz" firstAttribute="top" secondItem="5Lb-08-BCr" secondAttribute="top" constant="5" id="ePI-iN-1om"/>
+                            <constraint firstAttribute="bottom" secondItem="f58-Xr-tWb" secondAttribute="bottom" constant="5" id="i04-s2-FcX"/>
+                            <constraint firstAttribute="bottom" secondItem="Bi3-k0-taF" secondAttribute="bottom" id="mwd-Jm-nv8"/>
+                            <constraint firstItem="Bi3-k0-taF" firstAttribute="leading" secondItem="5Lb-08-BCr" secondAttribute="leading" id="peH-Sj-oOp"/>
+                            <constraint firstItem="f58-Xr-tWb" firstAttribute="top" secondItem="74Y-Ry-7sz" secondAttribute="bottom" constant="5" id="plJ-LK-GLI"/>
+                            <constraint firstItem="74Y-Ry-7sz" firstAttribute="leading" secondItem="NgI-tT-E8I" secondAttribute="trailing" constant="10" id="q0m-hD-CaQ"/>
+                            <constraint firstAttribute="trailing" secondItem="f58-Xr-tWb" secondAttribute="trailing" constant="5" id="tcK-qt-kpg"/>
+                            <constraint firstItem="NgI-tT-E8I" firstAttribute="leading" secondItem="Bi3-k0-taF" secondAttribute="trailing" constant="10" id="tgw-rV-YdD"/>
+                            <constraint firstItem="iDj-09-oOk" firstAttribute="leading" secondItem="NgI-tT-E8I" secondAttribute="leading" id="ujr-Fm-JzA"/>
+                            <constraint firstItem="bff-Ib-5fI" firstAttribute="leading" secondItem="5Lb-08-BCr" secondAttribute="leading" constant="5" id="zdO-51-WNu"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="5Lb-08-BCr" secondAttribute="bottom" constant="5" id="4Qh-DO-Sbg"/>
+                    <constraint firstItem="5Lb-08-BCr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="5P9-4G-0Be"/>
+                    <constraint firstItem="5Lb-08-BCr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="68w-2X-BOM"/>
+                    <constraint firstAttribute="trailing" secondItem="5Lb-08-BCr" secondAttribute="trailing" constant="5" id="V0l-UF-tGE"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="favouriteCellBackgroundView" destination="5Lb-08-BCr" id="gtf-2x-8Jp"/>
+                <outlet property="priceBackground" destination="bff-Ib-5fI" id="j6d-Yn-M9n"/>
+                <outlet property="priceLabel" destination="rXs-wr-6cI" id="ndZ-Nf-3By"/>
+                <outlet property="productDescriptionLabel" destination="iDj-09-oOk" id="on4-jo-cfn"/>
+                <outlet property="productImage" destination="Bi3-k0-taF" id="aqg-vj-tHx"/>
+                <outlet property="productNameLabel" destination="NgI-tT-E8I" id="paW-OZ-O2H"/>
+            </connections>
+            <point key="canvasLocation" x="63.768115942028992" y="14.397321428571427"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="bookmark.slash" catalog="system" width="115" height="128"/>
+        <image name="cart.badge.plus" catalog="system" width="128" height="106"/>
+        <namedColor name="MainColor">
+            <color red="0.40000000596046448" green="0.5220000147819519" blue="0.046999998390674591" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="MainLabelColor">
+            <color red="0.29800000786781311" green="0.25499999523162842" blue="0.3449999988079071" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="SecondaryLabelColor">
+            <color red="0.66200000047683716" green="0.6589999794960022" blue="0.73299998044967651" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TertiaryColor">
+            <color red="0.95300000905990601" green="0.9570000171661377" blue="0.96799999475479126" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
