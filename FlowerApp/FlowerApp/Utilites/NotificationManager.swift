@@ -56,9 +56,10 @@ extension NotificationManager {
         case february23
         case september1
         case march8
-        #if DEBUG
+
+#if DEBUG
         case testDate
-        #endif
+#endif
         
         var message: String {
             switch self {
@@ -114,7 +115,9 @@ extension NotificationManager {
                 components.month = Date().get(.month)
                 components.hour = Date().get(.hour)
                 components.minute = Date().get(.minute) + 1
+#if DEBUG
                 print("Push scheduled on: \(components.month!).\(components.day!) in \(components.hour!):\(components.minute!)")
+#endif
             }
             
             return components
