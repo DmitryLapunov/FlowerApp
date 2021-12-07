@@ -56,6 +56,7 @@
 		933F0CDC273FC05500482A9F /* ShoppingCartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933F0CDA273FC05500482A9F /* ShoppingCartVC.swift */; };
 		933F0CDD273FC05500482A9F /* ShoppingCartVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 933F0CDB273FC05500482A9F /* ShoppingCartVC.xib */; };
 		935D8949274EB93F00106DE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 935D8948274EB93F00106DE0 /* Main.storyboard */; };
+		9381373F275FEF9C00374F55 /* ContactsType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9381373E275FEF9B00374F55 /* ContactsType.swift */; };
 		9396BC5F274881BB00DA4FC8 /* FavouriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9396BC5D274881BB00DA4FC8 /* FavouriteCell.swift */; };
 		9396BC60274881BB00DA4FC8 /* FavouriteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9396BC5E274881BB00DA4FC8 /* FavouriteCell.xib */; };
 		9396BC6227488F3300DA4FC8 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9396BC6127488F3200DA4FC8 /* RealmManager.swift */; };
@@ -117,6 +118,7 @@
 		933F0CDA273FC05500482A9F /* ShoppingCartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartVC.swift; sourceTree = "<group>"; };
 		933F0CDB273FC05500482A9F /* ShoppingCartVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShoppingCartVC.xib; sourceTree = "<group>"; };
 		935D8948274EB93F00106DE0 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		9381373E275FEF9B00374F55 /* ContactsType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsType.swift; sourceTree = "<group>"; };
 		9396BC5D274881BB00DA4FC8 /* FavouriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteCell.swift; sourceTree = "<group>"; };
 		9396BC5E274881BB00DA4FC8 /* FavouriteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavouriteCell.xib; sourceTree = "<group>"; };
 		9396BC6127488F3200DA4FC8 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
@@ -338,6 +340,7 @@
 			isa = PBXGroup;
 			children = (
 				8982F16A2740ADCC00FB79E8 /* Enums.swift */,
+				9381373E275FEF9B00374F55 /* ContactsType.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -623,6 +626,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9381373F275FEF9C00374F55 /* ContactsType.swift in Sources */,
 				9320364A2752A76F00E68921 /* UIApplication+Extensions.swift in Sources */,
 				89DBE8A02747614B00B7C96D /* GoogleMapVC.swift in Sources */,
 				893086A427434B1E000339B0 /* CategoryVC.swift in Sources */,
@@ -792,7 +796,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = T8V9JXV542;
+				DEVELOPMENT_TEAM = 5RNZY2B8VP;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FlowerApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -823,7 +827,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = T8V9JXV542;
+				DEVELOPMENT_TEAM = 5RNZY2B8VP;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FlowerApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
