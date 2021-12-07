@@ -46,7 +46,9 @@ class RealmManager {
     
     func writeCart(product: CartProduct) {
         let productInCart = checkInCart(productName: product.productName)
+      
         try! realm.write {
+            productInCart?.count = product.count
             realm.add(productInCart == nil ? product : productInCart!)
         }
     }

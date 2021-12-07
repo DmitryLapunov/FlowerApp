@@ -29,7 +29,11 @@ class ProductVC: UIViewController {
     }
     var product: Product?
     var productImages: [String] = []
-    var productAmount: Int?
+    var productAmount: Int? {
+        didSet {
+            productAmountField.text = "\(productAmount ?? 1)"
+        }
+    }
     var imageName = ""
     var alertDelegate: AlertShowerProduct?
     
@@ -72,6 +76,12 @@ class ProductVC: UIViewController {
            let aboutItemText = productAboutItemLabel.text {
             scrollViewHeightConstraint.constant = nameText.height(withConstrainedWidth: productNameLabel.frame.width, font: secondFont) + (productImagesBackgroundView.frame.width / 1.5) + compositionText.height(withConstrainedWidth: productCompositionLabel.frame.width, font: font) + packageText.height(withConstrainedWidth: productPackageLabel.frame.width, font: font) + sizeText.height(withConstrainedWidth: productSizeLabel.frame.width, font: font) + aboutItemText.height(withConstrainedWidth: productAboutItemLabel.frame.width, font: font) + 190
         }
+        
+        guard let product = product, let productName = product.itemName, let productInCart = RealmManager.shared.checkInCart(productName: productName) else {
+            return
+        }
+        
+        productAmount = productInCart.count
     }
     
     override func viewWillAppear(_ animated: Bool) {
