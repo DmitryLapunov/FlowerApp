@@ -17,30 +17,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         configureTabBar()
         configureNavBar()
-        createNavigationTabBar()
-    }
-  
-    func createNavigationTabBar() {
-        
-        let navTabCatalog = UINavigationController(rootViewController: CatalogVC(nibName: String(describing: CatalogVC.self), bundle: nil))
-        let navTabFavourite = UINavigationController(rootViewController: FavouriteVC(nibName: String(describing: FavouriteVC.self), bundle: nil))
-        let navTabContacts = UINavigationController(rootViewController: ContactsVC(nibName: String(describing: ContactsVC.self), bundle: nil))
-//        let navTabShopping = UINavigationController(rootViewController: ShoppingCartVC(nibName: String(describing: ShoppingCartVC.self), bundle: nil))
-        let navTabShopping = UINavigationController(rootViewController: OrderVC(nibName: String(describing: OrderVC.self), bundle: nil))
-        
-        let tabBarController = TabViewController()
-        
-        tabBarController.viewControllers = [navTabCatalog, navTabFavourite, navTabContacts, navTabShopping]
-                
-        navTabCatalog.tabBarItem = UITabBarItem(title: "Каталог", image: UIImage(named: "icon_flower"), tag: 0)
-        navTabFavourite.tabBarItem = UITabBarItem(title: "Избранное", image: UIImage(named: "icon_bookmark"), tag: 1)
-        navTabContacts.tabBarItem = UITabBarItem(title: "Контакты", image: UIImage(named: "icon_info"), tag: 2)
-        navTabShopping.tabBarItem = UITabBarItem(title: "Корзина", image: UIImage(named: "icon_cart"), tag: 3)
-        
-        tabBarController.tabBar.tintColor = UIColor(named: "MainColor")
-        window?.rootViewController = tabBarController
+        window?.rootViewController = TabViewController()
         window?.makeKeyAndVisible()
-        
     }
     
     private func configureTabBar() {
