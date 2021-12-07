@@ -45,8 +45,9 @@ class RealmManager {
     }
     
     func writeCart(product: CartProduct) {
+        let productInCart = checkInCart(productName: product.productName)
         try! realm.write {
-            realm.add(product)
+            realm.add(productInCart == nil ? product : productInCart!)
         }
     }
     
@@ -63,8 +64,8 @@ class RealmManager {
         }
     }
     
-    func checkInCart(productName: String) -> Int {
-        return getCart().filter({ $0.productName == productName }).count
+    func checkInCart(productName: String) -> CartProduct? {
+        return getCart().filter({ $0.productName == productName }).first
     }
     
     
