@@ -56,6 +56,7 @@
 		9396BC65274890C300DA4FC8 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9396BC64274890C300DA4FC8 /* Product.swift */; };
 		93AD6D4B27515B6A00211D96 /* PopupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AD6D4927515B6A00211D96 /* PopupController.swift */; };
 		93AD6D4C27515B6A00211D96 /* PopupController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93AD6D4A27515B6A00211D96 /* PopupController.xib */; };
+		93F7A3C1275D41760027735A /* ContactsType + Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F7A3C0275D41760027735A /* ContactsType + Enums.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -111,6 +112,7 @@
 		9396BC64274890C300DA4FC8 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		93AD6D4927515B6A00211D96 /* PopupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupController.swift; sourceTree = "<group>"; };
 		93AD6D4A27515B6A00211D96 /* PopupController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopupController.xib; sourceTree = "<group>"; };
+		93F7A3C0275D41760027735A /* ContactsType + Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ContactsType + Enums.swift"; path = "../../../../../../ContactsType + Enums.swift"; sourceTree = "<group>"; };
 		AE8CB9B2E865292D811F91E2 /* Pods_FlowerApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlowerApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -281,6 +283,7 @@
 			isa = PBXGroup;
 			children = (
 				8982F16A2740ADCC00FB79E8 /* Enums.swift */,
+				93F7A3C0275D41760027735A /* ContactsType + Enums.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -582,6 +585,7 @@
 				89DBE917275059F000B7C96D /* FilterVC.swift in Sources */,
 				933F0CD4273FBF8900482A9F /* FavouriteVC.swift in Sources */,
 				9396BC5F274881BB00DA4FC8 /* FavouriteCell.swift in Sources */,
+				93F7A3C1275D41760027735A /* ContactsType + Enums.swift in Sources */,
 				89DBE89627475C8C00B7C96D /* ContactsCell.swift in Sources */,
 				8982F16B2740ADCC00FB79E8 /* Enums.swift in Sources */,
 				9396BC65274890C300DA4FC8 /* Product.swift in Sources */,
