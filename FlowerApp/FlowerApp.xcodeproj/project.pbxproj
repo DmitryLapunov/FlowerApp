@@ -13,6 +13,7 @@
 		7F224A14275F75DA000649BB /* ValidationTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F224A13275F75DA000649BB /* ValidationTextField.xib */; };
 		7F224A16275F7722000649BB /* ValidationTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F224A15275F7722000649BB /* ValidationTextField.swift */; };
 		7F224A1E275F9F64000649BB /* InsetsTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F224A1D275F9F64000649BB /* InsetsTextField.swift */; };
+		7F6C2DE7275FE38B00F3D849 /* CartProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6C2DE6275FE38B00F3D849 /* CartProduct.swift */; };
 		7F9B67DD275A8339009A742E /* CatalogVC+Configure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9B67DC275A8339009A742E /* CatalogVC+Configure.swift */; };
 		8930869E274340C6000339B0 /* vgosti.json in Resources */ = {isa = PBXBuildFile; fileRef = 8930869D274340C6000339B0 /* vgosti.json */; };
 		893086A027434851000339B0 /* CodableClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8930869F27434851000339B0 /* CodableClasses.swift */; };
@@ -71,6 +72,7 @@
 		7F224A13275F75DA000649BB /* ValidationTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ValidationTextField.xib; sourceTree = "<group>"; };
 		7F224A15275F7722000649BB /* ValidationTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationTextField.swift; sourceTree = "<group>"; };
 		7F224A1D275F9F64000649BB /* InsetsTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsetsTextField.swift; sourceTree = "<group>"; };
+		7F6C2DE6275FE38B00F3D849 /* CartProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartProduct.swift; sourceTree = "<group>"; };
 		7F9B67DC275A8339009A742E /* CatalogVC+Configure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CatalogVC+Configure.swift"; sourceTree = "<group>"; };
 		8930869D274340C6000339B0 /* vgosti.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = vgosti.json; sourceTree = "<group>"; };
 		8930869F27434851000339B0 /* CodableClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableClasses.swift; sourceTree = "<group>"; };
@@ -406,6 +408,7 @@
 			isa = PBXGroup;
 			children = (
 				9396BC64274890C300DA4FC8 /* Product.swift */,
+				7F6C2DE6275FE38B00F3D849 /* CartProduct.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -631,6 +634,7 @@
 				933F0CDC273FC05500482A9F /* ShoppingCartVC.swift in Sources */,
 				8982F137273F328200FB79E8 /* AppDelegate.swift in Sources */,
 				8982F153273F33D100FB79E8 /* CatalogVC.swift in Sources */,
+				7F6C2DE7275FE38B00F3D849 /* CartProduct.swift in Sources */,
 				893086A027434851000339B0 /* CodableClasses.swift in Sources */,
 				8982F16F2740ADFB00FB79E8 /* CategoryCell.swift in Sources */,
 				9396BC6227488F3300DA4FC8 /* RealmManager.swift in Sources */,

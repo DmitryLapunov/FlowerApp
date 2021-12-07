@@ -30,7 +30,7 @@ class FavouriteVC: UIViewController, AlertShowerProduct {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         arrayProductsObject.removeAll()
-        arrayProductsObject = RealmManager.shared.getProducts()
+        arrayProductsObject = RealmManager.shared.getBookmarks()
     }
 }
 
@@ -90,7 +90,7 @@ extension FavouriteVC: UITableViewDelegate {
 
 extension FavouriteVC: ReloadCellFavourite {
     func reloadCell() {
-        arrayProductsObject = RealmManager.shared.getProducts()
+        arrayProductsObject = RealmManager.shared.getBookmarks()
     }
 }
 

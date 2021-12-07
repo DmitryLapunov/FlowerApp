@@ -29,7 +29,7 @@ class CategoryVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        productRealm = RealmManager.shared.getProducts()
+        productRealm = RealmManager.shared.getBookmarks()
     }
     
     private func setupTableView() {
@@ -114,7 +114,7 @@ extension CategoryVC: UITableViewDelegate, UITableViewDataSource {
 
 extension CategoryVC: ReloadCellCategory {
     func reloadCell() {
-        productRealm = RealmManager.shared.getProducts()
+        productRealm = RealmManager.shared.getBookmarks()
     }
 }
 

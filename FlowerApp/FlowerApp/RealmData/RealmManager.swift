@@ -14,26 +14,58 @@ class RealmManager {
     static let shared = RealmManager()
     private init () {}
     
-    func getProducts() -> [ProductObject] {
+    func getBookmarks() -> [ProductObject] {
         return Array(realm.objects(ProductObject.self))
     }
     
-    func writeProduct(product: ProductObject) {
+    func writeBookmarks(product: ProductObject) {
         try! realm.write {
             realm.add(product)
         }
     }
     
-    func clearRealm() {
+    //    Error, eraze ALL DATA
+    func clearBookmarks() {
         try! realm.write {
             realm.deleteAll()
         }
     }
     
-    func deleteProduct(productName: String) {
+    func deleteBookmarks(productName: String) {
         try! realm.write {
             realm.delete(realm.objects(ProductObject.self).filter("productName=%@", productName))
         }
     }
+    
+    //    MARK:
+    //    MARK: Cart methods
+    
+    func getCart() -> [CartProduct] {
+        return Array(realm.objects(CartProduct.self))
+    }
+    
+    func writeCart(product: CartProduct) {
+        try! realm.write {
+            realm.add(product)
+        }
+    }
+    
+    //    Error, eraze ALL DATA
+    func clearCart() {
+        try! realm.write {
+            realm.deleteAll()
+        }
+    }
+    
+    func deleteCart(productName: String) {
+        try! realm.write {
+            realm.delete(realm.objects(CartProduct.self).filter("productName=%@", productName))
+        }
+    }
+    
+    func checkInCart(productName: String) -> Int {
+        return getCart().filter({ $0.productName == productName }).count
+    }
+    
     
 }

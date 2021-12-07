@@ -76,7 +76,7 @@ class ProductVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        productRealm = RealmManager.shared.getProducts()
+        productRealm = RealmManager.shared.getBookmarks()
         let filter = productRealm.first { $0.productName == productNameLabel.text}
         if filter == nil {
             navigationItem.rightBarButtonItem = UIBarButtonItem().menuButton(target: self, action: #selector(addToFavorites), imageName: "bookmark")
@@ -89,7 +89,13 @@ class ProductVC: UIViewController {
     
     
     @IBAction func addToCartAction(_ sender: Any) {
-        
+        guard let product = product, let productName = product.itemName, let amountText = productAmountField.text, let amount = Int(amountText), amount != 0 else {
+            return
+        }
+        let productToCart = CartProduct(productName: productName, count: amount)
+        RealmManager.shared.writeCart(product: productToCart)
+        setBadge()
+        PopupController.showPopup(message: "Товар добавлен в корзину")
     }
     
     @IBAction func productAmountIncrease(_ sender: Any) {
@@ -141,14 +147,17 @@ class ProductVC: UIViewController {
             productSizeLabel.text = productDescription.size ?? "не указан"
             productAboutItemLabel.text = productDescription.aboutItem ?? "описание не указано"
         }
-        
-        
+    }
+    
+    private func setBadge() {
+        let badge = RealmManager.shared.getCart().count
+        tabBarController?.tabBar.items?.last?.badgeValue = badge == 0 ? nil : "\(badge)"
     }
     
     @objc func addToFavorites() {
         if imageName == "bookmark" {
             guard let name = productNameLabel.text else { return }
-            RealmManager.shared.writeProduct(product: ProductObject(productName: name))
+            RealmManager.shared.writeBookmarks(product: ProductObject(productName: name))
             imageName = "bookmark.fill"
             navigationItem.rightBarButtonItem = UIBarButtonItem().menuButton(target: self, action: #selector(addToFavorites), imageName: "bookmark.fill")
             PopupController.showPopup()
@@ -157,7 +166,7 @@ class ProductVC: UIViewController {
             let alert = UIAlertController(title: "Подтвердите действие", message: "Вы действительно хотите удалить «\(name)» из избранного?", preferredStyle: .alert)
             let noAction = UIAlertAction(title: "Нет", style: .default, handler: nil)
             let yesAction = UIAlertAction(title: "Да", style: .destructive, handler: { action in
-                RealmManager.shared.deleteProduct(productName: name)
+                RealmManager.shared.deleteBookmarks(productName: name)
                 self.imageName = "bookmark"
                 self.navigationItem.rightBarButtonItem = UIBarButtonItem().menuButton(target: self, action: #selector(self.addToFavorites), imageName: "bookmark")
             })

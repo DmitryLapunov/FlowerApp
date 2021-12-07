@@ -54,7 +54,7 @@ class FavouriteCell: UITableViewCell {
         let alert = UIAlertController(title: "", message: "Вы действительно хотите удалить «\(name)» из избранного?", preferredStyle: .alert)
         let noAction = UIAlertAction(title: "Нет", style: .default, handler: nil)
         let yesAction = UIAlertAction(title: "Да", style: .destructive, handler: { action in
-            RealmManager.shared.deleteProduct(productName: name)
+            RealmManager.shared.deleteBookmarks(productName: name)
             self.delegate?.reloadCell()
         })
         alert.addAction(yesAction)
