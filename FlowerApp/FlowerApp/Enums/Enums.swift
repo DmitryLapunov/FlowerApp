@@ -22,3 +22,16 @@ enum CategoryType: String, CaseIterable {
     case christmasAndNewYear = "Рождество Новый год"
 }
 
+
+//переименовать и вынести в отдельный файл
+enum Application: String {
+    case telegram
+    case instagram
+    case facebook
+    case viber
+    case vk
+    case phoneGor
+    case phoneA1
+    case phoneMTS
+    case googleMap
+}
