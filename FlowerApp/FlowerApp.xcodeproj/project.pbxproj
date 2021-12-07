@@ -14,6 +14,7 @@
 		7F224A16275F7722000649BB /* ValidationTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F224A15275F7722000649BB /* ValidationTextField.swift */; };
 		7F224A1E275F9F64000649BB /* InsetsTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F224A1D275F9F64000649BB /* InsetsTextField.swift */; };
 		7F6C2DE7275FE38B00F3D849 /* CartProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6C2DE6275FE38B00F3D849 /* CartProduct.swift */; };
+		7F6C2DEA275FF68200F3D849 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6C2DE9275FF68200F3D849 /* NotificationManager.swift */; };
 		7F9B67DD275A8339009A742E /* CatalogVC+Configure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9B67DC275A8339009A742E /* CatalogVC+Configure.swift */; };
 		8930869E274340C6000339B0 /* vgosti.json in Resources */ = {isa = PBXBuildFile; fileRef = 8930869D274340C6000339B0 /* vgosti.json */; };
 		893086A027434851000339B0 /* CodableClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8930869F27434851000339B0 /* CodableClasses.swift */; };
@@ -73,6 +74,7 @@
 		7F224A15275F7722000649BB /* ValidationTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationTextField.swift; sourceTree = "<group>"; };
 		7F224A1D275F9F64000649BB /* InsetsTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsetsTextField.swift; sourceTree = "<group>"; };
 		7F6C2DE6275FE38B00F3D849 /* CartProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartProduct.swift; sourceTree = "<group>"; };
+		7F6C2DE9275FF68200F3D849 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		7F9B67DC275A8339009A742E /* CatalogVC+Configure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CatalogVC+Configure.swift"; sourceTree = "<group>"; };
 		8930869D274340C6000339B0 /* vgosti.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = vgosti.json; sourceTree = "<group>"; };
 		8930869F27434851000339B0 /* CodableClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableClasses.swift; sourceTree = "<group>"; };
@@ -182,6 +184,14 @@
 			path = InsetsTextField;
 			sourceTree = "<group>";
 		};
+		7F6C2DE8275FF67500F3D849 /* Utilites */ = {
+			isa = PBXGroup;
+			children = (
+				7F6C2DE9275FF68200F3D849 /* NotificationManager.swift */,
+			);
+			path = Utilites;
+			sourceTree = "<group>";
+		};
 		7F9B67DE275A8812009A742E /* Catalog */ = {
 			isa = PBXGroup;
 			children = (
@@ -261,6 +271,7 @@
 		8982F135273F328200FB79E8 /* FlowerApp */ = {
 			isa = PBXGroup;
 			children = (
+				7F6C2DE8275FF67500F3D849 /* Utilites */,
 				7F224A12275F75B2000649BB /* CustomViews */,
 				8982F14E273F339600FB79E8 /* ViewControllers */,
 				8982F14D273F339200FB79E8 /* Cells */,
@@ -650,6 +661,7 @@
 				8982F16B2740ADCC00FB79E8 /* Enums.swift in Sources */,
 				9396BC65274890C300DA4FC8 /* Product.swift in Sources */,
 				8982F139273F328200FB79E8 /* SceneDelegate.swift in Sources */,
+				7F6C2DEA275FF68200F3D849 /* NotificationManager.swift in Sources */,
 				933F0CD8273FBFB900482A9F /* ContactsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

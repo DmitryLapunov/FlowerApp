@@ -19,6 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         configureNavBar()
         window?.rootViewController = TabViewController()
         window?.makeKeyAndVisible()
+        NotificationManager.requestAuthorization()
     }
     
     private func configureTabBar() {
