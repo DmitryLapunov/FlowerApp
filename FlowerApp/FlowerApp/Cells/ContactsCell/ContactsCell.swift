@@ -18,7 +18,7 @@ class ContactsCell: UITableViewCell {
     }
 
 
-func openApplication(application: Application) {
+func openApplication(application: ContactsType) {
     switch application {
         
     case .facebook:

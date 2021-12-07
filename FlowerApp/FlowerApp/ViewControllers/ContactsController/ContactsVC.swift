@@ -9,17 +9,17 @@ import UIKit
 
 class ContactsVC: UIViewController {
     
-    let imageName = [[UIImage(systemName: "phone"), UIImage(named: "icon_a1"), UIImage(named: "icon_mts"), UIImage(named: "icon_viber")],
-                     [UIImage(named: "icon_vkontakte"), UIImage(named: "icon_telegram"), UIImage(named: "icon_instagram"), UIImage(named: "icon_facebook")],
-                     [UIImage(named: "icon_google_maps")]]
+    let imageName: [[UIImage]] = [[ContactImage.phoneGor.image, ContactImage.phoneA1.image, ContactImage.phoneMTS.image, ContactImage.viber.image],
+                     [ContactImage.vk.image, ContactImage.telegram.image, ContactImage.instagram.image, ContactImage.facebook.image],
+                     [ContactImage.googleMap.image]]
     
     let section = ["Наши телефоны", "Мы в соцсетях", "Как добраться"]
     
-    let tableViewSettings = [["+375(17)396-36-66", "+375(29)668-39-65", "+375(29)751-17-77", "+375(29)161-16-66"],
-                             ["Вконтакте", "Telegram", "Instagram", "Facebook"],
-                             ["Google Maps"]]
+    let tableViewSettings: [[String]] = [[ContactsText.phone.name, ContactsText.phoneA1.name, ContactsText.phoneMTS.name, ContactsText.phoneViber.name],
+                                               [ContactsText.vk.name, ContactsText.telegram.name, ContactsText.instagremm.name, ContactsText.facebook.name],
+                                               [ContactsText.googleMaps.name]]
     
-    let arrayOfEnum: [[Application]] = [[.phoneGor, .phoneA1, .phoneMTS, .viber],
+    let arrayOfEnum: [[ContactsType]] = [[.phoneGor, .phoneA1, .phoneMTS, .viber],
                                         [.vk, .telegram, .instagram, .facebook],
                                         [.googleMap]]
     
