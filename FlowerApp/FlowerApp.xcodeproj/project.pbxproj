@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		5DDFC96AE44A47F94D8111BC /* Pods_FlowerApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE8CB9B2E865292D811F91E2 /* Pods_FlowerApp.framework */; };
+		7F224A10275F74C1000649BB /* OrderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F224A0E275F74C1000649BB /* OrderVC.swift */; };
+		7F224A11275F74C1000649BB /* OrderVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F224A0F275F74C1000649BB /* OrderVC.xib */; };
+		7F224A14275F75DA000649BB /* ValidationTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F224A13275F75DA000649BB /* ValidationTextField.xib */; };
+		7F224A16275F7722000649BB /* ValidationTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F224A15275F7722000649BB /* ValidationTextField.swift */; };
+		7F224A1E275F9F64000649BB /* InsetsTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F224A1D275F9F64000649BB /* InsetsTextField.swift */; };
 		7F9B67DD275A8339009A742E /* CatalogVC+Configure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9B67DC275A8339009A742E /* CatalogVC+Configure.swift */; };
 		8930869E274340C6000339B0 /* vgosti.json in Resources */ = {isa = PBXBuildFile; fileRef = 8930869D274340C6000339B0 /* vgosti.json */; };
 		893086A027434851000339B0 /* CodableClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8930869F27434851000339B0 /* CodableClasses.swift */; };
@@ -61,6 +66,11 @@
 /* Begin PBXFileReference section */
 		10B83A1A918906EF7FA39CC1 /* Pods-FlowerApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlowerApp.release.xcconfig"; path = "Target Support Files/Pods-FlowerApp/Pods-FlowerApp.release.xcconfig"; sourceTree = "<group>"; };
 		3C235F7C2C1D2127AC5EE758 /* Pods-FlowerApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlowerApp.debug.xcconfig"; path = "Target Support Files/Pods-FlowerApp/Pods-FlowerApp.debug.xcconfig"; sourceTree = "<group>"; };
+		7F224A0E275F74C1000649BB /* OrderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderVC.swift; sourceTree = "<group>"; };
+		7F224A0F275F74C1000649BB /* OrderVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderVC.xib; sourceTree = "<group>"; };
+		7F224A13275F75DA000649BB /* ValidationTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ValidationTextField.xib; sourceTree = "<group>"; };
+		7F224A15275F7722000649BB /* ValidationTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationTextField.swift; sourceTree = "<group>"; };
+		7F224A1D275F9F64000649BB /* InsetsTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsetsTextField.swift; sourceTree = "<group>"; };
 		7F9B67DC275A8339009A742E /* CatalogVC+Configure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CatalogVC+Configure.swift"; sourceTree = "<group>"; };
 		8930869D274340C6000339B0 /* vgosti.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = vgosti.json; sourceTree = "<group>"; };
 		8930869F27434851000339B0 /* CodableClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableClasses.swift; sourceTree = "<group>"; };
@@ -126,6 +136,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7F224A0C275F74A0000649BB /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				7F224A0D275F74AE000649BB /* OrderController */,
+				93A3B06927412C97008DF823 /* ShopingCartController */,
+			);
+			path = Cart;
+			sourceTree = "<group>";
+		};
+		7F224A0D275F74AE000649BB /* OrderController */ = {
+			isa = PBXGroup;
+			children = (
+				7F224A0E275F74C1000649BB /* OrderVC.swift */,
+				7F224A0F275F74C1000649BB /* OrderVC.xib */,
+			);
+			path = OrderController;
+			sourceTree = "<group>";
+		};
+		7F224A12275F75B2000649BB /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				7F224A1C275F9F43000649BB /* InsetsTextField */,
+				7F224A1B275F9F34000649BB /* ValidationTextField */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		7F224A1B275F9F34000649BB /* ValidationTextField */ = {
+			isa = PBXGroup;
+			children = (
+				7F224A13275F75DA000649BB /* ValidationTextField.xib */,
+				7F224A15275F7722000649BB /* ValidationTextField.swift */,
+			);
+			path = ValidationTextField;
+			sourceTree = "<group>";
+		};
+		7F224A1C275F9F43000649BB /* InsetsTextField */ = {
+			isa = PBXGroup;
+			children = (
+				7F224A1D275F9F64000649BB /* InsetsTextField.swift */,
+			);
+			path = InsetsTextField;
+			sourceTree = "<group>";
+		};
 		7F9B67DE275A8812009A742E /* Catalog */ = {
 			isa = PBXGroup;
 			children = (
@@ -205,6 +259,7 @@
 		8982F135273F328200FB79E8 /* FlowerApp */ = {
 			isa = PBXGroup;
 			children = (
+				7F224A12275F75B2000649BB /* CustomViews */,
 				8982F14E273F339600FB79E8 /* ViewControllers */,
 				8982F14D273F339200FB79E8 /* Cells */,
 				8982F14C273F338900FB79E8 /* NetworkTools */,
@@ -259,7 +314,7 @@
 				7F9B67DE275A8812009A742E /* Catalog */,
 				93A3B0662741283D008DF823 /* FavouriteController */,
 				93A3B06727412893008DF823 /* ContactsController */,
-				93A3B06927412C97008DF823 /* ShopingCartController */,
+				7F224A0C275F74A0000649BB /* Cart */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -476,9 +531,11 @@
 				933F0CD9273FBFB900482A9F /* ContactsVC.xib in Resources */,
 				8982F15C273F352500FB79E8 /* OCT55.otf in Resources */,
 				8982F15D273F352500FB79E8 /* OCT85.otf in Resources */,
+				7F224A11275F74C1000649BB /* OrderVC.xib in Resources */,
 				935D8949274EB93F00106DE0 /* Main.storyboard in Resources */,
 				89DBE89727475C8C00B7C96D /* ContactsCell.xib in Resources */,
 				8982F1702740ADFB00FB79E8 /* CategoryCell.xib in Resources */,
+				7F224A14275F75DA000649BB /* ValidationTextField.xib in Resources */,
 				8982F143273F328300FB79E8 /* LaunchScreen.storyboard in Resources */,
 				893086A527434B1E000339B0 /* CategoryVC.xib in Resources */,
 				8982F1722741410800FB79E8 /* OpenSans-Italic-VariableFont.ttf in Resources */,
@@ -566,6 +623,7 @@
 				9320364A2752A76F00E68921 /* UIApplication+Extensions.swift in Sources */,
 				89DBE8A02747614B00B7C96D /* GoogleMapVC.swift in Sources */,
 				893086A427434B1E000339B0 /* CategoryVC.swift in Sources */,
+				7F224A1E275F9F64000649BB /* InsetsTextField.swift in Sources */,
 				893086FF27472838000339B0 /* ProductImageCell.swift in Sources */,
 				893086FA27471CBD000339B0 /* ProductVC.swift in Sources */,
 				89DBE89227475C7C00B7C96D /* TabBarController.swift in Sources */,
@@ -577,11 +635,13 @@
 				8982F16F2740ADFB00FB79E8 /* CategoryCell.swift in Sources */,
 				9396BC6227488F3300DA4FC8 /* RealmManager.swift in Sources */,
 				7F9B67DD275A8339009A742E /* CatalogVC+Configure.swift in Sources */,
+				7F224A16275F7722000649BB /* ValidationTextField.swift in Sources */,
 				93AD6D4B27515B6A00211D96 /* PopupController.swift in Sources */,
 				893086F6274715FC000339B0 /* Extensions.swift in Sources */,
 				89DBE917275059F000B7C96D /* FilterVC.swift in Sources */,
 				933F0CD4273FBF8900482A9F /* FavouriteVC.swift in Sources */,
 				9396BC5F274881BB00DA4FC8 /* FavouriteCell.swift in Sources */,
+				7F224A10275F74C1000649BB /* OrderVC.swift in Sources */,
 				89DBE89627475C8C00B7C96D /* ContactsCell.swift in Sources */,
 				8982F16B2740ADCC00FB79E8 /* Enums.swift in Sources */,
 				9396BC65274890C300DA4FC8 /* Product.swift in Sources */,
