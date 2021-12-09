@@ -8,16 +8,12 @@
 import UIKit
 
 class ContactsVC: UIViewController {
-    
-    let imageName: [[UIImage]] = [ContactImage.first.image, ContactImage.second.image, ContactImage.third.image]
-    
-    let section = ["Наши телефоны", "Мы в соцсетях", "Как добраться"]
-    
-    let tableViewSettings: [[String]] = [ContactInfo.first.info, ContactInfo.second.info, ContactInfo.third.info]
-    
+  
     let arrayOfEnum: [[ContactsType]] = [[.phoneGor, .phoneA1, .phoneMTS, .viber],
                                         [.vk, .telegram, .instagram, .facebook],
                                         [.googleMap]]
+    
+    let section = ["Наши телефоны", "Мы в соцсетях", "Как добраться"]
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -42,11 +38,11 @@ class ContactsVC: UIViewController {
 
 extension ContactsVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tableViewSettings[section].count
+        return arrayOfEnum[section].count
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return section.count
+        return arrayOfEnum.count
     }
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
@@ -63,8 +59,8 @@ extension ContactsVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ContactsCell.self), for: indexPath)
         guard let contactsCell = cell as? ContactsCell else { return cell }
-        contactsCell.textCell.text = tableViewSettings[indexPath.section][indexPath.row]
-        contactsCell.imageCell.image = imageName[indexPath.section][indexPath.row]
+        contactsCell.textCell.text = arrayOfEnum[indexPath.section][indexPath.row].contactInfo
+        contactsCell.imageCell.image = arrayOfEnum[indexPath.section][indexPath.row].image
         return contactsCell
     }
     
