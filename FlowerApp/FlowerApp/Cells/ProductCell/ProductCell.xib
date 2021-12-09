@@ -75,6 +75,9 @@
                         <color key="textColor" name="MainLabelColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vgosti_logo_inverted" translatesAutoresizingMaskIntoConstraints="NO" id="0ej-pn-G2F">
+                        <rect key="frame" x="5" y="5" width="125" height="125"/>
+                    </imageView>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rmf-DJ-Jzi">
                         <rect key="frame" x="5" y="5" width="125" height="125"/>
                         <constraints>
@@ -113,12 +116,16 @@
                     <constraint firstItem="bno-84-xmC" firstAttribute="leading" secondItem="Qm0-e0-CQF" secondAttribute="leading" id="92V-Sj-Qh8"/>
                     <constraint firstAttribute="trailing" secondItem="Qm0-e0-CQF" secondAttribute="trailing" constant="60" id="GtS-XM-sf7"/>
                     <constraint firstItem="IJL-F4-5Ll" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="MkK-hi-oqq"/>
+                    <constraint firstItem="0ej-pn-G2F" firstAttribute="height" secondItem="rmf-DJ-Jzi" secondAttribute="height" id="R6C-Tz-am6"/>
                     <constraint firstAttribute="bottom" secondItem="IJL-F4-5Ll" secondAttribute="bottom" constant="5" id="U6S-3P-0iI"/>
+                    <constraint firstItem="0ej-pn-G2F" firstAttribute="width" secondItem="rmf-DJ-Jzi" secondAttribute="width" id="UJJ-b2-bvw"/>
+                    <constraint firstItem="0ej-pn-G2F" firstAttribute="centerX" secondItem="rmf-DJ-Jzi" secondAttribute="centerX" id="cQn-IA-oZs"/>
                     <constraint firstItem="bno-84-xmC" firstAttribute="top" secondItem="Qm0-e0-CQF" secondAttribute="bottom" id="duV-CD-Yb3"/>
                     <constraint firstItem="Qm0-e0-CQF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="hoX-Op-a7n"/>
                     <constraint firstItem="rmf-DJ-Jzi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="jJP-er-iYK"/>
                     <constraint firstItem="rmf-DJ-Jzi" firstAttribute="right" secondItem="Jaz-ge-xeC" secondAttribute="right" constant="5" id="jRU-fZ-Pwn"/>
                     <constraint firstAttribute="bottom" secondItem="rmf-DJ-Jzi" secondAttribute="bottom" constant="5" id="oSY-KC-qB0"/>
+                    <constraint firstItem="0ej-pn-G2F" firstAttribute="centerY" secondItem="rmf-DJ-Jzi" secondAttribute="centerY" id="qbA-vN-6VN"/>
                     <constraint firstItem="rmf-DJ-Jzi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="u5P-ce-E9E"/>
                     <constraint firstItem="Jaz-ge-xeC" firstAttribute="left" secondItem="rmf-DJ-Jzi" secondAttribute="left" constant="5" id="vGA-do-xhE"/>
                     <constraint firstItem="IJL-F4-5Ll" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="wEe-C0-5uc"/>
@@ -143,6 +150,7 @@
     <resources>
         <image name="bookmark" catalog="system" width="112" height="128"/>
         <image name="cart.badge.plus" catalog="system" width="128" height="106"/>
+        <image name="vgosti_logo_inverted" width="732" height="533"/>
         <namedColor name="MainColor">
             <color red="0.40000000596046448" green="0.5220000147819519" blue="0.046999998390674591" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

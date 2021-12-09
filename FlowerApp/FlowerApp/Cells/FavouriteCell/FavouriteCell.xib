@@ -29,6 +29,9 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Lb-08-BCr">
                         <rect key="frame" x="5" y="5" width="580" height="125"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vgosti_logo_inverted" translatesAutoresizingMaskIntoConstraints="NO" id="zk5-Iu-G71">
+                                <rect key="frame" x="0.0" y="0.0" width="125" height="125"/>
+                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bi3-k0-taF">
                                 <rect key="frame" x="0.0" y="0.0" width="125" height="125"/>
                                 <constraints>
@@ -95,12 +98,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="zk5-Iu-G71" firstAttribute="centerX" secondItem="Bi3-k0-taF" secondAttribute="centerX" id="1YY-m5-M1t"/>
+                            <constraint firstItem="zk5-Iu-G71" firstAttribute="width" secondItem="Bi3-k0-taF" secondAttribute="width" id="2d7-oD-IZ3"/>
                             <constraint firstItem="Bi3-k0-taF" firstAttribute="top" secondItem="5Lb-08-BCr" secondAttribute="top" id="5go-sG-RBn"/>
                             <constraint firstItem="NgI-tT-E8I" firstAttribute="top" secondItem="5Lb-08-BCr" secondAttribute="top" constant="10" id="FoH-qa-EOI"/>
                             <constraint firstAttribute="trailing" secondItem="74Y-Ry-7sz" secondAttribute="trailing" constant="5" id="HIF-SK-K6z"/>
                             <constraint firstItem="bff-Ib-5fI" firstAttribute="trailing" secondItem="Bi3-k0-taF" secondAttribute="trailing" constant="-5" id="Suw-y7-IJV"/>
                             <constraint firstItem="iDj-09-oOk" firstAttribute="top" secondItem="NgI-tT-E8I" secondAttribute="bottom" constant="5" id="VsA-Sg-wX1"/>
+                            <constraint firstItem="zk5-Iu-G71" firstAttribute="height" secondItem="Bi3-k0-taF" secondAttribute="height" id="WKM-la-jHW"/>
                             <constraint firstAttribute="bottom" secondItem="bff-Ib-5fI" secondAttribute="bottom" constant="5" id="XAk-G5-0ih"/>
+                            <constraint firstItem="zk5-Iu-G71" firstAttribute="centerY" secondItem="Bi3-k0-taF" secondAttribute="centerY" id="aJ1-f5-7ns"/>
                             <constraint firstItem="74Y-Ry-7sz" firstAttribute="leading" secondItem="iDj-09-oOk" secondAttribute="trailing" constant="10" id="bAS-sT-hpM"/>
                             <constraint firstAttribute="height" constant="125" id="bR5-1w-ozg"/>
                             <constraint firstItem="74Y-Ry-7sz" firstAttribute="top" secondItem="5Lb-08-BCr" secondAttribute="top" constant="5" id="ePI-iN-1om"/>
@@ -138,6 +145,7 @@
     <resources>
         <image name="bookmark.slash" catalog="system" width="115" height="128"/>
         <image name="cart.badge.plus" catalog="system" width="128" height="106"/>
+        <image name="vgosti_logo_inverted" width="732" height="533"/>
         <namedColor name="MainColor">
             <color red="0.40000000596046448" green="0.5220000147819519" blue="0.046999998390674591" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
