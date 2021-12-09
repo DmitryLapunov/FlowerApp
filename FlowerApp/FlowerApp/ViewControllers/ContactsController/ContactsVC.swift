@@ -13,8 +13,6 @@ class ContactsVC: UIViewController {
                                         [.vk, .telegram, .instagram, .facebook],
                                         [.googleMap]]
     
-    let section = ["Наши телефоны", "Мы в соцсетях", "Как добраться"]
-    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -52,8 +50,7 @@ extension ContactsVC: UITableViewDataSource {
     }
         
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let title = self.section[section]
-        return title
+        return ["Наши телефоны", "Мы в соцсетях", "Как добраться"][section]
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

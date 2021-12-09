@@ -11,6 +11,7 @@ class FavouriteVC: UIViewController, AlertShowerProduct {
 
     @IBOutlet weak var tableView: UITableView!
     
+    
     var arrayProductsObject: [ProductObject] = [] {
         didSet {
             tableView.reloadData()
@@ -33,6 +34,11 @@ class FavouriteVC: UIViewController, AlertShowerProduct {
         arrayProductsObject = RealmManager.shared.getBookmarks()
     }
 }
+
+func checkArrayEmpty() {
+    
+}
+
 
 extension FavouriteVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
