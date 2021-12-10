@@ -49,6 +49,8 @@
 		89DBE8A12747614B00B7C96D /* GoogleMapVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89DBE89F2747614B00B7C96D /* GoogleMapVC.xib */; };
 		89DBE917275059F000B7C96D /* FilterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DBE915275059F000B7C96D /* FilterVC.swift */; };
 		89DBE918275059F000B7C96D /* FilterVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89DBE916275059F000B7C96D /* FilterVC.xib */; };
+		89DBE9A32762C9D000B7C96D /* CompositionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DBE9A12762C9D000B7C96D /* CompositionVC.swift */; };
+		89DBE9A42762C9D000B7C96D /* CompositionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89DBE9A22762C9D000B7C96D /* CompositionVC.xib */; };
 		9320364A2752A76F00E68921 /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932036492752A76F00E68921 /* UIApplication+Extensions.swift */; };
 		933F0CD4273FBF8900482A9F /* FavouriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933F0CD2273FBF8900482A9F /* FavouriteVC.swift */; };
 		933F0CD5273FBF8900482A9F /* FavouriteVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 933F0CD3273FBF8900482A9F /* FavouriteVC.xib */; };
@@ -111,6 +113,8 @@
 		89DBE89F2747614B00B7C96D /* GoogleMapVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GoogleMapVC.xib; sourceTree = "<group>"; };
 		89DBE915275059F000B7C96D /* FilterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterVC.swift; sourceTree = "<group>"; };
 		89DBE916275059F000B7C96D /* FilterVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterVC.xib; sourceTree = "<group>"; };
+		89DBE9A12762C9D000B7C96D /* CompositionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionVC.swift; sourceTree = "<group>"; };
+		89DBE9A22762C9D000B7C96D /* CompositionVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompositionVC.xib; sourceTree = "<group>"; };
 		932036492752A76F00E68921 /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
 		933F0CD2273FBF8900482A9F /* FavouriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteVC.swift; sourceTree = "<group>"; };
 		933F0CD3273FBF8900482A9F /* FavouriteVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavouriteVC.xib; sourceTree = "<group>"; };
@@ -393,8 +397,18 @@
 			children = (
 				89DBE915275059F000B7C96D /* FilterVC.swift */,
 				89DBE916275059F000B7C96D /* FilterVC.xib */,
+				89DBE9A02762C9A200B7C96D /* CompositionComtroller */,
 			);
 			path = FilterController;
+			sourceTree = "<group>";
+		};
+		89DBE9A02762C9A200B7C96D /* CompositionComtroller */ = {
+			isa = PBXGroup;
+			children = (
+				89DBE9A12762C9D000B7C96D /* CompositionVC.swift */,
+				89DBE9A22762C9D000B7C96D /* CompositionVC.xib */,
+			);
+			path = CompositionComtroller;
 			sourceTree = "<group>";
 		};
 		91E7C5CD6880390624272CC9 /* Pods */ = {
@@ -560,6 +574,7 @@
 				8982F15E273F352500FB79E8 /* OCT86.otf in Resources */,
 				8982F140273F328300FB79E8 /* Assets.xcassets in Resources */,
 				893086FB27471CBD000339B0 /* ProductVC.xib in Resources */,
+				89DBE9A42762C9D000B7C96D /* CompositionVC.xib in Resources */,
 				89DBE8A12747614B00B7C96D /* GoogleMapVC.xib in Resources */,
 				8982F154273F33D100FB79E8 /* CatalogVC.xib in Resources */,
 				8930869E274340C6000339B0 /* vgosti.json in Resources */,
@@ -641,6 +656,7 @@
 				893086FF27472838000339B0 /* ProductImageCell.swift in Sources */,
 				893086FA27471CBD000339B0 /* ProductVC.swift in Sources */,
 				89DBE89227475C7C00B7C96D /* TabBarController.swift in Sources */,
+				89DBE9A32762C9D000B7C96D /* CompositionVC.swift in Sources */,
 				893086A927434B7B000339B0 /* ProductCell.swift in Sources */,
 				933F0CDC273FC05500482A9F /* ShoppingCartVC.swift in Sources */,
 				8982F137273F328200FB79E8 /* AppDelegate.swift in Sources */,

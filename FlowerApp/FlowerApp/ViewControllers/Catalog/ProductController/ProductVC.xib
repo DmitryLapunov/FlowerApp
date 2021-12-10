@@ -26,6 +26,8 @@
             <connections>
                 <outlet property="addToCartBackgroundView" destination="DIe-yc-WEs" id="kbg-Np-Hv0"/>
                 <outlet property="addToCartButton" destination="Fv5-gC-l38" id="2Ef-f6-Jxc"/>
+                <outlet property="imagePhotosDown" destination="BiS-62-npR" id="Gdz-hF-OJs"/>
+                <outlet property="imagePhotosUp" destination="f3K-HA-bhg" id="2cC-Ca-VKm"/>
                 <outlet property="imagesCollectionView" destination="nA5-UH-s2T" id="t5X-gf-X5I"/>
                 <outlet property="productAboutItemLabel" destination="8Op-zD-N0f" id="xKg-wT-wc0"/>
                 <outlet property="productAmountField" destination="uDM-7A-wQJ" id="h2f-FS-Ndf"/>
@@ -83,18 +85,40 @@
                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </collectionViewFlowLayout>
                                 </collectionView>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.compact.up" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="f3K-HA-bhg">
+                                    <rect key="frame" x="316" y="-13.5" width="25" height="11.5"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="tintColor" name="MainColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="25" id="Bgi-bg-ZA3"/>
+                                        <constraint firstAttribute="width" constant="25" id="pbV-GW-t5H"/>
+                                    </constraints>
+                                </imageView>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.compact.down" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="BiS-62-npR">
+                                    <rect key="frame" x="316" y="264" width="25" height="11.5"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="tintColor" name="MainColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="25" id="KB5-m8-ncm"/>
+                                        <constraint firstAttribute="height" constant="25" id="YQa-JX-fHP"/>
+                                    </constraints>
+                                </imageView>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstItem="nA5-UH-s2T" firstAttribute="top" secondItem="cDm-uH-fYA" secondAttribute="top" id="6Tc-gH-yW5"/>
                                 <constraint firstItem="u2C-RK-P0K" firstAttribute="centerX" secondItem="zNO-hK-JX5" secondAttribute="centerX" id="99r-zb-xYi"/>
+                                <constraint firstItem="BiS-62-npR" firstAttribute="centerX" secondItem="nA5-UH-s2T" secondAttribute="centerX" id="Cci-ZG-K21"/>
+                                <constraint firstItem="f3K-HA-bhg" firstAttribute="centerX" secondItem="nA5-UH-s2T" secondAttribute="centerX" id="FmF-ua-Kjj"/>
                                 <constraint firstItem="u2C-RK-P0K" firstAttribute="width" secondItem="zNO-hK-JX5" secondAttribute="width" multiplier="1.0019" id="GMn-QH-Ge4"/>
                                 <constraint firstItem="zNO-hK-JX5" firstAttribute="leading" secondItem="cDm-uH-fYA" secondAttribute="leading" id="IBq-Zt-e2m"/>
                                 <constraint firstItem="u2C-RK-P0K" firstAttribute="height" secondItem="zNO-hK-JX5" secondAttribute="height" multiplier="1.0019" id="IwZ-xg-3Og"/>
                                 <constraint firstAttribute="bottom" secondItem="zNO-hK-JX5" secondAttribute="bottom" id="Lgd-Qi-tS7"/>
                                 <constraint firstAttribute="trailing" secondItem="nA5-UH-s2T" secondAttribute="trailing" id="VhF-k6-J5C"/>
+                                <constraint firstAttribute="bottom" secondItem="BiS-62-npR" secondAttribute="bottom" constant="-20" id="YBI-Nz-GTt"/>
                                 <constraint firstItem="zNO-hK-JX5" firstAttribute="top" secondItem="cDm-uH-fYA" secondAttribute="top" id="bOM-l9-d68"/>
                                 <constraint firstItem="u2C-RK-P0K" firstAttribute="centerY" secondItem="zNO-hK-JX5" secondAttribute="centerY" id="gAH-hl-1yk"/>
+                                <constraint firstItem="f3K-HA-bhg" firstAttribute="top" secondItem="cDm-uH-fYA" secondAttribute="top" constant="-20" id="gS4-ol-Nur"/>
                                 <constraint firstAttribute="width" secondItem="cDm-uH-fYA" secondAttribute="height" multiplier="3:2" id="l0g-So-xuP"/>
                                 <constraint firstAttribute="bottom" secondItem="nA5-UH-s2T" secondAttribute="bottom" id="qYu-KO-8h4"/>
                                 <constraint firstItem="nA5-UH-s2T" firstAttribute="leading" secondItem="zNO-hK-JX5" secondAttribute="trailing" id="zcW-qs-gbz"/>
@@ -312,9 +336,14 @@
     </objects>
     <resources>
         <image name="cart.badge.plus" catalog="system" width="128" height="106"/>
+        <image name="chevron.compact.down" catalog="system" width="128" height="43"/>
+        <image name="chevron.compact.up" catalog="system" width="128" height="43"/>
         <image name="minus" catalog="system" width="128" height="24"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="vgosti_logo_inverted" width="732" height="533"/>
+        <namedColor name="MainColor">
+            <color red="0.40000000596046448" green="0.5220000147819519" blue="0.046999998390674591" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <namedColor name="MainLabelColor">
             <color red="0.29800000786781311" green="0.25499999523162842" blue="0.3449999988079071" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

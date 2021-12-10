@@ -21,6 +21,8 @@ class ProductVC: UIViewController {
     @IBOutlet weak var productSizeLabel: UILabel!
     @IBOutlet weak var productAboutItemLabel: UILabel!
     @IBOutlet weak var scrollViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var imagePhotosDown: UIImageView!
+    @IBOutlet weak var imagePhotosUp: UIImageView!
     
     var productRealm: [ProductObject] = [] {
         didSet{
@@ -42,6 +44,7 @@ class ProductVC: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem().menuButton(target: self, action: #selector(addToFavorites), imageName: "bookmark")
         scrollViewHeightConstraint.constant = productCompositionLabel.frame.height + productPackageLabel.frame.height + productSizeLabel.frame.height + productAboutItemLabel.frame.height + 40
         
+        imagePhotosDown.layer.cornerRadius = 4
         
         productImagesBackgroundView.layer.cornerRadius = 10
         productImageView.layer.cornerRadius = 10
@@ -133,6 +136,10 @@ class ProductVC: UIViewController {
         let nib = UINib(nibName: String(describing: ProductImageCell.self), bundle: nil)
         imagesCollectionView.register(nib, forCellWithReuseIdentifier: String(describing: ProductImageCell.self))
         imagesCollectionView.reloadData()
+        if productImages.count <= 2 {
+            imagePhotosDown.isHidden = true
+            imagePhotosUp.isHidden = true
+        }
     }
     
     func setupProductPage(product: Product) {
@@ -162,6 +169,7 @@ class ProductVC: UIViewController {
     private func setBadge() {
         let badge = RealmManager.shared.getCart().count
         tabBarController?.tabBar.items?.last?.badgeValue = badge == 0 ? nil : "\(badge)"
+        tabBarController?.tabBar.items?.last?.badgeColor = .green
     }
     
     @objc func addToFavorites() {
@@ -182,7 +190,7 @@ class ProductVC: UIViewController {
             })
             alert.addAction(yesAction)
             alert.addAction(noAction)
-            self.alertDelegate?.showAlert(alert: alert) 
+            self.alertDelegate?.showAlert(alert: alert)
         }
     }
     
@@ -219,5 +227,12 @@ extension ProductVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLay
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         productImageView.sd_setImage(with: URL(string: productImages[indexPath.row]))
         collectionView.reloadData()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if productImages.count > 2 {
+            imagePhotosDown.isHidden = indexPath.row == productImages.count - 1 ? true : false
+            imagePhotosUp.isHidden = indexPath.row == 0 ? true : false
+        }
     }
 }

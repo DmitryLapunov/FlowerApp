@@ -21,9 +21,7 @@
                 <outlet property="applyFiltersButton" destination="7Yf-1U-ROw" id="98J-RV-RKA"/>
                 <outlet property="chooseCompositionBackgroundView" destination="0Eo-5a-eS2" id="Vxk-i1-X4e"/>
                 <outlet property="chooseCompositionButton" destination="FkC-YT-FyD" id="oCd-qT-QQ4"/>
-                <outlet property="closeFiltersButton" destination="xaY-I1-Ggo" id="p8e-Ff-TJX"/>
                 <outlet property="discardFiltersButton" destination="qrC-pn-7ol" id="Oqb-AJ-rDJ"/>
-                <outlet property="filterBackgroundView" destination="K5V-v1-cGn" id="tNS-j7-cCD"/>
                 <outlet property="nameSortBackgroundView" destination="el5-vM-6Us" id="cpL-s3-Efl"/>
                 <outlet property="priceSortBackgroundView" destination="7Ie-jn-gBb" id="pjd-hC-K5r"/>
                 <outlet property="sliderBackgroundView" destination="k4C-yo-eMW" id="KnT-f3-3lY"/>
@@ -40,13 +38,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K5V-v1-cGn">
-                    <rect key="frame" x="20" y="64" width="374" height="778"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Oe3-4K-gRO">
-                            <rect key="frame" x="10" y="733.5" width="354" height="34.5"/>
+                            <rect key="frame" x="10" y="773.5" width="394" height="34.5"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qrC-pn-7ol">
-                                    <rect key="frame" x="0.0" y="0.0" width="172" height="34.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="192" height="34.5"/>
                                     <color key="tintColor" name="MainColor"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" title="Сбросить фильтры" cornerStyle="large">
@@ -57,7 +55,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Yf-1U-ROw">
-                                    <rect key="frame" x="182" y="0.0" width="172" height="34.5"/>
+                                    <rect key="frame" x="202" y="0.0" width="192" height="34.5"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="filled" title="  Применить фильтры" cornerStyle="large">
                                         <fontDescription key="titleFontDescription" name="OpenSansRoman-CondensedRegular" family="Open Sans" pointSize="15"/>
@@ -69,59 +67,44 @@
                             </subviews>
                         </stackView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ценовой диапазон" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="su7-M6-lFt">
-                            <rect key="frame" x="10" y="10" width="354" height="20.5"/>
+                            <rect key="frame" x="20" y="10" width="384" height="20.5"/>
                             <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="15"/>
                             <color key="textColor" name="MainLabelColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k4C-yo-eMW">
-                            <rect key="frame" x="10" y="40.5" width="354" height="80"/>
+                            <rect key="frame" x="10" y="40.5" width="394" height="80"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="80" id="w1u-c1-Z72"/>
                             </constraints>
                         </view>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xaY-I1-Ggo">
-                            <rect key="frame" x="339" y="8" width="25" height="25"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="25" id="Ch6-QA-4VW"/>
-                                <constraint firstAttribute="width" constant="25" id="OEW-p8-mB0"/>
-                                <constraint firstAttribute="width" secondItem="xaY-I1-Ggo" secondAttribute="height" multiplier="1:1" id="TGQ-MY-EMl"/>
-                            </constraints>
-                            <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="filled" cornerStyle="large">
-                                <imageReference key="image" image="xmark" catalog="system" symbolScale="small"/>
-                            </buttonConfiguration>
-                            <connections>
-                                <action selector="closeFiltersAction:" destination="-1" eventType="touchUpInside" id="S8J-uG-Ntx"/>
-                            </connections>
-                        </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Сортировать по цене" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HtP-IH-GfT">
-                            <rect key="frame" x="10" y="130.5" width="354" height="20.5"/>
+                            <rect key="frame" x="20" y="130.5" width="384" height="20.5"/>
                             <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="15"/>
                             <color key="textColor" name="MainLabelColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Ie-jn-gBb">
-                            <rect key="frame" x="10" y="161" width="354" height="54.5"/>
+                            <rect key="frame" x="10" y="161" width="394" height="53.5"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="8o1-SH-VTa">
-                                    <rect key="frame" x="10" y="10" width="334" height="34.5"/>
+                                    <rect key="frame" x="10" y="10" width="374" height="33.5"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iMh-OP-qTN">
-                                            <rect key="frame" x="0.0" y="0.0" width="162" height="34.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="182" height="33.5"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="filled" title="Сначала дорогие" imagePadding="5">
                                                 <imageReference key="image" image="arrow.down" catalog="system" symbolScale="medium"/>
-                                                <fontDescription key="titleFontDescription" name="OpenSansRoman-CondensedRegular" family="Open Sans" pointSize="15"/>
+                                                <fontDescription key="titleFontDescription" name="OpenSansRoman-CondensedRegular" family="Open Sans" pointSize="14"/>
                                             </buttonConfiguration>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w26-uh-4Iu">
-                                            <rect key="frame" x="172" y="0.0" width="162" height="34.5"/>
+                                            <rect key="frame" x="192" y="0.0" width="182" height="33.5"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="filled" title="Сначала дешевые" imagePadding="5">
                                                 <imageReference key="image" image="arrow.up" catalog="system" symbolScale="medium"/>
-                                                <fontDescription key="titleFontDescription" name="OpenSansRoman-CondensedRegular" family="Open Sans" pointSize="15"/>
+                                                <fontDescription key="titleFontDescription" name="OpenSansRoman-CondensedRegular" family="Open Sans" pointSize="14"/>
                                             </buttonConfiguration>
                                         </button>
                                     </subviews>
@@ -136,29 +119,29 @@
                             </constraints>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Сортировать по названию" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L6y-Ta-JXR">
-                            <rect key="frame" x="10" y="225.5" width="354" height="20.5"/>
+                            <rect key="frame" x="20" y="224.5" width="384" height="20.5"/>
                             <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="15"/>
                             <color key="textColor" name="MainLabelColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="el5-vM-6Us">
-                            <rect key="frame" x="10" y="256" width="354" height="54.5"/>
+                            <rect key="frame" x="10" y="255" width="394" height="53.5"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Y36-Es-Xxj">
-                                    <rect key="frame" x="10" y="10" width="334" height="34.5"/>
+                                    <rect key="frame" x="10" y="10" width="374" height="33.5"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Jv-hP-0Qe">
-                                            <rect key="frame" x="0.0" y="0.0" width="162" height="34.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="182" height="33.5"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="filled" title="В алфавитном порядке">
-                                                <fontDescription key="titleFontDescription" name="OpenSansRoman-CondensedRegular" family="Open Sans" pointSize="15"/>
+                                                <fontDescription key="titleFontDescription" name="OpenSansRoman-CondensedRegular" family="Open Sans" pointSize="14"/>
                                             </buttonConfiguration>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cxi-yT-umG">
-                                            <rect key="frame" x="172" y="0.0" width="162" height="34.5"/>
+                                            <rect key="frame" x="192" y="0.0" width="182" height="33.5"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="filled" title="В обратном порядке">
-                                                <fontDescription key="titleFontDescription" name="OpenSansRoman-CondensedRegular" family="Open Sans" pointSize="15"/>
+                                                <fontDescription key="titleFontDescription" name="OpenSansRoman-CondensedRegular" family="Open Sans" pointSize="14"/>
                                             </buttonConfiguration>
                                         </button>
                                     </subviews>
@@ -173,28 +156,28 @@
                             </constraints>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Фильтр по составу" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6DC-vf-bjG">
-                            <rect key="frame" x="10" y="320.5" width="354" height="20.5"/>
+                            <rect key="frame" x="20" y="318.5" width="384" height="20.5"/>
                             <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="15"/>
                             <color key="textColor" name="MainLabelColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Eo-5a-eS2">
-                            <rect key="frame" x="10" y="351" width="354" height="54.5"/>
+                            <rect key="frame" x="10" y="349" width="394" height="57"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выбрать состав" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hP2-Gg-M2L">
-                                    <rect key="frame" x="10" y="10" width="334" height="20.5"/>
+                                    <rect key="frame" x="10" y="10" width="374" height="20.5"/>
                                     <fontDescription key="fontDescription" name="OpenSansRoman-CondensedRegular" family="Open Sans" pointSize="15"/>
                                     <color key="textColor" name="MainLabelColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Поиск по совпадениям состава букета с выбранными позициями" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="upB-Sf-wss">
-                                    <rect key="frame" x="10" y="30.5" width="334" height="14"/>
-                                    <fontDescription key="fontDescription" name="OpenSansRoman-CondensedRegular" family="Open Sans" pointSize="10"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Поиск по совпадениям состава букета" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="upB-Sf-wss">
+                                    <rect key="frame" x="10" y="30.5" width="374" height="16.5"/>
+                                    <fontDescription key="fontDescription" name="OpenSansRoman-CondensedRegular" family="Open Sans" pointSize="12"/>
                                     <color key="textColor" name="SecondaryLabelColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FkC-YT-FyD">
-                                    <rect key="frame" x="0.0" y="0.0" width="354" height="54.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="394" height="57"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" title=""/>
                                     <connections>
@@ -218,7 +201,7 @@
                             </constraints>
                         </view>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="d8r-mG-Loz">
-                            <rect key="frame" x="329" y="368" width="25" height="21.5"/>
+                            <rect key="frame" x="369" y="367" width="25" height="21.5"/>
                             <color key="tintColor" name="MainLabelColor"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="25" id="Kpx-vY-ksF"/>
@@ -235,8 +218,6 @@
                         <constraint firstItem="d8r-mG-Loz" firstAttribute="centerY" secondItem="0Eo-5a-eS2" secondAttribute="centerY" id="Ada-Du-ivP"/>
                         <constraint firstAttribute="trailing" secondItem="el5-vM-6Us" secondAttribute="trailing" constant="10" id="ArC-Cl-rec"/>
                         <constraint firstAttribute="trailing" secondItem="su7-M6-lFt" secondAttribute="trailing" constant="10" id="BIk-dK-xDA"/>
-                        <constraint firstAttribute="trailing" secondItem="xaY-I1-Ggo" secondAttribute="trailing" constant="10" id="F7d-lL-qcB"/>
-                        <constraint firstItem="xaY-I1-Ggo" firstAttribute="centerY" secondItem="su7-M6-lFt" secondAttribute="centerY" id="Goo-e9-oDa"/>
                         <constraint firstItem="6DC-vf-bjG" firstAttribute="top" secondItem="el5-vM-6Us" secondAttribute="bottom" constant="10" id="H9I-2U-QdO"/>
                         <constraint firstAttribute="trailing" secondItem="L6y-Ta-JXR" secondAttribute="trailing" constant="10" id="Owo-dW-8I3"/>
                         <constraint firstItem="HtP-IH-GfT" firstAttribute="top" secondItem="k4C-yo-eMW" secondAttribute="bottom" constant="10" id="TA6-6r-g1h"/>
@@ -248,28 +229,28 @@
                         <constraint firstItem="7Ie-jn-gBb" firstAttribute="leading" secondItem="K5V-v1-cGn" secondAttribute="leading" constant="10" id="e39-lA-vbA"/>
                         <constraint firstAttribute="bottom" secondItem="Oe3-4K-gRO" secondAttribute="bottom" constant="10" id="ff1-du-0vS"/>
                         <constraint firstItem="0Eo-5a-eS2" firstAttribute="leading" secondItem="K5V-v1-cGn" secondAttribute="leading" constant="10" id="gwH-sf-JZz"/>
-                        <constraint firstItem="su7-M6-lFt" firstAttribute="leading" secondItem="K5V-v1-cGn" secondAttribute="leading" constant="10" id="hgs-YU-Ica"/>
-                        <constraint firstItem="HtP-IH-GfT" firstAttribute="leading" secondItem="K5V-v1-cGn" secondAttribute="leading" constant="10" id="iWQ-ij-m02"/>
+                        <constraint firstItem="su7-M6-lFt" firstAttribute="leading" secondItem="K5V-v1-cGn" secondAttribute="leading" constant="20" id="hgs-YU-Ica"/>
+                        <constraint firstItem="HtP-IH-GfT" firstAttribute="leading" secondItem="K5V-v1-cGn" secondAttribute="leading" constant="20" id="iWQ-ij-m02"/>
                         <constraint firstAttribute="trailing" secondItem="6DC-vf-bjG" secondAttribute="trailing" constant="10" id="jCm-jz-bPa"/>
                         <constraint firstAttribute="trailing" secondItem="7Ie-jn-gBb" secondAttribute="trailing" constant="10" id="kW6-jt-pby"/>
                         <constraint firstItem="el5-vM-6Us" firstAttribute="top" secondItem="L6y-Ta-JXR" secondAttribute="bottom" constant="10" id="m1C-aX-Bd3"/>
                         <constraint firstAttribute="trailing" secondItem="Oe3-4K-gRO" secondAttribute="trailing" constant="10" id="nuM-Ea-Fdz"/>
-                        <constraint firstItem="6DC-vf-bjG" firstAttribute="leading" secondItem="K5V-v1-cGn" secondAttribute="leading" constant="10" id="o3a-J8-fYT"/>
+                        <constraint firstItem="6DC-vf-bjG" firstAttribute="leading" secondItem="K5V-v1-cGn" secondAttribute="leading" constant="20" id="o3a-J8-fYT"/>
                         <constraint firstItem="L6y-Ta-JXR" firstAttribute="top" secondItem="7Ie-jn-gBb" secondAttribute="bottom" constant="10" id="ohX-Sg-FQC"/>
                         <constraint firstItem="k4C-yo-eMW" firstAttribute="leading" secondItem="K5V-v1-cGn" secondAttribute="leading" constant="10" id="p3s-P5-kms"/>
                         <constraint firstItem="k4C-yo-eMW" firstAttribute="centerX" secondItem="K5V-v1-cGn" secondAttribute="centerX" id="qjM-Ja-glT"/>
                         <constraint firstAttribute="trailing" secondItem="k4C-yo-eMW" secondAttribute="trailing" constant="10" id="vtf-eC-5AY"/>
-                        <constraint firstItem="L6y-Ta-JXR" firstAttribute="leading" secondItem="K5V-v1-cGn" secondAttribute="leading" constant="10" id="wPG-IQ-nKY"/>
+                        <constraint firstItem="L6y-Ta-JXR" firstAttribute="leading" secondItem="K5V-v1-cGn" secondAttribute="leading" constant="20" id="wPG-IQ-nKY"/>
                     </constraints>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="K5V-v1-cGn" secondAttribute="trailing" constant="20" id="4Yr-Hh-ty4"/>
-                <constraint firstItem="K5V-v1-cGn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="8eg-Es-Urs"/>
-                <constraint firstItem="K5V-v1-cGn" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="9vH-AA-x5e"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="K5V-v1-cGn" secondAttribute="bottom" constant="20" id="lSc-0W-QRF"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="K5V-v1-cGn" secondAttribute="trailing" id="4Yr-Hh-ty4"/>
+                <constraint firstItem="K5V-v1-cGn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="8eg-Es-Urs"/>
+                <constraint firstItem="K5V-v1-cGn" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="9vH-AA-x5e"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="K5V-v1-cGn" secondAttribute="bottom" id="lSc-0W-QRF"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="113.83928571428571"/>
         </view>
@@ -278,7 +259,6 @@
         <image name="arrow.down" catalog="system" width="120" height="128"/>
         <image name="arrow.up" catalog="system" width="120" height="128"/>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
-        <image name="xmark" catalog="system" width="128" height="113"/>
         <namedColor name="MainColor">
             <color red="0.40000000596046448" green="0.5220000147819519" blue="0.046999998390674591" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

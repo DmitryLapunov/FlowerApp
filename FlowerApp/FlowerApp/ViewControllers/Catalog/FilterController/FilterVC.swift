@@ -9,9 +9,7 @@ import UIKit
 import MultiSlider
 
 class FilterVC: UIViewController {
-    @IBOutlet weak var filterBackgroundView: UIView!
     @IBOutlet weak var applyFiltersButton: UIButton!
-    @IBOutlet weak var closeFiltersButton: UIButton!
     @IBOutlet weak var discardFiltersButton: UIButton!
     @IBOutlet weak var sliderBackgroundView: UIView!
     @IBOutlet weak var priceSortBackgroundView: UIView!
@@ -29,8 +27,10 @@ class FilterVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Фильтры"
         
-        filterBackgroundView.addShadowAndCornerRadius()
+        navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "")
+        
         sliderBackgroundView.addShadowAndCornerRadius()
         priceSortBackgroundView.addShadowAndCornerRadius()
         nameSortBackgroundView.addShadowAndCornerRadius()
@@ -38,7 +38,6 @@ class FilterVC: UIViewController {
         
         applyFiltersButton.addShadowAndTintColor()
         discardFiltersButton.addShadowAndTintColor()
-        closeFiltersButton.addShadowAndTintColor()
         sortByPriceDescButton.isNormalState()
         sortByPriceAscButton.isNormalState()
         sortByNameDescButton.isNormalState()
@@ -97,12 +96,9 @@ class FilterVC: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func closeFiltersAction(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
     @IBAction func chooseCompositionAction(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        let compositionVC = CompositionVC(nibName: String(describing: CompositionVC.self), bundle: nil)
+        navigationController?.pushViewController(compositionVC, animated: true)
     }
     
     @IBAction func discardFiltersAction(_ sender: Any) {

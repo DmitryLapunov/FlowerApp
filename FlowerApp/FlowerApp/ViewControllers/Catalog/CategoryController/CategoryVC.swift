@@ -51,7 +51,7 @@ class CategoryVC: UIViewController {
         filterVC.lowestPrice = filtered.first!.cost!
         filterVC.highestPrice = filtered.last!.cost!
         
-        present(filterVC, animated: true, completion: nil)
+        navigationController?.pushViewController(filterVC, animated: true)
     }
 }
 
