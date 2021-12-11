@@ -31,6 +31,14 @@ class OrderVC: UIViewController {
         adressField.delegate = self
         emailField.delegate = self
     }
+    
+    @IBAction func createOrderAction(_ sender: Any) {
+//        for test, remove when implemented
+        let user = User(name: "лох", phone: "пидор", address: "нет друзей", delivery: .delivery)
+        let order = Order(user: user).params()
+        print(order)
+    }
+    
 }
 
 extension OrderVC: ValidationTextFieldDelegate {

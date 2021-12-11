@@ -13,6 +13,8 @@
 		7F224A14275F75DA000649BB /* ValidationTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F224A13275F75DA000649BB /* ValidationTextField.xib */; };
 		7F224A16275F7722000649BB /* ValidationTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F224A15275F7722000649BB /* ValidationTextField.swift */; };
 		7F224A1E275F9F64000649BB /* InsetsTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F224A1D275F9F64000649BB /* InsetsTextField.swift */; };
+		7F681B7B27654D4F00C81EFA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F681B7A27654D4F00C81EFA /* User.swift */; };
+		7F681B7D27654FA000C81EFA /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F681B7C27654FA000C81EFA /* Order.swift */; };
 		7F6C2DE7275FE38B00F3D849 /* CartProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6C2DE6275FE38B00F3D849 /* CartProduct.swift */; };
 		7F6C2DEA275FF68200F3D849 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6C2DE9275FF68200F3D849 /* NotificationManager.swift */; };
 		7F9B67DD275A8339009A742E /* CatalogVC+Configure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9B67DC275A8339009A742E /* CatalogVC+Configure.swift */; };
@@ -74,6 +76,8 @@
 		7F224A13275F75DA000649BB /* ValidationTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ValidationTextField.xib; sourceTree = "<group>"; };
 		7F224A15275F7722000649BB /* ValidationTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationTextField.swift; sourceTree = "<group>"; };
 		7F224A1D275F9F64000649BB /* InsetsTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsetsTextField.swift; sourceTree = "<group>"; };
+		7F681B7A27654D4F00C81EFA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		7F681B7C27654FA000C81EFA /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		7F6C2DE6275FE38B00F3D849 /* CartProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartProduct.swift; sourceTree = "<group>"; };
 		7F6C2DE9275FF68200F3D849 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		7F9B67DC275A8339009A742E /* CatalogVC+Configure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CatalogVC+Configure.swift"; sourceTree = "<group>"; };
@@ -423,6 +427,8 @@
 			children = (
 				9396BC64274890C300DA4FC8 /* Product.swift */,
 				7F6C2DE6275FE38B00F3D849 /* CartProduct.swift */,
+				7F681B7A27654D4F00C81EFA /* User.swift */,
+				7F681B7C27654FA000C81EFA /* Order.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -639,8 +645,10 @@
 			files = (
 				9381373F275FEF9C00374F55 /* ContactsType.swift in Sources */,
 				9320364A2752A76F00E68921 /* UIApplication+Extensions.swift in Sources */,
+				7F681B7D27654FA000C81EFA /* Order.swift in Sources */,
 				89DBE8A02747614B00B7C96D /* GoogleMapVC.swift in Sources */,
 				893086A427434B1E000339B0 /* CategoryVC.swift in Sources */,
+				7F681B7B27654D4F00C81EFA /* User.swift in Sources */,
 				7F224A1E275F9F64000649BB /* InsetsTextField.swift in Sources */,
 				893086FF27472838000339B0 /* ProductImageCell.swift in Sources */,
 				893086FA27471CBD000339B0 /* ProductVC.swift in Sources */,
@@ -808,7 +816,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5RNZY2B8VP;
+				DEVELOPMENT_TEAM = T8V9JXV542;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FlowerApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -839,7 +847,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5RNZY2B8VP;
+				DEVELOPMENT_TEAM = T8V9JXV542;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FlowerApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
