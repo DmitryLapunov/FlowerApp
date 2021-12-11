@@ -34,7 +34,7 @@ class OrderVC: UIViewController {
     
     @IBAction func createOrderAction(_ sender: Any) {
 //        for test, remove when implemented
-        let user = User(name: "лох", phone: "пидор", address: "нет друзей", delivery: .delivery)
+        let user = User(name: "testName", phone: "testPhone", address: "testAddress", delivery: .delivery)
         let order = Order(user: user).params()
         print(order)
     }
