@@ -8,18 +8,8 @@
 import UIKit
 
 class ContactsVC: UIViewController {
-    
-    let imageName = [[UIImage(systemName: "phone"), UIImage(named: "icon_a1"), UIImage(named: "icon_mts"), UIImage(named: "icon_viber")],
-                     [UIImage(named: "icon_vkontakte"), UIImage(named: "icon_telegram"), UIImage(named: "icon_instagram"), UIImage(named: "icon_facebook")],
-                     [UIImage(named: "icon_google_maps")]]
-    
-    let section = ["Наши телефоны", "Мы в соцсетях", "Как добраться"]
-    
-    let tableViewSettings = [["+375(17)396-36-66", "+375(29)668-39-65", "+375(29)751-17-77", "+375(29)161-16-66"],
-                             ["Вконтакте", "Telegram", "Instagram", "Facebook"],
-                             ["Google Maps"]]
-    
-    let arrayOfEnum: [[Application]] = [[.phoneGor, .phoneA1, .phoneMTS, .viber],
+  
+    let arrayOfEnum: [[ContactsType]] = [[.phoneGor, .phoneA1, .phoneMTS, .viber],
                                         [.vk, .telegram, .instagram, .facebook],
                                         [.googleMap]]
     
@@ -46,11 +36,11 @@ class ContactsVC: UIViewController {
 
 extension ContactsVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tableViewSettings[section].count
+        return arrayOfEnum[section].count
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return section.count
+        return arrayOfEnum.count
     }
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
@@ -60,15 +50,14 @@ extension ContactsVC: UITableViewDataSource {
     }
         
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let title = self.section[section]
-        return title
+        return ["Наши телефоны", "Мы в соцсетях", "Как добраться"][section]
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ContactsCell.self), for: indexPath)
         guard let contactsCell = cell as? ContactsCell else { return cell }
-        contactsCell.textCell.text = tableViewSettings[indexPath.section][indexPath.row]
-        contactsCell.imageCell.image = imageName[indexPath.section][indexPath.row]
+        contactsCell.textCell.text = arrayOfEnum[indexPath.section][indexPath.row].contactInfo
+        contactsCell.imageCell.image = arrayOfEnum[indexPath.section][indexPath.row].image
         return contactsCell
     }
     
