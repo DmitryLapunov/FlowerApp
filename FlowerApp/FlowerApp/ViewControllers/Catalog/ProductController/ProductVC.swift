@@ -136,16 +136,14 @@ class ProductVC: UIViewController {
         let nib = UINib(nibName: String(describing: ProductImageCell.self), bundle: nil)
         imagesCollectionView.register(nib, forCellWithReuseIdentifier: String(describing: ProductImageCell.self))
         imagesCollectionView.reloadData()
-        if productImages.count <= 2 {
-            imagePhotosDown.isHidden = true
-            imagePhotosUp.isHidden = true
-        }
+        imagePhotosDown.isHidden = productImages.count <= 2
+        imagePhotosUp.isHidden = productImages.count <= 2
     }
     
     func setupProductPage(product: Product) {
         productNameLabel.text = product.itemName
         
-        if let productPhotos = product.photos {
+        if let productPhotos = product.photos, productPhotos.count > 0 {
             productImageView.sd_setImage(with: URL(string: productPhotos[0]))
             productImages = productPhotos
         }

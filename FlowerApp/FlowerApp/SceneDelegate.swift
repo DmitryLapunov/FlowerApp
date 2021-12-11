@@ -7,6 +7,7 @@
 
 import UIKit
 import GoogleMaps
+import SDWebImage
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
@@ -20,6 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.rootViewController = TabViewController()
         window?.makeKeyAndVisible()
         NotificationManager.requestAuthorization()
+        configureCash()
     }
     
     private func configureTabBar() {
@@ -63,6 +65,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
             UINavigationBar.appearance().tintColor = UIColor(named: "MainColor")
         }
+    }
+    
+    private func configureCash() {
+        SDImageCacheConfig.default.maxDiskAge = 604800 * 10
     }
 }
 
