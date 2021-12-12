@@ -6,6 +6,7 @@ PODS:
   - GoogleMaps/Base (5.1.0)
   - GoogleMaps/Maps (5.1.0):
     - GoogleMaps/Base
+  - mailcore2-ios (0.6.4)
   - Moya (14.0.0):
     - Moya/Core (= 14.0.0)
   - Moya-ObjectMapper (2.9):
@@ -32,6 +33,7 @@ PODS:
 
 DEPENDENCIES:
   - GoogleMaps
+  - mailcore2-ios
   - Moya
   - Moya-ObjectMapper
   - MultiSlider
@@ -44,6 +46,7 @@ SPEC REPOS:
     - Alamofire
     - AvailableHapticFeedback
     - GoogleMaps
+    - mailcore2-ios
     - Moya
     - Moya-ObjectMapper
     - MultiSlider
@@ -58,6 +61,7 @@ SPEC CHECKSUMS:
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
   AvailableHapticFeedback: 9b21b9f6d3e4566015988b5de35b40abefe6c09a
   GoogleMaps: 086ae1dab659eaa7339bdb30fc88e2f44e7c597c
+  mailcore2-ios: 3ff0be2fa553d4da9c11d39c11d51863c768f24f
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   Moya-ObjectMapper: 967a99d9ea3aa9c93ddbe112aeca3667f53bfe93
   MultiSlider: 944d00877d371bbb5ce0a512fec517de87958775
@@ -68,6 +72,6 @@ SPEC CHECKSUMS:
   SweeterSwift: 8a90cf3156f5a1b6f39785c479369a16633b5ea9
   TPKeyboardAvoiding: d55b3ea7b362540af8fcf36aa3ed2e87bf210cc6
 
-PODFILE CHECKSUM: 483e55af6e6c82c17c8704d56b39aa28020ebd88
+PODFILE CHECKSUM: d67f53d16a7220938b4494361cd65020c3cd0760
 
 COCOAPODS: 1.11.2
