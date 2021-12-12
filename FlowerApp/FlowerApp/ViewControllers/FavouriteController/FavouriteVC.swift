@@ -11,20 +11,20 @@ class FavouriteVC: UIViewController, AlertShowerProduct {
 
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var checkLabel: UILabel!
+    @IBOutlet weak var checkView: UIView!
+    @IBOutlet weak var checkImage: UIImageView!
+    
     var arrayProductsObject: [ProductObject] = [] {
         didSet {
+            checkArrayEmpty()
             tableView.reloadData()
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Избранное"
-        tableView.dataSource = self
-        tableView.delegate = self
-        
-        let nib = UINib(nibName: String(describing: FavouriteCell.self), bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: String(describing: FavouriteCell.self))
+        setupController()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -32,7 +32,37 @@ class FavouriteVC: UIViewController, AlertShowerProduct {
         arrayProductsObject.removeAll()
         arrayProductsObject = RealmManager.shared.getBookmarks()
     }
+    
+    private func checkArrayEmpty() {
+        if arrayProductsObject.isEmpty {
+            tableView.isHidden = true
+            checkView.isHidden = false
+        } else {
+            tableView.isHidden = false
+            checkView.isHidden = true
+        }
+    }
+    
+    private func setupController() {
+        title = "Избранное"
+        view.backgroundColor = UIColor(named: "TertiaryColor")
+        checkView.backgroundColor = UIColor(named: "TertiaryColor")
+        checkLabel.textColor = UIColor(named: "MainLabelColor")
+        
+        checkImage.layer.cornerRadius = checkImage.bounds.height / 2
+        checkImage.alpha = 0.8
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+        
+        let nib = UINib(nibName: String(describing: FavouriteCell.self), bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: String(describing: FavouriteCell.self))
+    }
+    
 }
+
+
+
 
 extension FavouriteVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

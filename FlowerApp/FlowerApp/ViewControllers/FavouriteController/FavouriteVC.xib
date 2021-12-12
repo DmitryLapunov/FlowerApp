@@ -7,9 +7,17 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-VariableFont.ttf">
+            <string>OpenSans-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FavouriteVC" customModule="FlowerApp" customModuleProvider="target">
             <connections>
+                <outlet property="checkImage" destination="D2C-zF-v1Z" id="4iR-kz-Jat"/>
+                <outlet property="checkLabel" destination="hLU-pu-Z4h" id="Bpv-UL-Ofb"/>
+                <outlet property="checkView" destination="ZG3-6C-Hip" id="eIA-Wh-AU6"/>
                 <outlet property="tableView" destination="aNt-FF-5Df" id="pOJ-2A-6AO"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -23,19 +31,51 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZG3-6C-Hip">
+                    <rect key="frame" x="30" y="383" width="354" height="130.5"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchScreen" translatesAutoresizingMaskIntoConstraints="NO" id="D2C-zF-v1Z">
+                            <rect key="frame" x="142" y="10" width="70" height="70"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="70" id="T0G-XM-Sos"/>
+                                <constraint firstAttribute="width" constant="70" id="cM4-4r-PWv"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="В избранное ничего не добавлено" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hLU-pu-Z4h">
+                            <rect key="frame" x="10" y="90" width="334" height="20.5"/>
+                            <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="15"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="hLU-pu-Z4h" firstAttribute="leading" secondItem="ZG3-6C-Hip" secondAttribute="leading" constant="10" id="TKE-P6-ooZ"/>
+                        <constraint firstItem="hLU-pu-Z4h" firstAttribute="top" secondItem="D2C-zF-v1Z" secondAttribute="bottom" constant="10" id="bSw-mp-p91"/>
+                        <constraint firstAttribute="bottom" secondItem="hLU-pu-Z4h" secondAttribute="bottom" constant="20" id="cg3-Js-0CP"/>
+                        <constraint firstItem="D2C-zF-v1Z" firstAttribute="top" secondItem="ZG3-6C-Hip" secondAttribute="top" constant="10" id="oqh-mk-fNZ"/>
+                        <constraint firstItem="D2C-zF-v1Z" firstAttribute="centerX" secondItem="hLU-pu-Z4h" secondAttribute="centerX" id="puC-ZG-1Gd"/>
+                        <constraint firstAttribute="trailing" secondItem="hLU-pu-Z4h" secondAttribute="trailing" constant="10" id="wQz-WL-Zy6"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ZG3-6C-Hip" secondAttribute="trailing" constant="30" id="TXF-19-Dun"/>
                 <constraint firstItem="aNt-FF-5Df" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Vvc-le-ftQ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="aNt-FF-5Df" secondAttribute="bottom" id="YmZ-M8-KoM"/>
+                <constraint firstItem="ZG3-6C-Hip" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="c6T-09-L71"/>
+                <constraint firstItem="ZG3-6C-Hip" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="fJE-Cb-zlc"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="aNt-FF-5Df" secondAttribute="trailing" id="hwh-Sf-rF9"/>
+                <constraint firstItem="ZG3-6C-Hip" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="jVz-IP-wyg"/>
                 <constraint firstItem="aNt-FF-5Df" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="osZ-aN-MdE"/>
             </constraints>
-            <point key="canvasLocation" x="139" y="125"/>
+            <point key="canvasLocation" x="137.68115942028987" y="124.55357142857142"/>
         </view>
     </objects>
     <resources>
+        <image name="launchScreen" width="250" height="250"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

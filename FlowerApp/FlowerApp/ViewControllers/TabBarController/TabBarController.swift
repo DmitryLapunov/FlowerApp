@@ -13,17 +13,7 @@ class TabViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.delegate = self
-        
-        
-        var swipe = UISwipeGestureRecognizer(target: self, action: #selector(swipeGesture))
-        swipe.numberOfTouchesRequired = 1
-        swipe.direction = .right
-        self.view.addGestureRecognizer(swipe)
-        
-        swipe = UISwipeGestureRecognizer(target: self, action: #selector(swipeGesture))
-        swipe.numberOfTouchesRequired = 1
-        swipe.direction = .left
-        self.view.addGestureRecognizer(swipe)
+        createSwipe()
         
         let navTabCatalog = UINavigationController(rootViewController: CatalogVC(nibName: String(describing: CatalogVC.self), bundle: nil))
         let navTabFavourite = UINavigationController(rootViewController: FavouriteVC(nibName: String(describing: FavouriteVC.self), bundle: nil))
@@ -48,7 +38,7 @@ class TabViewController: UITabBarController {
     @objc private func swipeGesture(swipe: UISwipeGestureRecognizer) {
         switch swipe.direction {
         case .left:
-            if selectedIndex > 0 {
+            if selectedIndex >= 0 {
                 self.selectedIndex = self.selectedIndex + 1
             }
             break
@@ -60,6 +50,16 @@ class TabViewController: UITabBarController {
         default:
             break
         }
+    }
+    
+    func createSwipe() {
+        var swipe = UISwipeGestureRecognizer(target: self, action: #selector(swipeGesture))
+        swipe.direction = .right
+        self.view.addGestureRecognizer(swipe)
+        
+        swipe = UISwipeGestureRecognizer(target: self, action: #selector(swipeGesture))
+        swipe.direction = .left
+        self.view.addGestureRecognizer(swipe)
     }
     
 }

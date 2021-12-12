@@ -103,10 +103,10 @@ class ProductVC: UIViewController {
     
     
     @IBAction func addToCartAction(_ sender: Any) {
-        guard let product = product, let productName = product.itemName, let amountText = productAmountField.text, let amount = Int(amountText), amount != 0 else {
+        guard let product = product, let productName = product.itemName, let amountText = productAmountField.text, let amount = Int(amountText), amount != 0, let cost = product.cost else {
             return
         }
-        let productToCart = CartProduct(productName: productName, count: amount)
+        let productToCart = CartProduct(productName: productName, count: amount, productCost: cost)
         RealmManager.shared.writeCart(product: productToCart)
         setBadge()
         PopupController.showPopup(message: "Товар добавлен в корзину")

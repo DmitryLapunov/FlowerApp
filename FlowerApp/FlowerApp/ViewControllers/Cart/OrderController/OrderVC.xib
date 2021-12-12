@@ -79,6 +79,9 @@
                     <color key="tintColor" name="AccentColor"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="Оформить заказ"/>
+                    <connections>
+                        <action selector="createOrderAction:" destination="-1" eventType="touchUpInside" id="yjQ-6I-gYq"/>
+                    </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
