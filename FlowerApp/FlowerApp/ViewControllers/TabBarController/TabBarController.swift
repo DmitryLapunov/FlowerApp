@@ -5,10 +5,14 @@
 //  Created by Евгений on 15.11.21.
 //
 
+var translationXBool = true
+
 import Foundation
 import UIKit
 
 class TabViewController: UITabBarController {
+    
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,11 +44,13 @@ class TabViewController: UITabBarController {
         case .left:
             if selectedIndex >= 0 {
                 self.selectedIndex = self.selectedIndex + 1
+                translationXBool = true
             }
             break
         case .right:
             if selectedIndex < 4 {
                 self.selectedIndex = self.selectedIndex - 1
+                translationXBool = false
             }
             break
         default:
@@ -65,5 +71,29 @@ class TabViewController: UITabBarController {
 }
 
 extension TabViewController: UITabBarControllerDelegate {
+    func tabBarController(_ tabBarController: UITabBarController, animationControllerForTransitionFrom fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return TabViewAnimation()
+    }
+}
+
+class TabViewAnimation: NSObject, UIViewControllerAnimatedTransitioning {
+    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+        return 0.5
+    }
+    
+    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+        guard let destination = transitionContext.view(forKey: .to) else { return }
+        if translationXBool {
+            destination.transform = CGAffineTransform(translationX: destination.frame.width, y: 0)
+        } else {
+            destination.transform = CGAffineTransform(translationX: -destination.frame.width, y: 0)
+        }
+        transitionContext.containerView.addSubview(destination)
+        
+        UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: {
+            destination.transform = .identity
+        }, completion: {transitionContext.completeTransition($0)})
+    }
+    
     
 }
