@@ -10,10 +10,12 @@ import Alamofire
 
 class CartProduct: ProductObject {
     @objc dynamic var count = 0
+    @objc dynamic var productCost = 0.0
     
-    convenience init(productName: String, count: Int) {
+    convenience init(productName: String, count: Int, productCost: Double) {
         self.init()
         self.productName = productName
         self.count = count
+        self.productCost = productCost
     }
 }
