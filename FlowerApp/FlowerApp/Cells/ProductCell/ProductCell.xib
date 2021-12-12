@@ -75,7 +75,7 @@
                         <color key="textColor" name="MainLabelColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vgosti_logo_inverted" translatesAutoresizingMaskIntoConstraints="NO" id="0ej-pn-G2F">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vgosti_logo_inverted" translatesAutoresizingMaskIntoConstraints="NO" id="0ej-pn-G2F">
                         <rect key="frame" x="5" y="5" width="125" height="125"/>
                     </imageView>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rmf-DJ-Jzi">

@@ -66,6 +66,8 @@ class ProductVC: UIViewController {
         addToCartBackgroundView.layer.shadowRadius = 2
         addToCartBackgroundView.layer.shadowOffset = CGSize(width: 0, height: 2)
         
+        imagePhotosUp.isHidden = true
+        
         guard let productItem = product else { return }
         setupProductPage(product: productItem)
         setupCollectionView()
@@ -83,7 +85,6 @@ class ProductVC: UIViewController {
         guard let product = product, let productName = product.itemName, let productInCart = RealmManager.shared.checkInCart(productName: productName) else {
             return
         }
-        
         productAmount = productInCart.count
     }
     
@@ -137,7 +138,6 @@ class ProductVC: UIViewController {
         imagesCollectionView.register(nib, forCellWithReuseIdentifier: String(describing: ProductImageCell.self))
         imagesCollectionView.reloadData()
         imagePhotosDown.isHidden = productImages.count <= 2
-        imagePhotosUp.isHidden = productImages.count <= 2
     }
     
     func setupProductPage(product: Product) {
@@ -226,11 +226,16 @@ extension ProductVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLay
         productImageView.sd_setImage(with: URL(string: productImages[indexPath.row]))
         collectionView.reloadData()
     }
-    
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if productImages.count > 2 {
-            imagePhotosDown.isHidden = indexPath.row == productImages.count - 1 ? true : false
-            imagePhotosUp.isHidden = indexPath.row == 0 ? true : false
+}
+
+extension ProductVC: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView == imagesCollectionView, productImages.count > 2 {
+            let height = scrollView.frame.size.height
+            let contentYoffset = scrollView.contentOffset.y
+            let distanceFromBottom = scrollView.contentSize.height - contentYoffset
+            imagePhotosDown.isHidden = distanceFromBottom <= height
+            imagePhotosUp.isHidden = contentYoffset <= 0
         }
     }
 }
