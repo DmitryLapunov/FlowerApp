@@ -12,5 +12,6 @@ target 'FlowerApp' do
   pod 'TPKeyboardAvoiding'
   pod 'GoogleMaps'
   pod 'MultiSlider'
+  pod 'mailcore2-ios'
 
 end

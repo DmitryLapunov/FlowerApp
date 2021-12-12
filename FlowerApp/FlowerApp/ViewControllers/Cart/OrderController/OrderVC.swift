@@ -37,7 +37,7 @@ class OrderVC: UIViewController {
         let user = User(name: "testName", phone: "testPhone", address: "testAddress", delivery: .delivery)
         let order = Order(user: user).params()
         print(order)
-        
+        MailBuilder().sendOrderToOperator(order: Order(user: user))
     }
     
 }
