@@ -56,6 +56,8 @@
 		89DBE918275059F000B7C96D /* FilterVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89DBE916275059F000B7C96D /* FilterVC.xib */; };
 		89DBE9A32762C9D000B7C96D /* CompositionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DBE9A12762C9D000B7C96D /* CompositionVC.swift */; };
 		89DBE9A42762C9D000B7C96D /* CompositionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89DBE9A22762C9D000B7C96D /* CompositionVC.xib */; };
+		89DBE9A82766DC3E00B7C96D /* FilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DBE9A62766DC3E00B7C96D /* FilterCell.swift */; };
+		89DBE9A92766DC3E00B7C96D /* FilterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89DBE9A72766DC3E00B7C96D /* FilterCell.xib */; };
 		9320364A2752A76F00E68921 /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932036492752A76F00E68921 /* UIApplication+Extensions.swift */; };
 		933F0CD4273FBF8900482A9F /* FavouriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933F0CD2273FBF8900482A9F /* FavouriteVC.swift */; };
 		933F0CD5273FBF8900482A9F /* FavouriteVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 933F0CD3273FBF8900482A9F /* FavouriteVC.xib */; };
@@ -127,6 +129,8 @@
 		89DBE916275059F000B7C96D /* FilterVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterVC.xib; sourceTree = "<group>"; };
 		89DBE9A12762C9D000B7C96D /* CompositionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionVC.swift; sourceTree = "<group>"; };
 		89DBE9A22762C9D000B7C96D /* CompositionVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompositionVC.xib; sourceTree = "<group>"; };
+		89DBE9A62766DC3E00B7C96D /* FilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCell.swift; sourceTree = "<group>"; };
+		89DBE9A72766DC3E00B7C96D /* FilterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCell.xib; sourceTree = "<group>"; };
 		932036492752A76F00E68921 /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
 		933F0CD2273FBF8900482A9F /* FavouriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteVC.swift; sourceTree = "<group>"; };
 		933F0CD3273FBF8900482A9F /* FavouriteVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavouriteVC.xib; sourceTree = "<group>"; };
@@ -328,6 +332,7 @@
 		8982F14D273F339200FB79E8 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				89DBE9A52766DC2800B7C96D /* FilterCell */,
 				9396BC5C2748819A00DA4FC8 /* FavouriteCell */,
 				89DBE89327475C8C00B7C96D /* ContactsCell */,
 				8982F16C2740ADEE00FB79E8 /* CategoryCell */,
@@ -425,6 +430,15 @@
 				89DBE9A22762C9D000B7C96D /* CompositionVC.xib */,
 			);
 			path = CompositionComtroller;
+			sourceTree = "<group>";
+		};
+		89DBE9A52766DC2800B7C96D /* FilterCell */ = {
+			isa = PBXGroup;
+			children = (
+				89DBE9A62766DC3E00B7C96D /* FilterCell.swift */,
+				89DBE9A72766DC3E00B7C96D /* FilterCell.xib */,
+			);
+			path = FilterCell;
 			sourceTree = "<group>";
 		};
 		91E7C5CD6880390624272CC9 /* Pods */ = {
@@ -586,6 +600,7 @@
 				7F224A14275F75DA000649BB /* ValidationTextField.xib in Resources */,
 				8982F143273F328300FB79E8 /* LaunchScreen.storyboard in Resources */,
 				893086A527434B1E000339B0 /* CategoryVC.xib in Resources */,
+				89DBE9A92766DC3E00B7C96D /* FilterCell.xib in Resources */,
 				8982F1722741410800FB79E8 /* OpenSans-Italic-VariableFont.ttf in Resources */,
 				933F0CD5273FBF8900482A9F /* FavouriteVC.xib in Resources */,
 				893086AA27434B7B000339B0 /* ProductCell.xib in Resources */,
@@ -690,6 +705,7 @@
 				7F6C2DE7275FE38B00F3D849 /* CartProduct.swift in Sources */,
 				893086A027434851000339B0 /* CodableClasses.swift in Sources */,
 				8982F16F2740ADFB00FB79E8 /* CategoryCell.swift in Sources */,
+				89DBE9A82766DC3E00B7C96D /* FilterCell.swift in Sources */,
 				9396BC6227488F3300DA4FC8 /* RealmManager.swift in Sources */,
 				7F9B67DD275A8339009A742E /* CatalogVC+Configure.swift in Sources */,
 				7F224A16275F7722000649BB /* ValidationTextField.swift in Sources */,
@@ -846,7 +862,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = T8V9JXV542;
+				DEVELOPMENT_TEAM = 97L2996NM5;
 				GENERATE_INFOPLIST_FILE = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",

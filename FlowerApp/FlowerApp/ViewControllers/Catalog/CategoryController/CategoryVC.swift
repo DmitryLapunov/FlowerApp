@@ -13,6 +13,7 @@ class CategoryVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var products: [Product] = []
+    var availableComposition: [String] = []
     var productRealm: [ProductObject] = [] {
         didSet {
             tableView.reloadData()
@@ -25,6 +26,11 @@ class CategoryVC: UIViewController {
         
         navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "")
         navigationItem.rightBarButtonItem = UIBarButtonItem().menuButton(target: self, action: #selector(filterProducts), imageName: "slider.horizontal.3")
+        
+        for product in products {
+            availableComposition.append(contentsOf: product.description?.composition ?? [""])
+        }
+        availableComposition = Array(Set(availableComposition.filter({ $0 != "" }))).sorted(by: { $0 < $1 })
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,6 +57,11 @@ class CategoryVC: UIViewController {
         filterVC.lowestPrice = filtered.first!.cost!
         filterVC.highestPrice = filtered.last!.cost!
         
+        if availableComposition != [] {
+            filterVC.compositionArray = availableComposition
+        }
+        
+        filterVC.filterDelegate = self
         navigationController?.pushViewController(filterVC, animated: true)
     }
 }
@@ -121,5 +132,13 @@ extension CategoryVC: ReloadCellCategory {
 extension CategoryVC: AlertShowerProduct {
     func showAlert(alert: UIAlertController) {
         present(alert, animated: true, completion: nil)
+    }
+}
+
+extension CategoryVC: FilterProducts {
+    func filterProductsArray() {
+        
+        
+        tableView.reloadData()
     }
 }

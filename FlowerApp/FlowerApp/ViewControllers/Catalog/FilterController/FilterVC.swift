@@ -8,6 +8,10 @@
 import UIKit
 import MultiSlider
 
+protocol FilterProducts: AnyObject {
+    func filterProductsArray()
+}
+
 class FilterVC: UIViewController {
     @IBOutlet weak var applyFiltersButton: UIButton!
     @IBOutlet weak var discardFiltersButton: UIButton!
@@ -20,10 +24,17 @@ class FilterVC: UIViewController {
     @IBOutlet weak var sortByNameAscButton: UIButton!
     @IBOutlet weak var chooseCompositionButton: UIButton!
     @IBOutlet weak var chooseCompositionBackgroundView: UIView!
+    @IBOutlet weak var chooseCompositionLabel: UILabel!
+    @IBOutlet weak var compositionImageView: UIImageView!
+    @IBOutlet weak var chooseCompositionPromptLabel: UILabel!
+    
+    weak var filterDelegate: FilterProducts?
     
     var lowestPrice = 0.0
     var highestPrice = 0.0
     let multiSlider = MultiSlider()
+    var compositionArray: [String] = []
+    var compositionArrayChosen: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,7 +68,6 @@ class FilterVC: UIViewController {
     
     func configureSlider() {
         multiSlider.minimumValue = lowestPrice
-
         multiSlider.maximumValue = highestPrice
 
         multiSlider.value = [multiSlider.minimumValue, multiSlider.maximumValue]
@@ -98,14 +108,37 @@ class FilterVC: UIViewController {
     
     @IBAction func chooseCompositionAction(_ sender: Any) {
         let compositionVC = CompositionVC(nibName: String(describing: CompositionVC.self), bundle: nil)
+        compositionVC.compositionArray = self.compositionArray
+        compositionVC.compositionDelegate = self
         navigationController?.pushViewController(compositionVC, animated: true)
     }
     
     @IBAction func discardFiltersAction(_ sender: Any) {
         multiSlider.value = [multiSlider.minimumValue, multiSlider.maximumValue]
+        
+        
+        chooseCompositionLabel.text = "Выбрать состав"
+        chooseCompositionPromptLabel.text = "Поиск по совпадениям состава букета"
+        compositionImageView.image = UIImage(systemName: "chevron.right")
+        compositionImageView.tintColor = UIColor(named: "MainLabelColor")
     }
     
     @IBAction func applyFiltersAction(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        filterDelegate?.filterProductsArray()
+        navigationController?.popViewController(animated: true)
+    }
+}
+
+extension FilterVC: CompleteComposition {
+    func refreshComposition(_ composition: [String]) {
+        compositionArrayChosen = composition
+        chooseCompositionLabel.text = "Состав выбран"
+        
+        let compositionString = compositionArrayChosen.joined(separator: ", ")
+        let nsCompositionString = compositionString as NSString
+        chooseCompositionPromptLabel.text = nsCompositionString.length > 50 ? "\(nsCompositionString.substring(with: NSRange(location: 0, length: 50)))" + "..." : compositionString
+        
+        compositionImageView.image = UIImage(systemName: "checkmark")
+        compositionImageView.tintColor = UIColor(named: "MainColor")
     }
 }

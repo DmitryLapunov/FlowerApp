@@ -21,6 +21,9 @@
                 <outlet property="applyFiltersButton" destination="7Yf-1U-ROw" id="98J-RV-RKA"/>
                 <outlet property="chooseCompositionBackgroundView" destination="0Eo-5a-eS2" id="Vxk-i1-X4e"/>
                 <outlet property="chooseCompositionButton" destination="FkC-YT-FyD" id="oCd-qT-QQ4"/>
+                <outlet property="chooseCompositionLabel" destination="hP2-Gg-M2L" id="gXv-Kx-BZg"/>
+                <outlet property="chooseCompositionPromptLabel" destination="upB-Sf-wss" id="adr-ID-rDx"/>
+                <outlet property="compositionImageView" destination="d8r-mG-Loz" id="Gwj-gE-kGK"/>
                 <outlet property="discardFiltersButton" destination="qrC-pn-7ol" id="Oqb-AJ-rDJ"/>
                 <outlet property="nameSortBackgroundView" destination="el5-vM-6Us" id="cpL-s3-Efl"/>
                 <outlet property="priceSortBackgroundView" destination="7Ie-jn-gBb" id="pjd-hC-K5r"/>
@@ -171,7 +174,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Поиск по совпадениям состава букета" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="upB-Sf-wss">
-                                    <rect key="frame" x="10" y="30.5" width="374" height="16.5"/>
+                                    <rect key="frame" x="10" y="30.5" width="334" height="16.5"/>
                                     <fontDescription key="fontDescription" name="OpenSansRoman-CondensedRegular" family="Open Sans" pointSize="12"/>
                                     <color key="textColor" name="SecondaryLabelColor"/>
                                     <nil key="highlightedColor"/>
@@ -194,7 +197,7 @@
                                 <constraint firstItem="hP2-Gg-M2L" firstAttribute="top" secondItem="0Eo-5a-eS2" secondAttribute="top" constant="10" id="WSO-Nw-Utf"/>
                                 <constraint firstItem="FkC-YT-FyD" firstAttribute="top" secondItem="0Eo-5a-eS2" secondAttribute="top" id="byi-xI-rbG"/>
                                 <constraint firstAttribute="trailing" secondItem="FkC-YT-FyD" secondAttribute="trailing" id="eBE-pE-RE5"/>
-                                <constraint firstAttribute="trailing" secondItem="upB-Sf-wss" secondAttribute="trailing" constant="10" id="gCb-Mj-00l"/>
+                                <constraint firstAttribute="trailing" secondItem="upB-Sf-wss" secondAttribute="trailing" constant="50" id="gCb-Mj-00l"/>
                                 <constraint firstItem="upB-Sf-wss" firstAttribute="top" secondItem="hP2-Gg-M2L" secondAttribute="bottom" id="ngX-1W-46i"/>
                                 <constraint firstAttribute="bottom" secondItem="upB-Sf-wss" secondAttribute="bottom" constant="10" id="tQn-Gj-AsC"/>
                                 <constraint firstAttribute="trailing" secondItem="hP2-Gg-M2L" secondAttribute="trailing" constant="10" id="uKx-5K-In6"/>
