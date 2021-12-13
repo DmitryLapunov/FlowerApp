@@ -58,6 +58,9 @@ class CompositionVC: UIViewController {
     }
     
     @IBAction func discardCompositionAction(_ sender: Any) {
+        selectedCompositions = []
+        tableView.reloadData()
+        tableView.scrollToRow(at: [0, 0], at: .top, animated: true)
     }
     
     @IBAction func acceptCompositionAction(_ sender: Any) {
