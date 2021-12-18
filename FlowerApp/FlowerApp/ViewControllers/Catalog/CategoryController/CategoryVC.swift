@@ -13,7 +13,10 @@ class CategoryVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var products: [Product] = []
+    var cachedProducts: [Product] = []
+    var chosenProducts: [Product] = []
     var availableComposition: [String] = []
+    var chosenComposition: [String] = []
     var productRealm: [ProductObject] = [] {
         didSet {
             tableView.reloadData()
@@ -39,6 +42,7 @@ class CategoryVC: UIViewController {
     }
     
     private func setupTableView() {
+        cachedProducts = products
         tableView.delegate = self
         tableView.dataSource = self
         let nib = UINib(nibName: String(describing: ProductCell.self), bundle: nil)
@@ -48,12 +52,17 @@ class CategoryVC: UIViewController {
     }
     
     @objc func filterProducts() {
+        products = cachedProducts
+        chosenProducts = []
+        tableView.reloadData()
+        tableView.scrollToRow(at: [0, 0], at: .top, animated: true)
+        
         let filterVC = FilterVC(nibName: String(describing: FilterVC.self), bundle: nil)
-
+        
         filterVC.modalTransitionStyle = .crossDissolve
         filterVC.modalPresentationStyle = .overFullScreen
         
-        let filtered = products.filter({$0.cost != nil }).filter({ $0.cost != 0.0}).sorted(by: { $0.cost ?? 0.0 < $1.cost ?? 0.0})
+        let filtered = products.filter({ $0.cost != nil }).filter({ $0.cost != 0.0 }).sorted(by: { $0.cost ?? 0.0 < $1.cost ?? 0.0 })
         filterVC.lowestPrice = filtered.first!.cost!
         filterVC.highestPrice = filtered.last!.cost!
         
@@ -116,7 +125,7 @@ extension CategoryVC: UITableViewDelegate, UITableViewDataSource {
         
         let filter = productRealm.first{ $0.productName == products[indexPath.row].itemName}
         productVC.imageName = filter == nil ? "bookmark" : "bookmark.fill"
-
+        
         productVC.alertDelegate = self
         productVC.product = products[indexPath.row]
         navigationController?.pushViewController(productVC, animated: true)
@@ -135,10 +144,55 @@ extension CategoryVC: AlertShowerProduct {
     }
 }
 
-extension CategoryVC: FilterProducts {
-    func filterProductsArray() {
+extension CategoryVC: FilterProductsDelegate {
+    func filterProductsArray(priceRange: [CGFloat], namePriceFilter: NamePriceFilter, composition: [String]) {
+        if composition.count != 0 {
+            let filteredProducts = products.filter({ $0.description != nil }).filter({ $0.description!.composition != nil })
+            for product in filteredProducts {
+                guard let productComposition = product.description?.composition else { return }
+                if composition.allSatisfy(productComposition.contains) {
+                    chosenProducts.append(product)
+                }
+            }
+        }
         
+        if priceRange.count != 0 {
+            if chosenProducts.count != 0 {
+                chosenProducts = chosenProducts.filter({ $0.cost ?? 0.0 >= priceRange[0] }).filter({ $0.cost ?? 0.0 <= priceRange[1] })
+            } else {
+                chosenProducts = products.filter({ $0.cost ?? 0.0 >= priceRange[0] }).filter({ $0.cost ?? 0.0 <= priceRange[1] })
+            }
+        }
         
+        if chosenProducts.count != 0 {
+            switch namePriceFilter {
+            case .byNameDesc:
+                chosenProducts = chosenProducts.sorted(by: { $0.itemName! > $1.itemName! } )
+            case .byNameAsc:
+                chosenProducts = chosenProducts.sorted(by: { $0.itemName! < $1.itemName! } )
+            case .byPriceDesc:
+                chosenProducts = chosenProducts.sorted(by: { $0.cost! > $1.cost! } )
+            case .byPriceAsc:
+                chosenProducts = chosenProducts.sorted(by: { $0.cost! < $1.cost! } )
+            case .ignore:
+                break
+            }
+        } else {
+            switch namePriceFilter {
+            case .byNameDesc:
+                chosenProducts = products.sorted(by: { $0.itemName! > $1.itemName! } )
+            case .byNameAsc:
+                chosenProducts = products.sorted(by: { $0.itemName ?? "" < $1.itemName ?? "" } )
+            case .byPriceDesc:
+                chosenProducts = products.sorted(by: { $0.cost! > $1.cost! } )
+            case .byPriceAsc:
+                chosenProducts = products.sorted(by: { $0.cost! < $1.cost! } )
+            case .ignore:
+                break
+            }
+        }
+        
+        products = chosenProducts
         tableView.reloadData()
     }
 }

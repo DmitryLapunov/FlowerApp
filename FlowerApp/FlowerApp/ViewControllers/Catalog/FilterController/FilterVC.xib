@@ -94,21 +94,27 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="8o1-SH-VTa">
                                     <rect key="frame" x="10" y="10" width="374" height="33.5"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iMh-OP-qTN">
+                                        <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iMh-OP-qTN">
                                             <rect key="frame" x="0.0" y="0.0" width="182" height="33.5"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="filled" title="Сначала дорогие" imagePadding="5">
                                                 <imageReference key="image" image="arrow.down" catalog="system" symbolScale="medium"/>
                                                 <fontDescription key="titleFontDescription" name="OpenSansRoman-CondensedRegular" family="Open Sans" pointSize="14"/>
                                             </buttonConfiguration>
+                                            <connections>
+                                                <action selector="sortingAction:" destination="-1" eventType="touchUpInside" id="m3b-KE-R3D"/>
+                                            </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w26-uh-4Iu">
+                                        <button opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w26-uh-4Iu">
                                             <rect key="frame" x="192" y="0.0" width="182" height="33.5"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="filled" title="Сначала дешевые" imagePadding="5">
                                                 <imageReference key="image" image="arrow.up" catalog="system" symbolScale="medium"/>
                                                 <fontDescription key="titleFontDescription" name="OpenSansRoman-CondensedRegular" family="Open Sans" pointSize="14"/>
                                             </buttonConfiguration>
+                                            <connections>
+                                                <action selector="sortingAction:" destination="-1" eventType="touchUpInside" id="4TU-wi-VHS"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                 </stackView>
@@ -133,19 +139,25 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Y36-Es-Xxj">
                                     <rect key="frame" x="10" y="10" width="374" height="33.5"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Jv-hP-0Qe">
+                                        <button opaque="NO" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Jv-hP-0Qe">
                                             <rect key="frame" x="0.0" y="0.0" width="182" height="33.5"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="filled" title="В алфавитном порядке">
                                                 <fontDescription key="titleFontDescription" name="OpenSansRoman-CondensedRegular" family="Open Sans" pointSize="14"/>
                                             </buttonConfiguration>
+                                            <connections>
+                                                <action selector="sortingAction:" destination="-1" eventType="touchUpInside" id="FKe-Os-g48"/>
+                                            </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cxi-yT-umG">
+                                        <button opaque="NO" tag="103" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cxi-yT-umG">
                                             <rect key="frame" x="192" y="0.0" width="182" height="33.5"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="filled" title="В обратном порядке">
                                                 <fontDescription key="titleFontDescription" name="OpenSansRoman-CondensedRegular" family="Open Sans" pointSize="14"/>
                                             </buttonConfiguration>
+                                            <connections>
+                                                <action selector="sortingAction:" destination="-1" eventType="touchUpInside" id="7bC-1H-Znu"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                 </stackView>

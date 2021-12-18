@@ -8,8 +8,16 @@
 import UIKit
 import MultiSlider
 
-protocol FilterProducts: AnyObject {
-    func filterProductsArray()
+protocol FilterProductsDelegate: AnyObject {
+    func filterProductsArray(priceRange: [CGFloat], namePriceFilter: NamePriceFilter, composition: [String])
+}
+
+enum NamePriceFilter {
+    case byNameDesc
+    case byNameAsc
+    case byPriceDesc
+    case byPriceAsc
+    case ignore
 }
 
 class FilterVC: UIViewController {
@@ -28,13 +36,16 @@ class FilterVC: UIViewController {
     @IBOutlet weak var compositionImageView: UIImageView!
     @IBOutlet weak var chooseCompositionPromptLabel: UILabel!
     
-    weak var filterDelegate: FilterProducts?
+    weak var filterDelegate: FilterProductsDelegate?
     
     var lowestPrice = 0.0
     var highestPrice = 0.0
     let multiSlider = MultiSlider()
     var compositionArray: [String] = []
     var compositionArrayChosen: [String] = []
+    var currentSliderValue: [CGFloat] = []
+    var sortingOrder: NamePriceFilter = .ignore
+    var buttonArray: [UIButton] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,17 +64,17 @@ class FilterVC: UIViewController {
         sortByPriceAscButton.isNormalState()
         sortByNameDescButton.isNormalState()
         sortByNameAscButton.isNormalState()
-                
+        
         discardFiltersButton.layer.borderColor = UIColor(named: "MainColor")?.cgColor
         discardFiltersButton.layer.borderWidth = 1
         discardFiltersButton.layer.cornerRadius = 10
         
-        let blurEffect = UIBlurEffect(style: .systemUltraThinMaterialLight)
-        let blurEffectView = UIVisualEffectView(effect: blurEffect)
-        blurEffectView.frame = self.view.frame
-        self.view.insertSubview(blurEffectView, at: 0)
-        
         configureSlider()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.dismiss(animated: true, completion: nil)
     }
     
     func configureSlider() {
@@ -95,15 +106,31 @@ class FilterVC: UIViewController {
     @objc func sliderChanged(slider: MultiSlider) {
         print("thumb \(slider.draggedThumbIndex) moved")
         print("now thumbs are at \(slider.value)")
+        currentSliderValue = slider.value
     }
     
     @objc func sliderDragEnded(slider: MultiSlider) {
         
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        self.dismiss(animated: true, completion: nil)
+    @IBAction func sortingAction(_ sender: UIButton) {
+        sortByPriceDescButton.isNormalState()
+        sortByPriceAscButton.isNormalState()
+        sortByNameDescButton.isNormalState()
+        sortByNameAscButton.isNormalState()
+        sender.isSelectedState()
+        switch sender.tag {
+        case 100:
+            sortingOrder = .byPriceDesc
+        case 101:
+            sortingOrder = .byPriceAsc
+        case 102:
+            sortingOrder = .byNameAsc
+        case 103:
+            sortingOrder = .byNameDesc
+        default:
+            break
+        }
     }
     
     @IBAction func chooseCompositionAction(_ sender: Any) {
@@ -115,7 +142,13 @@ class FilterVC: UIViewController {
     
     @IBAction func discardFiltersAction(_ sender: Any) {
         multiSlider.value = [multiSlider.minimumValue, multiSlider.maximumValue]
+        currentSliderValue = multiSlider.value
         
+        sortByPriceDescButton.isNormalState()
+        sortByPriceAscButton.isNormalState()
+        sortByNameDescButton.isNormalState()
+        sortByNameAscButton.isNormalState()
+        sortingOrder = .ignore
         
         chooseCompositionLabel.text = "Выбрать состав"
         chooseCompositionPromptLabel.text = "Поиск по совпадениям состава букета"
@@ -124,7 +157,10 @@ class FilterVC: UIViewController {
     }
     
     @IBAction func applyFiltersAction(_ sender: Any) {
-        filterDelegate?.filterProductsArray()
+        let defaultSliderValue = [multiSlider.minimumValue, multiSlider.maximumValue]
+        let priceRange = currentSliderValue == defaultSliderValue ? [] : currentSliderValue
+        
+        filterDelegate?.filterProductsArray(priceRange: priceRange, namePriceFilter: sortingOrder, composition: compositionArrayChosen)
         navigationController?.popViewController(animated: true)
     }
 }
