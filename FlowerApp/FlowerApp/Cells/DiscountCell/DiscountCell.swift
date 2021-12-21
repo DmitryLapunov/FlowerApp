@@ -9,22 +9,27 @@ import UIKit
 
 class DiscountCell: UICollectionViewCell {
 
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var discountCollectionView: UICollectionView!
     
-    var discountArray = ["", "", ""]
+//    var cellWidth: Int = 300
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        collectionView.dataSource = self
-        collectionView.backgroundColor = UIColor(named: "TertiaryColor")
+        discountCollectionView.dataSource = self
+        discountCollectionView.backgroundColor = UIColor(named: "TertiaryColor")
         let nib = UINib(nibName: String(describing: SubDiscountCell.self), bundle: nil)
-        collectionView.register(nib, forCellWithReuseIdentifier: String(describing: SubDiscountCell.self))
+        discountCollectionView.register(nib, forCellWithReuseIdentifier: String(describing: SubDiscountCell.self))
+        
+        let layout = discountCollectionView.collectionViewLayout
+        if let flowLayout = layout as? UICollectionViewFlowLayout {
+            flowLayout.estimatedItemSize = CGSize(width: cellWidth, height: discountCollectionView.frame.height)
+        }
     }
 }
 
 extension DiscountCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return discountArray.count
+        return discounts.count + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -33,4 +38,5 @@ extension DiscountCell: UICollectionViewDataSource {
         return subDiscountCell
     }
 }
+
 
