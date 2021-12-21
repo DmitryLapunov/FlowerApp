@@ -11,8 +11,6 @@ class DiscountCell: UICollectionViewCell {
 
     @IBOutlet weak var discountCollectionView: UICollectionView!
     
-//    var cellWidth: Int = 300
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         discountCollectionView.dataSource = self
@@ -22,7 +20,8 @@ class DiscountCell: UICollectionViewCell {
         
         let layout = discountCollectionView.collectionViewLayout
         if let flowLayout = layout as? UICollectionViewFlowLayout {
-            flowLayout.estimatedItemSize = CGSize(width: cellWidth, height: discountCollectionView.frame.height)
+            let size = CGSize(width: Int(UIScreen.main.bounds.width) - 10, height: Int(discountCollectionView.bounds.height))
+            flowLayout.estimatedItemSize = size
         }
     }
 }
