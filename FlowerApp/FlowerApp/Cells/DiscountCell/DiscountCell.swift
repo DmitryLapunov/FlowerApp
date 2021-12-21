@@ -20,8 +20,7 @@ class DiscountCell: UICollectionViewCell {
         
         let layout = discountCollectionView.collectionViewLayout
         if let flowLayout = layout as? UICollectionViewFlowLayout {
-            let size = CGSize(width: Int(UIScreen.main.bounds.width) - 10, height: Int(discountCollectionView.bounds.height))
-            flowLayout.estimatedItemSize = size
+            flowLayout.estimatedItemSize = CGSize(width: Int(UIScreen.main.bounds.width) - 10, height: Int(discountCollectionView.bounds.height))
         }
     }
 }

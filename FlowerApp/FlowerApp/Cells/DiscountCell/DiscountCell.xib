@@ -18,10 +18,10 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="izE-gl-Wmf">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="191"/>
+                        <rect key="frame" x="5" y="5" width="380" height="181"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="oEE-bm-9Gk">
-                                <rect key="frame" x="5" y="5" width="380" height="181"/>
+                                <rect key="frame" x="0.0" y="0.0" width="380" height="181"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ycn-0r-6j3">
                                     <size key="itemSize" width="390" height="171"/>
@@ -33,20 +33,20 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="oEE-bm-9Gk" firstAttribute="leading" secondItem="izE-gl-Wmf" secondAttribute="leading" constant="5" id="5Zg-Td-9zT"/>
-                            <constraint firstAttribute="trailing" secondItem="oEE-bm-9Gk" secondAttribute="trailing" constant="5" id="Ftc-Ad-pSn"/>
-                            <constraint firstItem="oEE-bm-9Gk" firstAttribute="top" secondItem="izE-gl-Wmf" secondAttribute="top" constant="5" id="NOx-nD-S5K"/>
-                            <constraint firstAttribute="bottom" secondItem="oEE-bm-9Gk" secondAttribute="bottom" constant="5" id="bky-k7-gRX"/>
+                            <constraint firstAttribute="trailing" secondItem="oEE-bm-9Gk" secondAttribute="trailing" id="Mee-1f-wRV"/>
+                            <constraint firstItem="oEE-bm-9Gk" firstAttribute="top" secondItem="izE-gl-Wmf" secondAttribute="top" id="P6r-Cr-iFk"/>
+                            <constraint firstItem="oEE-bm-9Gk" firstAttribute="leading" secondItem="izE-gl-Wmf" secondAttribute="leading" id="cv5-sg-dwr"/>
+                            <constraint firstAttribute="bottom" secondItem="oEE-bm-9Gk" secondAttribute="bottom" id="yRl-jX-23w"/>
                         </constraints>
                     </view>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="izE-gl-Wmf" secondAttribute="trailing" id="Nfg-OF-D31"/>
-                <constraint firstItem="izE-gl-Wmf" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="fhc-1e-dz9"/>
-                <constraint firstAttribute="bottom" secondItem="izE-gl-Wmf" secondAttribute="bottom" id="hkT-II-Ft0"/>
-                <constraint firstItem="izE-gl-Wmf" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="tFj-mj-aq9"/>
+                <constraint firstAttribute="bottom" secondItem="izE-gl-Wmf" secondAttribute="bottom" constant="5" id="AlS-Tq-4w1"/>
+                <constraint firstItem="izE-gl-Wmf" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="JOL-Ly-pbD"/>
+                <constraint firstItem="izE-gl-Wmf" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="Uo7-zx-3Rl"/>
+                <constraint firstAttribute="trailing" secondItem="izE-gl-Wmf" secondAttribute="trailing" constant="5" id="WoJ-jm-I2z"/>
             </constraints>
             <size key="customSize" width="562" height="191"/>
             <connections>
