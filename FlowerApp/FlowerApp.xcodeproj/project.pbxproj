@@ -13,6 +13,7 @@
 		7F224A14275F75DA000649BB /* ValidationTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F224A13275F75DA000649BB /* ValidationTextField.xib */; };
 		7F224A16275F7722000649BB /* ValidationTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F224A15275F7722000649BB /* ValidationTextField.swift */; };
 		7F224A1E275F9F64000649BB /* InsetsTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F224A1D275F9F64000649BB /* InsetsTextField.swift */; };
+		7F6020EE2773AAD50031C1F7 /* vgosti_promo.json in Resources */ = {isa = PBXBuildFile; fileRef = 7F6020ED2773AAD50031C1F7 /* vgosti_promo.json */; };
 		7F681B7F2765775E00C81EFA /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F681B7E2765775E00C81EFA /* Order.swift */; };
 		7F681B812765776C00C81EFA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F681B802765776C00C81EFA /* User.swift */; };
 		7F681B832766493C00C81EFA /* MailBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F681B822766493C00C81EFA /* MailBuilder.swift */; };
@@ -71,7 +72,6 @@
 		93A874D0276CD97900B95AEF /* SubDiscountCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93A874CE276CD97900B95AEF /* SubDiscountCell.xib */; };
 		93AD6D4B27515B6A00211D96 /* PopupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AD6D4927515B6A00211D96 /* PopupController.swift */; };
 		93AD6D4C27515B6A00211D96 /* PopupController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93AD6D4A27515B6A00211D96 /* PopupController.xib */; };
-		93D97C0D27711947001CF716 /* vgosti_promo.json in Resources */ = {isa = PBXBuildFile; fileRef = 93D97C0C27711946001CF716 /* vgosti_promo.json */; };
 		93D97C0F27711C14001CF716 /* DiscountCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D97C0E27711C14001CF716 /* DiscountCodable.swift */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +84,7 @@
 		7F224A13275F75DA000649BB /* ValidationTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ValidationTextField.xib; sourceTree = "<group>"; };
 		7F224A15275F7722000649BB /* ValidationTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationTextField.swift; sourceTree = "<group>"; };
 		7F224A1D275F9F64000649BB /* InsetsTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsetsTextField.swift; sourceTree = "<group>"; };
+		7F6020ED2773AAD50031C1F7 /* vgosti_promo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = vgosti_promo.json; sourceTree = "<group>"; };
 		7F681B7E2765775E00C81EFA /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		7F681B802765776C00C81EFA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7F681B822766493C00C81EFA /* MailBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailBuilder.swift; sourceTree = "<group>"; };
@@ -144,7 +145,6 @@
 		93A874CE276CD97900B95AEF /* SubDiscountCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubDiscountCell.xib; sourceTree = "<group>"; };
 		93AD6D4927515B6A00211D96 /* PopupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupController.swift; sourceTree = "<group>"; };
 		93AD6D4A27515B6A00211D96 /* PopupController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopupController.xib; sourceTree = "<group>"; };
-		93D97C0C27711946001CF716 /* vgosti_promo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = vgosti_promo.json; path = ../../../../Downloads/vgosti_promo.json; sourceTree = "<group>"; };
 		93D97C0E27711C14001CF716 /* DiscountCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountCodable.swift; sourceTree = "<group>"; };
 		AE8CB9B2E865292D811F91E2 /* Pods_FlowerApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlowerApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -273,7 +273,7 @@
 		8982F12A273F328200FB79E8 = {
 			isa = PBXGroup;
 			children = (
-				93D97C0C27711946001CF716 /* vgosti_promo.json */,
+				7F6020ED2773AAD50031C1F7 /* vgosti_promo.json */,
 				8930869D274340C6000339B0 /* vgosti.json */,
 				8982F135273F328200FB79E8 /* FlowerApp */,
 				8982F14F273F339F00FB79E8 /* Fonts */,
@@ -612,7 +612,7 @@
 				893086FB27471CBD000339B0 /* ProductVC.xib in Resources */,
 				89DBE8A12747614B00B7C96D /* GoogleMapVC.xib in Resources */,
 				8982F154273F33D100FB79E8 /* CatalogVC.xib in Resources */,
-				93D97C0D27711947001CF716 /* vgosti_promo.json in Resources */,
+				7F6020EE2773AAD50031C1F7 /* vgosti_promo.json in Resources */,
 				8930869E274340C6000339B0 /* vgosti.json in Resources */,
 				93AD6D4C27515B6A00211D96 /* PopupController.xib in Resources */,
 				8930870027472838000339B0 /* ProductImageCell.xib in Resources */,
