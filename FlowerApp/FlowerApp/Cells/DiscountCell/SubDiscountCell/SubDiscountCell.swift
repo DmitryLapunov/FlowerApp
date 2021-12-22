@@ -25,6 +25,7 @@ class SubDiscountCell: UICollectionViewCell {
         backgroubdView.layer.shadowOpacity = 0.25
         backgroubdView.layer.shadowRadius = 3
         backgroubdView.layer.shadowOffset = CGSize(width: 0, height: 2)
+        
     }
 }
 

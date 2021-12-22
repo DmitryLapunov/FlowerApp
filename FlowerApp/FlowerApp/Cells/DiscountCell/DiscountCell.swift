@@ -11,6 +11,7 @@ class DiscountCell: UICollectionViewCell {
 
     @IBOutlet weak var discountCollectionView: UICollectionView!
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         discountCollectionView.dataSource = self
