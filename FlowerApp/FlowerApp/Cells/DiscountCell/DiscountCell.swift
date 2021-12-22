@@ -18,11 +18,11 @@ class DiscountCell: UICollectionViewCell {
         discountCollectionView.backgroundColor = UIColor(named: "TertiaryColor")
         let nib = UINib(nibName: String(describing: SubDiscountCell.self), bundle: nil)
         discountCollectionView.register(nib, forCellWithReuseIdentifier: String(describing: SubDiscountCell.self))
-        
-        let layout = discountCollectionView.collectionViewLayout
-        if let flowLayout = layout as? UICollectionViewFlowLayout {
-            flowLayout.estimatedItemSize = CGSize(width: Int(UIScreen.main.bounds.width) - 10, height: Int(discountCollectionView.bounds.height))
-        }
+        discountCollectionView.delegate = self
+//        let layout = discountCollectionView.collectionViewLayout
+//        if let flowLayout = layout as? UICollectionViewFlowLayout {
+//            flowLayout.estimatedItemSize = CGSize(width: Int(UIScreen.main.bounds.width) - 10, height: Int(discountCollectionView.bounds.height))
+//        }
     }
 }
 
@@ -38,4 +38,9 @@ extension DiscountCell: UICollectionViewDataSource {
     }
 }
 
+extension DiscountCell: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: Int(UIScreen.main.bounds.width) - 10, height: Int(discountCollectionView.bounds.height))
+    }
+}
 
