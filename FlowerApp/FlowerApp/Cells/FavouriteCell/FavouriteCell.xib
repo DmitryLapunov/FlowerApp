@@ -116,6 +116,7 @@
                         </constraints>
                     </view>
                 </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="5Lb-08-BCr" secondAttribute="bottom" constant="5" id="4Qh-DO-Sbg"/>
                     <constraint firstItem="5Lb-08-BCr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="5P9-4G-0Be"/>

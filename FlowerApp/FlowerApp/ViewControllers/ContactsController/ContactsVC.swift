@@ -19,6 +19,8 @@ class ContactsVC: UIViewController {
         super.viewDidLoad()
         title = "Контакты"
         
+        tableView.backgroundColor = UIColor(named: "TertiaryColor")
+        
         tableView.dataSource = self
         tableView.delegate = self
         
