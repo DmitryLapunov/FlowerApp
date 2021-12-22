@@ -56,10 +56,6 @@ extension NotificationManager {
         case february23
         case september1
         case march8
-
-#if DEBUG
-        case testDate
-#endif
         
         var message: String {
             switch self {
@@ -74,10 +70,6 @@ extension NotificationManager {
                 return "Дети скоро идут в школу, а мы поможем собраться!"
             case .march8:
                 return "Подумайте о подарке на женский праздник заранее!"
-#if DEBUG
-            case .testDate:
-                return "Чё смотришь, сабака?"
-#endif
             }
         }
         
@@ -111,15 +103,6 @@ extension NotificationManager {
             case .march8:
                 components.day = 5
                 components.month = 3
-#if DEBUG
-            case .testDate:
-                components.day = Date().get(.day)
-                components.month = Date().get(.month)
-                components.hour = Date().get(.hour)
-                components.minute = Date().get(.minute) + 1
-
-                print("Push scheduled on: \(components.month!).\(components.day!) in \(components.hour!):\(components.minute!)")
-#endif
             }
             
             return components
