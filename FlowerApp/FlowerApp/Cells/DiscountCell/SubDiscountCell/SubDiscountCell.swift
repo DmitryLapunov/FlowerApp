@@ -11,6 +11,7 @@ class SubDiscountCell: UICollectionViewCell {
 
     @IBOutlet weak var backgroubdView: UIView!
     @IBOutlet weak var discountImage: UIImageView!
+    @IBOutlet weak var discountName: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
