@@ -9,6 +9,7 @@ import UIKit
 
 class SubDiscountCell: UICollectionViewCell {
 
+    @IBOutlet weak var discountLabelView: UIView!
     @IBOutlet weak var backgroubdView: UIView!
     @IBOutlet weak var discountImage: UIImageView!
     @IBOutlet weak var discountName: UILabel!
@@ -27,6 +28,10 @@ class SubDiscountCell: UICollectionViewCell {
         backgroubdView.layer.shadowRadius = 3
         backgroubdView.layer.shadowOffset = CGSize(width: 0, height: 2)
         
+        discountLabelView.layer.cornerRadius = 12
+        discountLabelView.backgroundColor = UIColor.black.withAlphaComponent(0.55)
+        
+        discountName.textColor = UIColor(named: "SecondaryColor")
     }
 }
 

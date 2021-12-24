@@ -38,13 +38,13 @@ class GoogleMapVC: UIViewController {
     @IBAction func makeTripAction(_ sender: Any) {
         
         let application = UIApplication.shared
-        let alert = UIAlertController(title: "Selection", message: "Select Navigation App", preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: "Выбор", message: "Выберете приложение", preferredStyle: .actionSheet)
         for app in self.installedNavigationApps {
             let button = UIAlertAction(title: app, style: .default, handler: { buttonAction in
-               
+            
                 switch app {
                 case "Apple Maps":
-                    let appURLApple = URL(string: "maps://?saddr=53.913147,27.593101")!
+                    let appURLApple = URL(string: "maps://?daddr=53.913147,27.593101")!
                     if application.canOpenURL(appURLApple) {
                         application.open(appURLApple, options: [:], completionHandler: nil)
                     }
@@ -73,6 +73,12 @@ class GoogleMapVC: UIViewController {
             })
             alert.addAction(button)
         }
+        
+        let cancelButton = UIAlertAction(title: "Отмена", style: .cancel) { cancel in
+            self.dismiss(animated: true, completion: nil)
+        }
+        alert.addAction(cancelButton)
+        
         present(alert, animated: true, completion: nil)
     }
     
@@ -98,5 +104,19 @@ class GoogleMapVC: UIViewController {
 }
 
 
-
+class ViewController: UIViewController {
+   override func viewDidLoad() {
+      super.viewDidLoad()
+   }
+   @IBAction func showAlert(_ sender: Any) {
+      let uialert = UIAlertController(title: "WELCOME", message: "Welcome to my tutorials, tap outside to dismiss the alert", preferredStyle: .alert)
+      self.present(uialert, animated: true, completion:{
+      uialert.view.superview?.isUserInteractionEnabled = true
+      uialert.view.superview?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.dismissOnTapOutside)))
+      })
+   }
+   @objc func dismissOnTapOutside(){
+      self.dismiss(animated: true, completion: nil)
+   }
+}
 

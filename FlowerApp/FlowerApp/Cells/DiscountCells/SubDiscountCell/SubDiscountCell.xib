@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -27,22 +28,34 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_christmas_and_new_year" translatesAutoresizingMaskIntoConstraints="NO" id="Eeu-G3-rGC">
                                 <rect key="frame" x="0.0" y="0.0" width="670" height="385"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vvK-pY-4PG">
-                                <rect key="frame" x="16" y="347" width="638" height="22"/>
-                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="16"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GPL-PK-pJu">
+                                <rect key="frame" x="0.0" y="344.5" width="670" height="40.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vvK-pY-4PG">
+                                        <rect key="frame" x="16" y="10" width="638" height="20.5"/>
+                                        <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <color key="highlightedColor" name="MainLabelColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="vvK-pY-4PG" secondAttribute="bottom" constant="10" id="YoK-cd-CHi"/>
+                                    <constraint firstAttribute="trailing" secondItem="vvK-pY-4PG" secondAttribute="trailing" constant="16" id="hMU-N7-O2e"/>
+                                    <constraint firstItem="vvK-pY-4PG" firstAttribute="top" secondItem="GPL-PK-pJu" secondAttribute="top" constant="10" id="yZa-B2-In8"/>
+                                    <constraint firstItem="vvK-pY-4PG" firstAttribute="leading" secondItem="GPL-PK-pJu" secondAttribute="leading" constant="16" id="zu5-Cf-0WL"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="vvK-pY-4PG" secondAttribute="trailing" constant="16" id="06Q-uG-zwA"/>
+                            <constraint firstAttribute="trailing" secondItem="GPL-PK-pJu" secondAttribute="trailing" id="0lm-hZ-Vcv"/>
                             <constraint firstAttribute="trailing" secondItem="Eeu-G3-rGC" secondAttribute="trailing" id="3cQ-Mp-71v"/>
-                            <constraint firstItem="vvK-pY-4PG" firstAttribute="leading" secondItem="QMk-Bp-Ozp" secondAttribute="leading" constant="16" id="K7K-5R-C3a"/>
-                            <constraint firstAttribute="bottom" secondItem="vvK-pY-4PG" secondAttribute="bottom" constant="16" id="NT2-gN-n7C"/>
+                            <constraint firstItem="GPL-PK-pJu" firstAttribute="leading" secondItem="QMk-Bp-Ozp" secondAttribute="leading" id="VQM-Oz-Cgq"/>
                             <constraint firstAttribute="bottom" secondItem="Eeu-G3-rGC" secondAttribute="bottom" id="cgg-rl-fPt"/>
                             <constraint firstItem="Eeu-G3-rGC" firstAttribute="top" secondItem="QMk-Bp-Ozp" secondAttribute="top" id="cvo-yY-9SG"/>
                             <constraint firstItem="Eeu-G3-rGC" firstAttribute="leading" secondItem="QMk-Bp-Ozp" secondAttribute="leading" id="guR-kj-rhJ"/>
+                            <constraint firstAttribute="bottom" secondItem="GPL-PK-pJu" secondAttribute="bottom" id="s6h-vX-lKv"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -58,6 +71,7 @@
             <connections>
                 <outlet property="backgroubdView" destination="QMk-Bp-Ozp" id="WDC-la-dgG"/>
                 <outlet property="discountImage" destination="Eeu-G3-rGC" id="Rdv-Dv-L5R"/>
+                <outlet property="discountLabelView" destination="GPL-PK-pJu" id="HJY-98-Uc0"/>
                 <outlet property="discountName" destination="vvK-pY-4PG" id="TxP-MN-CeY"/>
             </connections>
             <point key="canvasLocation" x="316" y="134"/>
@@ -65,6 +79,9 @@
     </objects>
     <resources>
         <image name="icon_christmas_and_new_year" width="640" height="320"/>
+        <namedColor name="MainLabelColor">
+            <color red="0.29800000786781311" green="0.25499999523162842" blue="0.3449999988079071" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
