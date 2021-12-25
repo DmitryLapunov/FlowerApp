@@ -54,6 +54,7 @@
 		89DBE917275059F000B7C96D /* FilterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DBE915275059F000B7C96D /* FilterVC.swift */; };
 		89DBE918275059F000B7C96D /* FilterVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89DBE916275059F000B7C96D /* FilterVC.xib */; };
 		9320364A2752A76F00E68921 /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932036492752A76F00E68921 /* UIApplication+Extensions.swift */; };
+		933EEC4227772C54007E482D /* UIColor + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933EEC4127772C54007E482D /* UIColor + Extension.swift */; };
 		933F0CD4273FBF8900482A9F /* FavouriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933F0CD2273FBF8900482A9F /* FavouriteVC.swift */; };
 		933F0CD5273FBF8900482A9F /* FavouriteVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 933F0CD3273FBF8900482A9F /* FavouriteVC.xib */; };
 		933F0CD8273FBFB900482A9F /* ContactsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933F0CD6273FBFB900482A9F /* ContactsVC.swift */; };
@@ -127,6 +128,7 @@
 		89DBE915275059F000B7C96D /* FilterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterVC.swift; sourceTree = "<group>"; };
 		89DBE916275059F000B7C96D /* FilterVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterVC.xib; sourceTree = "<group>"; };
 		932036492752A76F00E68921 /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
+		933EEC4127772C54007E482D /* UIColor + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extension.swift"; sourceTree = "<group>"; };
 		933F0CD2273FBF8900482A9F /* FavouriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteVC.swift; sourceTree = "<group>"; };
 		933F0CD3273FBF8900482A9F /* FavouriteVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavouriteVC.xib; sourceTree = "<group>"; };
 		933F0CD6273FBFB900482A9F /* ContactsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsVC.swift; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 			children = (
 				893086F5274715FC000339B0 /* Extensions.swift */,
 				932036492752A76F00E68921 /* UIApplication+Extensions.swift */,
+				933EEC4127772C54007E482D /* UIColor + Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -725,6 +728,7 @@
 				89DBE89627475C8C00B7C96D /* ContactsCell.swift in Sources */,
 				8982F16B2740ADCC00FB79E8 /* Enums.swift in Sources */,
 				9396BC65274890C300DA4FC8 /* Product.swift in Sources */,
+				933EEC4227772C54007E482D /* UIColor + Extension.swift in Sources */,
 				8982F139273F328200FB79E8 /* SceneDelegate.swift in Sources */,
 				7F6C2DEA275FF68200F3D849 /* NotificationManager.swift in Sources */,
 				933F0CD8273FBFB900482A9F /* ContactsVC.swift in Sources */,
