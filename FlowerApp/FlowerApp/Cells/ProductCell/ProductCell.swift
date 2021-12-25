@@ -5,6 +5,10 @@
 //  Created by Дмитрий Лапунов on 16.11.21.
 //
 
+protocol ReloadBadge {
+    func reloadBadge(count: String)
+}
+
 protocol AlertShowerProduct {
     func showAlert(alert: UIAlertController )
 }
@@ -26,9 +30,11 @@ class ProductCell: UITableViewCell {
     @IBOutlet weak var productPriceBackgroundView: UIView!
     @IBOutlet weak var addToFavouriteButtonOutlet: UIButton!
     
+    var badgeDelegate: ReloadBadge?
     var alertDelegate: AlertShowerProduct?
     var delegate: ReloadCellCategory?
     var product: ProductObject?
+    var productCart: Product?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -56,7 +62,6 @@ class ProductCell: UITableViewCell {
             PopupController.showPopup()
             delegate?.reloadCell()
         } else {
-            
             guard let name = productNameLabel.text else { return }
             let alert = UIAlertController(title: "", message: "Вы действительно хотите удалить «\(name)» из избранного?", preferredStyle: .alert)
             let noAction = UIAlertAction(title: "Нет", style: .default, handler: nil)
@@ -68,7 +73,23 @@ class ProductCell: UITableViewCell {
             alert.addAction(noAction)
             self.alertDelegate?.showAlert(alert: alert)
         }
+    }
+    
+    @IBAction func addToCart(_ sender: Any) {
+        guard let product = productCart, let productName = productCart?.itemName, let cost = product.cost else {
+            return
+        }
+        let productToCart = CartProduct(productName: productName, count: 1, productCost: cost)
+        RealmManager.shared.writeCart(product: productToCart)
+        setBadge()
+        PopupController.showPopup(message: "Товар добавлен в корзину")
         
     }
+    
+    private func setBadge() {
+        let badge = RealmManager.shared.getCart().count
+        self.badgeDelegate?.reloadBadge(count: String(badge))
+    }
+    
     
 }

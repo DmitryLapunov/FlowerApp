@@ -57,6 +57,9 @@
                                     <imageReference key="image" image="cart.badge.plus" catalog="system" symbolScale="large"/>
                                     <color key="baseForegroundColor" name="MainColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="addToCart:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ceL-pc-m9e"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

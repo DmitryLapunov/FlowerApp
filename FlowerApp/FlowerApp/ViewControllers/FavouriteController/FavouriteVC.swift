@@ -98,6 +98,8 @@ extension FavouriteVC: UITableViewDataSource {
         }
         
         favouriteCell.productNameLabel.text = arrayProductsObject[indexPath.row].productName
+        
+        favouriteCell.badgeDelegate = self
         favouriteCell.delegate = self
         favouriteCell.alertDelegate = self
         
@@ -128,5 +130,11 @@ extension FavouriteVC: ReloadCellFavourite {
 extension FavouriteVC: AlertShowerFavourite {
     func showAlert(alert: UIAlertController) {
         present(alert, animated: true, completion: nil)
+    }
+}
+
+extension FavouriteVC: ReloadBadgeFavourite {
+    func reloadBadge(count: String) {
+        tabBarController?.tabBar.items?.last?.badgeValue = count
     }
 }

@@ -5,6 +5,10 @@
 //  Created by Евгений on 20.11.21.
 //
 
+protocol ReloadBadgeFavourite {
+    func reloadBadge(count: String)
+}
+
 protocol AlertShowerFavourite {
     func showAlert(alert: UIAlertController )
 }
@@ -25,6 +29,7 @@ class FavouriteCell: UITableViewCell {
     @IBOutlet weak var productDescriptionLabel: UILabel!
     @IBOutlet weak var productNameLabel: UILabel!
     
+    var badgeDelegate: ReloadBadgeFavourite?
     var delegate: ReloadCellFavourite?
     var alertDelegate: AlertShowerFavourite?
     
@@ -66,6 +71,18 @@ class FavouriteCell: UITableViewCell {
     }
     
     @IBAction func addToCart(_ sender: Any) {
+        let filterProduct = arrayGlobalProducts.first{ $0.itemName == productNameLabel.text}
+        guard let product = filterProduct, let productName = product.itemName, let cost = product.cost else {
+            return
+        }
+        let productToCart = CartProduct(productName: productName, count: 1, productCost: cost)
+        RealmManager.shared.writeCart(product: productToCart)
+        setBadge()
+        PopupController.showPopup(message: "Товар добавлен в корзину")
     }
     
+    private func setBadge() {
+        let badge = RealmManager.shared.getCart().count
+        self.badgeDelegate?.reloadBadge(count: String(badge))
+    }
 }

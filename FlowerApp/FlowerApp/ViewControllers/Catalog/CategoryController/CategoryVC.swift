@@ -94,6 +94,9 @@ extension CategoryVC: UITableViewDelegate, UITableViewDataSource {
             productCell.addToFavouriteButtonOutlet.setImage(UIImage(systemName: "bookmark.fill"), for: .normal)
         }
         
+        productCell.productCart = products[indexPath.row]
+        
+        productCell.badgeDelegate = self
         productCell.delegate = self
         productCell.alertDelegate = self
         
@@ -121,5 +124,11 @@ extension CategoryVC: ReloadCellCategory {
 extension CategoryVC: AlertShowerProduct {
     func showAlert(alert: UIAlertController) {
         present(alert, animated: true, completion: nil)
+    }
+}
+
+extension CategoryVC: ReloadBadge {
+    func reloadBadge(count: String) {
+        tabBarController?.tabBar.items?.last?.badgeValue = count
     }
 }
