@@ -45,6 +45,7 @@ class FavouriteVC: UIViewController, AlertShowerProduct {
     
     private func setupController() {
         title = "Избранное"
+        tableView.backgroundColor = UIColor(named: "TertiaryColor")
         view.backgroundColor = UIColor(named: "TertiaryColor")
         checkView.backgroundColor = UIColor(named: "TertiaryColor")
         checkLabel.textColor = UIColor(named: "MainLabelColor")

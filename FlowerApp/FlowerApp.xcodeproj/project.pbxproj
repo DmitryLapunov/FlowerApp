@@ -334,7 +334,7 @@
 		8982F14D273F339200FB79E8 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				9373DEFC2767F0E5001012BA /* DiscountCell */,
+				933EEC402775C01E007E482D /* DiscountCells */,
 				9396BC5C2748819A00DA4FC8 /* FavouriteCell */,
 				89DBE89327475C8C00B7C96D /* ContactsCell */,
 				8982F16C2740ADEE00FB79E8 /* CategoryCell */,
@@ -433,10 +433,18 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		9373DEFC2767F0E5001012BA /* DiscountCell */ = {
+		933EEC402775C01E007E482D /* DiscountCells */ = {
 			isa = PBXGroup;
 			children = (
 				93A874CC276CD94D00B95AEF /* SubDiscountCell */,
+				9373DEFC2767F0E5001012BA /* DiscountCell */,
+			);
+			path = DiscountCells;
+			sourceTree = "<group>";
+		};
+		9373DEFC2767F0E5001012BA /* DiscountCell */ = {
+			isa = PBXGroup;
+			children = (
 				9373DEFD2767F108001012BA /* DiscountCell.swift */,
 				9373DEFE2767F108001012BA /* DiscountCell.xib */,
 			);
@@ -862,7 +870,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = T8V9JXV542;
+				DEVELOPMENT_TEAM = 5RNZY2B8VP;
 				GENERATE_INFOPLIST_FILE = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -895,7 +903,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.romanenko.flowers;
+				PRODUCT_BUNDLE_IDENTIFIER = .FlowerApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/FlowerApp/sendEmail_bridge.h";
@@ -912,7 +920,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = T8V9JXV542;
+				DEVELOPMENT_TEAM = 5RNZY2B8VP;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FlowerApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -927,7 +935,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.romanenko.flowers;
+				PRODUCT_BUNDLE_IDENTIFIER = .FlowerApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/FlowerApp/sendEmail_bridge.h";
