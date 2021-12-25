@@ -16,7 +16,7 @@ extension CatalogVC {
         let discoutNib = UINib(nibName: String(describing: DiscountCell.self), bundle: nil)
         catalogCollectionView.register(discoutNib, forCellWithReuseIdentifier: String(describing: DiscountCell.self))
         catalogCollectionView.register(nib, forCellWithReuseIdentifier: String(describing: CategoryCell.self))
-        catalogCollectionView.backgroundColor = UIColor(named: "TertiaryColor")
+        catalogCollectionView.backgroundColor = UIColor.tertiaryColor()
         
         let compositionalLayout: UICollectionViewCompositionalLayout = {
             

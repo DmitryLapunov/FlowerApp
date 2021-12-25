@@ -47,7 +47,7 @@ class ProductVC: UIViewController {
         productImageView.layer.cornerRadius = 10
         addToCartBackgroundView.layer.cornerRadius = 10
         
-        addToCartButton.tintColor = UIColor(named: "MainColor")
+        addToCartButton.tintColor = UIColor.mainColor()
         addToCartButton.layer.shadowColor = UIColor.black.cgColor
         addToCartButton.layer.shadowOpacity = 0.15
         addToCartButton.layer.shadowRadius = 2
@@ -202,7 +202,7 @@ extension ProductVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLay
         productImageCell.productImageView.sd_setImage(with: URL(string: productImages[indexPath.row]))
         
         if productImageCell.productImageView.image == self.productImageView.image {
-            productImageCell.productImageView.layer.borderColor = UIColor(named: "MainColor")?.cgColor
+            productImageCell.productImageView.layer.borderColor = UIColor.mainColor().cgColor
             productImageCell.productImageView.layer.borderWidth = 2
         }
         if productImageCell.productImageView.image != self.productImageView.image {

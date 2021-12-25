@@ -31,7 +31,7 @@ class SubDiscountCell: UICollectionViewCell {
         discountLabelView.layer.cornerRadius = 12
         discountLabelView.backgroundColor = UIColor.black.withAlphaComponent(0.55)
         
-        discountName.textColor = UIColor(named: "SecondaryColor")
+        discountName.textColor = UIColor.secondaryColor()
     }
 }
 

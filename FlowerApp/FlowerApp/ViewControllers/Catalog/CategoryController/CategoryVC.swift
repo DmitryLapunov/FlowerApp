@@ -38,7 +38,7 @@ class CategoryVC: UIViewController {
         let nib = UINib(nibName: String(describing: ProductCell.self), bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: String(describing: ProductCell.self))
         tableView.separatorStyle = .none
-        tableView.backgroundColor = UIColor(named: "TertiaryColor")
+        tableView.backgroundColor = UIColor.tertiaryColor()
     }
     
     @objc func filterProducts() {

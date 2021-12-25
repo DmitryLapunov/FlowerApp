@@ -35,7 +35,7 @@ class FavouriteCell: UITableViewCell {
     }
 
     func setupCell() {
-        contentView.backgroundColor = UIColor(named: "TertiaryColor")
+        contentView.backgroundColor = UIColor.tertiaryColor()
         
         productImage.layer.cornerRadius = 10
         favouriteCellBackgroundView.layer.cornerRadius = 10
