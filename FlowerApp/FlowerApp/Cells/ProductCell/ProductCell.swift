@@ -29,6 +29,7 @@ class ProductCell: UITableViewCell {
     @IBOutlet weak var productCellBackgroundView: UIView!
     @IBOutlet weak var productPriceBackgroundView: UIView!
     @IBOutlet weak var addToFavouriteButtonOutlet: UIButton!
+    @IBOutlet weak var addToCartButtonOutlet: UIButton!
     
     var badgeDelegate: ReloadBadge?
     var alertDelegate: AlertShowerProduct?
@@ -76,6 +77,7 @@ class ProductCell: UITableViewCell {
     }
     
     @IBAction func addToCart(_ sender: Any) {
+        if addToCartButtonOutlet.imageView?.image == UIImage(systemName: "cart.badge.plus") {
         guard let product = productCart, let productName = productCart?.itemName, let cost = product.cost else {
             return
         }
@@ -83,7 +85,22 @@ class ProductCell: UITableViewCell {
         RealmManager.shared.writeCart(product: productToCart)
         setBadge()
         PopupController.showPopup(message: "Товар добавлен в корзину")
-        
+        delegate?.reloadCell()
+        } else {
+            guard let name = productNameLabel.text else { return }
+            let alert = UIAlertController(title: "", message: "Вы действительно хотите удалить «\(name)» из корзины?", preferredStyle: .alert)
+            let noAction = UIAlertAction(title: "Нет", style: .default, handler: nil)
+            let yesAction = UIAlertAction(title: "Да", style: .destructive, handler: { action in
+                RealmManager.shared.deleteCart(productName: name)
+                self.delegate?.reloadCell()
+                let badge = RealmManager.shared.getCart().count
+                self.badgeDelegate?.reloadBadge(count: String(badge))
+                PopupController.showPopup(message: "Товар удален из корзины")
+            })
+            alert.addAction(yesAction)
+            alert.addAction(noAction)
+            self.alertDelegate?.showAlert(alert: alert)
+        }
     }
     
     private func setBadge() {

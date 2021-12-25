@@ -126,6 +126,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="addToCartButtonOutlet" destination="f58-Xr-tWb" id="TiW-jT-k0H"/>
                 <outlet property="favouriteCellBackgroundView" destination="5Lb-08-BCr" id="gtf-2x-8Jp"/>
                 <outlet property="priceBackground" destination="bff-Ib-5fI" id="j6d-Yn-M9n"/>
                 <outlet property="priceLabel" destination="rXs-wr-6cI" id="ndZ-Nf-3By"/>

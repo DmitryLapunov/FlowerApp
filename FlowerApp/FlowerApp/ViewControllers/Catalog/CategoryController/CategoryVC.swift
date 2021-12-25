@@ -12,6 +12,11 @@ import Realm
 class CategoryVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
+    var productCart: [CartProduct] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     var products: [Product] = []
     var productRealm: [ProductObject] = [] {
         didSet {
@@ -30,6 +35,7 @@ class CategoryVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         productRealm = RealmManager.shared.getBookmarks()
+        productCart = RealmManager.shared.getCart()
     }
     
     private func setupTableView() {
@@ -52,6 +58,11 @@ class CategoryVC: UIViewController {
         filterVC.highestPrice = filtered.last!.cost!
         
         present(filterVC, animated: true, completion: nil)
+    }
+    
+    private func setBadge() {
+        let badge = RealmManager.shared.getCart().count
+        tabBarController?.tabBar.items?.last?.badgeValue = badge == 0 ? nil : "\(badge)"
     }
 }
 
@@ -94,6 +105,13 @@ extension CategoryVC: UITableViewDelegate, UITableViewDataSource {
             productCell.addToFavouriteButtonOutlet.setImage(UIImage(systemName: "bookmark.fill"), for: .normal)
         }
         
+        let cartFilter = productCart.first { $0.productName == products[indexPath.row].itemName}
+        if cartFilter == nil {
+            productCell.addToCartButtonOutlet.setImage(UIImage(systemName: "cart.badge.plus"), for: .normal)
+        } else {
+            productCell.addToCartButtonOutlet.setImage(UIImage(systemName: "cart.fill.badge.minus"), for: .normal)
+        }
+        
         productCell.productCart = products[indexPath.row]
         
         productCell.badgeDelegate = self
@@ -118,6 +136,7 @@ extension CategoryVC: UITableViewDelegate, UITableViewDataSource {
 extension CategoryVC: ReloadCellCategory {
     func reloadCell() {
         productRealm = RealmManager.shared.getBookmarks()
+        productCart = RealmManager.shared.getCart()
     }
 }
 
