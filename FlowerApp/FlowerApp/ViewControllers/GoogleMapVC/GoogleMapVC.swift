@@ -77,7 +77,7 @@ class GoogleMapVC: UIViewController {
     
     func correctButton() {
         makeTripButton.layer.cornerRadius = makeTripButton.frame.height / 2
-        makeTripButton.backgroundColor = UIColor.mainColor()
+        makeTripButton.backgroundColor = UIColor.mainColor
         
     }
     

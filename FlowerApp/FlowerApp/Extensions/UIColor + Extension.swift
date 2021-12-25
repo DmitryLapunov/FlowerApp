@@ -9,61 +9,36 @@ import Foundation
 import UIKit
 
 extension UIColor {
-   
-    class func accentColor() -> UIColor {
-        if let accentColor = UIColor(named: "AccentColor") {
-            return accentColor
-        }
-        return UIColor.black
+    
+    open class var accentColor: UIColor {
+        return UIColor(named: "AccentColor")!
     }
     
-    class func customGreenColor() -> UIColor {
-        if let customGreenColor = UIColor(named: "CustomGreenColor") {
-            return customGreenColor
-        }
-        return UIColor.black
+    open class var customGreenColor: UIColor {
+        return UIColor(named: "CustomGreenColor")!
     }
     
-    class func customPinkColor() -> UIColor {
-        if let customPinkColor = UIColor(named: "CustomPinkColor") {
-            return customPinkColor
-        }
-        return UIColor.black
+    open class var customPinkColor: UIColor {
+        return UIColor(named: "CustomPinkColor")!
     }
     
-    class func mainLabelColor() -> UIColor {
-        if let mainLabelColor = UIColor(named: "MainLabelColor") {
-            return mainLabelColor
-        }
-        return UIColor.black
+    open class var mainLabelColor: UIColor {
+        return UIColor(named: "MainLabelColor")!
     }
     
-    class func secondaryColor() -> UIColor {
-        if let secondaryColor = UIColor(named: "SecondaryColor") {
-            return secondaryColor
-        }
-        return UIColor.black
+    open class var secondaryColor: UIColor {
+        return UIColor(named: "SecondaryColor")!
     }
     
-    class func secondaryLabelColor() -> UIColor {
-        if let secondaryLabelColor = UIColor(named: "SecondaryLabelColor") {
-            return secondaryLabelColor
-        }
-        return UIColor.black
+    open class var secondaryLabelColor: UIColor {
+        return UIColor(named: "SecondaryLabelColor")!
     }
     
-    class func tertiaryColor() -> UIColor {
-        if let tertiaryColor = UIColor(named: "TertiaryColor") {
-            return tertiaryColor
-        }
-        return UIColor.black
+    open class var tertiaryColor: UIColor {
+        return UIColor(named: "TertiaryColor")!
     }
     
-    class func mainColor() -> UIColor {
-        if let mainColor = UIColor(named: "MainColor") {
-            return mainColor
-        }
-        return UIColor.black
+    open class var mainColor: UIColor {
+        return UIColor(named: "MainColor")!
     }
-    
 }

@@ -58,7 +58,7 @@ extension UIView {
 extension UIButton {
     
     func addShadowAndTintColor() {
-        self.tintColor = UIColor.mainColor()
+        self.tintColor = UIColor.mainColor
         self.layer.shadowColor = UIColor.black.cgColor
         self.layer.shadowOpacity = 0.15
         self.layer.shadowRadius = 2
@@ -66,10 +66,10 @@ extension UIButton {
     }
     
     func isSelectedState() {
-        self.tintColor = UIColor.mainColor()
+        self.tintColor = UIColor.mainColor
     }
     
     func isNormalState() {
-        self.tintColor = UIColor.secondaryLabelColor()
+        self.tintColor = UIColor.secondaryLabelColor
     }
 }

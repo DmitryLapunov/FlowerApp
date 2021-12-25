@@ -46,15 +46,15 @@ class CategoryCell: UICollectionViewCell {
         case .basketsWithFlowers:
             categoryImageView.image = UIImage(named: "icon_baskets_with_flowers")
             categoryTitleLabel.text = category.rawValue
-            cellBackgroundView.backgroundColor = UIColor.secondaryColor()
+            cellBackgroundView.backgroundColor = UIColor.secondaryColor
         case .bridalBouquet:
             categoryImageView.image = UIImage(named: "icon_bridal_bouquet")
             categoryTitleLabel.text = category.rawValue
-            cellBackgroundView.backgroundColor = UIColor.customPinkColor()
+            cellBackgroundView.backgroundColor = UIColor.customPinkColor
         case .bouquets:
             categoryImageView.image = UIImage(named: "icon_bouquets")
             categoryTitleLabel.text = category.rawValue
-            cellBackgroundView.backgroundColor = UIColor.customGreenColor()
+            cellBackgroundView.backgroundColor = UIColor.customGreenColor
         case .driedFlowersBouquets:
             categoryImageView.image = UIImage(named: "icon_dried_flowers_bouquets")
             categoryTitleLabel.text = category.rawValue

@@ -34,7 +34,7 @@ class TabViewController: UITabBarController {
         navTabShopping.tabBarItem = UITabBarItem(title: "Корзина", image: UIImage(named: "icon_cart"), tag: 3)
         
         
-        self.tabBar.tintColor = UIColor.mainColor()
+        self.tabBar.tintColor = UIColor.mainColor
         
         let badge = RealmManager.shared.getCart().count
         navTabShopping.tabBarItem.badgeValue = badge == 0 ? nil : "\(badge)"
