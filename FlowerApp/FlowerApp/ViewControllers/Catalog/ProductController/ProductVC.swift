@@ -21,6 +21,7 @@ class ProductVC: UIViewController {
     @IBOutlet weak var productSizeLabel: UILabel!
     @IBOutlet weak var productAboutItemLabel: UILabel!
     @IBOutlet weak var scrollViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var countView: UIView!
     
     var productRealm: [ProductObject] = [] {
         didSet{

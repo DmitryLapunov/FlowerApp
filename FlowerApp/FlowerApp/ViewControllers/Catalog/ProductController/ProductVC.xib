@@ -26,6 +26,7 @@
             <connections>
                 <outlet property="addToCartBackgroundView" destination="DIe-yc-WEs" id="kbg-Np-Hv0"/>
                 <outlet property="addToCartButton" destination="Fv5-gC-l38" id="2Ef-f6-Jxc"/>
+                <outlet property="countView" destination="6hu-Q9-Hrn" id="Kh0-In-k2V"/>
                 <outlet property="imagesCollectionView" destination="nA5-UH-s2T" id="t5X-gf-X5I"/>
                 <outlet property="productAboutItemLabel" destination="8Op-zD-N0f" id="xKg-wT-wc0"/>
                 <outlet property="productAmountField" destination="uDM-7A-wQJ" id="h2f-FS-Ndf"/>
