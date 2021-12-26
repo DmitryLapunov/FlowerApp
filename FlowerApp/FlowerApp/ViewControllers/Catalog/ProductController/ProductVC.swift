@@ -23,6 +23,9 @@ class ProductVC: UIViewController {
     @IBOutlet weak var scrollViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var imagePhotosDown: UIImageView!
     @IBOutlet weak var imagePhotosUp: UIImageView!
+    @IBOutlet weak var cartView: UIView!
+    @IBOutlet weak var countView: UIView!
+    @IBOutlet weak var deleteFromCart: UIButton!
     
     var productRealm: [ProductObject] = [] {
         didSet{
@@ -37,6 +40,7 @@ class ProductVC: UIViewController {
         }
     }
     var imageName = ""
+    var productCart: [CartProduct] = []
     var alertDelegate: AlertShowerProduct?
     
     override func viewDidLoad() {
@@ -49,6 +53,12 @@ class ProductVC: UIViewController {
         productImagesBackgroundView.layer.cornerRadius = 10
         productImageView.layer.cornerRadius = 10
         addToCartBackgroundView.layer.cornerRadius = 10
+     
+        deleteFromCart.tintColor = UIColor.mainColor
+        deleteFromCart.layer.shadowColor = UIColor.black.cgColor
+        deleteFromCart.layer.shadowOpacity = 0.15
+        deleteFromCart.layer.shadowRadius = 2
+        deleteFromCart.layer.shadowOffset = CGSize(width: 0, height: 2)
         
         addToCartButton.tintColor = UIColor.mainColor
         addToCartButton.layer.shadowColor = UIColor.black.cgColor
@@ -99,17 +109,36 @@ class ProductVC: UIViewController {
             navigationItem.rightBarButtonItem = UIBarButtonItem().menuButton(target: self, action: #selector(addToFavorites), imageName: "bookmark.fill")
             imageName = "bookmark.fill"
         }
+        
+        productCart = RealmManager.shared.getCart()
+        let filterCart = productCart.first { $0.productName == productNameLabel.text}
+        if filterCart == nil {
+            deleteFromCart.isHidden = true
+            addToCartButton.isHidden = false
+            countView.isHidden = false
+        } else {
+            cartView.backgroundColor = UIColor.white.withAlphaComponent(0)
+            addToCartButton.isHidden = true
+            countView.isHidden = true
+        }
     }
     
     
     @IBAction func addToCartAction(_ sender: Any) {
-        guard let product = product, let productName = product.itemName, let amountText = productAmountField.text, let amount = Int(amountText), amount != 0, let cost = product.cost else {
-            return
+        if countView.isHidden == false {
+            guard let product = product, let productName = product.itemName, let amountText = productAmountField.text, let amount = Int(amountText), amount != 0, let cost = product.cost else {
+                return
+            }
+            let productToCart = CartProduct(productName: productName, count: amount, productCost: cost)
+            RealmManager.shared.writeCart(product: productToCart)
+            setBadge()
+            PopupController.showPopup(message: "Товар добавлен в корзину")
+            self.deleteFromCart.isHidden = false
+            self.addToCartButton.isHidden = true
+            self.countView.isHidden = true
+            self.cartView.backgroundColor = UIColor.white.withAlphaComponent(0)
         }
-        let productToCart = CartProduct(productName: productName, count: amount, productCost: cost)
-        RealmManager.shared.writeCart(product: productToCart)
-        setBadge()
-        PopupController.showPopup(message: "Товар добавлен в корзину")
+        
     }
     
     @IBAction func productAmountIncrease(_ sender: Any) {
@@ -128,6 +157,24 @@ class ProductVC: UIViewController {
             productAmount = amount
             productAmountField.text = "\(amount)"
         }
+    }
+    @IBAction func deleteFromCart(_ sender: Any) {
+        
+        guard let name = productNameLabel.text else { return }
+        let alert = UIAlertController(title: "", message: "Вы действительно хотите удалить «\(name)» из корзины?", preferredStyle: .alert)
+        let noAction = UIAlertAction(title: "Нет", style: .default, handler: nil)
+        let yesAction = UIAlertAction(title: "Да", style: .destructive, handler: { action in
+            RealmManager.shared.deleteCart(productName: name)
+            self.deleteFromCart.isHidden = true
+            self.addToCartButton.isHidden = false
+            self.countView.isHidden = false
+            self.cartView.backgroundColor = UIColor.white.withAlphaComponent(1)
+            self.setBadge()
+            PopupController.showPopup(message: "Товар удален из корзины")
+        })
+        alert.addAction(yesAction)
+        alert.addAction(noAction)
+        present(alert, animated: true, completion: nil)
     }
     
     func setupCollectionView() {
@@ -164,6 +211,7 @@ class ProductVC: UIViewController {
         }
     }
     
+    
     private func setBadge() {
         let badge = RealmManager.shared.getCart().count
         tabBarController?.tabBar.items?.last?.badgeValue = badge == 0 ? nil : "\(badge)"
@@ -190,10 +238,6 @@ class ProductVC: UIViewController {
             alert.addAction(noAction)
             self.alertDelegate?.showAlert(alert: alert)
         }
-    }
-    
-    @objc func removeFromFavorites() {
-        
     }
 }
 

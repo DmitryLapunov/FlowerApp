@@ -22,6 +22,12 @@ class FavouriteVC: UIViewController, AlertShowerProduct {
         }
     }
     
+    var productCart: [CartProduct] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupController()
@@ -29,6 +35,7 @@ class FavouriteVC: UIViewController, AlertShowerProduct {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        productCart = RealmManager.shared.getCart()
         arrayProductsObject.removeAll()
         arrayProductsObject = RealmManager.shared.getBookmarks()
     }
@@ -94,7 +101,16 @@ extension FavouriteVC: UITableViewDataSource {
             favouriteCell.productImage.sd_setImage(with: URL(string: "\(productImages[0])"))
         }
         
+        let cartFilter = productCart.first { $0.productName == arrayProducts[indexPath.row].itemName }
+        if cartFilter == nil {
+            favouriteCell.addToCartButtonOutlet.setImage(UIImage(systemName: "cart.badge.plus"), for: .normal)
+        } else {
+            favouriteCell.addToCartButtonOutlet.setImage(UIImage(systemName: "cart.fill.badge.minus"), for: .normal)
+        }
+        
         favouriteCell.productNameLabel.text = arrayProductsObject[indexPath.row].productName
+        
+        favouriteCell.badgeDelegate = self
         favouriteCell.delegate = self
         favouriteCell.alertDelegate = self
         
@@ -119,11 +135,18 @@ extension FavouriteVC: UITableViewDelegate {
 extension FavouriteVC: ReloadCellFavourite {
     func reloadCell() {
         arrayProductsObject = RealmManager.shared.getBookmarks()
+        productCart = RealmManager.shared.getCart()
     }
 }
 
 extension FavouriteVC: AlertShowerFavourite {
     func showAlert(alert: UIAlertController) {
         present(alert, animated: true, completion: nil)
+    }
+}
+
+extension FavouriteVC: ReloadBadgeFavourite {
+    func reloadBadge(count: String) {
+        tabBarController?.tabBar.items?.last?.badgeValue = count
     }
 }

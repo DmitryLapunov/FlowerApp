@@ -20,15 +20,19 @@ class CategoryVC: UIViewController {
     @IBOutlet weak var checkImage: UIImageView!
     @IBOutlet weak var checkLabel: UILabel!
     
-    var products: [Product] = [] {
-        didSet {
-            
-        }
-    }
     var cachedProducts: [Product] = []
     var chosenProducts: [Product] = []
+    var products: [Product] = []
     var availableComposition: [String] = []
     var chosenComposition: [String] = []
+
+    var productCart: [CartProduct] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
+
     var productRealm: [ProductObject] = [] {
         didSet {
             tableView.reloadData()
@@ -55,6 +59,7 @@ class CategoryVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         productRealm = RealmManager.shared.getBookmarks()
+        productCart = RealmManager.shared.getCart()
     }
     
     private func setupTableView() {
@@ -90,6 +95,11 @@ class CategoryVC: UIViewController {
         
         filterVC.filterDelegate = self
         navigationController?.pushViewController(filterVC, animated: true)
+    }
+    
+    private func setBadge() {
+        let badge = RealmManager.shared.getCart().count
+        tabBarController?.tabBar.items?.last?.badgeValue = badge == 0 ? nil : "\(badge)"
     }
 }
 
@@ -132,6 +142,16 @@ extension CategoryVC: UITableViewDelegate, UITableViewDataSource {
             productCell.addToFavouriteButtonOutlet.setImage(UIImage(systemName: "bookmark.fill"), for: .normal)
         }
         
+        let cartFilter = productCart.first { $0.productName == products[indexPath.row].itemName}
+        if cartFilter == nil {
+            productCell.addToCartButtonOutlet.setImage(UIImage(systemName: "cart.badge.plus"), for: .normal)
+        } else {
+            productCell.addToCartButtonOutlet.setImage(UIImage(systemName: "cart.fill.badge.minus"), for: .normal)
+        }
+        
+        productCell.productCart = products[indexPath.row]
+        
+        productCell.badgeDelegate = self
         productCell.delegate = self
         productCell.alertDelegate = self
         
@@ -153,6 +173,7 @@ extension CategoryVC: UITableViewDelegate, UITableViewDataSource {
 extension CategoryVC: ReloadCellCategory {
     func reloadCell() {
         productRealm = RealmManager.shared.getBookmarks()
+        productCart = RealmManager.shared.getCart()
     }
 }
 
@@ -161,6 +182,7 @@ extension CategoryVC: AlertShowerProduct {
         present(alert, animated: true, completion: nil)
     }
 }
+
 
 extension CategoryVC: FilterProductsDelegate {
     func filterProductsArray(priceRange: [CGFloat], namePriceFilter: NamePriceFilter, composition: [String]) {
@@ -227,5 +249,11 @@ extension CategoryVC: FilterProductsDelegate {
         }
         
         tableView.reloadData()
+    }
+}
+    
+extension CategoryVC: ReloadBadge {
+    func reloadBadge(count: String) {
+        tabBarController?.tabBar.items?.last?.badgeValue = count
     }
 }

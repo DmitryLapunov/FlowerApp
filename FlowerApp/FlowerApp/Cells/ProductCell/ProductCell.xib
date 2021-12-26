@@ -57,6 +57,9 @@
                                     <imageReference key="image" image="cart.badge.plus" catalog="system" symbolScale="large"/>
                                     <color key="baseForegroundColor" name="MainColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="addToCart:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ceL-pc-m9e"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -136,6 +139,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
+                <outlet property="addToCartButtonOutlet" destination="SjL-K2-0nI" id="hoi-ac-nw0"/>
                 <outlet property="addToFavouriteButtonOutlet" destination="qoT-y0-QoR" id="TPz-So-hsw"/>
                 <outlet property="productCellBackgroundView" destination="IJL-F4-5Ll" id="zHn-iz-91d"/>
                 <outlet property="productDescriptionLabel" destination="bno-84-xmC" id="ge1-aM-QB4"/>
