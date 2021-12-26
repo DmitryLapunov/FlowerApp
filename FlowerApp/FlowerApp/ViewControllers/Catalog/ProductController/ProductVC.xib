@@ -26,7 +26,9 @@
             <connections>
                 <outlet property="addToCartBackgroundView" destination="DIe-yc-WEs" id="kbg-Np-Hv0"/>
                 <outlet property="addToCartButton" destination="Fv5-gC-l38" id="2Ef-f6-Jxc"/>
-                <outlet property="countView" destination="6hu-Q9-Hrn" id="Kh0-In-k2V"/>
+                <outlet property="cartView" destination="DIe-yc-WEs" id="ak7-At-eug"/>
+                <outlet property="countView" destination="6hu-Q9-Hrn" id="ysE-Da-UFX"/>
+                <outlet property="deleteFromCart" destination="BZU-e1-bI4" id="Cs0-g3-Jm0"/>
                 <outlet property="imagesCollectionView" destination="nA5-UH-s2T" id="t5X-gf-X5I"/>
                 <outlet property="productAboutItemLabel" destination="8Op-zD-N0f" id="xKg-wT-wc0"/>
                 <outlet property="productAmountField" destination="uDM-7A-wQJ" id="h2f-FS-Ndf"/>
@@ -227,7 +229,7 @@
                     <rect key="frame" x="10" y="807.5" width="394" height="44.5"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fv5-gC-l38">
-                            <rect key="frame" x="228.5" y="5" width="160.5" height="34.5"/>
+                            <rect key="frame" x="226" y="5" width="163" height="34.5"/>
                             <fontDescription key="fontDescription" name="OpenSansRoman-CondensedRegular" family="Open Sans" pointSize="15"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" title="  Добавить в корзину" image="cart.badge.plus" catalog="system"/>
@@ -239,15 +241,15 @@
                             </connections>
                         </button>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6hu-Q9-Hrn">
-                            <rect key="frame" x="0.0" y="0.0" width="228.5" height="44.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="226" height="44.5"/>
                             <subviews>
                                 <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uDM-7A-wQJ">
-                                    <rect key="frame" x="95.5" y="5.5" width="38" height="34"/>
+                                    <rect key="frame" x="94" y="5.5" width="38" height="34"/>
                                     <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="16"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R3b-6z-IbF">
-                                    <rect key="frame" x="133.5" y="7" width="41.5" height="31"/>
+                                    <rect key="frame" x="132" y="7" width="41.5" height="31"/>
                                     <color key="tintColor" name="MainLabelColor"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system"/>
@@ -256,7 +258,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nbd-pn-V9C">
-                                    <rect key="frame" x="54" y="7" width="41.5" height="31"/>
+                                    <rect key="frame" x="52.5" y="7" width="41.5" height="31"/>
                                     <color key="tintColor" name="MainLabelColor"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" image="minus" catalog="system"/>
@@ -275,14 +277,31 @@
                                 <constraint firstItem="R3b-6z-IbF" firstAttribute="centerY" secondItem="uDM-7A-wQJ" secondAttribute="centerY" id="jWA-4p-aZK"/>
                             </constraints>
                         </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BZU-e1-bI4">
+                            <rect key="frame" x="226" y="5" width="163" height="34.5"/>
+                            <fontDescription key="fontDescription" name="OpenSansRoman-CondensedRegular" family="Open Sans" pointSize="15"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="  Добавить в корзину" image="cart.badge.plus" catalog="system"/>
+                            <buttonConfiguration key="configuration" style="filled" image="cart.fill.badge.minus" catalog="system" title="Удалить из корзины" imagePadding="7" cornerStyle="large">
+                                <fontDescription key="titleFontDescription" name="OpenSansRoman-CondensedRegular" family="Open Sans" pointSize="15"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="addToCartAction:" destination="-1" eventType="touchUpInside" id="IZ2-3r-Q3y"/>
+                                <action selector="deleteFromCart:" destination="-1" eventType="touchUpInside" id="k7n-s8-YpA"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="Fv5-gC-l38" secondAttribute="bottom" constant="5" id="2Si-Pl-yJa"/>
+                        <constraint firstAttribute="trailing" secondItem="BZU-e1-bI4" secondAttribute="trailing" constant="5" id="3ZE-Jt-zZQ"/>
                         <constraint firstItem="6hu-Q9-Hrn" firstAttribute="leading" secondItem="DIe-yc-WEs" secondAttribute="leading" id="5kV-Fm-fax"/>
+                        <constraint firstItem="Fv5-gC-l38" firstAttribute="leading" secondItem="6hu-Q9-Hrn" secondAttribute="trailing" id="6Wi-cU-JVy"/>
                         <constraint firstItem="Fv5-gC-l38" firstAttribute="top" secondItem="DIe-yc-WEs" secondAttribute="top" constant="5" id="KCB-5W-Hoy"/>
+                        <constraint firstItem="BZU-e1-bI4" firstAttribute="leading" secondItem="6hu-Q9-Hrn" secondAttribute="trailing" id="KoW-Df-Veq"/>
                         <constraint firstAttribute="trailing" secondItem="Fv5-gC-l38" secondAttribute="trailing" constant="5" id="Ltg-eJ-h0W"/>
-                        <constraint firstItem="Fv5-gC-l38" firstAttribute="leading" secondItem="6hu-Q9-Hrn" secondAttribute="trailing" id="Xhz-Qr-fui"/>
+                        <constraint firstAttribute="bottom" secondItem="BZU-e1-bI4" secondAttribute="bottom" constant="5" id="VXt-jw-vG4"/>
+                        <constraint firstItem="BZU-e1-bI4" firstAttribute="top" secondItem="DIe-yc-WEs" secondAttribute="top" constant="5" id="c51-IB-jzY"/>
                         <constraint firstItem="6hu-Q9-Hrn" firstAttribute="top" secondItem="DIe-yc-WEs" secondAttribute="top" id="dip-aW-JAa"/>
                         <constraint firstAttribute="bottom" secondItem="6hu-Q9-Hrn" secondAttribute="bottom" id="plK-o9-Cyn"/>
                     </constraints>
@@ -306,6 +325,7 @@
     </objects>
     <resources>
         <image name="cart.badge.plus" catalog="system" width="128" height="106"/>
+        <image name="cart.fill.badge.minus" catalog="system" width="128" height="106"/>
         <image name="minus" catalog="system" width="128" height="24"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <namedColor name="MainLabelColor">
