@@ -24,6 +24,12 @@
 		7F9B67DD275A8339009A742E /* CatalogVC+Configure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9B67DC275A8339009A742E /* CatalogVC+Configure.swift */; };
 		7FC1AB992778EF88007495A3 /* DiscountCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FC1AB972778EF88007495A3 /* DiscountCell.xib */; };
 		7FC1AB9A2778EF88007495A3 /* DiscountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC1AB982778EF88007495A3 /* DiscountCell.swift */; };
+		7FC3B22D2778F7290095DEC0 /* OCT55.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FC3B2272778F7280095DEC0 /* OCT55.otf */; };
+		7FC3B22E2778F7290095DEC0 /* OpenSans-Italic-VariableFont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7FC3B2282778F7280095DEC0 /* OpenSans-Italic-VariableFont.ttf */; };
+		7FC3B22F2778F7290095DEC0 /* OCT85.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FC3B2292778F7280095DEC0 /* OCT85.otf */; };
+		7FC3B2302778F7290095DEC0 /* OCT56.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FC3B22A2778F7280095DEC0 /* OCT56.otf */; };
+		7FC3B2312778F7290095DEC0 /* OpenSans-VariableFont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7FC3B22B2778F7280095DEC0 /* OpenSans-VariableFont.ttf */; };
+		7FC3B2322778F7290095DEC0 /* OCT86.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FC3B22C2778F7290095DEC0 /* OCT86.otf */; };
 		8930869E274340C6000339B0 /* vgosti.json in Resources */ = {isa = PBXBuildFile; fileRef = 8930869D274340C6000339B0 /* vgosti.json */; };
 		893086A027434851000339B0 /* CodableClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8930869F27434851000339B0 /* CodableClasses.swift */; };
 		893086A427434B1E000339B0 /* CategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893086A227434B1E000339B0 /* CategoryVC.swift */; };
@@ -41,15 +47,9 @@
 		8982F143273F328300FB79E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8982F141273F328300FB79E8 /* LaunchScreen.storyboard */; };
 		8982F153273F33D100FB79E8 /* CatalogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8982F151273F33D100FB79E8 /* CatalogVC.swift */; };
 		8982F154273F33D100FB79E8 /* CatalogVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8982F152273F33D100FB79E8 /* CatalogVC.xib */; };
-		8982F15C273F352500FB79E8 /* OCT55.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8982F156273F352500FB79E8 /* OCT55.otf */; };
-		8982F15D273F352500FB79E8 /* OCT85.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8982F157273F352500FB79E8 /* OCT85.otf */; };
-		8982F15E273F352500FB79E8 /* OCT86.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8982F158273F352500FB79E8 /* OCT86.otf */; };
-		8982F15F273F352500FB79E8 /* OCT56.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8982F159273F352500FB79E8 /* OCT56.otf */; };
-		8982F160273F352500FB79E8 /* OpenSans-VariableFont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8982F15A273F352500FB79E8 /* OpenSans-VariableFont.ttf */; };
 		8982F16B2740ADCC00FB79E8 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8982F16A2740ADCC00FB79E8 /* Enums.swift */; };
 		8982F16F2740ADFB00FB79E8 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8982F16D2740ADFB00FB79E8 /* CategoryCell.swift */; };
 		8982F1702740ADFB00FB79E8 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8982F16E2740ADFB00FB79E8 /* CategoryCell.xib */; };
-		8982F1722741410800FB79E8 /* OpenSans-Italic-VariableFont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8982F1712741410800FB79E8 /* OpenSans-Italic-VariableFont.ttf */; };
 		89DBE89227475C7C00B7C96D /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DBE89127475C7C00B7C96D /* TabBarController.swift */; };
 		89DBE89627475C8C00B7C96D /* ContactsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DBE89427475C8C00B7C96D /* ContactsCell.swift */; };
 		89DBE89727475C8C00B7C96D /* ContactsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89DBE89527475C8C00B7C96D /* ContactsCell.xib */; };
@@ -102,6 +102,12 @@
 		7F9B67DC275A8339009A742E /* CatalogVC+Configure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CatalogVC+Configure.swift"; sourceTree = "<group>"; };
 		7FC1AB972778EF88007495A3 /* DiscountCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DiscountCell.xib; sourceTree = "<group>"; };
 		7FC1AB982778EF88007495A3 /* DiscountCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscountCell.swift; sourceTree = "<group>"; };
+		7FC3B2272778F7280095DEC0 /* OCT55.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OCT55.otf; sourceTree = "<group>"; };
+		7FC3B2282778F7280095DEC0 /* OpenSans-Italic-VariableFont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Italic-VariableFont.ttf"; sourceTree = "<group>"; };
+		7FC3B2292778F7280095DEC0 /* OCT85.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OCT85.otf; sourceTree = "<group>"; };
+		7FC3B22A2778F7280095DEC0 /* OCT56.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OCT56.otf; sourceTree = "<group>"; };
+		7FC3B22B2778F7280095DEC0 /* OpenSans-VariableFont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-VariableFont.ttf"; sourceTree = "<group>"; };
+		7FC3B22C2778F7290095DEC0 /* OCT86.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OCT86.otf; sourceTree = "<group>"; };
 		8930869D274340C6000339B0 /* vgosti.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = vgosti.json; sourceTree = "<group>"; };
 		8930869F27434851000339B0 /* CodableClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableClasses.swift; sourceTree = "<group>"; };
 		893086A227434B1E000339B0 /* CategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryVC.swift; sourceTree = "<group>"; };
@@ -121,15 +127,9 @@
 		8982F144273F328300FB79E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8982F151273F33D100FB79E8 /* CatalogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogVC.swift; sourceTree = "<group>"; };
 		8982F152273F33D100FB79E8 /* CatalogVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CatalogVC.xib; sourceTree = "<group>"; };
-		8982F156273F352500FB79E8 /* OCT55.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = OCT55.otf; path = Resources/Fonts/OCT55.otf; sourceTree = SOURCE_ROOT; };
-		8982F157273F352500FB79E8 /* OCT85.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = OCT85.otf; path = Resources/Fonts/OCT85.otf; sourceTree = SOURCE_ROOT; };
-		8982F158273F352500FB79E8 /* OCT86.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = OCT86.otf; path = Resources/Fonts/OCT86.otf; sourceTree = SOURCE_ROOT; };
-		8982F159273F352500FB79E8 /* OCT56.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = OCT56.otf; path = Resources/Fonts/OCT56.otf; sourceTree = SOURCE_ROOT; };
-		8982F15A273F352500FB79E8 /* OpenSans-VariableFont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-VariableFont.ttf"; path = "Resources/Fonts/OpenSans-VariableFont.ttf"; sourceTree = SOURCE_ROOT; };
 		8982F16A2740ADCC00FB79E8 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		8982F16D2740ADFB00FB79E8 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		8982F16E2740ADFB00FB79E8 /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
-		8982F1712741410800FB79E8 /* OpenSans-Italic-VariableFont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Italic-VariableFont.ttf"; path = "Resources/Fonts/OpenSans-Italic-VariableFont.ttf"; sourceTree = SOURCE_ROOT; };
 		89DBE89127475C7C00B7C96D /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		89DBE89427475C8C00B7C96D /* ContactsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsCell.swift; sourceTree = "<group>"; };
 		89DBE89527475C8C00B7C96D /* ContactsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactsCell.xib; sourceTree = "<group>"; };
@@ -248,6 +248,19 @@
 			path = DiscountCell;
 			sourceTree = "<group>";
 		};
+		7FC3B2262778F7110095DEC0 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				7FC3B2272778F7280095DEC0 /* OCT55.otf */,
+				7FC3B22A2778F7280095DEC0 /* OCT56.otf */,
+				7FC3B2292778F7280095DEC0 /* OCT85.otf */,
+				7FC3B22C2778F7290095DEC0 /* OCT86.otf */,
+				7FC3B2282778F7280095DEC0 /* OpenSans-Italic-VariableFont.ttf */,
+				7FC3B22B2778F7280095DEC0 /* OpenSans-VariableFont.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		893086A127434B03000339B0 /* CategoryController */ = {
 			isa = PBXGroup;
 			children = (
@@ -300,7 +313,6 @@
 				7F6020ED2773AAD50031C1F7 /* vgosti_promo.json */,
 				8930869D274340C6000339B0 /* vgosti.json */,
 				8982F135273F328200FB79E8 /* FlowerApp */,
-				8982F14F273F339F00FB79E8 /* Fonts */,
 				8982F134273F328200FB79E8 /* Products */,
 				91E7C5CD6880390624272CC9 /* Pods */,
 				C54DA66551EAE16582D491DA /* Frameworks */,
@@ -327,6 +339,7 @@
 				893086F4274715EE000339B0 /* Extensions */,
 				8982F1692740ADBD00FB79E8 /* Enums */,
 				9396BC63274890A000DA4FC8 /* Models */,
+				7FC3B2262778F7110095DEC0 /* Fonts */,
 				8982F136273F328200FB79E8 /* AppDelegate.swift */,
 				8982F138273F328200FB79E8 /* SceneDelegate.swift */,
 				8982F13F273F328300FB79E8 /* Assets.xcassets */,
@@ -381,19 +394,6 @@
 				7F224A0C275F74A0000649BB /* Cart */,
 			);
 			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		8982F14F273F339F00FB79E8 /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				8982F1712741410800FB79E8 /* OpenSans-Italic-VariableFont.ttf */,
-				8982F156273F352500FB79E8 /* OCT55.otf */,
-				8982F159273F352500FB79E8 /* OCT56.otf */,
-				8982F157273F352500FB79E8 /* OCT85.otf */,
-				8982F158273F352500FB79E8 /* OCT86.otf */,
-				8982F15A273F352500FB79E8 /* OpenSans-VariableFont.ttf */,
-			);
-			path = Fonts;
 			sourceTree = "<group>";
 		};
 		8982F1692740ADBD00FB79E8 /* Enums */ = {
@@ -632,34 +632,34 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FC3B2322778F7290095DEC0 /* OCT86.otf in Resources */,
 				89DBE918275059F000B7C96D /* FilterVC.xib in Resources */,
-				8982F160273F352500FB79E8 /* OpenSans-VariableFont.ttf in Resources */,
 				7FC1AB992778EF88007495A3 /* DiscountCell.xib in Resources */,
+				7FC3B22E2778F7290095DEC0 /* OpenSans-Italic-VariableFont.ttf in Resources */,
 				9396BC60274881BB00DA4FC8 /* FavouriteCell.xib in Resources */,
 				933F0CD9273FBFB900482A9F /* ContactsVC.xib in Resources */,
-				8982F15C273F352500FB79E8 /* OCT55.otf in Resources */,
-				8982F15D273F352500FB79E8 /* OCT85.otf in Resources */,
 				7F224A11275F74C1000649BB /* OrderVC.xib in Resources */,
 				935D8949274EB93F00106DE0 /* Main.storyboard in Resources */,
 				89DBE89727475C8C00B7C96D /* ContactsCell.xib in Resources */,
 				8982F1702740ADFB00FB79E8 /* CategoryCell.xib in Resources */,
 				7F224A14275F75DA000649BB /* ValidationTextField.xib in Resources */,
+				7FC3B2312778F7290095DEC0 /* OpenSans-VariableFont.ttf in Resources */,
+				7FC3B2302778F7290095DEC0 /* OCT56.otf in Resources */,
 				8982F143273F328300FB79E8 /* LaunchScreen.storyboard in Resources */,
 				893086A527434B1E000339B0 /* CategoryVC.xib in Resources */,
 				89DBE9A92766DC3E00B7C96D /* FilterCell.xib in Resources */,
-				8982F1722741410800FB79E8 /* OpenSans-Italic-VariableFont.ttf in Resources */,
 				93A874D0276CD97900B95AEF /* SubDiscountCell.xib in Resources */,
 				933F0CD5273FBF8900482A9F /* FavouriteVC.xib in Resources */,
+				7FC3B22F2778F7290095DEC0 /* OCT85.otf in Resources */,
 				893086AA27434B7B000339B0 /* ProductCell.xib in Resources */,
 				933F0CDD273FC05500482A9F /* ShoppingCartVC.xib in Resources */,
-				8982F15F273F352500FB79E8 /* OCT56.otf in Resources */,
-				8982F15E273F352500FB79E8 /* OCT86.otf in Resources */,
 				8982F140273F328300FB79E8 /* Assets.xcassets in Resources */,
 				893086FB27471CBD000339B0 /* ProductVC.xib in Resources */,
 				89DBE9A42762C9D000B7C96D /* CompositionVC.xib in Resources */,
 				89DBE8A12747614B00B7C96D /* GoogleMapVC.xib in Resources */,
 				8982F154273F33D100FB79E8 /* CatalogVC.xib in Resources */,
 				7F6020EE2773AAD50031C1F7 /* vgosti_promo.json in Resources */,
+				7FC3B22D2778F7290095DEC0 /* OCT55.otf in Resources */,
 				8930869E274340C6000339B0 /* vgosti.json in Resources */,
 				93AD6D4C27515B6A00211D96 /* PopupController.xib in Resources */,
 				8930870027472838000339B0 /* ProductImageCell.xib in Resources */,
