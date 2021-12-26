@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="SubDiscountCell" customModule="FlowerApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="580" height="290"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="580" height="290"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kd9-3g-Z91">
+                        <rect key="frame" x="5" y="5" width="570" height="280"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_christmas_and_new_year" translatesAutoresizingMaskIntoConstraints="NO" id="C6f-Xd-6OB">
+                                <rect key="frame" x="0.0" y="0.0" width="570" height="280"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="C6f-Xd-6OB" firstAttribute="top" secondItem="Kd9-3g-Z91" secondAttribute="top" id="C1R-hX-Whk"/>
+                            <constraint firstAttribute="bottom" secondItem="C6f-Xd-6OB" secondAttribute="bottom" id="Owg-j8-yjz"/>
+                            <constraint firstAttribute="trailing" secondItem="C6f-Xd-6OB" secondAttribute="trailing" id="VyD-Jk-Fmd"/>
+                            <constraint firstItem="C6f-Xd-6OB" firstAttribute="leading" secondItem="Kd9-3g-Z91" secondAttribute="leading" id="zYn-t3-AyF"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="Kd9-3g-Z91" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="GfG-Ba-e48"/>
+                <constraint firstAttribute="trailing" secondItem="Kd9-3g-Z91" secondAttribute="trailing" constant="5" id="OaB-Ew-7Ms"/>
+                <constraint firstItem="Kd9-3g-Z91" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="eLu-5K-Sb7"/>
+                <constraint firstAttribute="bottom" secondItem="Kd9-3g-Z91" secondAttribute="bottom" constant="5" id="ygi-KQ-uOk"/>
+            </constraints>
+            <size key="customSize" width="580" height="297"/>
+            <connections>
+                <outlet property="backgroubdView" destination="Kd9-3g-Z91" id="h2t-gK-ln4"/>
+                <outlet property="discountImage" destination="C6f-Xd-6OB" id="98Y-YO-VVE"/>
+            </connections>
+            <point key="canvasLocation" x="521.73913043478262" y="158.03571428571428"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="icon_christmas_and_new_year" width="640" height="320"/>
+    </resources>
+</document>

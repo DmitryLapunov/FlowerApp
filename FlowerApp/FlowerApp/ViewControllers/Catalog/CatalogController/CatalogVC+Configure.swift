@@ -13,10 +13,14 @@ extension CatalogVC {
         catalogCollectionView.dataSource = self
         catalogCollectionView.delegate = self
         let nib = UINib(nibName: String(describing: CategoryCell.self), bundle: nil)
+        let discoutNib = UINib(nibName: String(describing: DiscountCell.self), bundle: nil)
+        catalogCollectionView.register(discoutNib, forCellWithReuseIdentifier: String(describing: DiscountCell.self))
         catalogCollectionView.register(nib, forCellWithReuseIdentifier: String(describing: CategoryCell.self))
         catalogCollectionView.backgroundColor = UIColor(named: "TertiaryColor")
         
         let compositionalLayout: UICollectionViewCompositionalLayout = {
+            
+            
             let horizontalGroupItemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1/2), heightDimension: .fractionalWidth(1/2))
             let horizontalGroupItem = NSCollectionLayoutItem(layoutSize: horizontalGroupItemSize)
             
@@ -47,11 +51,11 @@ extension CatalogVC {
             let smallHorizontalItemGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalWidth(1/2))
             let smallHorizontalItemGroup = NSCollectionLayoutGroup.horizontal(layoutSize: smallHorizontalItemGroupSize, subitems: [smallHorizontalItem])
             
-            let fullHorizontalItemAboveGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(2/7))
-            let fullHorizontalItemAboveGroup = NSCollectionLayoutGroup.vertical(layoutSize: fullHorizontalItemAboveGroupSize, subitems: [smallHorizontalItemGroup, fullHorizontalItem])
+            let fullHorizontalItemUpperGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(2/7))
+            let fullHorizontalItemUpperGroup = NSCollectionLayoutGroup.vertical(layoutSize: fullHorizontalItemUpperGroupSize, subitems: [fullHorizontalItem, smallHorizontalItemGroup])
             
             let categoriesGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalWidth(3.5))
-            let categoriesGroup = NSCollectionLayoutGroup.vertical(layoutSize: categoriesGroupSize, subitems: [horizontalGroup, fullVerticalItemOnLeftGroup, fullVerticalItemOnRightGroup, fullHorizontalItemAboveGroup])
+            let categoriesGroup = NSCollectionLayoutGroup.vertical(layoutSize: categoriesGroupSize, subitems: [fullHorizontalItemUpperGroup, fullVerticalItemOnLeftGroup, fullVerticalItemOnRightGroup, smallHorizontalItemGroup, fullHorizontalItem ])
             
             let section = NSCollectionLayoutSection(group: categoriesGroup)
             return UICollectionViewCompositionalLayout(section: section)
