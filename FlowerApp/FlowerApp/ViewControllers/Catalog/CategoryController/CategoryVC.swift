@@ -254,6 +254,6 @@ extension CategoryVC: FilterProductsDelegate {
     
 extension CategoryVC: ReloadBadge {
     func reloadBadge(count: String) {
-        tabBarController?.tabBar.items?.last?.badgeValue = count
+        tabBarController?.tabBar.items?.last?.badgeValue = Int(count) == 0 ? nil : "\(count)"
     }
 }

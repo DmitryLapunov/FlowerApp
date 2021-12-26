@@ -63,7 +63,7 @@ enum ContactsType: String {
         case .phoneMTS:
             return "+375(29)751-17-77"
         case .googleMap:
-            return "Google Maps"
+            return "Мы на карте"
         }
     }
 }
