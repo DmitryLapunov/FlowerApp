@@ -150,6 +150,7 @@ class FilterVC: UIViewController {
         sortByNameAscButton.isNormalState()
         sortingOrder = .ignore
         
+        compositionArrayChosen = []
         chooseCompositionLabel.text = "Выбрать состав"
         chooseCompositionPromptLabel.text = "Поиск по совпадениям состава букета"
         compositionImageView.image = UIImage(systemName: "chevron.right")
@@ -160,8 +161,12 @@ class FilterVC: UIViewController {
         let defaultSliderValue = [multiSlider.minimumValue, multiSlider.maximumValue]
         let priceRange = currentSliderValue == defaultSliderValue ? [] : currentSliderValue
         
-        filterDelegate?.filterProductsArray(priceRange: priceRange, namePriceFilter: sortingOrder, composition: compositionArrayChosen)
-        navigationController?.popViewController(animated: true)
+        if priceRange == [], sortingOrder == .ignore, compositionArrayChosen == [] {
+            PopupController.showPopup(message: "Фильтры не заданы")
+        } else {
+            filterDelegate?.filterProductsArray(priceRange: priceRange, namePriceFilter: sortingOrder, composition: compositionArrayChosen)
+            navigationController?.popViewController(animated: true)
+        }
     }
 }
 

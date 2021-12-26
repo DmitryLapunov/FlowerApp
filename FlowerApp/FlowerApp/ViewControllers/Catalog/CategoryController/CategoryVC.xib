@@ -3,13 +3,22 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-VariableFont.ttf">
+            <string>OpenSans-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CategoryVC" customModule="FlowerApp" customModuleProvider="target">
             <connections>
+                <outlet property="checkImage" destination="F3i-SQ-bDO" id="wGO-tV-hPL"/>
+                <outlet property="checkLabel" destination="tQC-K2-Sa7" id="5kh-cR-beF"/>
+                <outlet property="checkView" destination="R6w-72-u9v" id="Z3k-TL-waf"/>
                 <outlet property="tableView" destination="6Du-de-dHd" id="aPi-Rw-2JD"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -23,19 +32,57 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R6w-72-u9v">
+                    <rect key="frame" x="30" y="372.5" width="354" height="151"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchScreen" translatesAutoresizingMaskIntoConstraints="NO" id="F3i-SQ-bDO">
+                            <rect key="frame" x="142" y="10" width="70" height="70"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="70" id="QyB-ZG-YXN"/>
+                                <constraint firstAttribute="height" constant="70" id="kyK-jx-U64"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="По заданным параметрам фильтрации совпадений не найдено" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tQC-K2-Sa7">
+                            <rect key="frame" x="10" y="90" width="334" height="41"/>
+                            <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="15"/>
+                            <color key="textColor" name="MainLabelColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" name="TertiaryColor"/>
+                    <constraints>
+                        <constraint firstItem="tQC-K2-Sa7" firstAttribute="top" secondItem="F3i-SQ-bDO" secondAttribute="bottom" constant="10" id="B57-jw-i9Y"/>
+                        <constraint firstItem="F3i-SQ-bDO" firstAttribute="top" secondItem="R6w-72-u9v" secondAttribute="top" constant="10" id="YLq-pa-VFh"/>
+                        <constraint firstItem="tQC-K2-Sa7" firstAttribute="leading" secondItem="R6w-72-u9v" secondAttribute="leading" constant="10" id="aTR-jo-DDh"/>
+                        <constraint firstItem="F3i-SQ-bDO" firstAttribute="centerX" secondItem="R6w-72-u9v" secondAttribute="centerX" id="l1t-BT-zI4"/>
+                        <constraint firstAttribute="trailing" secondItem="tQC-K2-Sa7" secondAttribute="trailing" constant="10" id="pL6-l4-F09"/>
+                        <constraint firstAttribute="bottom" secondItem="tQC-K2-Sa7" secondAttribute="bottom" constant="20" id="pcT-24-hMZ"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" name="TertiaryColor"/>
             <constraints>
+                <constraint firstItem="R6w-72-u9v" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="9c3-C9-qQD"/>
                 <constraint firstItem="6Du-de-dHd" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Fyz-9G-5Pm"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="R6w-72-u9v" secondAttribute="trailing" constant="30" id="OYN-w1-lVd"/>
+                <constraint firstItem="R6w-72-u9v" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="ckc-cf-0tV"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6Du-de-dHd" secondAttribute="trailing" id="ifU-5t-kaz"/>
                 <constraint firstItem="6Du-de-dHd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="jDG-1j-mcl"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="6Du-de-dHd" secondAttribute="bottom" id="ulX-xa-Lvy"/>
+                <constraint firstItem="R6w-72-u9v" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="yVA-a8-ueb"/>
             </constraints>
-            <point key="canvasLocation" x="139" y="77"/>
+            <point key="canvasLocation" x="137.68115942028987" y="76.339285714285708"/>
         </view>
     </objects>
     <resources>
+        <image name="launchScreen" width="250" height="250"/>
+        <namedColor name="MainLabelColor">
+            <color red="0.29800000786781311" green="0.25499999523162842" blue="0.3449999988079071" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TertiaryColor">
+            <color red="0.95300000905990601" green="0.9570000171661377" blue="0.96799999475479126" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -9,10 +9,22 @@ import UIKit
 import SDWebImage
 import Realm
 
+enum CompositionExists {
+    case compositionExists
+    case noComposition
+}
+
 class CategoryVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var checkView: UIView!
+    @IBOutlet weak var checkImage: UIImageView!
+    @IBOutlet weak var checkLabel: UILabel!
     
-    var products: [Product] = []
+    var products: [Product] = [] {
+        didSet {
+            
+        }
+    }
     var cachedProducts: [Product] = []
     var chosenProducts: [Product] = []
     var availableComposition: [String] = []
@@ -22,10 +34,14 @@ class CategoryVC: UIViewController {
             tableView.reloadData()
         }
     }
+    var ifCompositionExists: CompositionExists?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        checkView.isHidden = true
+        checkImage.layer.cornerRadius = checkImage.frame.width / 2
+        checkImage.alpha = 0.8
         
         navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "")
         navigationItem.rightBarButtonItem = UIBarButtonItem().menuButton(target: self, action: #selector(filterProducts), imageName: "slider.horizontal.3")
@@ -54,6 +70,8 @@ class CategoryVC: UIViewController {
     @objc func filterProducts() {
         products = cachedProducts
         chosenProducts = []
+        tableView.isHidden = false
+        checkView.isHidden = true
         tableView.reloadData()
         tableView.scrollToRow(at: [0, 0], at: .top, animated: true)
         
@@ -154,45 +172,60 @@ extension CategoryVC: FilterProductsDelegate {
                     chosenProducts.append(product)
                 }
             }
+            ifCompositionExists = chosenProducts.count != 0 ? .compositionExists : .noComposition
         }
         
-        if priceRange.count != 0 {
-            if chosenProducts.count != 0 {
-                chosenProducts = chosenProducts.filter({ $0.cost ?? 0.0 >= priceRange[0] }).filter({ $0.cost ?? 0.0 <= priceRange[1] })
-            } else {
-                chosenProducts = products.filter({ $0.cost ?? 0.0 >= priceRange[0] }).filter({ $0.cost ?? 0.0 <= priceRange[1] })
-            }
-        }
-        
-        if chosenProducts.count != 0 {
-            switch namePriceFilter {
-            case .byNameDesc:
-                chosenProducts = chosenProducts.sorted(by: { $0.itemName! > $1.itemName! } )
-            case .byNameAsc:
-                chosenProducts = chosenProducts.sorted(by: { $0.itemName! < $1.itemName! } )
-            case .byPriceDesc:
-                chosenProducts = chosenProducts.sorted(by: { $0.cost! > $1.cost! } )
-            case .byPriceAsc:
-                chosenProducts = chosenProducts.sorted(by: { $0.cost! < $1.cost! } )
-            case .ignore:
-                break
-            }
+        if ifCompositionExists == .noComposition {
+            products = chosenProducts
+            tableView.reloadData()
         } else {
-            switch namePriceFilter {
-            case .byNameDesc:
-                chosenProducts = products.sorted(by: { $0.itemName! > $1.itemName! } )
-            case .byNameAsc:
-                chosenProducts = products.sorted(by: { $0.itemName ?? "" < $1.itemName ?? "" } )
-            case .byPriceDesc:
-                chosenProducts = products.sorted(by: { $0.cost! > $1.cost! } )
-            case .byPriceAsc:
-                chosenProducts = products.sorted(by: { $0.cost! < $1.cost! } )
-            case .ignore:
-                break
+            if priceRange.count != 0 {
+                if chosenProducts.count != 0 {
+                    chosenProducts = chosenProducts.filter({ $0.cost ?? 0.0 >= priceRange[0] }).filter({ $0.cost ?? 0.0 <= priceRange[1] })
+                } else {
+                    chosenProducts = products.filter({ $0.cost ?? 0.0 >= priceRange[0] }).filter({ $0.cost ?? 0.0 <= priceRange[1] })
+                }
+            }
+            
+            if chosenProducts.count != 0 {
+                switch namePriceFilter {
+                case .byNameDesc:
+                    chosenProducts = chosenProducts.sorted(by: { $0.itemName! > $1.itemName! } )
+                case .byNameAsc:
+                    chosenProducts = chosenProducts.sorted(by: { $0.itemName! < $1.itemName! } )
+                case .byPriceDesc:
+                    chosenProducts = chosenProducts.sorted(by: { $0.cost! > $1.cost! } )
+                case .byPriceAsc:
+                    chosenProducts = chosenProducts.sorted(by: { $0.cost! < $1.cost! } )
+                case .ignore:
+                    break
+                }
+            } else {
+                switch namePriceFilter {
+                case .byNameDesc:
+                    chosenProducts = products.sorted(by: { $0.itemName! > $1.itemName! } )
+                case .byNameAsc:
+                    chosenProducts = products.sorted(by: { $0.itemName ?? "" < $1.itemName ?? "" } )
+                case .byPriceDesc:
+                    chosenProducts = products.sorted(by: { $0.cost! > $1.cost! } )
+                case .byPriceAsc:
+                    chosenProducts = products.sorted(by: { $0.cost! < $1.cost! } )
+                case .ignore:
+                    break
+                }
             }
         }
         
         products = chosenProducts
+        
+        if products.count == 0 {
+            tableView.isHidden = true
+            checkView.isHidden = false
+        } else {
+            tableView.isHidden = false
+            checkView.isHidden = true
+        }
+        
         tableView.reloadData()
     }
 }

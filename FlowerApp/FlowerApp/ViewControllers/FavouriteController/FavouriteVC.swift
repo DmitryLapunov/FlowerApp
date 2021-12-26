@@ -61,9 +61,6 @@ class FavouriteVC: UIViewController, AlertShowerProduct {
     
 }
 
-
-
-
 extension FavouriteVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrayProductsObject.count
