@@ -1,10 +1,10 @@
 PODS:
-  - Alamofire (5.4.3)
+  - Alamofire (5.4.4)
   - AvailableHapticFeedback (1.0.2)
-  - GoogleMaps (5.1.0):
-    - GoogleMaps/Maps (= 5.1.0)
-  - GoogleMaps/Base (5.1.0)
-  - GoogleMaps/Maps (5.1.0):
+  - GoogleMaps (5.2.0):
+    - GoogleMaps/Maps (= 5.2.0)
+  - GoogleMaps/Base (5.2.0)
+  - GoogleMaps/Maps (5.2.0):
     - GoogleMaps/Base
   - mailcore2-ios (0.6.4)
   - Moya (14.0.0):
@@ -20,14 +20,14 @@ PODS:
     - AvailableHapticFeedback
     - SweeterSwift
   - ObjectMapper (4.2.0)
-  - Realm (10.15.1):
-    - Realm/Headers (= 10.15.1)
-  - Realm/Headers (10.15.1)
-  - RealmSwift (10.15.1):
-    - Realm (= 10.15.1)
-  - SDWebImage (5.11.1):
-    - SDWebImage/Core (= 5.11.1)
-  - SDWebImage/Core (5.11.1)
+  - Realm (10.17.0):
+    - Realm/Headers (= 10.17.0)
+  - Realm/Headers (10.17.0)
+  - RealmSwift (10.17.0):
+    - Realm (= 10.17.0)
+  - SDWebImage (5.12.1):
+    - SDWebImage/Core (= 5.12.1)
+  - SDWebImage/Core (5.12.1)
   - SweeterSwift (1.1.4)
   - TPKeyboardAvoiding (1.3.5)
 
@@ -58,17 +58,17 @@ SPEC REPOS:
     - TPKeyboardAvoiding
 
 SPEC CHECKSUMS:
-  Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
+  Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
   AvailableHapticFeedback: 9b21b9f6d3e4566015988b5de35b40abefe6c09a
-  GoogleMaps: 086ae1dab659eaa7339bdb30fc88e2f44e7c597c
+  GoogleMaps: 025272d5876d3b32604e5c080dc25eaf68764693
   mailcore2-ios: 3ff0be2fa553d4da9c11d39c11d51863c768f24f
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   Moya-ObjectMapper: 967a99d9ea3aa9c93ddbe112aeca3667f53bfe93
   MultiSlider: 944d00877d371bbb5ce0a512fec517de87958775
   ObjectMapper: 1eb41f610210777375fa806bf161dc39fb832b81
-  Realm: fbcbde2620d51623cc5b18e28f5b165c39abef52
-  RealmSwift: e4bea8e42efad3d543aea23b56504069c6faaea2
-  SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
+  Realm: 9533276bd76f66aa2fd0d3ffe700c1f6023dcab6
+  RealmSwift: 57f5d59aa29852587aad1e861989e7af139894b5
+  SDWebImage: 4dc3e42d9ec0c1028b960a33ac6b637bb432207b
   SweeterSwift: 8a90cf3156f5a1b6f39785c479369a16633b5ea9
   TPKeyboardAvoiding: d55b3ea7b362540af8fcf36aa3ed2e87bf210cc6
 

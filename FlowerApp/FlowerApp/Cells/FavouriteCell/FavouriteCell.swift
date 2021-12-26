@@ -31,9 +31,12 @@ class FavouriteCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         setupCell()
+       
     }
 
     func setupCell() {
+        contentView.backgroundColor = UIColor.tertiaryColor
+        
         productImage.layer.cornerRadius = 10
         favouriteCellBackgroundView.layer.cornerRadius = 10
         priceBackground.layer.cornerRadius = 10

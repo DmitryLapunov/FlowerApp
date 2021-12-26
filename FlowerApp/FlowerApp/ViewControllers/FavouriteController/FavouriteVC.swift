@@ -45,9 +45,10 @@ class FavouriteVC: UIViewController, AlertShowerProduct {
     
     private func setupController() {
         title = "Избранное"
-        view.backgroundColor = UIColor(named: "TertiaryColor")
-        checkView.backgroundColor = UIColor(named: "TertiaryColor")
-        checkLabel.textColor = UIColor(named: "MainLabelColor")
+        tableView.backgroundColor = UIColor.tertiaryColor
+        view.backgroundColor = UIColor.tertiaryColor
+        checkView.backgroundColor = UIColor.tertiaryColor
+        checkLabel.textColor = UIColor.mainLabelColor
         
         checkImage.layer.cornerRadius = checkImage.bounds.height / 2
         checkImage.alpha = 0.8

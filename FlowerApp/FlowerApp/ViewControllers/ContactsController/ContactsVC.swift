@@ -19,6 +19,8 @@ class ContactsVC: UIViewController {
         super.viewDidLoad()
         title = "Контакты"
         
+        tableView.backgroundColor = UIColor.tertiaryColor
+        
         tableView.dataSource = self
         tableView.delegate = self
         
@@ -45,7 +47,7 @@ extension ContactsVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         let header = view as! UITableViewHeaderFooterView
-        header.textLabel?.textColor = UIColor(named: "MainColor")
+        header.textLabel?.textColor = UIColor.mainColor
         header.textLabel?.font = UIFont(name: "Octava-Regular", size: 16)
     }
         

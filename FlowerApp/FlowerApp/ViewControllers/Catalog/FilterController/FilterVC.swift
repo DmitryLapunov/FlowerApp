@@ -64,8 +64,7 @@ class FilterVC: UIViewController {
         sortByPriceAscButton.isNormalState()
         sortByNameDescButton.isNormalState()
         sortByNameAscButton.isNormalState()
-        
-        discardFiltersButton.layer.borderColor = UIColor(named: "MainColor")?.cgColor
+        discardFiltersButton.layer.borderColor = UIColor.mainColor.cgColor
         discardFiltersButton.layer.borderWidth = 1
         discardFiltersButton.layer.cornerRadius = 10
         
@@ -87,14 +86,14 @@ class FilterVC: UIViewController {
         multiSlider.addTarget(self, action: #selector(sliderChanged), for: .valueChanged)
         multiSlider.addTarget(self, action: #selector(sliderDragEnded), for: .touchUpInside)
         
-        multiSlider.outerTrackColor = UIColor(named: "SecondaryLabelColor")
+        multiSlider.outerTrackColor = UIColor.secondaryLabelColor
         multiSlider.orientation = .horizontal
         multiSlider.valueLabelPosition = .bottom
-        multiSlider.valueLabelColor = UIColor(named: "MainLabelColor")
+        multiSlider.valueLabelColor = UIColor.mainLabelColor
         multiSlider.valueLabelFont = UIFont(name: "Open Sans", size: 15)
         multiSlider.snapStepSize = 1.0
         multiSlider.isHapticSnap = true
-        multiSlider.tintColor = UIColor(named: "MainColor")
+        multiSlider.tintColor = UIColor.mainColor
         multiSlider.trackWidth = 4
         multiSlider.hasRoundTrackEnds = true
         multiSlider.showsThumbImageShadow = true

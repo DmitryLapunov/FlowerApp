@@ -30,11 +30,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let tabBarItemAppearance = UITabBarItemAppearance()
             
             tabBarAppearance.configureWithDefaultBackground()
-            tabBarAppearance.backgroundColor = UIColor(named: "TertiaryColor")
+            tabBarAppearance.backgroundColor = UIColor.tertiaryColor
             
-            if let font = UIFont(name: "Open Sans", size: 10), let color = UIColor(named: "SecondaryLabelColor") {
-                tabBarItemAppearance.normal.iconColor = color
-                tabBarItemAppearance.normal.titleTextAttributes = [NSAttributedString.Key.foregroundColor: color]
+            if let font = UIFont(name: "Open Sans", size: 10) {
+                tabBarItemAppearance.normal.iconColor = UIColor.secondaryLabelColor
+                tabBarItemAppearance.normal.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.secondaryLabelColor]
                 tabBarItemAppearance.normal.titleTextAttributes = [NSAttributedString.Key.font: font]
                 tabBarItemAppearance.selected.titleTextAttributes = [NSAttributedString.Key.font: font]
             }
@@ -54,7 +54,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let navigationBarAppearance = UINavigationBarAppearance()
             navigationBarAppearance.configureWithDefaultBackground()
             navigationBarAppearance.shadowColor = .clear
-            navigationBarAppearance.backgroundColor = UIColor(named: "TertiaryColor")
+            navigationBarAppearance.backgroundColor = UIColor.tertiaryColor
             
             if let font = UIFont(name: "Open Sans", size: 20) {
                 navigationBarAppearance.titleTextAttributes = [NSAttributedString.Key.font: font]
@@ -63,7 +63,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             UINavigationBar.appearance().standardAppearance = navigationBarAppearance
             UINavigationBar.appearance().compactAppearance = navigationBarAppearance
             UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
-            UINavigationBar.appearance().tintColor = UIColor(named: "MainColor")
+            UINavigationBar.appearance().tintColor = UIColor.mainColor
         }
     }
     
