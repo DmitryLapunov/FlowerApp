@@ -11,12 +11,16 @@ class ShoppingCartVC: UIViewController {
     @IBOutlet weak var greenBgAspectRatioConstraint: NSLayoutConstraint!
     @IBOutlet weak var greenBgView: UIView!
     @IBOutlet weak var orderDetailsButton: UIButton!
+    @IBOutlet weak var orderStepLabel: UILabel!
+    @IBOutlet weak var orderStepLabelLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var orderStepLabelWidthConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Корзина"
         
         orderDetailsButton.addShadowAndTintColor()
+        orderStepLabelWidthConstraint.constant = UIScreen.main.bounds.width / 3
     }
     
     @IBAction func orderDetailsButtonAction(_ sender: Any) {
@@ -30,6 +34,8 @@ class ShoppingCartVC: UIViewController {
                                                          attribute: .width,
                                                          multiplier: 1/4,
                                                          constant: 0))
+            self.orderStepLabel.text = "Оформление"
+            self.orderStepLabelLeadingConstraint.constant += UIScreen.main.bounds.width / 3
             self.view.layoutSubviews()
         }
         
