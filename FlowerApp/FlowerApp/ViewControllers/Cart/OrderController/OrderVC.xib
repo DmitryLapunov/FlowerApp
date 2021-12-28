@@ -19,6 +19,7 @@
                 <outlet property="nameField" destination="neK-89-g1V" id="cuc-8D-oGs"/>
                 <outlet property="orderTopConstraint" destination="Jqx-UC-DYp" id="RXU-5I-D0m"/>
                 <outlet property="phoneField" destination="p4S-hu-Daq" id="PR5-7r-CD3"/>
+                <outlet property="switcherDelivery" destination="TIV-N7-9au" id="xU8-Eg-1fD"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -31,14 +32,14 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                     <color key="backgroundColor" name="TertiaryColor"/>
                 </view>
-                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KFa-DO-oO6">
-                    <rect key="frame" x="16" y="44" width="382" height="415"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KFa-DO-oO6">
+                    <rect key="frame" x="16" y="44" width="382" height="471"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="bEi-pr-cY3">
-                            <rect key="frame" x="0.0" y="5" width="372" height="400"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="bEi-pr-cY3">
+                            <rect key="frame" x="10" y="61" width="362" height="400"/>
                             <subviews>
-                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="neK-89-g1V" customClass="ValidationTextField" customModule="FlowerApp" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="372" height="100"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="neK-89-g1V" customClass="ValidationTextField" customModule="FlowerApp" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="362" height="100"/>
                                     <color key="backgroundColor" name="TertiaryColor"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Имя:"/>
@@ -48,8 +49,8 @@
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </view>
-                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p4S-hu-Daq" customClass="ValidationTextField" customModule="FlowerApp" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="100" width="372" height="100"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p4S-hu-Daq" customClass="ValidationTextField" customModule="FlowerApp" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="100" width="362" height="100"/>
                                     <color key="backgroundColor" name="TertiaryColor"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Номер телефона:"/>
@@ -59,19 +60,19 @@
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </view>
-                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i4Q-Pq-xS4" customClass="ValidationTextField" customModule="FlowerApp" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="200" width="372" height="100"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i4Q-Pq-xS4" customClass="ValidationTextField" customModule="FlowerApp" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="200" width="362" height="100"/>
                                     <color key="backgroundColor" name="TertiaryColor"/>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Адрес:"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Адрес доставки:"/>
                                         <userDefinedRuntimeAttribute type="string" keyPath="errorMessage" value="Адрес введён неправильно"/>
                                         <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                             <color key="value" name="MainColor"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </view>
-                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Fs-Wy-OdX" customClass="ValidationTextField" customModule="FlowerApp" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="300" width="372" height="100"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Fs-Wy-OdX" customClass="ValidationTextField" customModule="FlowerApp" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="300" width="362" height="100"/>
                                     <color key="backgroundColor" name="TertiaryColor"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Email:"/>
@@ -84,13 +85,27 @@
                             </subviews>
                             <color key="backgroundColor" name="TertiaryColor"/>
                         </stackView>
+                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="TIV-N7-9au">
+                            <rect key="frame" x="26" y="15" width="330" height="32"/>
+                            <color key="backgroundColor" name="MainColor"/>
+                            <segments>
+                                <segment title="Доставка"/>
+                                <segment title="Самовывоз"/>
+                            </segments>
+                            <connections>
+                                <action selector="switcherDelivery:" destination="-1" eventType="valueChanged" id="Bh8-nT-biD"/>
+                            </connections>
+                        </segmentedControl>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
+                        <constraint firstAttribute="trailing" secondItem="TIV-N7-9au" secondAttribute="trailing" constant="26" id="6Au-97-IOH"/>
+                        <constraint firstItem="TIV-N7-9au" firstAttribute="leading" secondItem="KFa-DO-oO6" secondAttribute="leading" constant="26" id="7jU-2g-uq0"/>
                         <constraint firstAttribute="bottom" secondItem="bEi-pr-cY3" secondAttribute="bottom" constant="10" id="8ig-2r-zcw"/>
-                        <constraint firstItem="bEi-pr-cY3" firstAttribute="top" secondItem="KFa-DO-oO6" secondAttribute="top" constant="5" id="CeF-6t-d1b"/>
+                        <constraint firstItem="TIV-N7-9au" firstAttribute="top" secondItem="KFa-DO-oO6" secondAttribute="top" constant="15" id="CEF-bS-DaK"/>
+                        <constraint firstItem="bEi-pr-cY3" firstAttribute="top" secondItem="TIV-N7-9au" secondAttribute="bottom" constant="15" id="P0Q-H7-xB2"/>
                         <constraint firstAttribute="trailing" secondItem="bEi-pr-cY3" secondAttribute="trailing" constant="10" id="YXt-0f-U28"/>
-                        <constraint firstItem="bEi-pr-cY3" firstAttribute="leading" secondItem="KFa-DO-oO6" secondAttribute="leading" id="deC-hz-29d"/>
+                        <constraint firstItem="bEi-pr-cY3" firstAttribute="leading" secondItem="KFa-DO-oO6" secondAttribute="leading" constant="10" id="deC-hz-29d"/>
                     </constraints>
                 </view>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="0AY-Ma-Nd5">

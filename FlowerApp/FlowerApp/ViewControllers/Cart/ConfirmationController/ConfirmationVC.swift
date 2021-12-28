@@ -16,6 +16,9 @@ class ConfirmationVC: UIViewController {
     @IBOutlet weak var backToPreviousButton: UIButton!
     @IBOutlet weak var sendOrderButton: UIButton!
     
+    var name = ""
+    var phone = ""
+    var adress = ""
     var navBarHeight: CGFloat?
     weak var animationDelegate: ConfirmationVCDelegate?
     

@@ -23,6 +23,7 @@ class OrderVC: UIViewController {
     @IBOutlet weak var orderTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var backToOrderButton: UIButton!
     @IBOutlet weak var createOrderButton: UIButton!
+    @IBOutlet weak var switcherDelivery: UISegmentedControl!
     
     var navBarHeight: CGFloat?
     weak var animationDelegate: OrderVCDelegate?
@@ -34,6 +35,22 @@ class OrderVC: UIViewController {
         setupStackView()
         let keyboardTap = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         view.addGestureRecognizer(keyboardTap)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height - backgroundStackView.frame.height / 2.2
+            }
+        }
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
+        }
     }
     
     @objc func hideKeyboard() {
@@ -83,6 +100,13 @@ class OrderVC: UIViewController {
     }
     
     
+    @IBAction func switcherDelivery(_ sender: Any) {
+        if switcherDelivery.selectedSegmentIndex == 1 {
+            adressField.isHidden = true
+        } else {
+            adressField.isHidden = false
+        }
+    }
     
     @IBAction func backToOrderAction(_ sender: Any) {
         animationDelegate?.backToStepOne()
@@ -91,18 +115,33 @@ class OrderVC: UIViewController {
     
     @IBAction func createOrderAction(_ sender: Any) {
         
-        guard let name = nameField.inputField.text, !name.isEmpty, nameField.errorLabel.text == "",
-              let phone = phoneField.inputField.text, !phone.isEmpty, phoneField.errorLabel.text == "",
-              let adress = adressField.inputField.text, !adress.isEmpty, adressField.errorLabel.text == "",
-              let email = emailField.inputField.text, !email.isEmpty, emailField.errorLabel.text == "" else { return }
+        if adressField.isHidden {
+            guard let name = nameField.inputField.text, !name.isEmpty, nameField.errorLabel.text == "",
+                  let phone = phoneField.inputField.text, !phone.isEmpty, phoneField.errorLabel.text == "",
+                  let email = emailField.inputField.text, !email.isEmpty, emailField.errorLabel.text == "" else { return }
+            
+            animationDelegate?.fromStepTwoToStepThree()
+            let confirmationVC = ConfirmationVC(nibName: String(describing: ConfirmationVC.self), bundle: nil)
+            confirmationVC.modalPresentationStyle = .overCurrentContext
+            confirmationVC.modalTransitionStyle = .coverVertical
+            confirmationVC.navBarHeight = self.navBarHeight
+            confirmationVC.animationDelegate = self
+            present(confirmationVC, animated: true, completion: nil)
+        } else {
+            guard let name = nameField.inputField.text, !name.isEmpty, nameField.errorLabel.text == "",
+                  let phone = phoneField.inputField.text, !phone.isEmpty, phoneField.errorLabel.text == "",
+                  let adress = adressField.inputField.text, !adress.isEmpty, adressField.errorLabel.text == "",
+                  let email = emailField.inputField.text, !email.isEmpty, emailField.errorLabel.text == "" else { return }
+            
+            animationDelegate?.fromStepTwoToStepThree()
+            let confirmationVC = ConfirmationVC(nibName: String(describing: ConfirmationVC.self), bundle: nil)
+            confirmationVC.modalPresentationStyle = .overCurrentContext
+            confirmationVC.modalTransitionStyle = .coverVertical
+            confirmationVC.navBarHeight = self.navBarHeight
+            confirmationVC.animationDelegate = self
+            present(confirmationVC, animated: true, completion: nil)
+        }
         
-        animationDelegate?.fromStepTwoToStepThree()
-        let confirmationVC = ConfirmationVC(nibName: String(describing: ConfirmationVC.self), bundle: nil)
-        confirmationVC.modalPresentationStyle = .overCurrentContext
-        confirmationVC.modalTransitionStyle = .coverVertical
-        confirmationVC.navBarHeight = self.navBarHeight
-        confirmationVC.animationDelegate = self
-        present(confirmationVC, animated: true, completion: nil)
     }
     
 }

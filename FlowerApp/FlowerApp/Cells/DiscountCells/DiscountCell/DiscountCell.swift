@@ -40,8 +40,6 @@ extension DiscountCell: UICollectionViewDataSource {
             }
         }
         
-        // тут нужно выбрать, что мы будем выводить Name или Subtitle, мне кажется лучше сабтайтл, так как он короче, можно красивее его встроить
-        
         if let discountName = discounts[indexPath.row].subtitle {
             subDiscountCell.discountName.text = discountName
         }
