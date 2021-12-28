@@ -21,6 +21,7 @@
                 <outlet property="orderStepLabel" destination="CVf-rJ-LO3" id="ImG-KK-mPW"/>
                 <outlet property="orderStepLabelLeadingConstraint" destination="Ciw-OG-G6X" id="oM3-il-Hu3"/>
                 <outlet property="orderStepLabelWidthConstraint" destination="KuT-mz-m5o" id="uuR-Dz-mfD"/>
+                <outlet property="tableView" destination="9iX-Og-0WP" id="jKQ-0h-rYz"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -65,11 +66,16 @@
                         <action selector="orderDetailsButtonAction:" destination="-1" eventType="touchUpInside" id="ryR-fM-yEk"/>
                     </connections>
                 </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="9iX-Og-0WP">
+                    <rect key="frame" x="0.0" y="128" width="414" height="679.5"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" name="TertiaryColor"/>
             <constraints>
                 <constraint firstItem="cr7-RP-CgJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="4HK-hH-fW5"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9iX-Og-0WP" secondAttribute="trailing" id="4xT-5u-5Cm"/>
                 <constraint firstItem="U7B-yx-DvX" firstAttribute="bottom" secondItem="cr7-RP-CgJ" secondAttribute="bottom" id="8YM-si-Pv7"/>
                 <constraint firstItem="CVf-rJ-LO3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Ciw-OG-G6X"/>
                 <constraint firstItem="U7B-yx-DvX" firstAttribute="bottom" secondItem="iXc-O5-5Cr" secondAttribute="bottom" id="Rev-sG-z0P"/>
@@ -78,11 +84,14 @@
                 <constraint firstItem="cr7-RP-CgJ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="bMP-WT-7bP"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="X2f-39-COe" secondAttribute="bottom" constant="10" id="bmw-fg-kcd"/>
                 <constraint firstItem="iXc-O5-5Cr" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="bsL-nv-0nE"/>
+                <constraint firstItem="9iX-Og-0WP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="dyN-0Z-eRj"/>
+                <constraint firstItem="X2f-39-COe" firstAttribute="top" secondItem="9iX-Og-0WP" secondAttribute="bottom" constant="10" id="hfE-dF-Nge"/>
                 <constraint firstItem="X2f-39-COe" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="hsh-UP-lUO"/>
                 <constraint firstItem="U7B-yx-DvX" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="otL-LS-ofb"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="iXc-O5-5Cr" secondAttribute="trailing" id="r5l-yI-XeU"/>
                 <constraint firstItem="CVf-rJ-LO3" firstAttribute="top" secondItem="iXc-O5-5Cr" secondAttribute="bottom" constant="-10" id="y2m-Qm-6ZA"/>
                 <constraint firstItem="U7B-yx-DvX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ydZ-Xm-1HN"/>
+                <constraint firstItem="9iX-Og-0WP" firstAttribute="top" secondItem="iXc-O5-5Cr" secondAttribute="bottom" constant="15" id="zgE-a0-Gbz"/>
             </constraints>
             <point key="canvasLocation" x="139" y="125"/>
         </view>

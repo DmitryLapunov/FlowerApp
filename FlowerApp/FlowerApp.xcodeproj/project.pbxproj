@@ -52,6 +52,8 @@
 		8982F1702740ADFB00FB79E8 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8982F16E2740ADFB00FB79E8 /* CategoryCell.xib */; };
 		89969DEA277A7BD0001519F9 /* ConfirmationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89969DE8277A7BD0001519F9 /* ConfirmationVC.swift */; };
 		89969DEB277A7BD0001519F9 /* ConfirmationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89969DE9277A7BD0001519F9 /* ConfirmationVC.xib */; };
+		89969DF3277B6198001519F9 /* CartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89969DF1277B6198001519F9 /* CartCell.swift */; };
+		89969DF4277B6198001519F9 /* CartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89969DF2277B6198001519F9 /* CartCell.xib */; };
 		89DBE89227475C7C00B7C96D /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DBE89127475C7C00B7C96D /* TabBarController.swift */; };
 		89DBE89627475C8C00B7C96D /* ContactsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DBE89427475C8C00B7C96D /* ContactsCell.swift */; };
 		89DBE89727475C8C00B7C96D /* ContactsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89DBE89527475C8C00B7C96D /* ContactsCell.xib */; };
@@ -134,6 +136,8 @@
 		8982F16E2740ADFB00FB79E8 /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 		89969DE8277A7BD0001519F9 /* ConfirmationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationVC.swift; sourceTree = "<group>"; };
 		89969DE9277A7BD0001519F9 /* ConfirmationVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfirmationVC.xib; sourceTree = "<group>"; };
+		89969DF1277B6198001519F9 /* CartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCell.swift; sourceTree = "<group>"; };
+		89969DF2277B6198001519F9 /* CartCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartCell.xib; sourceTree = "<group>"; };
 		89DBE89127475C7C00B7C96D /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		89DBE89427475C8C00B7C96D /* ContactsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsCell.swift; sourceTree = "<group>"; };
 		89DBE89527475C8C00B7C96D /* ContactsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactsCell.xib; sourceTree = "<group>"; };
@@ -376,6 +380,7 @@
 		8982F14D273F339200FB79E8 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				89969DF0277B6180001519F9 /* CartCell */,
 				89DBE9A52766DC2800B7C96D /* FilterCell */,
 				933EEC402775C01E007E482D /* DiscountCells */,
 				9396BC5C2748819A00DA4FC8 /* FavouriteCell */,
@@ -426,6 +431,15 @@
 				89969DE9277A7BD0001519F9 /* ConfirmationVC.xib */,
 			);
 			path = ConfirmationController;
+			sourceTree = "<group>";
+		};
+		89969DF0277B6180001519F9 /* CartCell */ = {
+			isa = PBXGroup;
+			children = (
+				89969DF1277B6198001519F9 /* CartCell.swift */,
+				89969DF2277B6198001519F9 /* CartCell.xib */,
+			);
+			path = CartCell;
 			sourceTree = "<group>";
 		};
 		89DBE89027475C7C00B7C96D /* TabBarController */ = {
@@ -646,6 +660,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89969DF4277B6198001519F9 /* CartCell.xib in Resources */,
 				7FC3B2322778F7290095DEC0 /* OCT86.otf in Resources */,
 				89DBE918275059F000B7C96D /* FilterVC.xib in Resources */,
 				7FC1AB992778EF88007495A3 /* DiscountCell.xib in Resources */,
@@ -754,6 +769,7 @@
 				893086A427434B1E000339B0 /* CategoryVC.swift in Sources */,
 				7F681B7B27654D4F00C81EFA /* User.swift in Sources */,
 				7F681B812765776C00C81EFA /* User.swift in Sources */,
+				89969DF3277B6198001519F9 /* CartCell.swift in Sources */,
 				7F224A1E275F9F64000649BB /* InsetsTextField.swift in Sources */,
 				893086FF27472838000339B0 /* ProductImageCell.swift in Sources */,
 				893086FA27471CBD000339B0 /* ProductVC.swift in Sources */,

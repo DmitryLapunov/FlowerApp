@@ -25,8 +25,7 @@ class ConfirmationVC: UIViewController {
         backToPreviousButton.addShadowAndSecondaryTintColor()
         sendOrderButton.addShadowAndTintColor()
         
-        guard let navBarHeightValue = navBarHeight else { return }
-        confirmationTopConstraint.constant = (UIScreen.main.bounds.width / 6) + navBarHeightValue
+        confirmationTopConstraint.constant = (UIScreen.main.bounds.width / 6) + 17
     }
     
     @IBAction func backToPreviousAction(_ sender: Any) {

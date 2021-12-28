@@ -46,8 +46,7 @@ class OrderVC: UIViewController {
         adressField.delegate = self
         emailField.delegate = self
         
-        guard let navBarHeightValue = navBarHeight else { return }
-        orderTopConstraint.constant = (UIScreen.main.bounds.width / 6) + navBarHeightValue
+        orderTopConstraint.constant = (UIScreen.main.bounds.width / 6) + 17
     }
     
     @IBAction func backToOrderAction(_ sender: Any) {
@@ -59,7 +58,7 @@ class OrderVC: UIViewController {
         animationDelegate?.fromStepTwoToStepThree()
         let confirmationVC = ConfirmationVC(nibName: String(describing: ConfirmationVC.self), bundle: nil)
         confirmationVC.modalPresentationStyle = .overCurrentContext
-        confirmationVC.modalTransitionStyle = .coverVertical
+        confirmationVC.modalTransitionStyle = .flipHorizontal
         confirmationVC.navBarHeight = self.navBarHeight
         confirmationVC.animationDelegate = self
         present(confirmationVC, animated: true, completion: nil)

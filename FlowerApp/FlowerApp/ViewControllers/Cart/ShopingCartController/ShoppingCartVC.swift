@@ -14,19 +14,30 @@ class ShoppingCartVC: UIViewController {
     @IBOutlet weak var orderStepLabel: UILabel!
     @IBOutlet weak var orderStepLabelLeadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var orderStepLabelWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var tableView: UITableView!
+    
+    var cartProducts: [CartProduct] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Корзина"
         
+        setupTableView()
+        
         orderDetailsButton.addShadowAndTintColor()
         orderStepLabelWidthConstraint.constant = UIScreen.main.bounds.width / 3
         greenBgWidthConstraint.constant = UIScreen.main.bounds.width / 3
+        
+        self.definesPresentationContext = true
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        greenBgWidthConstraint.isActive = true
+    private func setupTableView() {
+        cartProducts = RealmManager.shared.getCart()
+        tableView.delegate = self
+        tableView.dataSource = self
+        let nib = UINib(nibName: String(describing: CartCell.self), bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: String(describing: CartCell.self))
+        tableView.separatorStyle = .none
     }
     
     @IBAction func orderDetailsButtonAction(_ sender: Any) {
@@ -39,7 +50,7 @@ class ShoppingCartVC: UIViewController {
         }
         let orderVC = OrderVC(nibName: String(describing: OrderVC.self), bundle: nil)
         orderVC.modalPresentationStyle = .overCurrentContext
-        orderVC.modalTransitionStyle = .coverVertical
+        orderVC.modalTransitionStyle = .flipHorizontal
         orderVC.navBarHeight = self.navBarHeight
         orderVC.animationDelegate = self
         present(orderVC, animated: true, completion: nil)
@@ -82,5 +93,23 @@ extension ShoppingCartVC: OrderVCDelegate {
             self.orderStepLabelLeadingConstraint.constant = 0
             self.view.layoutSubviews()
         }
+    }
+}
+
+extension ShoppingCartVC: UITableViewDelegate {
+    
+}
+
+extension ShoppingCartVC: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return cartProducts.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: CartCell.self), for: indexPath)
+        guard let cartCell = cell as? CartCell else { return cell }
+        cartCell.setupCell(cartProducts[indexPath.row])
+        cartCell.selectionStyle = .none
+        return cartCell
     }
 }
