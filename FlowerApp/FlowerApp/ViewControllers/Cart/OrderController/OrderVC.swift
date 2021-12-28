@@ -15,6 +15,7 @@ protocol OrderVCDelegate: AnyObject {
 
 class OrderVC: UIViewController {
 
+    @IBOutlet weak var backgroundStackView: UIView!
     @IBOutlet weak var nameField: ValidationTextField!
     @IBOutlet weak var phoneField: ValidationTextField!
     @IBOutlet weak var adressField: ValidationTextField!
@@ -30,6 +31,13 @@ class OrderVC: UIViewController {
         super.viewDidLoad()
         title = "Детали заказа"
         setupValidationField()
+        setupStackView()
+        let keyboardTap = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        view.addGestureRecognizer(keyboardTap)
+    }
+    
+    @objc func hideKeyboard() {
+        self.view.endEditing(true)
     }
     
     private func setupValidationField() {
@@ -50,12 +58,44 @@ class OrderVC: UIViewController {
         orderTopConstraint.constant = (UIScreen.main.bounds.width / 6) + navBarHeightValue
     }
     
+    func setupStackView() {
+        backgroundStackView.layer.cornerRadius = 12
+        
+        nameField.inputField.delegate = self
+        phoneField.inputField.delegate = self
+        adressField.inputField.delegate = self
+        emailField.inputField.delegate = self
+        
+        nameField.inputField.tintColor = .black
+        phoneField.inputField.tintColor = .black
+        adressField.inputField.tintColor = .black
+        emailField.inputField.tintColor = .black
+        
+        nameField.inputField.placeholder = "Пример: Иван"
+        phoneField.inputField.placeholder = "Пример: +375291234567"
+        adressField.inputField.placeholder = "Пример: Гикало 7а"
+        emailField.inputField.placeholder = "Пример: vgosti.by@gmail.com"
+        
+        backgroundStackView.layer.shadowColor = UIColor.black.cgColor
+        backgroundStackView.layer.shadowOpacity = 0.15
+        backgroundStackView.layer.shadowRadius = 2
+        backgroundStackView.layer.shadowOffset = CGSize(width: 0, height: 2)
+    }
+    
+    
+    
     @IBAction func backToOrderAction(_ sender: Any) {
         animationDelegate?.backToStepOne()
         self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func createOrderAction(_ sender: Any) {
+        
+        guard let name = nameField.inputField.text, !name.isEmpty, nameField.errorLabel.text == "",
+              let phone = phoneField.inputField.text, !phone.isEmpty, phoneField.errorLabel.text == "",
+              let adress = adressField.inputField.text, !adress.isEmpty, adressField.errorLabel.text == "",
+              let email = emailField.inputField.text, !email.isEmpty, emailField.errorLabel.text == "" else { return }
+        
         animationDelegate?.fromStepTwoToStepThree()
         let confirmationVC = ConfirmationVC(nibName: String(describing: ConfirmationVC.self), bundle: nil)
         confirmationVC.modalPresentationStyle = .overCurrentContext
@@ -76,5 +116,12 @@ extension OrderVC: ValidationTextFieldDelegate {
 extension OrderVC: ConfirmationVCDelegate {
     func backToStepTwo() {
         animationDelegate?.fromStepThreeToStepTwo()
+    }
+}
+
+extension OrderVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
 }
