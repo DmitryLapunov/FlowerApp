@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -12,8 +12,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OrderVC" customModule="FlowerApp" customModuleProvider="target">
             <connections>
                 <outlet property="adressField" destination="i4Q-Pq-xS4" id="cIg-sU-PM5"/>
+                <outlet property="createOrderButton" destination="PfB-qF-Z3O" id="s4z-pP-Gbg"/>
                 <outlet property="emailField" destination="6Fs-Wy-OdX" id="oZX-m6-tW5"/>
                 <outlet property="nameField" destination="neK-89-g1V" id="cuc-8D-oGs"/>
+                <outlet property="orderTopConstraint" destination="gTq-bt-tfL" id="b53-WZ-hm9"/>
                 <outlet property="phoneField" destination="p4S-hu-Daq" id="PR5-7r-CD3"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -23,6 +25,10 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ym3-JG-6Gl">
+                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                    <color key="backgroundColor" name="TertiaryColor"/>
+                </view>
                 <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="bEi-pr-cY3">
                     <rect key="frame" x="0.0" y="44" width="414" height="400"/>
                     <subviews>
@@ -73,40 +79,39 @@
                     </subviews>
                     <color key="backgroundColor" red="0.94117647059999998" green="0.60392156860000001" blue="0.602715373" alpha="1" colorSpace="calibratedRGB"/>
                 </stackView>
-                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PfB-qF-Z3O">
-                    <rect key="frame" x="20" y="464" width="374" height="31"/>
-                    <color key="backgroundColor" name="MainColor"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="31" id="oO2-bI-JBr"/>
-                    </constraints>
-                    <color key="tintColor" name="AccentColor"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PfB-qF-Z3O">
+                    <rect key="frame" x="151.5" y="817.5" width="111" height="34.5"/>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="Оформить заказ"/>
+                    <buttonConfiguration key="configuration" style="filled" title="Оформить заказ">
+                        <fontDescription key="titleFontDescription" name="OpenSansRoman-CondensedRegular" family="Open Sans" pointSize="15"/>
+                    </buttonConfiguration>
                     <connections>
                         <action selector="createOrderAction:" destination="-1" eventType="touchUpInside" id="yjQ-6I-gYq"/>
                     </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="PfB-qF-Z3O" secondAttribute="bottom" constant="20" id="9Fu-YD-KMr"/>
-                <constraint firstItem="PfB-qF-Z3O" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="LFu-ZV-Y8S"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="PfB-qF-Z3O" secondAttribute="bottom" constant="10" id="9Fu-YD-KMr"/>
+                <constraint firstItem="ym3-JG-6Gl" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="HtQ-BV-NeZ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bEi-pr-cY3" secondAttribute="trailing" id="MKI-ND-eFR"/>
+                <constraint firstAttribute="bottom" secondItem="ym3-JG-6Gl" secondAttribute="bottom" id="Rie-rl-vwe"/>
                 <constraint firstItem="bEi-pr-cY3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ZdB-Dr-hQC"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="PfB-qF-Z3O" secondAttribute="trailing" constant="20" id="Zkv-mQ-PE7"/>
-                <constraint firstItem="PfB-qF-Z3O" firstAttribute="top" secondItem="bEi-pr-cY3" secondAttribute="bottom" constant="20" id="cIc-s3-PQW"/>
+                <constraint firstItem="ym3-JG-6Gl" firstAttribute="top" secondItem="bEi-pr-cY3" secondAttribute="top" id="fjo-Tj-kd5"/>
                 <constraint firstItem="bEi-pr-cY3" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="gTq-bt-tfL"/>
+                <constraint firstItem="PfB-qF-Z3O" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="jFC-EB-OZi"/>
+                <constraint firstItem="ym3-JG-6Gl" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="pNc-2v-hyy"/>
             </constraints>
             <point key="canvasLocation" x="-39.130434782608695" y="-11.383928571428571"/>
         </view>
     </objects>
     <resources>
-        <namedColor name="AccentColor">
-            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="MainColor">
             <color red="0.40000000596046448" green="0.5220000147819519" blue="0.046999998390674591" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="TertiaryColor">
+            <color red="0.95300000905990601" green="0.9570000171661377" blue="0.96799999475479126" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

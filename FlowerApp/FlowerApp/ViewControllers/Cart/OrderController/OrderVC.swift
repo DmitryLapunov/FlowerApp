@@ -13,6 +13,10 @@ class OrderVC: UIViewController {
     @IBOutlet weak var phoneField: ValidationTextField!
     @IBOutlet weak var adressField: ValidationTextField!
     @IBOutlet weak var emailField: ValidationTextField!
+    @IBOutlet weak var orderTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var createOrderButton: UIButton!
+    
+    var navBarHeight: CGFloat?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,10 +30,15 @@ class OrderVC: UIViewController {
         adressField.validationType = .adress
         emailField.validationType = .email
         
+        createOrderButton.addShadowAndTintColor()
+        
         nameField.delegate = self
         phoneField.delegate = self
         adressField.delegate = self
         emailField.delegate = self
+        
+        guard let navBarHeightValue = navBarHeight else { return }
+        orderTopConstraint.constant = (UIScreen.main.bounds.width / 6) + navBarHeightValue
     }
     
     @IBAction func createOrderAction(_ sender: Any) {

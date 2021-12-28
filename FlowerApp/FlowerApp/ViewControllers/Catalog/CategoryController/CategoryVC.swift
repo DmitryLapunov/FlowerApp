@@ -32,7 +32,6 @@ class CategoryVC: UIViewController {
         }
     }
     
-
     var productRealm: [ProductObject] = [] {
         didSet {
             tableView.reloadData()

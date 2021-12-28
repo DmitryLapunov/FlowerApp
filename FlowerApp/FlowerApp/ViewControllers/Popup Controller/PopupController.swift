@@ -60,7 +60,7 @@ class PopupController: UIViewController {
         self.view.addGestureRecognizer(tapGesture)
     }
     
-    class func showPopup(duration: TimeInterval = 1.3, message: String = "Товар добавлен в «Избранное»", textColor: UIColor = UIColor.mainLabelColor ?? .black, backgroundColor: UIColor = UIColor.tertiaryColor ?? .systemGray5, useShadow: Bool = true) {
+    class func showPopup(duration: TimeInterval = 1.3, message: String = "Товар добавлен в «Избранное»", textColor: UIColor = UIColor.mainLabelColor, backgroundColor: UIColor = UIColor.tertiaryColor, useShadow: Bool = true) {
         if let topController = UIApplication.topWindowController() {
             let popup = PopupController(nibName: String(describing: PopupController.self), bundle: nil)
             popup.modalPresentationStyle = .overCurrentContext
