@@ -65,6 +65,14 @@ extension UIButton {
         self.layer.shadowOffset = CGSize(width: 0, height: 2)
     }
     
+    func addShadowAndSecondaryTintColor() {
+        self.tintColor = UIColor.secondaryLabelColor
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowOpacity = 0.15
+        self.layer.shadowRadius = 2
+        self.layer.shadowOffset = CGSize(width: 0, height: 2)
+    }
+    
     func isSelectedState() {
         self.tintColor = UIColor.mainColor
     }

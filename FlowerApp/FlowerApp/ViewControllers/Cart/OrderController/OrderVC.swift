@@ -7,6 +7,12 @@
 
 import UIKit
 
+protocol OrderVCDelegate: AnyObject {
+    func backToStepOne()
+    func fromStepThreeToStepTwo()
+    func fromStepTwoToStepThree()
+}
+
 class OrderVC: UIViewController {
 
     @IBOutlet weak var nameField: ValidationTextField!
@@ -14,9 +20,11 @@ class OrderVC: UIViewController {
     @IBOutlet weak var adressField: ValidationTextField!
     @IBOutlet weak var emailField: ValidationTextField!
     @IBOutlet weak var orderTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var backToOrderButton: UIButton!
     @IBOutlet weak var createOrderButton: UIButton!
     
     var navBarHeight: CGFloat?
+    weak var animationDelegate: OrderVCDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +38,7 @@ class OrderVC: UIViewController {
         adressField.validationType = .adress
         emailField.validationType = .email
         
+        backToOrderButton.addShadowAndSecondaryTintColor()
         createOrderButton.addShadowAndTintColor()
         
         nameField.delegate = self
@@ -41,11 +50,19 @@ class OrderVC: UIViewController {
         orderTopConstraint.constant = (UIScreen.main.bounds.width / 6) + navBarHeightValue
     }
     
+    @IBAction func backToOrderAction(_ sender: Any) {
+        animationDelegate?.backToStepOne()
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func createOrderAction(_ sender: Any) {
-        let user = User(name: "testName", phone: "testPhone", address: "testAddress", delivery: .delivery)
-        let order = Order(user: user).params()
-        print(order)
-        MailBuilder().sendOrderToOperator(order: Order(user: user))
+        animationDelegate?.fromStepTwoToStepThree()
+        let confirmationVC = ConfirmationVC(nibName: String(describing: ConfirmationVC.self), bundle: nil)
+        confirmationVC.modalPresentationStyle = .overCurrentContext
+        confirmationVC.modalTransitionStyle = .coverVertical
+        confirmationVC.navBarHeight = self.navBarHeight
+        confirmationVC.animationDelegate = self
+        present(confirmationVC, animated: true, completion: nil)
     }
     
 }
@@ -53,5 +70,11 @@ class OrderVC: UIViewController {
 extension OrderVC: ValidationTextFieldDelegate {
     func layoutSubviews() {
         self.view.layoutSubviews()
+    }
+}
+
+extension OrderVC: ConfirmationVCDelegate {
+    func backToStepTwo() {
+        animationDelegate?.fromStepThreeToStepTwo()
     }
 }
