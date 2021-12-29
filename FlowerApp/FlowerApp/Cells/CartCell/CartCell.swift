@@ -14,6 +14,7 @@ class CartCell: UITableViewCell {
     @IBOutlet weak var cartProductImageView: UIImageView!
     @IBOutlet weak var cartTotalCostLabel: UILabel!
     @IBOutlet weak var cartProductCountField: UITextField!
+    @IBOutlet weak var checkboxButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,7 +23,7 @@ class CartCell: UITableViewCell {
         cellBackgroundView.addShadowAndCornerRadius()
         cellBackgroundShadowView.addShadowAndCornerRadius()
     }
-    
+        
     func setupCell(_ object: CartProduct) {
         cartProductNameLabel.text = object.productName
         cartTotalCostLabel.text = "\(object.productCost * Double(object.count)) РУБ."

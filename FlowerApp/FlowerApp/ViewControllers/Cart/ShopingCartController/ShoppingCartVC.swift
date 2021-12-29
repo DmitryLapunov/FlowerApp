@@ -17,6 +17,7 @@ class ShoppingCartVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var cartProducts: [CartProduct] = []
+    var selectedProducts: [IndexPath] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +39,18 @@ class ShoppingCartVC: UIViewController {
         let nib = UINib(nibName: String(describing: CartCell.self), bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: String(describing: CartCell.self))
         tableView.separatorStyle = .none
+    }
+    
+    @objc func checkboxClicked(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        let point = sender.convert(CGPoint.zero, to: tableView)
+        guard let indexPath = tableView.indexPathForRow(at: point) else { return }
+        if selectedProducts.contains(indexPath) {
+            selectedProducts.remove(at: selectedProducts.firstIndex(of: indexPath) ?? 0)
+        } else {
+            selectedProducts.append(indexPath)
+        }
+        tableView.reloadRows(at: [indexPath], with: .automatic)
     }
     
     @IBAction func orderDetailsButtonAction(_ sender: Any) {
@@ -109,6 +122,17 @@ extension ShoppingCartVC: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: CartCell.self), for: indexPath)
         guard let cartCell = cell as? CartCell else { return cell }
         cartCell.setupCell(cartProducts[indexPath.row])
+        
+        if let checkboxButton = cartCell.checkboxButton {
+            checkboxButton.addTarget(self, action: #selector(checkboxClicked(_:)), for: .touchUpInside)
+            checkboxButton.isSelected = selectedProducts.contains(indexPath) ? false : true
+            if checkboxButton.isSelected {
+                cartCell.cartProductImageView.backgroundColor = .mainColor
+            } else {
+                cartCell.cartProductImageView.backgroundColor = .mainLabelColor
+            }
+        }
+        
         cartCell.selectionStyle = .none
         return cartCell
     }
