@@ -25,6 +25,7 @@ class OrderVC: UIViewController {
     @IBOutlet weak var createOrderButton: UIButton!
     @IBOutlet weak var switcherDelivery: UISegmentedControl!
     
+    var arrayCartProduct: [Product] = []
     var navBarHeight: CGFloat?
     weak var animationDelegate: OrderVCDelegate?
     
@@ -37,6 +38,7 @@ class OrderVC: UIViewController {
         view.addGestureRecognizer(keyboardTap)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        arrayCartProduct = arrayGlobalProducts
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {
@@ -126,6 +128,11 @@ class OrderVC: UIViewController {
             confirmationVC.modalTransitionStyle = .coverVertical
             confirmationVC.navBarHeight = self.navBarHeight
             confirmationVC.animationDelegate = self
+            confirmationVC.arrayCartProduct = arrayCartProduct
+            confirmationVC.delivery = false
+            confirmationVC.name = name
+            confirmationVC.phone = phone
+            confirmationVC.email = email
             present(confirmationVC, animated: true, completion: nil)
         } else {
             guard let name = nameField.inputField.text, !name.isEmpty, nameField.errorLabel.text == "",
@@ -139,6 +146,12 @@ class OrderVC: UIViewController {
             confirmationVC.modalTransitionStyle = .coverVertical
             confirmationVC.navBarHeight = self.navBarHeight
             confirmationVC.animationDelegate = self
+            confirmationVC.arrayCartProduct = arrayCartProduct
+            confirmationVC.delivery = true
+            confirmationVC.name = name
+            confirmationVC.phone = phone
+            confirmationVC.email = email
+            confirmationVC.adress = adress
             present(confirmationVC, animated: true, completion: nil)
         }
         
