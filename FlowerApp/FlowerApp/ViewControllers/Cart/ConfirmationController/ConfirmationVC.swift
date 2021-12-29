@@ -33,7 +33,7 @@ class ConfirmationVC: UIViewController {
     var name = ""
     var phone = ""
     var email = ""
-    var adress = ""
+    var adress = "Самовывоз"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -101,10 +101,10 @@ class ConfirmationVC: UIViewController {
     }
     
     @IBAction func sendOrderAction(_ sender: Any) {
-        let user = User(name: "testName", phone: "testPhone", address: "testAddress", delivery: .delivery)
+        let user = User(name: name, phone: phone, address: adress, delivery: delivery ? .delivery : .pickup)
         let order = Order(user: user).params()
         print(order)
-        MailBuilder().sendOrderToOperator(order: Order(user: user))
+//        MailBuilder().sendOrderToOperator(order: Order(user: user))
     }
 }
 

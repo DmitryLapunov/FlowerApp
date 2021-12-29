@@ -24,16 +24,26 @@ class OrderVC: UIViewController {
     @IBOutlet weak var backToOrderButton: UIButton!
     @IBOutlet weak var createOrderButton: UIButton!
     @IBOutlet weak var switcherDelivery: UISegmentedControl!
+    @IBOutlet weak var buttonViewConstraintBottom: NSLayoutConstraint!
+    @IBOutlet weak var buttonViewConstraintTop: NSLayoutConstraint!
     
+    
+    var viewPosition: CGFloat?
     var arrayCartProduct: [Product] = []
     var navBarHeight: CGFloat?
     weak var animationDelegate: OrderVCDelegate?
+    var tabbarHeight: CGFloat = 0
+    
+    override func loadView() {
+        super.loadView()
+        buttonViewConstraintTop.isActive = false
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Детали заказа"
-        setupValidationField()
         setupStackView()
+        setupValidationField()
         let keyboardTap = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         view.addGestureRecognizer(keyboardTap)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -41,10 +51,29 @@ class OrderVC: UIViewController {
         arrayCartProduct = arrayGlobalProducts
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        viewPosition = backgroundStackView.frame.origin.y
+        calkulateConstraint()
+    }
+    
+    private func calkulateConstraint() {
+        let constraint = UIScreen.main.bounds.height - backgroundStackView.frame.maxY - tabbarHeight - 44.5
+        buttonViewConstraintTop.isActive = true
+        buttonViewConstraintTop.constant = constraint
+        buttonViewConstraintBottom.isActive = false
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y == 0 {
-                self.view.frame.origin.y -= keyboardSize.height - backgroundStackView.frame.height / 2.2
+                self.view.frame.origin.y -= keyboardSize.height - backgroundStackView.frame.height / 2.4
             }
         }
     }

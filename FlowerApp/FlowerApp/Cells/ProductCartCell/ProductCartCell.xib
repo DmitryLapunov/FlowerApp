@@ -40,10 +40,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BIM-5l-9Ha">
-                                <rect key="frame" x="31" y="73.5" width="88" height="20.5"/>
+                                <rect key="frame" x="32" y="72.5" width="86" height="20.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rlr-UD-U4t">
-                                        <rect key="frame" x="25" y="0.0" width="38" height="20.5"/>
+                                        <rect key="frame" x="24" y="0.0" width="38" height="20.5"/>
                                         <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="15"/>
                                         <color key="textColor" name="MainLabelColor"/>
                                         <nil key="highlightedColor"/>
@@ -68,10 +68,10 @@
                             <constraint firstAttribute="trailing" secondItem="KIV-1e-CWu" secondAttribute="trailing" constant="5" id="8eK-Pk-RMQ"/>
                             <constraint firstItem="KIV-1e-CWu" firstAttribute="top" secondItem="kUC-cA-gpP" secondAttribute="bottom" constant="5" id="HA2-K6-ewO"/>
                             <constraint firstItem="kUC-cA-gpP" firstAttribute="centerX" secondItem="eRJ-5N-O0Y" secondAttribute="centerX" id="J57-WI-rP0"/>
-                            <constraint firstItem="KIV-1e-CWu" firstAttribute="top" secondItem="BIM-5l-9Ha" secondAttribute="bottom" constant="6" id="Vz1-Ty-bKl"/>
-                            <constraint firstItem="BIM-5l-9Ha" firstAttribute="leading" secondItem="kUC-cA-gpP" secondAttribute="leading" constant="1" id="ayf-cb-IUw"/>
+                            <constraint firstItem="KIV-1e-CWu" firstAttribute="top" secondItem="BIM-5l-9Ha" secondAttribute="bottom" constant="7" id="Vz1-Ty-bKl"/>
+                            <constraint firstItem="BIM-5l-9Ha" firstAttribute="leading" secondItem="kUC-cA-gpP" secondAttribute="leading" constant="2" id="ayf-cb-IUw"/>
                             <constraint firstItem="kUC-cA-gpP" firstAttribute="top" secondItem="eRJ-5N-O0Y" secondAttribute="top" constant="5" id="kWw-rN-zhz"/>
-                            <constraint firstItem="BIM-5l-9Ha" firstAttribute="trailing" secondItem="kUC-cA-gpP" secondAttribute="trailing" constant="-1" id="o9a-JF-Fxg"/>
+                            <constraint firstItem="BIM-5l-9Ha" firstAttribute="trailing" secondItem="kUC-cA-gpP" secondAttribute="trailing" constant="-2" id="o9a-JF-Fxg"/>
                         </constraints>
                     </view>
                 </subviews>
