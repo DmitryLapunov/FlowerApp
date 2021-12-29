@@ -5,14 +5,28 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-VariableFont.ttf">
+            <string>OpenSans-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ConfirmationVC" customModule="FlowerApp" customModuleProvider="target">
             <connections>
                 <outlet property="backToPreviousButton" destination="XmV-q9-9ad" id="NiE-tS-APd"/>
+                <outlet property="collectionViewBackgroundView" destination="vcz-bo-Hku" id="Ix2-9O-bN5"/>
                 <outlet property="confirmationTopConstraint" destination="ksE-ob-hvc" id="4Zt-a6-NgG"/>
+                <outlet property="deliveryAdressLabel" destination="Luc-R8-Dgy" id="JsW-7F-Qeo"/>
+                <outlet property="emailLabel" destination="Oju-zj-7N4" id="xoC-Hl-Ika"/>
+                <outlet property="labelView" destination="enx-lF-zm8" id="cN7-Ma-43K"/>
+                <outlet property="nameLabel" destination="rw0-L0-tGl" id="lYW-cW-6IC"/>
+                <outlet property="phoneLabel" destination="StY-Pa-ebv" id="lQF-Y0-5OL"/>
+                <outlet property="productCollectionView" destination="rZe-gS-XJG" id="gR6-5i-hlp"/>
                 <outlet property="sendOrderButton" destination="9eq-re-rih" id="m0C-3D-MJZ"/>
+                <outlet property="totalCost" destination="Gev-8p-ctQ" id="inZ-TM-qaV"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,51 +37,159 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cat-ON-Tzo">
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                    <color key="backgroundColor" name="TertiaryColor"/>
-                </view>
-                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="wOi-Hf-oRt">
-                    <rect key="frame" x="10" y="817.5" width="394" height="34.5"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XmV-q9-9ad">
-                            <rect key="frame" x="0.0" y="0.0" width="192" height="34.5"/>
-                            <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="filled" title="Назад к оформлению">
-                                <fontDescription key="titleFontDescription" name="OpenSansRoman-CondensedRegular" family="Open Sans" pointSize="15"/>
-                            </buttonConfiguration>
-                            <connections>
-                                <action selector="backToPreviousAction:" destination="-1" eventType="touchUpInside" id="pg9-in-1L1"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9eq-re-rih">
-                            <rect key="frame" x="202" y="0.0" width="192" height="34.5"/>
-                            <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="filled" title="Отправить заказ">
-                                <fontDescription key="titleFontDescription" name="OpenSansRoman-CondensedRegular" family="Open Sans" pointSize="15"/>
-                            </buttonConfiguration>
-                            <connections>
-                                <action selector="sendOrderAction:" destination="-1" eventType="touchUpInside" id="Fp1-IK-aNQ"/>
-                            </connections>
-                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Проверьте правильность контактных данных" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UIy-jX-u9c">
+                            <rect key="frame" x="16" y="10" width="382" height="52"/>
+                            <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="19"/>
+                            <color key="textColor" name="MainLabelColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="enx-lF-zm8">
+                            <rect key="frame" x="16" y="72" width="382" height="123"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="HMJ-wa-bmH">
+                                    <rect key="frame" x="16" y="10" width="361" height="103"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Имя" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rw0-L0-tGl">
+                                            <rect key="frame" x="0.0" y="0.0" width="361" height="20.5"/>
+                                            <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="15"/>
+                                            <color key="textColor" name="MainLabelColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Телефон" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="StY-Pa-ebv">
+                                            <rect key="frame" x="0.0" y="27.5" width="361" height="20.5"/>
+                                            <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="15"/>
+                                            <color key="textColor" name="MainLabelColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Адрес" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Luc-R8-Dgy">
+                                            <rect key="frame" x="0.0" y="55" width="361" height="20.5"/>
+                                            <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="15"/>
+                                            <color key="textColor" name="MainLabelColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oju-zj-7N4">
+                                            <rect key="frame" x="0.0" y="82.5" width="361" height="20.5"/>
+                                            <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="15"/>
+                                            <color key="textColor" name="MainLabelColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="HMJ-wa-bmH" firstAttribute="top" secondItem="enx-lF-zm8" secondAttribute="top" constant="10" id="3Wl-X0-HRF"/>
+                                <constraint firstAttribute="trailing" secondItem="HMJ-wa-bmH" secondAttribute="trailing" constant="5" id="5wd-vc-69H"/>
+                                <constraint firstItem="HMJ-wa-bmH" firstAttribute="leading" secondItem="enx-lF-zm8" secondAttribute="leading" constant="16" id="aw8-Je-HRi"/>
+                                <constraint firstAttribute="bottom" secondItem="HMJ-wa-bmH" secondAttribute="bottom" constant="10" id="xrZ-TV-SHF"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Товары в заказе" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2MO-Zp-8Md">
+                            <rect key="frame" x="16" y="220" width="382" height="23.5"/>
+                            <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
+                            <color key="textColor" name="MainLabelColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vcz-bo-Hku">
+                            <rect key="frame" x="16" y="248.5" width="382" height="165"/>
+                            <subviews>
+                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="rZe-gS-XJG">
+                                    <rect key="frame" x="5" y="5" width="372" height="155"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="155" id="JV5-Iq-o96"/>
+                                    </constraints>
+                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="aqR-Yf-0XW">
+                                        <size key="itemSize" width="150" height="145"/>
+                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </collectionViewFlowLayout>
+                                </collectionView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="rZe-gS-XJG" firstAttribute="leading" secondItem="vcz-bo-Hku" secondAttribute="leading" constant="5" id="BSt-wO-HNQ"/>
+                                <constraint firstAttribute="bottom" secondItem="rZe-gS-XJG" secondAttribute="bottom" constant="5" id="WO4-gQ-H2F"/>
+                                <constraint firstItem="rZe-gS-XJG" firstAttribute="top" secondItem="vcz-bo-Hku" secondAttribute="top" constant="5" id="fzg-WK-eUA"/>
+                                <constraint firstAttribute="trailing" secondItem="rZe-gS-XJG" secondAttribute="trailing" constant="5" id="hOt-4y-P00"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Общая цена: N" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gev-8p-ctQ">
+                            <rect key="frame" x="266.5" y="728.5" width="131.5" height="25"/>
+                            <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="18"/>
+                            <color key="textColor" name="MainLabelColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="wOi-Hf-oRt">
+                            <rect key="frame" x="16" y="773.5" width="382" height="34.5"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XmV-q9-9ad">
+                                    <rect key="frame" x="0.0" y="0.0" width="186" height="34.5"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="filled" title="Назад к оформлению">
+                                        <fontDescription key="titleFontDescription" name="OpenSansRoman-CondensedRegular" family="Open Sans" pointSize="15"/>
+                                    </buttonConfiguration>
+                                    <connections>
+                                        <action selector="backToPreviousAction:" destination="-1" eventType="touchUpInside" id="pg9-in-1L1"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9eq-re-rih">
+                                    <rect key="frame" x="196" y="0.0" width="186" height="34.5"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="filled" title="Отправить заказ">
+                                        <fontDescription key="titleFontDescription" name="OpenSansRoman-CondensedRegular" family="Open Sans" pointSize="15"/>
+                                    </buttonConfiguration>
+                                    <connections>
+                                        <action selector="sendOrderAction:" destination="-1" eventType="touchUpInside" id="Fp1-IK-aNQ"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
                     </subviews>
-                </stackView>
+                    <color key="backgroundColor" name="TertiaryColor"/>
+                    <constraints>
+                        <constraint firstItem="wOi-Hf-oRt" firstAttribute="leading" secondItem="cat-ON-Tzo" secondAttribute="leading" constant="16" id="0hH-fW-FFy"/>
+                        <constraint firstAttribute="trailing" secondItem="2MO-Zp-8Md" secondAttribute="trailing" constant="16" id="1yz-1D-2cS"/>
+                        <constraint firstItem="2MO-Zp-8Md" firstAttribute="top" secondItem="enx-lF-zm8" secondAttribute="bottom" constant="25" id="7og-kb-T7B"/>
+                        <constraint firstItem="wOi-Hf-oRt" firstAttribute="top" secondItem="Gev-8p-ctQ" secondAttribute="bottom" constant="20" id="JL1-fX-T4O"/>
+                        <constraint firstAttribute="trailing" secondItem="wOi-Hf-oRt" secondAttribute="trailing" constant="16" id="Mbn-CF-9nc"/>
+                        <constraint firstAttribute="trailing" secondItem="UIy-jX-u9c" secondAttribute="trailing" constant="16" id="Mk0-f1-Ff0"/>
+                        <constraint firstItem="enx-lF-zm8" firstAttribute="top" secondItem="UIy-jX-u9c" secondAttribute="bottom" constant="10" id="SWU-ci-vIQ"/>
+                        <constraint firstAttribute="trailing" secondItem="enx-lF-zm8" secondAttribute="trailing" constant="16" id="a15-Py-VvB"/>
+                        <constraint firstItem="UIy-jX-u9c" firstAttribute="top" secondItem="cat-ON-Tzo" secondAttribute="top" constant="10" id="ckS-4b-JxE"/>
+                        <constraint firstItem="vcz-bo-Hku" firstAttribute="leading" secondItem="cat-ON-Tzo" secondAttribute="leading" constant="16" id="e69-A4-mpV"/>
+                        <constraint firstItem="UIy-jX-u9c" firstAttribute="leading" secondItem="cat-ON-Tzo" secondAttribute="leading" constant="16" id="fEH-Sf-RcT"/>
+                        <constraint firstItem="enx-lF-zm8" firstAttribute="leading" secondItem="cat-ON-Tzo" secondAttribute="leading" constant="16" id="k7g-wV-XqM"/>
+                        <constraint firstAttribute="trailing" secondItem="vcz-bo-Hku" secondAttribute="trailing" constant="16" id="k9Y-DM-HLf"/>
+                        <constraint firstItem="vcz-bo-Hku" firstAttribute="top" secondItem="2MO-Zp-8Md" secondAttribute="bottom" constant="5" id="qeC-2l-UOF"/>
+                        <constraint firstAttribute="bottom" secondItem="wOi-Hf-oRt" secondAttribute="bottom" constant="10" id="rvO-2Q-Mal"/>
+                        <constraint firstAttribute="trailing" secondItem="Gev-8p-ctQ" secondAttribute="trailing" constant="16" id="tte-Jr-Ae5"/>
+                        <constraint firstItem="2MO-Zp-8Md" firstAttribute="leading" secondItem="cat-ON-Tzo" secondAttribute="leading" constant="16" id="xBy-fA-at2"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="cat-ON-Tzo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="EjY-Oa-SP1"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="wOi-Hf-oRt" secondAttribute="trailing" constant="10" id="JwJ-Zq-0sb"/>
                 <constraint firstItem="cat-ON-Tzo" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Pai-21-jYK"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="wOi-Hf-oRt" secondAttribute="bottom" constant="10" id="Q0S-4C-QeS"/>
-                <constraint firstItem="wOi-Hf-oRt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="i9f-0g-7ed"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="cat-ON-Tzo" secondAttribute="bottom" id="jiw-Ge-bZA"/>
                 <constraint firstItem="cat-ON-Tzo" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="ksE-ob-hvc"/>
             </constraints>
-            <point key="canvasLocation" x="135" y="93"/>
+            <point key="canvasLocation" x="134.78260869565219" y="92.410714285714278"/>
         </view>
     </objects>
     <resources>
+        <namedColor name="MainLabelColor">
+            <color red="0.29800000786781311" green="0.25499999523162842" blue="0.3449999988079071" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="TertiaryColor">
             <color red="0.95300000905990601" green="0.9570000171661377" blue="0.96799999475479126" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

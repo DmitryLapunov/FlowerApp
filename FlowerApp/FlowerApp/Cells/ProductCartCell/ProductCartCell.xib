@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-VariableFont.ttf">
+            <string>OpenSans-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gTV-IL-0wX" customClass="ProductCartCell" customModule="FlowerApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="150" height="145"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="150" height="145"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eRJ-5N-O0Y">
+                        <rect key="frame" x="0.0" y="0.0" width="150" height="145"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" image="vgosti_logo_inverted" translatesAutoresizingMaskIntoConstraints="NO" id="kUC-cA-gpP">
+                                <rect key="frame" x="30" y="5" width="90" height="90"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="hGs-YE-Y8z"/>
+                                    <constraint firstAttribute="height" constant="90" id="zgo-ot-ZiU"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KIV-1e-CWu">
+                                <rect key="frame" x="5" y="100" width="140" height="20.5"/>
+                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="15"/>
+                                <color key="textColor" name="MainLabelColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BIM-5l-9Ha">
+                                <rect key="frame" x="32" y="72.5" width="86" height="20.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rlr-UD-U4t">
+                                        <rect key="frame" x="24" y="0.0" width="38" height="20.5"/>
+                                        <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="15"/>
+                                        <color key="textColor" name="MainLabelColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="TertiaryColor"/>
+                                <constraints>
+                                    <constraint firstItem="rlr-UD-U4t" firstAttribute="centerY" secondItem="BIM-5l-9Ha" secondAttribute="centerY" id="GbY-vc-LHp"/>
+                                    <constraint firstItem="rlr-UD-U4t" firstAttribute="top" secondItem="BIM-5l-9Ha" secondAttribute="top" id="YTQ-0g-q5Q"/>
+                                    <constraint firstItem="rlr-UD-U4t" firstAttribute="centerX" secondItem="BIM-5l-9Ha" secondAttribute="centerX" id="nGl-3j-yFn"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="KIV-1e-CWu" firstAttribute="leading" secondItem="eRJ-5N-O0Y" secondAttribute="leading" constant="5" id="2XP-k4-ghm"/>
+                            <constraint firstAttribute="trailing" secondItem="KIV-1e-CWu" secondAttribute="trailing" constant="5" id="8eK-Pk-RMQ"/>
+                            <constraint firstItem="KIV-1e-CWu" firstAttribute="top" secondItem="kUC-cA-gpP" secondAttribute="bottom" constant="5" id="HA2-K6-ewO"/>
+                            <constraint firstItem="kUC-cA-gpP" firstAttribute="centerX" secondItem="eRJ-5N-O0Y" secondAttribute="centerX" id="J57-WI-rP0"/>
+                            <constraint firstItem="KIV-1e-CWu" firstAttribute="top" secondItem="BIM-5l-9Ha" secondAttribute="bottom" constant="7" id="Vz1-Ty-bKl"/>
+                            <constraint firstItem="BIM-5l-9Ha" firstAttribute="leading" secondItem="kUC-cA-gpP" secondAttribute="leading" constant="2" id="ayf-cb-IUw"/>
+                            <constraint firstItem="kUC-cA-gpP" firstAttribute="top" secondItem="eRJ-5N-O0Y" secondAttribute="top" constant="5" id="kWw-rN-zhz"/>
+                            <constraint firstItem="BIM-5l-9Ha" firstAttribute="trailing" secondItem="kUC-cA-gpP" secondAttribute="trailing" constant="-2" id="o9a-JF-Fxg"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="eRJ-5N-O0Y" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Ea6-Bj-qjW"/>
+                <constraint firstAttribute="bottom" secondItem="eRJ-5N-O0Y" secondAttribute="bottom" id="YId-fQ-x60"/>
+                <constraint firstItem="eRJ-5N-O0Y" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="h5O-w1-Ihe"/>
+                <constraint firstAttribute="trailing" secondItem="eRJ-5N-O0Y" secondAttribute="trailing" id="ii6-fU-An2"/>
+            </constraints>
+            <size key="customSize" width="208" height="140"/>
+            <connections>
+                <outlet property="productImage" destination="kUC-cA-gpP" id="80I-PY-RCC"/>
+                <outlet property="productName" destination="KIV-1e-CWu" id="VX2-dd-K3T"/>
+                <outlet property="productPrice" destination="rlr-UD-U4t" id="OwI-Qe-u4K"/>
+            </connections>
+            <point key="canvasLocation" x="250.72463768115944" y="155.69196428571428"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="vgosti_logo_inverted" width="732" height="533"/>
+        <namedColor name="MainLabelColor">
+            <color red="0.29800000786781311" green="0.25499999523162842" blue="0.3449999988079071" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TertiaryColor">
+            <color red="0.95300000905990601" green="0.9570000171661377" blue="0.96799999475479126" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

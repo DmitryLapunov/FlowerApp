@@ -64,6 +64,10 @@ class ShoppingCartVC: UIViewController {
         let orderVC = OrderVC(nibName: String(describing: OrderVC.self), bundle: nil)
         orderVC.modalPresentationStyle = .overCurrentContext
         orderVC.modalTransitionStyle = .flipHorizontal
+
+        guard let tabbarHeight = tabBarController?.tabBar.frame.size.height else { return }
+        orderVC.tabbarHeight = tabbarHeight
+
         orderVC.navBarHeight = self.navBarHeight
         orderVC.animationDelegate = self
         present(orderVC, animated: true, completion: nil)
