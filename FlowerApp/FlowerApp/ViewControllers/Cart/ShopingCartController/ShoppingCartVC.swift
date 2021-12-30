@@ -18,9 +18,12 @@ class ShoppingCartVC: UIViewController {
     
     var cartProducts: [CartProduct] = [] {
         didSet {
-            productsInCart = []
+            productsInCart.removeAll()
             loadProducts()
-            tableView.reloadData()
+            
+            if cartProducts.count == productsInCart.count {
+                tableView.reloadData()
+            }
         }
     }
     var productsInCart: [Product] = []
@@ -29,7 +32,6 @@ class ShoppingCartVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Корзина"
-        cartProducts = RealmManager.shared.getCart()
         
         loadProducts()
         setupTableView()
@@ -47,7 +49,6 @@ class ShoppingCartVC: UIViewController {
     }
     
     private func setupTableView() {
-        cartProducts = RealmManager.shared.getCart()
         tableView.delegate = self
         tableView.dataSource = self
         let nib = UINib(nibName: String(describing: CartCell.self), bundle: nil)
@@ -162,6 +163,7 @@ extension ShoppingCartVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: CartCell.self), for: indexPath)
         guard let cartCell = cell as? CartCell else { return cell }
+        
         cartCell.cartProduct = cartProducts[indexPath.row]
         cartCell.product = productsInCart[indexPath.row]
         cartCell.setupCell(cartProducts[indexPath.row], productsInCart[indexPath.row])

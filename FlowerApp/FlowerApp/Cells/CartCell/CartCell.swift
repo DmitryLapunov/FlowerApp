@@ -42,7 +42,6 @@ class CartCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        setupCell(cartProduct, product)
     }
     
     func setupCell(_ cartProduct: CartProduct, _ product: Product) {
