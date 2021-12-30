@@ -57,7 +57,7 @@ class OrderVC: UIViewController {
     }
     
     private func calсulateConstraint() {
-        let constraint = UIScreen.main.bounds.height - backgroundStackView.frame.maxY - tabbarHeight - 44.5
+        let constraint = UIScreen.main.bounds.height - backgroundStackView.frame.minY - tabbarHeight - 44.5
         buttonViewConstraintTop.isActive = true
         buttonViewConstraintTop.constant = constraint
         buttonViewConstraintBottom.isActive = false
