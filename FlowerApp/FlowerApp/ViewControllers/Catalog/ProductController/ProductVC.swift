@@ -158,6 +158,7 @@ class ProductVC: UIViewController {
             productAmountField.text = "\(amount)"
         }
     }
+    
     @IBAction func deleteFromCart(_ sender: Any) {
         
         guard let name = productNameLabel.text else { return }

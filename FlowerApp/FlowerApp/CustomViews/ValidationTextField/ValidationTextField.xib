@@ -27,10 +27,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Tnu-Lm-6um">
-                    <rect key="frame" x="16" y="5" width="382" height="99"/>
+                    <rect key="frame" x="10" y="5" width="394" height="99"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Placeholder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pkd-HT-cAe">
-                            <rect key="frame" x="0.0" y="0.0" width="382" height="24"/>
+                            <rect key="frame" x="0.0" y="0.0" width="394" height="24"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="24" id="I6J-lh-gEF"/>
                             </constraints>
@@ -39,7 +39,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OWy-2t-mMO" customClass="InsetsTextField" customModule="FlowerApp" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="24" width="382" height="34"/>
+                            <rect key="frame" x="0.0" y="24" width="394" height="34"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="34" id="DgL-H3-nDr"/>
                             </constraints>
@@ -47,7 +47,7 @@
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kh7-Up-Khn">
-                            <rect key="frame" x="0.0" y="58" width="382" height="41"/>
+                            <rect key="frame" x="0.0" y="58" width="394" height="41"/>
                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                             <color key="textColor" systemColor="systemRedColor"/>
                             <nil key="highlightedColor"/>
@@ -57,9 +57,9 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="Tnu-Lm-6um" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="7BO-KQ-Mhz"/>
+                <constraint firstItem="Tnu-Lm-6um" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="7BO-KQ-Mhz"/>
                 <constraint firstAttribute="bottom" secondItem="Tnu-Lm-6um" secondAttribute="bottom" constant="9" id="gEA-A5-E8x"/>
-                <constraint firstAttribute="trailing" secondItem="Tnu-Lm-6um" secondAttribute="trailing" constant="16" id="lxE-PG-DFU"/>
+                <constraint firstAttribute="trailing" secondItem="Tnu-Lm-6um" secondAttribute="trailing" constant="10" id="lxE-PG-DFU"/>
                 <constraint firstItem="Tnu-Lm-6um" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="zxK-KQ-ag8"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

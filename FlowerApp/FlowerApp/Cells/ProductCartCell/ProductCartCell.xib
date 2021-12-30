@@ -10,6 +10,7 @@
     <customFonts key="customFonts">
         <array key="OpenSans-VariableFont.ttf">
             <string>OpenSans-Regular</string>
+            <string>OpenSansRoman-CondensedRegular</string>
         </array>
     </customFonts>
     <objects>
@@ -43,8 +44,8 @@
                                 <rect key="frame" x="32" y="72.5" width="86" height="20.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rlr-UD-U4t">
-                                        <rect key="frame" x="24" y="0.0" width="38" height="20.5"/>
-                                        <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="15"/>
+                                        <rect key="frame" x="29" y="0.0" width="28" height="20.5"/>
+                                        <fontDescription key="fontDescription" name="OpenSansRoman-CondensedRegular" family="Open Sans" pointSize="15"/>
                                         <color key="textColor" name="MainLabelColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -61,6 +62,29 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FkW-tQ-kX4">
+                                <rect key="frame" x="80" y="7" width="38" height="20.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EPE-cl-6bJ">
+                                        <rect key="frame" x="5" y="0.0" width="28" height="20.5"/>
+                                        <fontDescription key="fontDescription" name="OpenSansRoman-CondensedRegular" family="Open Sans" pointSize="15"/>
+                                        <color key="textColor" name="MainLabelColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="TertiaryColor"/>
+                                <constraints>
+                                    <constraint firstItem="EPE-cl-6bJ" firstAttribute="centerY" secondItem="FkW-tQ-kX4" secondAttribute="centerY" id="3b9-GK-OCW"/>
+                                    <constraint firstAttribute="trailing" secondItem="EPE-cl-6bJ" secondAttribute="trailing" constant="5" id="5En-iJ-GxA"/>
+                                    <constraint firstItem="EPE-cl-6bJ" firstAttribute="leading" secondItem="FkW-tQ-kX4" secondAttribute="leading" constant="5" id="CpD-QE-a77"/>
+                                    <constraint firstItem="EPE-cl-6bJ" firstAttribute="top" secondItem="FkW-tQ-kX4" secondAttribute="top" id="hVp-Nn-G1I"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
@@ -70,6 +94,8 @@
                             <constraint firstItem="kUC-cA-gpP" firstAttribute="centerX" secondItem="eRJ-5N-O0Y" secondAttribute="centerX" id="J57-WI-rP0"/>
                             <constraint firstItem="KIV-1e-CWu" firstAttribute="top" secondItem="BIM-5l-9Ha" secondAttribute="bottom" constant="7" id="Vz1-Ty-bKl"/>
                             <constraint firstItem="BIM-5l-9Ha" firstAttribute="leading" secondItem="kUC-cA-gpP" secondAttribute="leading" constant="2" id="ayf-cb-IUw"/>
+                            <constraint firstItem="FkW-tQ-kX4" firstAttribute="top" secondItem="kUC-cA-gpP" secondAttribute="top" constant="2" id="g28-8P-H9k"/>
+                            <constraint firstItem="kUC-cA-gpP" firstAttribute="trailing" secondItem="FkW-tQ-kX4" secondAttribute="trailing" constant="2" id="hva-cu-SHl"/>
                             <constraint firstItem="kUC-cA-gpP" firstAttribute="top" secondItem="eRJ-5N-O0Y" secondAttribute="top" constant="5" id="kWw-rN-zhz"/>
                             <constraint firstItem="BIM-5l-9Ha" firstAttribute="trailing" secondItem="kUC-cA-gpP" secondAttribute="trailing" constant="-2" id="o9a-JF-Fxg"/>
                         </constraints>
@@ -85,6 +111,7 @@
             </constraints>
             <size key="customSize" width="208" height="140"/>
             <connections>
+                <outlet property="productCount" destination="EPE-cl-6bJ" id="Pot-07-Vi4"/>
                 <outlet property="productImage" destination="kUC-cA-gpP" id="80I-PY-RCC"/>
                 <outlet property="productName" destination="KIV-1e-CWu" id="VX2-dd-K3T"/>
                 <outlet property="productPrice" destination="rlr-UD-U4t" id="OwI-Qe-u4K"/>

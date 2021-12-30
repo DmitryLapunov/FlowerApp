@@ -29,10 +29,10 @@ class OrderVC: UIViewController {
     
     
     var viewPosition: CGFloat?
-    var arrayCartProduct: [Product] = []
     var navBarHeight: CGFloat?
     weak var animationDelegate: OrderVCDelegate?
     var tabbarHeight: CGFloat = 0
+    var unselectedCartProducts: [CartProduct] = []
     
     override func loadView() {
         super.loadView()
@@ -48,16 +48,15 @@ class OrderVC: UIViewController {
         view.addGestureRecognizer(keyboardTap)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-        arrayCartProduct = arrayGlobalProducts
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         viewPosition = backgroundStackView.frame.origin.y
-        calkulateConstraint()
+        calсulateConstraint()
     }
     
-    private func calkulateConstraint() {
+    private func calсulateConstraint() {
         let constraint = UIScreen.main.bounds.height - backgroundStackView.frame.maxY - tabbarHeight - 44.5
         buttonViewConstraintTop.isActive = true
         buttonViewConstraintTop.constant = constraint
@@ -123,12 +122,8 @@ class OrderVC: UIViewController {
         adressField.inputField.placeholder = "Пример: Гикало 7а"
         emailField.inputField.placeholder = "Пример: vgosti.by@gmail.com"
         
-        backgroundStackView.layer.shadowColor = UIColor.black.cgColor
-        backgroundStackView.layer.shadowOpacity = 0.15
-        backgroundStackView.layer.shadowRadius = 2
-        backgroundStackView.layer.shadowOffset = CGSize(width: 0, height: 2)
+        backgroundStackView.addShadowAndCornerRadius()
     }
-    
     
     @IBAction func switcherDelivery(_ sender: Any) {
         if switcherDelivery.selectedSegmentIndex == 1 {
@@ -144,28 +139,22 @@ class OrderVC: UIViewController {
     }
     
     @IBAction func createOrderAction(_ sender: Any) {
-
-        animationDelegate?.fromStepTwoToStepThree()
         let confirmationVC = ConfirmationVC(nibName: String(describing: ConfirmationVC.self), bundle: nil)
         confirmationVC.modalPresentationStyle = .overCurrentContext
         confirmationVC.modalTransitionStyle = .flipHorizontal
         confirmationVC.navBarHeight = self.navBarHeight
-        confirmationVC.animationDelegate = self
-        present(confirmationVC, animated: true, completion: nil)
-
+        confirmationVC.unselectedCartProducts = self.unselectedCartProducts
         
         if adressField.isHidden {
             guard let name = nameField.inputField.text, !name.isEmpty, nameField.errorLabel.text == "",
                   let phone = phoneField.inputField.text, !phone.isEmpty, phoneField.errorLabel.text == "",
-                  let email = emailField.inputField.text, !email.isEmpty, emailField.errorLabel.text == "" else { return }
+                  let email = emailField.inputField.text, !email.isEmpty, emailField.errorLabel.text == "" else {
+                      PopupController.showPopup(message: "Поля не заполнены")
+                      return
+                  }
             
             animationDelegate?.fromStepTwoToStepThree()
-            let confirmationVC = ConfirmationVC(nibName: String(describing: ConfirmationVC.self), bundle: nil)
-            confirmationVC.modalPresentationStyle = .overCurrentContext
-            confirmationVC.modalTransitionStyle = .coverVertical
-            confirmationVC.navBarHeight = self.navBarHeight
             confirmationVC.animationDelegate = self
-            confirmationVC.arrayCartProduct = arrayCartProduct
             confirmationVC.delivery = false
             confirmationVC.name = name
             confirmationVC.phone = phone
@@ -175,15 +164,13 @@ class OrderVC: UIViewController {
             guard let name = nameField.inputField.text, !name.isEmpty, nameField.errorLabel.text == "",
                   let phone = phoneField.inputField.text, !phone.isEmpty, phoneField.errorLabel.text == "",
                   let adress = adressField.inputField.text, !adress.isEmpty, adressField.errorLabel.text == "",
-                  let email = emailField.inputField.text, !email.isEmpty, emailField.errorLabel.text == "" else { return }
+                  let email = emailField.inputField.text, !email.isEmpty, emailField.errorLabel.text == "" else {
+                      PopupController.showPopup(message: "Поля не заполнены")
+                      return
+                  }
             
             animationDelegate?.fromStepTwoToStepThree()
-            let confirmationVC = ConfirmationVC(nibName: String(describing: ConfirmationVC.self), bundle: nil)
-            confirmationVC.modalPresentationStyle = .overCurrentContext
-            confirmationVC.modalTransitionStyle = .coverVertical
-            confirmationVC.navBarHeight = self.navBarHeight
             confirmationVC.animationDelegate = self
-            confirmationVC.arrayCartProduct = arrayCartProduct
             confirmationVC.delivery = true
             confirmationVC.name = name
             confirmationVC.phone = phone
@@ -191,9 +178,7 @@ class OrderVC: UIViewController {
             confirmationVC.adress = adress
             present(confirmationVC, animated: true, completion: nil)
         }
-        
     }
-    
 }
 
 extension OrderVC: ValidationTextFieldDelegate {

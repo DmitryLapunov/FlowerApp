@@ -16,13 +16,22 @@ class ShoppingCartVC: UIViewController {
     @IBOutlet weak var orderStepLabelWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var tableView: UITableView!
     
-    var cartProducts: [CartProduct] = []
-    var selectedProducts: [IndexPath] = []
+    var cartProducts: [CartProduct] = [] {
+        didSet {
+            productsInCart = []
+            loadProducts()
+            tableView.reloadData()
+        }
+    }
+    var productsInCart: [Product] = []
+    var unselectedProductsIndexPaths: [IndexPath] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Корзина"
+        cartProducts = RealmManager.shared.getCart()
         
+        loadProducts()
         setupTableView()
         
         orderDetailsButton.addShadowAndTintColor()
@@ -30,6 +39,11 @@ class ShoppingCartVC: UIViewController {
         greenBgWidthConstraint.constant = UIScreen.main.bounds.width / 3
         
         self.definesPresentationContext = true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        cartProducts = RealmManager.shared.getCart()
     }
     
     private func setupTableView() {
@@ -41,36 +55,59 @@ class ShoppingCartVC: UIViewController {
         tableView.separatorStyle = .none
     }
     
+    private func loadProducts() {
+        for product in cartProducts {
+            for item in arrayGlobalProducts {
+                if item.itemName == product.productName {
+                    productsInCart.append(item)
+                }
+            }
+        }
+        print(productsInCart.count)
+    }
+    
     @objc func checkboxClicked(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
         let point = sender.convert(CGPoint.zero, to: tableView)
         guard let indexPath = tableView.indexPathForRow(at: point) else { return }
-        if selectedProducts.contains(indexPath) {
-            selectedProducts.remove(at: selectedProducts.firstIndex(of: indexPath) ?? 0)
+        if unselectedProductsIndexPaths.contains(indexPath) {
+            unselectedProductsIndexPaths.remove(at: unselectedProductsIndexPaths.firstIndex(of: indexPath) ?? 0)
         } else {
-            selectedProducts.append(indexPath)
+            unselectedProductsIndexPaths.append(indexPath)
         }
         tableView.reloadRows(at: [indexPath], with: .automatic)
     }
     
     @IBAction func orderDetailsButtonAction(_ sender: Any) {
-        UIView.animate(withDuration: 1, delay: 0, options: .curveEaseInOut) { [weak self] in
-            guard let self = self else { return }
-            self.greenBgWidthConstraint.constant = UIScreen.main.bounds.width / 1.5
-            self.orderStepLabel.text = "Оформление"
-            self.orderStepLabelLeadingConstraint.constant += UIScreen.main.bounds.width / 3
-            self.view.layoutSubviews()
+        if cartProducts.count == unselectedProductsIndexPaths.count {
+            PopupController.showPopup(message: "Товары не выбраны")
+        } else {
+            UIView.animate(withDuration: 1, delay: 0, options: .curveEaseInOut) { [weak self] in
+                guard let self = self else { return }
+                self.greenBgWidthConstraint.constant = UIScreen.main.bounds.width / 1.5
+                self.orderStepLabel.text = "Оформление"
+                self.orderStepLabelLeadingConstraint.constant += UIScreen.main.bounds.width / 3
+                self.view.layoutSubviews()
+            }
+            let orderVC = OrderVC(nibName: String(describing: OrderVC.self), bundle: nil)
+            orderVC.modalPresentationStyle = .overCurrentContext
+            orderVC.modalTransitionStyle = .flipHorizontal
+            
+            var unselectedCartProducts: [CartProduct] = []
+            if unselectedProductsIndexPaths.count != 0 {
+                for productIndexPath in unselectedProductsIndexPaths {
+                    unselectedCartProducts.append(cartProducts[productIndexPath.row])
+                }
+            }
+            orderVC.unselectedCartProducts = unselectedCartProducts
+            
+            guard let tabbarHeight = tabBarController?.tabBar.frame.size.height else { return }
+            orderVC.tabbarHeight = tabbarHeight
+            
+            orderVC.navBarHeight = self.navBarHeight
+            orderVC.animationDelegate = self
+            present(orderVC, animated: true, completion: nil)
         }
-        let orderVC = OrderVC(nibName: String(describing: OrderVC.self), bundle: nil)
-        orderVC.modalPresentationStyle = .overCurrentContext
-        orderVC.modalTransitionStyle = .flipHorizontal
-
-        guard let tabbarHeight = tabBarController?.tabBar.frame.size.height else { return }
-        orderVC.tabbarHeight = tabbarHeight
-
-        orderVC.navBarHeight = self.navBarHeight
-        orderVC.animationDelegate = self
-        present(orderVC, animated: true, completion: nil)
     }
 }
 
@@ -125,15 +162,17 @@ extension ShoppingCartVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: CartCell.self), for: indexPath)
         guard let cartCell = cell as? CartCell else { return cell }
-        cartCell.setupCell(cartProducts[indexPath.row])
+        cartCell.cartProduct = cartProducts[indexPath.row]
+        cartCell.product = productsInCart[indexPath.row]
+        cartCell.setupCell(cartProducts[indexPath.row], productsInCart[indexPath.row])
         
         if let checkboxButton = cartCell.checkboxButton {
             checkboxButton.addTarget(self, action: #selector(checkboxClicked(_:)), for: .touchUpInside)
-            checkboxButton.isSelected = selectedProducts.contains(indexPath) ? false : true
+            checkboxButton.isSelected = unselectedProductsIndexPaths.contains(indexPath) ? false : true
             if checkboxButton.isSelected {
-                cartCell.cartProductImageView.backgroundColor = .mainColor
+                checkboxButton.tintColor = .mainColor
             } else {
-                cartCell.cartProductImageView.backgroundColor = .mainLabelColor
+                checkboxButton.tintColor = .mainLabelColor
             }
         }
         

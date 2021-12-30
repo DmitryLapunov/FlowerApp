@@ -11,11 +11,13 @@
     <customFonts key="customFonts">
         <array key="OpenSans-VariableFont.ttf">
             <string>OpenSans-Regular</string>
+            <string>OpenSansRoman-CondensedRegular</string>
         </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ConfirmationVC" customModule="FlowerApp" customModuleProvider="target">
             <connections>
+                <outlet property="addressLabel" destination="cat-ON-Tzo" id="On3-bU-hBi"/>
                 <outlet property="backToPreviousButton" destination="XmV-q9-9ad" id="NiE-tS-APd"/>
                 <outlet property="collectionViewBackgroundView" destination="vcz-bo-Hku" id="Ix2-9O-bN5"/>
                 <outlet property="confirmationTopConstraint" destination="ksE-ob-hvc" id="4Zt-a6-NgG"/>
@@ -38,64 +40,96 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cat-ON-Tzo">
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Проверьте правильность контактных данных" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UIy-jX-u9c">
-                            <rect key="frame" x="16" y="10" width="382" height="52"/>
-                            <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="19"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Проверьте контактные данные" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UIy-jX-u9c">
+                            <rect key="frame" x="20" y="10" width="374" height="20.5"/>
+                            <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="15"/>
                             <color key="textColor" name="MainLabelColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="enx-lF-zm8">
-                            <rect key="frame" x="16" y="72" width="382" height="123"/>
+                            <rect key="frame" x="10" y="40.5" width="394" height="123"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="HMJ-wa-bmH">
-                                    <rect key="frame" x="16" y="10" width="361" height="103"/>
+                                    <rect key="frame" x="75" y="10" width="314" height="103"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Имя" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rw0-L0-tGl">
-                                            <rect key="frame" x="0.0" y="0.0" width="361" height="20.5"/>
-                                            <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="15"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="314" height="20.5"/>
+                                            <fontDescription key="fontDescription" name="OpenSansRoman-CondensedRegular" family="Open Sans" pointSize="15"/>
                                             <color key="textColor" name="MainLabelColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Телефон" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="StY-Pa-ebv">
-                                            <rect key="frame" x="0.0" y="27.5" width="361" height="20.5"/>
-                                            <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="15"/>
+                                            <rect key="frame" x="0.0" y="27.5" width="314" height="20.5"/>
+                                            <fontDescription key="fontDescription" name="OpenSansRoman-CondensedRegular" family="Open Sans" pointSize="15"/>
                                             <color key="textColor" name="MainLabelColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Адрес" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Luc-R8-Dgy">
-                                            <rect key="frame" x="0.0" y="55" width="361" height="20.5"/>
-                                            <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="15"/>
+                                            <rect key="frame" x="0.0" y="55" width="314" height="20.5"/>
+                                            <fontDescription key="fontDescription" name="OpenSansRoman-CondensedRegular" family="Open Sans" pointSize="15"/>
                                             <color key="textColor" name="MainLabelColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oju-zj-7N4">
-                                            <rect key="frame" x="0.0" y="82.5" width="361" height="20.5"/>
-                                            <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="15"/>
+                                            <rect key="frame" x="0.0" y="82.5" width="314" height="20.5"/>
+                                            <fontDescription key="fontDescription" name="OpenSansRoman-CondensedRegular" family="Open Sans" pointSize="15"/>
                                             <color key="textColor" name="MainLabelColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </stackView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Имя:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XPM-Jz-a8X">
+                                    <rect key="frame" x="10" y="10" width="26.5" height="20.5"/>
+                                    <fontDescription key="fontDescription" name="OpenSansRoman-CondensedRegular" family="Open Sans" pointSize="15"/>
+                                    <color key="textColor" name="SecondaryLabelColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Телефон:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="elx-3S-mEX">
+                                    <rect key="frame" x="10" y="37.5" width="49.5" height="20.5"/>
+                                    <fontDescription key="fontDescription" name="OpenSansRoman-CondensedRegular" family="Open Sans" pointSize="15"/>
+                                    <color key="textColor" name="SecondaryLabelColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Адрес:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1L2-UG-boe">
+                                    <rect key="frame" x="10" y="65" width="35" height="20.5"/>
+                                    <fontDescription key="fontDescription" name="OpenSansRoman-CondensedRegular" family="Open Sans" pointSize="15"/>
+                                    <color key="textColor" name="SecondaryLabelColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BXa-If-Yna">
+                                    <rect key="frame" x="10" y="92.5" width="32" height="20.5"/>
+                                    <fontDescription key="fontDescription" name="OpenSansRoman-CondensedRegular" family="Open Sans" pointSize="15"/>
+                                    <color key="textColor" name="SecondaryLabelColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstItem="HMJ-wa-bmH" firstAttribute="top" secondItem="enx-lF-zm8" secondAttribute="top" constant="10" id="3Wl-X0-HRF"/>
                                 <constraint firstAttribute="trailing" secondItem="HMJ-wa-bmH" secondAttribute="trailing" constant="5" id="5wd-vc-69H"/>
-                                <constraint firstItem="HMJ-wa-bmH" firstAttribute="leading" secondItem="enx-lF-zm8" secondAttribute="leading" constant="16" id="aw8-Je-HRi"/>
+                                <constraint firstItem="BXa-If-Yna" firstAttribute="leading" secondItem="enx-lF-zm8" secondAttribute="leading" constant="10" id="JlK-mH-gFb"/>
+                                <constraint firstItem="elx-3S-mEX" firstAttribute="top" secondItem="StY-Pa-ebv" secondAttribute="top" id="MtO-nc-2uf"/>
+                                <constraint firstItem="XPM-Jz-a8X" firstAttribute="top" secondItem="rw0-L0-tGl" secondAttribute="top" id="Qdr-Do-hOZ"/>
+                                <constraint firstItem="1L2-UG-boe" firstAttribute="leading" secondItem="enx-lF-zm8" secondAttribute="leading" constant="10" id="VJ9-Dq-QMO"/>
+                                <constraint firstItem="1L2-UG-boe" firstAttribute="top" secondItem="Luc-R8-Dgy" secondAttribute="top" id="Y4v-Pt-1Gz"/>
+                                <constraint firstItem="HMJ-wa-bmH" firstAttribute="leading" secondItem="enx-lF-zm8" secondAttribute="leading" constant="75" id="aw8-Je-HRi"/>
+                                <constraint firstItem="elx-3S-mEX" firstAttribute="leading" secondItem="enx-lF-zm8" secondAttribute="leading" constant="10" id="azT-dm-td4"/>
+                                <constraint firstItem="XPM-Jz-a8X" firstAttribute="leading" secondItem="enx-lF-zm8" secondAttribute="leading" constant="10" id="oi6-Xd-j9E"/>
                                 <constraint firstAttribute="bottom" secondItem="HMJ-wa-bmH" secondAttribute="bottom" constant="10" id="xrZ-TV-SHF"/>
+                                <constraint firstItem="BXa-If-Yna" firstAttribute="top" secondItem="Oju-zj-7N4" secondAttribute="top" id="y4i-U2-tyk"/>
                             </constraints>
                         </view>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Товары в заказе" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2MO-Zp-8Md">
-                            <rect key="frame" x="16" y="220" width="382" height="23.5"/>
-                            <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Товары в заказе" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2MO-Zp-8Md">
+                            <rect key="frame" x="20" y="173.5" width="374" height="20.5"/>
+                            <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="15"/>
                             <color key="textColor" name="MainLabelColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vcz-bo-Hku">
-                            <rect key="frame" x="16" y="248.5" width="382" height="165"/>
+                            <rect key="frame" x="10" y="204" width="394" height="165"/>
                             <subviews>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="rZe-gS-XJG">
-                                    <rect key="frame" x="5" y="5" width="372" height="155"/>
+                                    <rect key="frame" x="5" y="5" width="384" height="155"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="155" id="JV5-Iq-o96"/>
@@ -117,16 +151,16 @@
                             </constraints>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Общая цена: N" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gev-8p-ctQ">
-                            <rect key="frame" x="266.5" y="728.5" width="131.5" height="25"/>
-                            <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="18"/>
+                            <rect key="frame" x="287" y="731.5" width="117" height="22"/>
+                            <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="16"/>
                             <color key="textColor" name="MainLabelColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="wOi-Hf-oRt">
-                            <rect key="frame" x="16" y="773.5" width="382" height="34.5"/>
+                            <rect key="frame" x="10" y="773.5" width="394" height="34.5"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XmV-q9-9ad">
-                                    <rect key="frame" x="0.0" y="0.0" width="186" height="34.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="192" height="34.5"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="filled" title="Назад к оформлению">
                                         <fontDescription key="titleFontDescription" name="OpenSansRoman-CondensedRegular" family="Open Sans" pointSize="15"/>
@@ -136,7 +170,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9eq-re-rih">
-                                    <rect key="frame" x="196" y="0.0" width="186" height="34.5"/>
+                                    <rect key="frame" x="202" y="0.0" width="192" height="34.5"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="filled" title="Отправить заказ">
                                         <fontDescription key="titleFontDescription" name="OpenSansRoman-CondensedRegular" family="Open Sans" pointSize="15"/>
@@ -150,23 +184,23 @@
                     </subviews>
                     <color key="backgroundColor" name="TertiaryColor"/>
                     <constraints>
-                        <constraint firstItem="wOi-Hf-oRt" firstAttribute="leading" secondItem="cat-ON-Tzo" secondAttribute="leading" constant="16" id="0hH-fW-FFy"/>
-                        <constraint firstAttribute="trailing" secondItem="2MO-Zp-8Md" secondAttribute="trailing" constant="16" id="1yz-1D-2cS"/>
-                        <constraint firstItem="2MO-Zp-8Md" firstAttribute="top" secondItem="enx-lF-zm8" secondAttribute="bottom" constant="25" id="7og-kb-T7B"/>
+                        <constraint firstItem="wOi-Hf-oRt" firstAttribute="leading" secondItem="cat-ON-Tzo" secondAttribute="leading" constant="10" id="0hH-fW-FFy"/>
+                        <constraint firstAttribute="trailing" secondItem="2MO-Zp-8Md" secondAttribute="trailing" constant="20" id="1yz-1D-2cS"/>
+                        <constraint firstItem="2MO-Zp-8Md" firstAttribute="top" secondItem="enx-lF-zm8" secondAttribute="bottom" constant="10" id="7og-kb-T7B"/>
                         <constraint firstItem="wOi-Hf-oRt" firstAttribute="top" secondItem="Gev-8p-ctQ" secondAttribute="bottom" constant="20" id="JL1-fX-T4O"/>
-                        <constraint firstAttribute="trailing" secondItem="wOi-Hf-oRt" secondAttribute="trailing" constant="16" id="Mbn-CF-9nc"/>
-                        <constraint firstAttribute="trailing" secondItem="UIy-jX-u9c" secondAttribute="trailing" constant="16" id="Mk0-f1-Ff0"/>
+                        <constraint firstAttribute="trailing" secondItem="wOi-Hf-oRt" secondAttribute="trailing" constant="10" id="Mbn-CF-9nc"/>
+                        <constraint firstAttribute="trailing" secondItem="UIy-jX-u9c" secondAttribute="trailing" constant="20" id="Mk0-f1-Ff0"/>
                         <constraint firstItem="enx-lF-zm8" firstAttribute="top" secondItem="UIy-jX-u9c" secondAttribute="bottom" constant="10" id="SWU-ci-vIQ"/>
-                        <constraint firstAttribute="trailing" secondItem="enx-lF-zm8" secondAttribute="trailing" constant="16" id="a15-Py-VvB"/>
+                        <constraint firstAttribute="trailing" secondItem="enx-lF-zm8" secondAttribute="trailing" constant="10" id="a15-Py-VvB"/>
                         <constraint firstItem="UIy-jX-u9c" firstAttribute="top" secondItem="cat-ON-Tzo" secondAttribute="top" constant="10" id="ckS-4b-JxE"/>
-                        <constraint firstItem="vcz-bo-Hku" firstAttribute="leading" secondItem="cat-ON-Tzo" secondAttribute="leading" constant="16" id="e69-A4-mpV"/>
-                        <constraint firstItem="UIy-jX-u9c" firstAttribute="leading" secondItem="cat-ON-Tzo" secondAttribute="leading" constant="16" id="fEH-Sf-RcT"/>
-                        <constraint firstItem="enx-lF-zm8" firstAttribute="leading" secondItem="cat-ON-Tzo" secondAttribute="leading" constant="16" id="k7g-wV-XqM"/>
-                        <constraint firstAttribute="trailing" secondItem="vcz-bo-Hku" secondAttribute="trailing" constant="16" id="k9Y-DM-HLf"/>
-                        <constraint firstItem="vcz-bo-Hku" firstAttribute="top" secondItem="2MO-Zp-8Md" secondAttribute="bottom" constant="5" id="qeC-2l-UOF"/>
+                        <constraint firstItem="vcz-bo-Hku" firstAttribute="leading" secondItem="cat-ON-Tzo" secondAttribute="leading" constant="10" id="e69-A4-mpV"/>
+                        <constraint firstItem="UIy-jX-u9c" firstAttribute="leading" secondItem="cat-ON-Tzo" secondAttribute="leading" constant="20" id="fEH-Sf-RcT"/>
+                        <constraint firstItem="enx-lF-zm8" firstAttribute="leading" secondItem="cat-ON-Tzo" secondAttribute="leading" constant="10" id="k7g-wV-XqM"/>
+                        <constraint firstAttribute="trailing" secondItem="vcz-bo-Hku" secondAttribute="trailing" constant="10" id="k9Y-DM-HLf"/>
+                        <constraint firstItem="vcz-bo-Hku" firstAttribute="top" secondItem="2MO-Zp-8Md" secondAttribute="bottom" constant="10" id="qeC-2l-UOF"/>
                         <constraint firstAttribute="bottom" secondItem="wOi-Hf-oRt" secondAttribute="bottom" constant="10" id="rvO-2Q-Mal"/>
-                        <constraint firstAttribute="trailing" secondItem="Gev-8p-ctQ" secondAttribute="trailing" constant="16" id="tte-Jr-Ae5"/>
-                        <constraint firstItem="2MO-Zp-8Md" firstAttribute="leading" secondItem="cat-ON-Tzo" secondAttribute="leading" constant="16" id="xBy-fA-at2"/>
+                        <constraint firstAttribute="trailing" secondItem="Gev-8p-ctQ" secondAttribute="trailing" constant="10" id="tte-Jr-Ae5"/>
+                        <constraint firstItem="2MO-Zp-8Md" firstAttribute="leading" secondItem="cat-ON-Tzo" secondAttribute="leading" constant="20" id="xBy-fA-at2"/>
                     </constraints>
                 </view>
             </subviews>
@@ -184,6 +218,9 @@
     <resources>
         <namedColor name="MainLabelColor">
             <color red="0.29800000786781311" green="0.25499999523162842" blue="0.3449999988079071" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="SecondaryLabelColor">
+            <color red="0.66200000047683716" green="0.6589999794960022" blue="0.73299998044967651" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="TertiaryColor">
             <color red="0.95300000905990601" green="0.9570000171661377" blue="0.96799999475479126" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

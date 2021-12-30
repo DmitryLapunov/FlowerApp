@@ -35,13 +35,13 @@
                     <color key="backgroundColor" name="TertiaryColor"/>
                 </view>
                 <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KFa-DO-oO6">
-                    <rect key="frame" x="16" y="44" width="382" height="471"/>
+                    <rect key="frame" x="10" y="44" width="394" height="471"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="bEi-pr-cY3">
-                            <rect key="frame" x="10" y="61" width="362" height="400"/>
+                            <rect key="frame" x="0.0" y="61" width="394" height="400"/>
                             <subviews>
                                 <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="neK-89-g1V" customClass="ValidationTextField" customModule="FlowerApp" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="362" height="100"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="394" height="100"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Имя:"/>
@@ -52,7 +52,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p4S-hu-Daq" customClass="ValidationTextField" customModule="FlowerApp" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="100" width="362" height="100"/>
+                                    <rect key="frame" x="0.0" y="100" width="394" height="100"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Номер телефона:"/>
@@ -63,7 +63,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i4Q-Pq-xS4" customClass="ValidationTextField" customModule="FlowerApp" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="200" width="362" height="100"/>
+                                    <rect key="frame" x="0.0" y="200" width="394" height="100"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Адрес доставки:"/>
@@ -74,7 +74,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Fs-Wy-OdX" customClass="ValidationTextField" customModule="FlowerApp" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="300" width="362" height="100"/>
+                                    <rect key="frame" x="0.0" y="300" width="394" height="100"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Email:"/>
@@ -88,7 +88,7 @@
                             <color key="backgroundColor" name="TertiaryColor"/>
                         </stackView>
                         <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="TIV-N7-9au">
-                            <rect key="frame" x="26" y="15" width="330" height="32"/>
+                            <rect key="frame" x="26" y="15" width="342" height="32"/>
                             <color key="backgroundColor" name="MainColor"/>
                             <segments>
                                 <segment title="Доставка"/>
@@ -106,8 +106,8 @@
                         <constraint firstAttribute="bottom" secondItem="bEi-pr-cY3" secondAttribute="bottom" constant="10" id="8ig-2r-zcw"/>
                         <constraint firstItem="TIV-N7-9au" firstAttribute="top" secondItem="KFa-DO-oO6" secondAttribute="top" constant="15" id="CEF-bS-DaK"/>
                         <constraint firstItem="bEi-pr-cY3" firstAttribute="top" secondItem="TIV-N7-9au" secondAttribute="bottom" constant="15" id="P0Q-H7-xB2"/>
-                        <constraint firstAttribute="trailing" secondItem="bEi-pr-cY3" secondAttribute="trailing" constant="10" id="YXt-0f-U28"/>
-                        <constraint firstItem="bEi-pr-cY3" firstAttribute="leading" secondItem="KFa-DO-oO6" secondAttribute="leading" constant="10" id="deC-hz-29d"/>
+                        <constraint firstAttribute="trailing" secondItem="bEi-pr-cY3" secondAttribute="trailing" id="YXt-0f-U28"/>
+                        <constraint firstItem="bEi-pr-cY3" firstAttribute="leading" secondItem="KFa-DO-oO6" secondAttribute="leading" id="deC-hz-29d"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zPn-uj-2hG">
@@ -155,11 +155,11 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="ym3-JG-6Gl" firstAttribute="top" secondItem="KFa-DO-oO6" secondAttribute="top" id="1WC-D0-DHh"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="KFa-DO-oO6" secondAttribute="trailing" constant="16" id="4GR-cc-y0M"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="KFa-DO-oO6" secondAttribute="trailing" constant="10" id="4GR-cc-y0M"/>
                 <constraint firstItem="zPn-uj-2hG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="5" id="DWE-Pf-QPr"/>
                 <constraint firstItem="ym3-JG-6Gl" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="HtQ-BV-NeZ"/>
                 <constraint firstItem="KFa-DO-oO6" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Jqx-UC-DYp"/>
-                <constraint firstItem="KFa-DO-oO6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Xut-sg-Ijh"/>
+                <constraint firstItem="KFa-DO-oO6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="Xut-sg-Ijh"/>
                 <constraint firstAttribute="bottom" secondItem="ym3-JG-6Gl" secondAttribute="bottom" id="afJ-Ln-zi4"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zPn-uj-2hG" secondAttribute="trailing" constant="5" id="c4X-oc-GNb"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="zPn-uj-2hG" secondAttribute="bottom" constant="10" id="f9F-hV-KQ3"/>

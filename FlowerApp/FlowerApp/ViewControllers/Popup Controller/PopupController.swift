@@ -25,7 +25,6 @@ class PopupController: UIViewController {
         setupTimer()
         configureUI()
         labelOutlet.text = message
-        
     }
     
     private func configureUI() {
@@ -39,7 +38,6 @@ class PopupController: UIViewController {
             mainView.layer.shadowRadius = 2
             mainView.layer.shadowOffset = CGSize(width: 0, height: 2)
         }
-       
     }
     
     private func setupTimer() {

@@ -9,7 +9,7 @@
     </dependencies>
     <customFonts key="customFonts">
         <array key="OpenSans-VariableFont.ttf">
-            <string>OpenSans-Regular</string>
+            <string>OpenSansRoman-CondensedRegular</string>
         </array>
     </customFonts>
     <objects>
@@ -52,7 +52,7 @@
                     <constraints>
                         <constraint firstAttribute="width" constant="75" id="KuT-mz-m5o"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="15"/>
+                    <fontDescription key="fontDescription" name="OpenSansRoman-CondensedRegular" family="Open Sans" pointSize="15"/>
                     <color key="textColor" name="MainColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -93,7 +93,7 @@
                 <constraint firstItem="U7B-yx-DvX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ydZ-Xm-1HN"/>
                 <constraint firstItem="9iX-Og-0WP" firstAttribute="top" secondItem="iXc-O5-5Cr" secondAttribute="bottom" constant="15" id="zgE-a0-Gbz"/>
             </constraints>
-            <point key="canvasLocation" x="139" y="125"/>
+            <point key="canvasLocation" x="137.68115942028987" y="124.55357142857142"/>
         </view>
     </objects>
     <resources>
