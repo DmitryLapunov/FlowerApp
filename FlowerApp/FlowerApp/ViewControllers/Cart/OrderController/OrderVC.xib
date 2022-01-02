@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -17,7 +18,10 @@
                 <outlet property="buttonViewConstraintBottom" destination="f9F-hV-KQ3" id="oZe-qR-smA"/>
                 <outlet property="buttonViewConstraintTop" destination="otP-kC-4gW" id="1ON-hB-KCh"/>
                 <outlet property="createOrderButton" destination="PfB-qF-Z3O" id="s4z-pP-Gbg"/>
+                <outlet property="defaultDeliveryButton" destination="g1G-yU-zqU" id="KyJ-Ec-S0i"/>
+                <outlet property="deliveryChooseView" destination="fHe-7d-8CE" id="fDv-hl-oP2"/>
                 <outlet property="emailField" destination="6Fs-Wy-OdX" id="oZX-m6-tW5"/>
+                <outlet property="expressDeliveryButton" destination="YhT-mP-VIm" id="iez-MK-8SO"/>
                 <outlet property="nameField" destination="neK-89-g1V" id="cuc-8D-oGs"/>
                 <outlet property="orderTopConstraint" destination="Jqx-UC-DYp" id="RXU-5I-D0m"/>
                 <outlet property="phoneField" destination="p4S-hu-Daq" id="PR5-7r-CD3"/>
@@ -34,13 +38,13 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                     <color key="backgroundColor" name="TertiaryColor"/>
                 </view>
-                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KFa-DO-oO6">
-                    <rect key="frame" x="10" y="44" width="394" height="471.5"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KFa-DO-oO6">
+                    <rect key="frame" x="10" y="44" width="394" height="538.5"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="bEi-pr-cY3">
-                            <rect key="frame" x="0.0" y="61" width="394" height="400.5"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="bEi-pr-cY3">
+                            <rect key="frame" x="0.0" y="61" width="394" height="467.5"/>
                             <subviews>
-                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="neK-89-g1V" customClass="ValidationTextField" customModule="FlowerApp" customModuleProvider="target">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="neK-89-g1V" customClass="ValidationTextField" customModule="FlowerApp" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="394" height="100"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <userDefinedRuntimeAttributes>
@@ -51,7 +55,7 @@
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </view>
-                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p4S-hu-Daq" customClass="ValidationTextField" customModule="FlowerApp" customModuleProvider="target">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p4S-hu-Daq" customClass="ValidationTextField" customModule="FlowerApp" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="100" width="394" height="100.5"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <userDefinedRuntimeAttributes>
@@ -62,7 +66,7 @@
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </view>
-                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i4Q-Pq-xS4" customClass="ValidationTextField" customModule="FlowerApp" customModuleProvider="target">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i4Q-Pq-xS4" customClass="ValidationTextField" customModule="FlowerApp" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="200.5" width="394" height="100"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <userDefinedRuntimeAttributes>
@@ -73,8 +77,62 @@
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </view>
-                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Fs-Wy-OdX" customClass="ValidationTextField" customModule="FlowerApp" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="300.5" width="394" height="100"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fHe-7d-8CE">
+                                    <rect key="frame" x="0.0" y="300.5" width="394" height="67"/>
+                                    <subviews>
+                                        <button opaque="NO" tag="1000" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g1G-yU-zqU">
+                                            <rect key="frame" x="10" y="10" width="374" height="18.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" title="Обычная доставка - 5 BYN (Свыше 60 BYN - бесплатно)">
+                                                <color key="titleColor" name="MainLabelColor"/>
+                                                <imageReference key="image" image="square.fill" catalog="system" symbolScale="default" renderingMode="hierarchical-single">
+                                                    <hierarchicalColors>
+                                                        <color name="MainColor"/>
+                                                        <color systemColor="secondaryLabelColor"/>
+                                                        <color systemColor="tertiaryLabelColor"/>
+                                                    </hierarchicalColors>
+                                                </imageReference>
+                                            </state>
+                                            <connections>
+                                                <action selector="deliveryTypeAction:" destination="-1" eventType="touchUpInside" id="y8p-QO-VWO"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="1001" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YhT-mP-VIm">
+                                            <rect key="frame" x="10" y="38.5" width="374" height="18.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" title="Экспресс-доставка  - 16 BYN">
+                                                <color key="titleColor" name="MainLabelColor"/>
+                                                <imageReference key="image" image="square" catalog="system" renderingMode="hierarchical-single">
+                                                    <hierarchicalColors>
+                                                        <color name="MainColor"/>
+                                                        <color systemColor="secondaryLabelColor"/>
+                                                        <color systemColor="tertiaryLabelColor"/>
+                                                    </hierarchicalColors>
+                                                </imageReference>
+                                            </state>
+                                            <connections>
+                                                <action selector="deliveryTypeAction:" destination="-1" eventType="touchUpInside" id="IAZ-gy-tlT"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="g1G-yU-zqU" secondAttribute="trailing" constant="10" id="C3S-AL-3ZI"/>
+                                        <constraint firstAttribute="bottom" secondItem="YhT-mP-VIm" secondAttribute="bottom" constant="10" id="J5J-gB-zaB"/>
+                                        <constraint firstAttribute="trailing" secondItem="YhT-mP-VIm" secondAttribute="trailing" constant="10" id="Tkt-uK-dWT"/>
+                                        <constraint firstAttribute="height" constant="67" id="Y1a-0i-mdm"/>
+                                        <constraint firstItem="g1G-yU-zqU" firstAttribute="leading" secondItem="fHe-7d-8CE" secondAttribute="leading" constant="10" id="oRj-Dm-wiF"/>
+                                        <constraint firstItem="YhT-mP-VIm" firstAttribute="top" secondItem="g1G-yU-zqU" secondAttribute="bottom" constant="10" id="qcY-BQ-gO5"/>
+                                        <constraint firstItem="g1G-yU-zqU" firstAttribute="top" secondItem="fHe-7d-8CE" secondAttribute="top" constant="10" id="vrR-oZ-rEi"/>
+                                        <constraint firstItem="YhT-mP-VIm" firstAttribute="leading" secondItem="fHe-7d-8CE" secondAttribute="leading" constant="10" id="wAt-TT-zj7"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Fs-Wy-OdX" customClass="ValidationTextField" customModule="FlowerApp" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="367.5" width="394" height="100"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Email:"/>
@@ -175,14 +233,25 @@
         </view>
     </objects>
     <resources>
+        <image name="square" catalog="system" width="128" height="114"/>
+        <image name="square.fill" catalog="system" width="128" height="114"/>
         <namedColor name="MainColor">
             <color red="0.40000000596046448" green="0.5220000147819519" blue="0.046999998390674591" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="MainLabelColor">
+            <color red="0.29800000786781311" green="0.25499999523162842" blue="0.3449999988079071" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="TertiaryColor">
             <color red="0.95300000905990601" green="0.9570000171661377" blue="0.96799999475479126" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tertiaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

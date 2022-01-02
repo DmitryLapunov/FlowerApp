@@ -112,6 +112,7 @@
             <size key="customSize" width="208" height="140"/>
             <connections>
                 <outlet property="productCount" destination="EPE-cl-6bJ" id="Pot-07-Vi4"/>
+                <outlet property="productCountView" destination="FkW-tQ-kX4" id="knA-p4-szV"/>
                 <outlet property="productImage" destination="kUC-cA-gpP" id="80I-PY-RCC"/>
                 <outlet property="productName" destination="KIV-1e-CWu" id="VX2-dd-K3T"/>
                 <outlet property="productPrice" destination="rlr-UD-U4t" id="OwI-Qe-u4K"/>

@@ -26,6 +26,9 @@ class OrderVC: UIViewController {
     @IBOutlet weak var switcherDelivery: UISegmentedControl!
     @IBOutlet weak var buttonViewConstraintBottom: NSLayoutConstraint!
     @IBOutlet weak var buttonViewConstraintTop: NSLayoutConstraint!
+    @IBOutlet weak var deliveryChooseView: UIView!
+    @IBOutlet weak var expressDeliveryButton: UIButton!
+    @IBOutlet weak var defaultDeliveryButton: UIButton!
     
     
     var viewPosition: CGFloat?
@@ -42,6 +45,7 @@ class OrderVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Детали заказа"
+        setupButtonChoose()
         setupStackView()
         setupValidationField()
         let keyboardTap = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
@@ -54,6 +58,13 @@ class OrderVC: UIViewController {
         super.viewDidAppear(animated)
         viewPosition = backgroundStackView.frame.origin.y
         calсulateConstraint()
+    }
+    
+    private func setupButtonChoose() {
+        defaultDeliveryButton.setImage(UIImage(systemName: "square.fill"), for: .normal)
+        defaultDeliveryButton.tintColor = .mainColor
+        expressDeliveryButton.setImage(UIImage(systemName: "square"), for: .normal)
+        expressDeliveryButton.tintColor = .mainColor
     }
     
     private func calсulateConstraint() {
@@ -108,7 +119,7 @@ class OrderVC: UIViewController {
         orderTopConstraint.constant = (UIScreen.main.bounds.width / 6) + 17
     }
     
-    func setupStackView() {
+    private func setupStackView() {
         backgroundStackView.layer.cornerRadius = 12
         
         nameField.inputField.delegate = self
@@ -128,11 +139,26 @@ class OrderVC: UIViewController {
         
         backgroundStackView.addShadowAndCornerRadius()
     }
+    @IBAction func deliveryTypeAction(_ sender: UIButton) {
+        if sender.tag == 1000 {
+            defaultDeliveryButton.setImage(UIImage(systemName: "square.fill"), for: .normal)
+            expressDeliveryButton.setImage(UIImage(systemName: "square"), for: .normal)
+            defaultDeliveryButton.tintColor = .mainColor
+            expressDeliveryButton.tintColor = .mainColor
+        } else {
+            expressDeliveryButton.setImage(UIImage(systemName: "square.fill"), for: .normal)
+            defaultDeliveryButton.setImage(UIImage(systemName: "square"), for: .normal)
+            defaultDeliveryButton.tintColor = .mainColor
+            expressDeliveryButton.tintColor = .mainColor
+        }
+    }
     
     @IBAction func switcherDelivery(_ sender: Any) {
         if switcherDelivery.selectedSegmentIndex == 1 {
             adressField.isHidden = true
+            deliveryChooseView.isHidden = true
         } else {
+            deliveryChooseView.isHidden = false
             adressField.isHidden = false
         }
     }
@@ -174,6 +200,11 @@ class OrderVC: UIViewController {
                   }
             
             animationDelegate?.fromStepTwoToStepThree()
+            if defaultDeliveryButton.imageView?.image == UIImage(systemName: "square.fill") {
+                confirmationVC.defaultDelivery = true
+            } else {
+                confirmationVC.defaultDelivery = false
+            }
             confirmationVC.animationDelegate = self
             confirmationVC.delivery = true
             confirmationVC.name = name
