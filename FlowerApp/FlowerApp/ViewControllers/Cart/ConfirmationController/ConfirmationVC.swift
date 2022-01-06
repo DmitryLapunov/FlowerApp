@@ -22,7 +22,7 @@ class ConfirmationVC: UIViewController {
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var deliveryAdressLabel: UILabel!
-    @IBOutlet weak var addressLabel: UIView!
+    @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var labelView: UIView!
     @IBOutlet weak var productCollectionView: UICollectionView!
     @IBOutlet weak var collectionViewBackgroundView: UIView!
@@ -105,17 +105,11 @@ class ConfirmationVC: UIViewController {
     
     private func setupLabelView() {
         
-        if delivery {
-            deliveryAdressLabel.isHidden = false
-            addressLabel.isHidden = false
-        } else {
-            deliveryAdressLabel.isHidden = true
-            addressLabel.isHidden = true
-        }
+        deliveryAdressLabel.isHidden = !delivery
+        addressLabel.isHidden = !delivery
         
         nameLabel.text = name
         phoneLabel.text = phone
-        deliveryAdressLabel.text = adress
         emailLabel.text = email
         
         labelView.addShadowAndCornerRadius()

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -17,7 +17,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ConfirmationVC" customModule="FlowerApp" customModuleProvider="target">
             <connections>
-                <outlet property="addressLabel" destination="cat-ON-Tzo" id="On3-bU-hBi"/>
+                <outlet property="addressLabel" destination="1L2-UG-boe" id="FDl-I6-DQu"/>
                 <outlet property="backToPreviousButton" destination="XmV-q9-9ad" id="NiE-tS-APd"/>
                 <outlet property="collectionViewBackgroundView" destination="vcz-bo-Hku" id="Ix2-9O-bN5"/>
                 <outlet property="confirmationTopConstraint" destination="ksE-ob-hvc" id="4Zt-a6-NgG"/>
@@ -78,45 +78,46 @@
                                         </label>
                                     </subviews>
                                 </stackView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Имя:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XPM-Jz-a8X">
-                                    <rect key="frame" x="10" y="10" width="26.5" height="20.5"/>
-                                    <fontDescription key="fontDescription" name="OpenSansRoman-CondensedRegular" family="Open Sans" pointSize="15"/>
-                                    <color key="textColor" name="SecondaryLabelColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Телефон:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="elx-3S-mEX">
-                                    <rect key="frame" x="10" y="37.5" width="49.5" height="20.5"/>
-                                    <fontDescription key="fontDescription" name="OpenSansRoman-CondensedRegular" family="Open Sans" pointSize="15"/>
-                                    <color key="textColor" name="SecondaryLabelColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Адрес:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1L2-UG-boe">
-                                    <rect key="frame" x="10" y="65" width="35" height="20.5"/>
-                                    <fontDescription key="fontDescription" name="OpenSansRoman-CondensedRegular" family="Open Sans" pointSize="15"/>
-                                    <color key="textColor" name="SecondaryLabelColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BXa-If-Yna">
-                                    <rect key="frame" x="10" y="92.5" width="32" height="20.5"/>
-                                    <fontDescription key="fontDescription" name="OpenSansRoman-CondensedRegular" family="Open Sans" pointSize="15"/>
-                                    <color key="textColor" name="SecondaryLabelColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="jW4-V7-O1Z">
+                                    <rect key="frame" x="10" y="10" width="50" height="103"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Имя:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XPM-Jz-a8X">
+                                            <rect key="frame" x="0.0" y="0.0" width="26.5" height="20.5"/>
+                                            <fontDescription key="fontDescription" name="OpenSansRoman-CondensedRegular" family="Open Sans" pointSize="15"/>
+                                            <color key="textColor" name="SecondaryLabelColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Телефон:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="elx-3S-mEX">
+                                            <rect key="frame" x="0.0" y="27.5" width="49.5" height="20.5"/>
+                                            <fontDescription key="fontDescription" name="OpenSansRoman-CondensedRegular" family="Open Sans" pointSize="15"/>
+                                            <color key="textColor" name="SecondaryLabelColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Адрес:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1L2-UG-boe">
+                                            <rect key="frame" x="0.0" y="55" width="35" height="20.5"/>
+                                            <fontDescription key="fontDescription" name="OpenSansRoman-CondensedRegular" family="Open Sans" pointSize="15"/>
+                                            <color key="textColor" name="SecondaryLabelColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BXa-If-Yna">
+                                            <rect key="frame" x="0.0" y="82.5" width="32" height="20.5"/>
+                                            <fontDescription key="fontDescription" name="OpenSansRoman-CondensedRegular" family="Open Sans" pointSize="15"/>
+                                            <color key="textColor" name="SecondaryLabelColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
+                                <constraint firstItem="jW4-V7-O1Z" firstAttribute="leading" secondItem="enx-lF-zm8" secondAttribute="leading" constant="10" id="3MT-sa-hsc"/>
                                 <constraint firstItem="HMJ-wa-bmH" firstAttribute="top" secondItem="enx-lF-zm8" secondAttribute="top" constant="10" id="3Wl-X0-HRF"/>
                                 <constraint firstAttribute="trailing" secondItem="HMJ-wa-bmH" secondAttribute="trailing" constant="5" id="5wd-vc-69H"/>
-                                <constraint firstItem="BXa-If-Yna" firstAttribute="leading" secondItem="enx-lF-zm8" secondAttribute="leading" constant="10" id="JlK-mH-gFb"/>
-                                <constraint firstItem="elx-3S-mEX" firstAttribute="top" secondItem="StY-Pa-ebv" secondAttribute="top" id="MtO-nc-2uf"/>
-                                <constraint firstItem="XPM-Jz-a8X" firstAttribute="top" secondItem="rw0-L0-tGl" secondAttribute="top" id="Qdr-Do-hOZ"/>
-                                <constraint firstItem="1L2-UG-boe" firstAttribute="leading" secondItem="enx-lF-zm8" secondAttribute="leading" constant="10" id="VJ9-Dq-QMO"/>
-                                <constraint firstItem="1L2-UG-boe" firstAttribute="top" secondItem="Luc-R8-Dgy" secondAttribute="top" id="Y4v-Pt-1Gz"/>
+                                <constraint firstItem="HMJ-wa-bmH" firstAttribute="leading" secondItem="jW4-V7-O1Z" secondAttribute="trailing" constant="15" id="9hk-iA-A9m"/>
+                                <constraint firstAttribute="bottom" secondItem="jW4-V7-O1Z" secondAttribute="bottom" constant="10" id="HgQ-iU-oJT"/>
+                                <constraint firstItem="jW4-V7-O1Z" firstAttribute="top" secondItem="enx-lF-zm8" secondAttribute="top" constant="10" id="acP-nm-xh6"/>
                                 <constraint firstItem="HMJ-wa-bmH" firstAttribute="leading" secondItem="enx-lF-zm8" secondAttribute="leading" constant="75" id="aw8-Je-HRi"/>
-                                <constraint firstItem="elx-3S-mEX" firstAttribute="leading" secondItem="enx-lF-zm8" secondAttribute="leading" constant="10" id="azT-dm-td4"/>
-                                <constraint firstItem="XPM-Jz-a8X" firstAttribute="leading" secondItem="enx-lF-zm8" secondAttribute="leading" constant="10" id="oi6-Xd-j9E"/>
                                 <constraint firstAttribute="bottom" secondItem="HMJ-wa-bmH" secondAttribute="bottom" constant="10" id="xrZ-TV-SHF"/>
-                                <constraint firstItem="BXa-If-Yna" firstAttribute="top" secondItem="Oju-zj-7N4" secondAttribute="top" id="y4i-U2-tyk"/>
                             </constraints>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Товары в заказе" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2MO-Zp-8Md">
