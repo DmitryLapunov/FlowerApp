@@ -78,6 +78,9 @@ class ProductVC: UIViewController {
         
         imagePhotosUp.isHidden = true
         
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(fullImageOpen))
+        productImageView.addGestureRecognizer(tapGesture)
+        
         guard let productItem = product else { return }
         setupProductPage(product: productItem)
         setupCollectionView()
@@ -178,7 +181,15 @@ class ProductVC: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    func setupCollectionView() {
+    @objc func fullImageOpen() {
+        let fullImageVC = FullImageController(nibName: String(describing: FullImageController.self), bundle: nil)
+        let image = productImageView.image
+        fullImageVC.fullImage.image = image
+        present(fullImageVC, animated: true, completion: nil)
+        
+    }
+    
+    private func setupCollectionView() {
         imagesCollectionView.dataSource = self
         imagesCollectionView.delegate = self
         imagesCollectionView.layer.cornerRadius = 10
@@ -188,7 +199,7 @@ class ProductVC: UIViewController {
         imagePhotosDown.isHidden = productImages.count <= 2
     }
     
-    func setupProductPage(product: Product) {
+    private func setupProductPage(product: Product) {
         productNameLabel.text = product.itemName
         
         if let productPhotos = product.photos, productPhotos.count > 0 {
