@@ -42,6 +42,7 @@ class ProductVC: UIViewController {
     var imageName = ""
     var productCart: [CartProduct] = []
     var alertDelegate: AlertShowerProduct?
+    var imageIndexFull = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,6 +79,7 @@ class ProductVC: UIViewController {
         
         imagePhotosUp.isHidden = true
         
+        productImageView.isUserInteractionEnabled = true
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(fullImageOpen))
         productImageView.addGestureRecognizer(tapGesture)
         
@@ -183,8 +185,11 @@ class ProductVC: UIViewController {
     
     @objc func fullImageOpen() {
         let fullImageVC = FullImageController(nibName: String(describing: FullImageController.self), bundle: nil)
-        let image = productImageView.image
-        fullImageVC.fullImage.image = image
+        fullImageVC.modalPresentationStyle = .fullScreen
+        fullImageVC.count = imageIndexFull
+        if let productPhotos = product?.photos, productPhotos.count > 0 {
+            fullImageVC.photosArray = productPhotos
+        }
         present(fullImageVC, animated: true, completion: nil)
         
     }
@@ -280,6 +285,7 @@ extension ProductVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLay
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         productImageView.sd_setImage(with: URL(string: productImages[indexPath.row]))
+        imageIndexFull = indexPath.row
         collectionView.reloadData()
     }
 }
