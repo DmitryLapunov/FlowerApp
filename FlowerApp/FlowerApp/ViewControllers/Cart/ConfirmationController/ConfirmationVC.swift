@@ -110,6 +110,7 @@ class ConfirmationVC: UIViewController {
         
         nameLabel.text = name
         phoneLabel.text = phone
+        deliveryAdressLabel.text = adress
         emailLabel.text = email
         
         labelView.addShadowAndCornerRadius()
