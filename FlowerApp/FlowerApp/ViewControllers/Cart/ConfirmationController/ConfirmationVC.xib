@@ -151,7 +151,7 @@
                             </constraints>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Общая цена: N" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gev-8p-ctQ">
-                            <rect key="frame" x="287" y="731.5" width="117" height="22"/>
+                            <rect key="frame" x="287" y="741.5" width="117" height="22"/>
                             <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="16"/>
                             <color key="textColor" name="MainLabelColor"/>
                             <nil key="highlightedColor"/>
@@ -187,7 +187,7 @@
                         <constraint firstItem="wOi-Hf-oRt" firstAttribute="leading" secondItem="cat-ON-Tzo" secondAttribute="leading" constant="10" id="0hH-fW-FFy"/>
                         <constraint firstAttribute="trailing" secondItem="2MO-Zp-8Md" secondAttribute="trailing" constant="20" id="1yz-1D-2cS"/>
                         <constraint firstItem="2MO-Zp-8Md" firstAttribute="top" secondItem="enx-lF-zm8" secondAttribute="bottom" constant="10" id="7og-kb-T7B"/>
-                        <constraint firstItem="wOi-Hf-oRt" firstAttribute="top" secondItem="Gev-8p-ctQ" secondAttribute="bottom" constant="20" id="JL1-fX-T4O"/>
+                        <constraint firstItem="wOi-Hf-oRt" firstAttribute="top" secondItem="Gev-8p-ctQ" secondAttribute="bottom" constant="10" id="JL1-fX-T4O"/>
                         <constraint firstAttribute="trailing" secondItem="wOi-Hf-oRt" secondAttribute="trailing" constant="10" id="Mbn-CF-9nc"/>
                         <constraint firstAttribute="trailing" secondItem="UIy-jX-u9c" secondAttribute="trailing" constant="20" id="Mk0-f1-Ff0"/>
                         <constraint firstItem="enx-lF-zm8" firstAttribute="top" secondItem="UIy-jX-u9c" secondAttribute="bottom" constant="10" id="SWU-ci-vIQ"/>
