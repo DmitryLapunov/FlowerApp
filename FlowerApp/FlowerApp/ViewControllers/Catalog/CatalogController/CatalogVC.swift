@@ -106,14 +106,14 @@ extension CatalogVC: UICollectionViewDelegate {
             categoryVC.title = "\(categories[indexPath.row ].rawValue)"
             navigationController?.pushViewController(categoryVC, animated: true)
         } else {
-        let filteredProducts = self.products.filter {
-            product in product.category == categories[indexPath.row - 1].rawValue
-        }
-        
-        let categoryVC = CategoryVC(nibName: String(describing: CategoryVC.self), bundle: nil)
-        categoryVC.products = filteredProducts
-        categoryVC.title = "\(categories[indexPath.row - 1].rawValue)"
-        navigationController?.pushViewController(categoryVC, animated: true)
+            let filteredProducts = self.products.filter {
+                product in product.category == categories[indexPath.row - 1].rawValue
+            }
+            
+            let categoryVC = CategoryVC(nibName: String(describing: CategoryVC.self), bundle: nil)
+            categoryVC.products = filteredProducts
+            categoryVC.title = "\(categories[indexPath.row - 1].rawValue)"
+            navigationController?.pushViewController(categoryVC, animated: true)
         }
     }
 }
