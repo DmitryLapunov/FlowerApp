@@ -21,37 +21,34 @@ class CatalogVC: UIViewController {
     override func loadView() {
         super.loadView()
         parsedDiscountJSON()
+        parseJSON()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Каталог"
         setupCollectionView()
-        parseJSON()
-        writeGlobalAraay()
+        writeGlobalArray()
     }
     
-    private func writeGlobalAraay() {
+    private func writeGlobalArray() {
         if let parsedProducts = parsedJSON {
             arrayGlobalProducts = parsedProducts.data
         }
     }
     
     private func parsedDiscountJSON() {
-        guard let path = Bundle.main.path(forResource: "vgosti_promo", ofType: "json") else { return }
-        let url = URL(fileURLWithPath: path)
+        guard let url = URL(string: "https://strike-nonprod.s3.eu-central-1.amazonaws.com/vgosti/vgosti_promo.json") else { return }
         guard let jsonData = try? Data(contentsOf: url) else { return }
         
         parsedDiscointJSON = try? JSONDecoder().decode([Discount].self, from: jsonData)
         if let parsedDiscointJSON = self.parsedDiscointJSON {
             discounts = parsedDiscointJSON
         }
-        
     }
     
     private func parseJSON() {
-        guard let path = Bundle.main.path(forResource: "vgosti", ofType: "json") else { return }
-        let url = URL(fileURLWithPath: path)
+        guard let url = URL(string: "https://strike-nonprod.s3.eu-central-1.amazonaws.com/vgosti/vgosti.json") else { return }
         guard let jsonData = try? Data(contentsOf: url) else { return }
         
         parsedJSON = try? JSONDecoder().decode(ParsedJSON.self, from: jsonData)
@@ -69,9 +66,6 @@ extension CatalogVC: UICollectionViewDataSource {
         } else {
             return categories.count + 1
         }
-            
-        
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -94,8 +88,6 @@ extension CatalogVC: UICollectionViewDataSource {
             categoryCell.category = categories[indexPath.row]
             return categoryCell
         }
-        
-        
     }
 }
 
