@@ -66,6 +66,8 @@
 		89DBE9A82766DC3E00B7C96D /* FilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DBE9A62766DC3E00B7C96D /* FilterCell.swift */; };
 		89DBE9A92766DC3E00B7C96D /* FilterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89DBE9A72766DC3E00B7C96D /* FilterCell.xib */; };
 		9320364A2752A76F00E68921 /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932036492752A76F00E68921 /* UIApplication+Extensions.swift */; };
+		9336B1B22788E6DE001A7BE6 /* FullImageProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9336B1B02788E6DE001A7BE6 /* FullImageProductCell.swift */; };
+		9336B1B32788E6DE001A7BE6 /* FullImageProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9336B1B12788E6DE001A7BE6 /* FullImageProductCell.xib */; };
 		933EEC4227772C54007E482D /* UIColor + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933EEC4127772C54007E482D /* UIColor + Extension.swift */; };
 		933F0CD4273FBF8900482A9F /* FavouriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933F0CD2273FBF8900482A9F /* FavouriteVC.swift */; };
 		933F0CD5273FBF8900482A9F /* FavouriteVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 933F0CD3273FBF8900482A9F /* FavouriteVC.xib */; };
@@ -154,6 +156,8 @@
 		89DBE9A62766DC3E00B7C96D /* FilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCell.swift; sourceTree = "<group>"; };
 		89DBE9A72766DC3E00B7C96D /* FilterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCell.xib; sourceTree = "<group>"; };
 		932036492752A76F00E68921 /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
+		9336B1B02788E6DE001A7BE6 /* FullImageProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullImageProductCell.swift; sourceTree = "<group>"; };
+		9336B1B12788E6DE001A7BE6 /* FullImageProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FullImageProductCell.xib; sourceTree = "<group>"; };
 		933EEC4127772C54007E482D /* UIColor + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extension.swift"; sourceTree = "<group>"; };
 		933F0CD2273FBF8900482A9F /* FavouriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteVC.swift; sourceTree = "<group>"; };
 		933F0CD3273FBF8900482A9F /* FavouriteVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavouriteVC.xib; sourceTree = "<group>"; };
@@ -259,8 +263,8 @@
 		7FC1AB962778EF88007495A3 /* DiscountCell */ = {
 			isa = PBXGroup;
 			children = (
-				7FC1AB972778EF88007495A3 /* DiscountCell.xib */,
 				7FC1AB982778EF88007495A3 /* DiscountCell.swift */,
+				7FC1AB972778EF88007495A3 /* DiscountCell.xib */,
 			);
 			path = DiscountCell;
 			sourceTree = "<group>";
@@ -389,6 +393,7 @@
 		8982F14D273F339200FB79E8 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				9336B1AF2788E6AE001A7BE6 /* FullImageProductCell */,
 				89969DF0277B6180001519F9 /* CartCell */,
 				9394AF19277BB8CD0018C6B3 /* ProductCartCell */,
 				89DBE9A52766DC2800B7C96D /* FilterCell */,
@@ -513,6 +518,15 @@
 				10B83A1A918906EF7FA39CC1 /* Pods-FlowerApp.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		9336B1AF2788E6AE001A7BE6 /* FullImageProductCell */ = {
+			isa = PBXGroup;
+			children = (
+				9336B1B02788E6DE001A7BE6 /* FullImageProductCell.swift */,
+				9336B1B12788E6DE001A7BE6 /* FullImageProductCell.xib */,
+			);
+			path = FullImageProductCell;
 			sourceTree = "<group>";
 		};
 		933EEC402775C01E007E482D /* DiscountCells */ = {
@@ -700,6 +714,7 @@
 				935D8949274EB93F00106DE0 /* Main.storyboard in Resources */,
 				89DBE89727475C8C00B7C96D /* ContactsCell.xib in Resources */,
 				8982F1702740ADFB00FB79E8 /* CategoryCell.xib in Resources */,
+				9336B1B32788E6DE001A7BE6 /* FullImageProductCell.xib in Resources */,
 				7F224A14275F75DA000649BB /* ValidationTextField.xib in Resources */,
 				7FC3B2312778F7290095DEC0 /* OpenSans-VariableFont.ttf in Resources */,
 				7FC3B2302778F7290095DEC0 /* OCT56.otf in Resources */,
@@ -816,6 +831,7 @@
 				7F6C2DE7275FE38B00F3D849 /* CartProduct.swift in Sources */,
 				893086A027434851000339B0 /* CodableClasses.swift in Sources */,
 				7FC1AB9A2778EF88007495A3 /* DiscountCell.swift in Sources */,
+				9336B1B22788E6DE001A7BE6 /* FullImageProductCell.swift in Sources */,
 				8982F16F2740ADFB00FB79E8 /* CategoryCell.swift in Sources */,
 				89DBE9A82766DC3E00B7C96D /* FilterCell.swift in Sources */,
 				9396BC6227488F3300DA4FC8 /* RealmManager.swift in Sources */,

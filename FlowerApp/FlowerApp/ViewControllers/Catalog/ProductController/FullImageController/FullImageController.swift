@@ -10,61 +10,42 @@ import SDWebImage
 
 class FullImageController: UIViewController {
     
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var photoLabel: UILabel!
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var fullImage: UIImageView!
     
     var photosArray: [String] = []
     var count = 0
+    private var didLayoutFlag = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fullImage.sd_setImage(with: URL(string: photosArray[count]))
-        fullImage.isUserInteractionEnabled = true
         createSwipe()
-        scrollView.maximumZoomScale = 4
-        scrollView.minimumZoomScale = 1
-        scrollView.delegate = self
+        let nib = UINib(nibName: String(describing: FullImageProductCell.self), bundle: nil)
+        collectionView.register(nib, forCellWithReuseIdentifier: String(describing: FullImageProductCell.self))
+        collectionView.dataSource = self
+        collectionView.delegate = self
         photoLabel.text = "Фото \(count + 1) из \(photosArray.count)"
     }
     
-    private func createSwipe() {
-        var swipe = UISwipeGestureRecognizer(target: self, action: #selector(setupDismissSwipe))
-        swipe.direction = .down
-        fullImage.addGestureRecognizer(swipe)
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         
-        swipe = UISwipeGestureRecognizer(target: self, action: #selector(setupDismissSwipe))
-        swipe.direction = .left
-        fullImage.addGestureRecognizer(swipe)
-        
-        swipe = UISwipeGestureRecognizer(target: self, action: #selector(setupDismissSwipe))
-        swipe.direction = .right
-        fullImage.addGestureRecognizer(swipe)
-        
+        if !didLayoutFlag {
+            collectionView.scrollToItem(at: NSIndexPath(row: count, section: 0) as IndexPath, at: [] ,animated: false)
+            didLayoutFlag = true
+        }
     }
     
+    private func createSwipe() {
+        let swipe = UISwipeGestureRecognizer(target: self, action: #selector(setupDismissSwipe))
+        swipe.direction = .down
+        collectionView.addGestureRecognizer(swipe)
+    }
     
     @objc private func setupDismissSwipe(swipe: UISwipeGestureRecognizer) {
         switch swipe.direction {
         case .down:
             self.dismiss(animated: true, completion: nil)
-        case .left:
-            if count < photosArray.count {
-                if count + 1 < photosArray.count {
-                    count += 1
-                }
-                fullImage.sd_setImage(with: URL(string: photosArray[count]))
-                photoLabel.text = "Фото \(count + 1) из \(photosArray.count)"
-               
-            }
-        case .right:
-            if count > 0 {
-                if count - 1 >= 0 {
-                    count -= 1
-                }
-                fullImage.sd_setImage(with: URL(string: photosArray[count]))
-                photoLabel.text = "Фото \(count + 1) из \(photosArray.count)"
-            }
         default:
             break
         }
@@ -75,31 +56,34 @@ class FullImageController: UIViewController {
     }
 }
 
-extension FullImageController: UIScrollViewDelegate {
-    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-        return fullImage
+
+extension FullImageController: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return photosArray.count
     }
     
-    func scrollViewDidZoom(_ scrollView: UIScrollView) {
-             if scrollView.zoomScale > 1 {
-                 if let image = fullImage.image {
-                     let ratioW = fullImage.frame.width / image.size.width
-                     let ratioH = fullImage.frame.height / image.size.height
-                     
-                     let ratio = ratioW < ratioH ? ratioW : ratioH
-                     let newWidth = image.size.width * ratio
-                     let newHeight = image.size.height * ratio
-                     let conditionLeft = newWidth*scrollView.zoomScale > fullImage.frame.width
-                     let left = 0.5 * (conditionLeft ? newWidth - fullImage.frame.width : (scrollView.frame.width - scrollView.contentSize.width))
-                     let conditioTop = newHeight*scrollView.zoomScale > fullImage.frame.height
-                     
-                     let top = 0.5 * (conditioTop ? newHeight - fullImage.frame.height : (scrollView.frame.height - scrollView.contentSize.height))
-                     
-                     scrollView.contentInset = UIEdgeInsets(top: top, left: left, bottom: top, right: left)
-                     
-                 }
-             } else {
-                 scrollView.contentInset = .zero
-             }
-         }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: FullImageProductCell.self), for: indexPath)
+        guard let fullImageCell = cell as? FullImageProductCell else { return cell}
+        fullImageCell.fullImage.sd_setImage(with: URL(string: photosArray[indexPath.row]))
+        return fullImageCell
+    }
 }
+
+extension FullImageController: UICollectionViewDelegateFlowLayout {
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        var visibleRect = CGRect()
+        visibleRect.origin = collectionView.contentOffset
+        visibleRect.size = collectionView.bounds.size
+        let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.midY)
+        guard let indexPath = collectionView.indexPathForItem(at: visiblePoint) else { return }
+        photoLabel.text = "Фото \(indexPath.row + 1) из \(photosArray.count)"
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
+    }
+}
+
