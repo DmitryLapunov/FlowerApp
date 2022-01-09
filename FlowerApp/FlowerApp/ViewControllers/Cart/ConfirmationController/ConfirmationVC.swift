@@ -148,12 +148,21 @@ class ConfirmationVC: UIViewController {
         let user = User(name: name, phone: phone, address: adress, delivery: checkDelivery())
         let order = Order(user: user).params()
         print(order)
-        MailBuilder().sendOrderToOperator(order: Order(user: user))
+        
+        var arrayProduct: [String] = []
+        for nameProduct in RealmManager.shared.getCart() {
+            arrayProduct.append(nameProduct.productName)
+        }
+        
+        NetworkManager.shared.sendToBot(itemImfo: arrayProduct, deliveryType: checkDelivery().rawValue, deliveryPrice: Double(globalDeliveryPrice), clientPhone: phone, clientName: name, deliveryAdress: adress, userId: 102765717)
+        
+//        MailBuilder().sendOrderToOperator(order: Order(user: user))
+        
         for product in RealmManager.shared.getCart() {
             RealmManager.shared.deleteCartProduct(product: product)
         }
 //        print(RealmManager.shared.getCart())
-        PopupController.showPopup(duration: 5.0, message: "Заказ успешно отправлен! В ближайшее время наш менеджер свяжется с вами для подтверждения")
+        PopupController.showPopup(duration: 5.0, message: "Заказ успешно отправлен! В ближайшее время наш менеджер свяжется с Вами для подтверждения")
     }
 }
 

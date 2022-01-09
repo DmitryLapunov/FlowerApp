@@ -87,6 +87,8 @@
 		93A874D0276CD97900B95AEF /* SubDiscountCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93A874CE276CD97900B95AEF /* SubDiscountCell.xib */; };
 		93AD6D4B27515B6A00211D96 /* PopupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AD6D4927515B6A00211D96 /* PopupController.swift */; };
 		93AD6D4C27515B6A00211D96 /* PopupController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93AD6D4A27515B6A00211D96 /* PopupController.xib */; };
+		93CFDBB2278B1B0500C340E1 /* BackendAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CFDBB1278B1B0500C340E1 /* BackendAPI.swift */; };
+		93CFDBB6278B278200C340E1 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CFDBB5278B278200C340E1 /* NetworkManager.swift */; };
 		93D97C0F27711C14001CF716 /* DiscountCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D97C0E27711C14001CF716 /* DiscountCodable.swift */; };
 		93F5F54F2787011C00178F76 /* FullImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F5F54D2787011C00178F76 /* FullImageController.swift */; };
 		93F5F5502787011C00178F76 /* FullImageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93F5F54E2787011C00178F76 /* FullImageController.xib */; };
@@ -177,6 +179,8 @@
 		93A874CE276CD97900B95AEF /* SubDiscountCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubDiscountCell.xib; sourceTree = "<group>"; };
 		93AD6D4927515B6A00211D96 /* PopupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupController.swift; sourceTree = "<group>"; };
 		93AD6D4A27515B6A00211D96 /* PopupController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopupController.xib; sourceTree = "<group>"; };
+		93CFDBB1278B1B0500C340E1 /* BackendAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackendAPI.swift; sourceTree = "<group>"; };
+		93CFDBB5278B278200C340E1 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		93D97C0E27711C14001CF716 /* DiscountCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountCodable.swift; sourceTree = "<group>"; };
 		93F5F54D2787011C00178F76 /* FullImageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullImageController.swift; sourceTree = "<group>"; };
 		93F5F54E2787011C00178F76 /* FullImageController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FullImageController.xib; sourceTree = "<group>"; };
@@ -386,6 +390,8 @@
 			children = (
 				8930869F27434851000339B0 /* CodableClasses.swift */,
 				93D97C0E27711C14001CF716 /* DiscountCodable.swift */,
+				93CFDBB1278B1B0500C340E1 /* BackendAPI.swift */,
+				93CFDBB5278B278200C340E1 /* NetworkManager.swift */,
 			);
 			path = NetworkTools;
 			sourceTree = "<group>";
@@ -838,6 +844,7 @@
 				93D97C0F27711C14001CF716 /* DiscountCodable.swift in Sources */,
 				7F9B67DD275A8339009A742E /* CatalogVC+Configure.swift in Sources */,
 				7F224A16275F7722000649BB /* ValidationTextField.swift in Sources */,
+				93CFDBB6278B278200C340E1 /* NetworkManager.swift in Sources */,
 				93AD6D4B27515B6A00211D96 /* PopupController.swift in Sources */,
 				893086F6274715FC000339B0 /* Extensions.swift in Sources */,
 				89DBE917275059F000B7C96D /* FilterVC.swift in Sources */,
@@ -849,6 +856,7 @@
 				9396BC65274890C300DA4FC8 /* Product.swift in Sources */,
 				933EEC4227772C54007E482D /* UIColor + Extension.swift in Sources */,
 				8982F139273F328200FB79E8 /* SceneDelegate.swift in Sources */,
+				93CFDBB2278B1B0500C340E1 /* BackendAPI.swift in Sources */,
 				7F6C2DEA275FF68200F3D849 /* NotificationManager.swift in Sources */,
 				9394AF1C277BB8FD0018C6B3 /* ProductCartCell.swift in Sources */,
 				933F0CD8273FBFB900482A9F /* ContactsVC.swift in Sources */,
