@@ -253,6 +253,7 @@ extension CategoryVC: FilterProductsDelegate {
     
 extension CategoryVC: ReloadBadge {
     func reloadBadge(count: String) {
-        tabBarController?.tabBar.items?.last?.badgeValue = count
+        let badge = RealmManager.shared.getCart().count
+        tabBarController?.tabBar.items?.last?.badgeValue = badge == 0 ? nil : "\(badge)"
     }
 }
