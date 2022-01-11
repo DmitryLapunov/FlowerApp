@@ -38,7 +38,7 @@
                         <constraint firstAttribute="width" constant="30" id="0pt-e4-ttw"/>
                         <constraint firstAttribute="height" constant="30" id="KC4-d5-u3y"/>
                     </constraints>
-                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" image="multiply" catalog="system" title="" cornerStyle="large"/>
                     <userDefinedRuntimeAttributes>

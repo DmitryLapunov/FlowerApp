@@ -210,7 +210,7 @@ class OrderVC: UIViewController {
             confirmationVC.name = name
             confirmationVC.phone = phone
             confirmationVC.email = email
-            confirmationVC.adress = adress
+            confirmationVC.address = adress
             present(confirmationVC, animated: true, completion: nil)
         }
     }

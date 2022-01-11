@@ -40,7 +40,7 @@ class ConfirmationVC: UIViewController {
     var name = ""
     var phone = ""
     var email = ""
-    var adress = "Самовывоз"
+    var address = "Самовывоз"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -110,7 +110,7 @@ class ConfirmationVC: UIViewController {
         
         nameLabel.text = name
         phoneLabel.text = phone
-        deliveryAdressLabel.text = adress
+        deliveryAdressLabel.text = address
         emailLabel.text = email
         
         labelView.addShadowAndCornerRadius()
@@ -145,16 +145,17 @@ class ConfirmationVC: UIViewController {
             RealmManager.shared.deleteCartProduct(product: product)
         }
 //        print(RealmManager.shared.getCart())
-        let user = User(name: name, phone: phone, address: adress, delivery: checkDelivery())
+        let user = User(name: name, phone: phone, address: address, delivery: checkDelivery())
         let order = Order(user: user).params()
         print(order)
         
         var arrayProduct: [String] = []
         for nameProduct in RealmManager.shared.getCart() {
-            arrayProduct.append(nameProduct.productName)
+            let product = "\(nameProduct.productName),\(nameProduct.count),\(Int(nameProduct.productCost))"
+            arrayProduct.append(product)
         }
         
-        NetworkManager.shared.sendToBot(itemImfo: arrayProduct, deliveryType: checkDelivery().rawValue, deliveryPrice: Double(globalDeliveryPrice), clientPhone: phone, clientName: name, deliveryAdress: adress, userId: 102765717)
+        NetworkManager.shared.sendToBot(itemImfo: arrayProduct, deliveryType: checkDelivery().rawValue, deliveryPrice: Double(globalDeliveryPrice), clientPhone: phone, clientName: name, deliveryAddress: address)
         
 //        MailBuilder().sendOrderToOperator(order: Order(user: user))
         
