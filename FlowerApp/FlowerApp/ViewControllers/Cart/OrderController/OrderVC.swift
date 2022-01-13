@@ -192,6 +192,12 @@ extension OrderVC: ValidationTextFieldDelegate {
 }
 
 extension OrderVC: ConfirmationVCDelegate {
+    func backToEmptyCart() {
+        self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
+        animationDelegate?.fromStepThreeToStepTwo()
+        animationDelegate?.backToStepOne()
+    }
+    
     func backToStepTwo() {
         animationDelegate?.fromStepThreeToStepTwo()
     }

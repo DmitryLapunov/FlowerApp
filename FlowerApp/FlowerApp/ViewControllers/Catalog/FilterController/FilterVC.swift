@@ -133,10 +133,14 @@ class FilterVC: UIViewController {
     }
     
     @IBAction func chooseCompositionAction(_ sender: Any) {
-        let compositionVC = CompositionVC(nibName: String(describing: CompositionVC.self), bundle: nil)
-        compositionVC.compositionArray = self.compositionArray
-        compositionVC.compositionDelegate = self
-        navigationController?.pushViewController(compositionVC, animated: true)
+        if compositionArray.count != 0 {
+            let compositionVC = CompositionVC(nibName: String(describing: CompositionVC.self), bundle: nil)
+            compositionVC.compositionArray = self.compositionArray
+            compositionVC.compositionDelegate = self
+            navigationController?.pushViewController(compositionVC, animated: true)
+        } else {
+            PopupController.showPopup(duration: 2, message: "Поиск по составу в данной категории товаров невозможен")
+        }
     }
     
     @IBAction func discardFiltersAction(_ sender: Any) {

@@ -112,7 +112,7 @@ extension CategoryVC: UITableViewDelegate, UITableViewDataSource {
         guard let productCell = cell as? ProductCell else { return cell }
         
         productCell.selectionStyle = .none
-        productCell.productNameLabel.text = products[indexPath.row].itemName
+        productCell.productNameLabel.text = products[indexPath.row].item_name
         
         if let aboutItem = products[indexPath.row].description?.aboutItem, !aboutItem.isEmpty {
             productCell.productDescriptionLabel.text = aboutItem
@@ -122,7 +122,7 @@ extension CategoryVC: UITableViewDelegate, UITableViewDataSource {
             productCell.productDescriptionLabel.text = "Товар без описания"
         }
         
-        if let productPrice = products[indexPath.row].costByn, !productPrice.isEmpty {
+        if let productPrice = products[indexPath.row].cost_byn, !productPrice.isEmpty {
             productCell.productPriceLabel.text = productPrice + " РУБ."
         }
         
@@ -130,18 +130,18 @@ extension CategoryVC: UITableViewDelegate, UITableViewDataSource {
             productCell.productImageView.sd_setImage(with: URL(string: "\(productImages[0])"))
         }
         
-        if let name = products[indexPath.row].itemName {
+        if let name = products[indexPath.row].item_name {
             productCell.product = ProductObject(productName: name)
         }
         
-        let filter = productRealm.first { $0.productName == products[indexPath.row].itemName}
+        let filter = productRealm.first { $0.productName == products[indexPath.row].item_name}
         if filter == nil {
             productCell.addToFavouriteButtonOutlet.setImage(UIImage(systemName: "bookmark"), for: .normal)
         } else {
             productCell.addToFavouriteButtonOutlet.setImage(UIImage(systemName: "bookmark.fill"), for: .normal)
         }
         
-        let cartFilter = productCart.first { $0.productName == products[indexPath.row].itemName}
+        let cartFilter = productCart.first { $0.productName == products[indexPath.row].item_name}
         if cartFilter == nil {
             productCell.addToCartButtonOutlet.setImage(UIImage(systemName: "cart.badge.plus"), for: .normal)
         } else {
@@ -160,7 +160,7 @@ extension CategoryVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let productVC = ProductVC(nibName: String(describing: ProductVC.self), bundle: nil)
         
-        let filter = productRealm.first{ $0.productName == products[indexPath.row].itemName}
+        let filter = productRealm.first{ $0.productName == products[indexPath.row].item_name}
         productVC.imageName = filter == nil ? "bookmark" : "bookmark.fill"
         
         productVC.alertDelegate = self
@@ -211,9 +211,9 @@ extension CategoryVC: FilterProductsDelegate {
             if chosenProducts.count != 0 {
                 switch namePriceFilter {
                 case .byNameDesc:
-                    chosenProducts = chosenProducts.sorted(by: { $0.itemName! > $1.itemName! } )
+                    chosenProducts = chosenProducts.sorted(by: { $0.item_name! > $1.item_name! } )
                 case .byNameAsc:
-                    chosenProducts = chosenProducts.sorted(by: { $0.itemName! < $1.itemName! } )
+                    chosenProducts = chosenProducts.sorted(by: { $0.item_name! < $1.item_name! } )
                 case .byPriceDesc:
                     chosenProducts = chosenProducts.sorted(by: { $0.cost! > $1.cost! } )
                 case .byPriceAsc:
@@ -224,9 +224,9 @@ extension CategoryVC: FilterProductsDelegate {
             } else {
                 switch namePriceFilter {
                 case .byNameDesc:
-                    chosenProducts = products.sorted(by: { $0.itemName! > $1.itemName! } )
+                    chosenProducts = products.sorted(by: { $0.item_name! > $1.item_name! } )
                 case .byNameAsc:
-                    chosenProducts = products.sorted(by: { $0.itemName ?? "" < $1.itemName ?? "" } )
+                    chosenProducts = products.sorted(by: { $0.item_name ?? "" < $1.item_name ?? "" } )
                 case .byPriceDesc:
                     chosenProducts = products.sorted(by: { $0.cost! > $1.cost! } )
                 case .byPriceAsc:
@@ -252,7 +252,7 @@ extension CategoryVC: FilterProductsDelegate {
 }
     
 extension CategoryVC: ReloadBadge {
-    func reloadBadge(count: String) {
-        tabBarController?.tabBar.items?.last?.badgeValue = count
+    func reloadBadge(count: Int) {
+        tabBarController?.tabBar.items?.last?.badgeValue = count > 0 ? "\(count)" : nil
     }
 }

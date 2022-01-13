@@ -6,7 +6,7 @@
 //
 
 protocol ReloadBadge {
-    func reloadBadge(count: String)
+    func reloadBadge(count: Int)
 }
 
 protocol AlertShowerProduct {
@@ -68,7 +68,7 @@ class ProductCell: UITableViewCell {
     
     @IBAction func addToCart(_ sender: Any) {
         if addToCartButtonOutlet.imageView?.image == UIImage(systemName: "cart.badge.plus") {
-            guard let product = productCart, let productName = product.itemName, let cost = product.cost else {
+            guard let product = productCart, let productName = product.item_name, let cost = product.cost else {
                 return
             }
             let productToCart = CartProduct(productName: productName, count: 1, productCost: cost)
@@ -84,7 +84,7 @@ class ProductCell: UITableViewCell {
                 RealmManager.shared.deleteCart(productName: name)
                 self.delegate?.reloadCell()
                 let badge = RealmManager.shared.getCart().count
-                self.badgeDelegate?.reloadBadge(count: String(badge))
+                self.badgeDelegate?.reloadBadge(count: badge)
                 PopupController.showPopup(message: "Товар удален из корзины")
             })
             alert.addAction(yesAction)
@@ -95,6 +95,6 @@ class ProductCell: UITableViewCell {
     
     private func setBadge() {
         let badge = RealmManager.shared.getCart().count
-        self.badgeDelegate?.reloadBadge(count: String(badge))
+        self.badgeDelegate?.reloadBadge(count: badge)
     }
 }

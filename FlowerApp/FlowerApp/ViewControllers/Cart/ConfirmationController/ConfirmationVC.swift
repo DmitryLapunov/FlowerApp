@@ -10,6 +10,7 @@ import SDWebImage
 
 protocol ConfirmationVCDelegate: AnyObject {
     func backToStepTwo()
+    func backToEmptyCart()
 }
 
 class ConfirmationVC: UIViewController {
@@ -20,7 +21,7 @@ class ConfirmationVC: UIViewController {
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var deliveryAdressLabel: UILabel!
-    @IBOutlet weak var addressLabel: UIView!
+    @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var labelView: UIView!
     @IBOutlet weak var productCollectionView: UICollectionView!
     @IBOutlet weak var collectionViewBackgroundView: UIView!
@@ -38,6 +39,7 @@ class ConfirmationVC: UIViewController {
     var phone = ""
     var email = ""
     var adress = "Самовывоз"
+    private var timer: Timer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,7 +72,7 @@ class ConfirmationVC: UIViewController {
         
         for product in cartProducts {
             for item in arrayGlobalProducts {
-                if item.itemName == product.productName {
+                if item.item_name == product.productName {
                     productsInCart.append(item)
                 }
             }
@@ -114,6 +116,7 @@ class ConfirmationVC: UIViewController {
     }
     
     @IBAction func sendOrderAction(_ sender: Any) {
+        timer?.invalidate()
         for product in unselectedCartProducts {
             RealmManager.shared.deleteCartProduct(product: product)
         }
@@ -126,7 +129,12 @@ class ConfirmationVC: UIViewController {
             RealmManager.shared.deleteCartProduct(product: product)
         }
         print(RealmManager.shared.getCart())
-        PopupController.showPopup(duration: 5.0, message: "Заказ успешно отправлен! В ближайшее время наш менеджер свяжется с вами для подтверждения")
+        PopupController.showPopup(duration: 3.0, message: "Заказ успешно отправлен! В ближайшее время наш менеджер свяжется с вами для подтверждения")
+        timer = Timer.scheduledTimer(withTimeInterval: 3.05, repeats: false, block: { [weak self] _ in
+            guard let self = self else { return }
+            self.animationDelegate?.backToEmptyCart()
+            NotificationCenter.default.post(name: NSNotification.Name("dismissPresented"), object: nil)
+        })
     }
 }
 
@@ -142,7 +150,7 @@ extension ConfirmationVC: UICollectionViewDataSource {
         if let url = productsInCart[indexPath.row].photos?.first {
             productCartCell.productImage.sd_setImage(with: URL(string: url), completed: nil)
         }
-        productCartCell.productName.text = productsInCart[indexPath.row].itemName
+        productCartCell.productName.text = productsInCart[indexPath.row].item_name
         if let cost = productsInCart[indexPath.row].cost {
             productCartCell.productPrice.text = "\(cost * Double(cartProducts[indexPath.row].count)) РУБ."
         }

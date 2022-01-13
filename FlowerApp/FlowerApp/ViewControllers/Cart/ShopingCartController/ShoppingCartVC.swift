@@ -9,17 +9,21 @@ import UIKit
 
 class ShoppingCartVC: UIViewController {
     @IBOutlet weak var greenBgWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var animationSectionGrayBg: UIView!
     @IBOutlet weak var greenBgView: UIView!
+    @IBOutlet weak var animationSectionCartStepsImageView: UIImageView!
     @IBOutlet weak var orderDetailsButton: UIButton!
     @IBOutlet weak var orderStepLabel: UILabel!
     @IBOutlet weak var orderStepLabelLeadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var orderStepLabelWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var checkView: UIView!
     
     var cartProducts: [CartProduct] = [] {
         didSet {
             productsInCart.removeAll()
             loadProducts()
+            checkIfCartIsEmpty()
             
             if cartProducts.count == productsInCart.count {
                 tableView.reloadData()
@@ -46,6 +50,12 @@ class ShoppingCartVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         cartProducts = RealmManager.shared.getCart()
+        addDismissObserver()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name("dismissPresented"), object: nil)
     }
     
     private func setupTableView() {
@@ -59,12 +69,38 @@ class ShoppingCartVC: UIViewController {
     private func loadProducts() {
         for product in cartProducts {
             for item in arrayGlobalProducts {
-                if item.itemName == product.productName {
+                if item.item_name == product.productName {
                     productsInCart.append(item)
                 }
             }
         }
         print(productsInCart.count)
+    }
+    
+    private func checkIfCartIsEmpty() {
+        animationSectionGrayBg.isHidden = cartProducts.count == 0
+        greenBgView.isHidden = cartProducts.count == 0
+        animationSectionCartStepsImageView.isHidden = cartProducts.count == 0
+        orderStepLabel.isHidden = cartProducts.count == 0
+        orderDetailsButton.isHidden = cartProducts.count == 0
+        
+        checkView.isHidden = cartProducts.count != 0
+    }
+    
+    private func setBadge() {
+        let badge = RealmManager.shared.getCart().count
+        tabBarController?.tabBar.items?.last?.badgeValue = badge == 0 ? nil : "\(badge)"
+        tabBarController?.tabBar.items?.last?.badgeColor = .green
+    }
+    
+    private func addDismissObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(dismissPresented), name: NSNotification.Name("dismissPresented"), object: nil)
+    }
+    
+    @objc private func dismissPresented() {
+        self.dismiss(animated: true, completion: nil)
+        cartProducts = RealmManager.shared.getCart()
+        setBadge()
     }
     
     @objc func checkboxClicked(_ sender: UIButton) {

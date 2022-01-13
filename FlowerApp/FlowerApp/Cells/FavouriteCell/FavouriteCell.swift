@@ -73,8 +73,8 @@ class FavouriteCell: UITableViewCell {
     
     @IBAction func addToCart(_ sender: Any) {
         if addToCartButtonOutlet.imageView?.image == UIImage(systemName: "cart.badge.plus") {
-        let filterProduct = arrayGlobalProducts.first{ $0.itemName == productNameLabel.text}
-        guard let product = filterProduct, let productName = product.itemName, let cost = product.cost else {
+        let filterProduct = arrayGlobalProducts.first{ $0.item_name == productNameLabel.text}
+        guard let product = filterProduct, let productName = product.item_name, let cost = product.cost else {
             return
         }
         let productToCart = CartProduct(productName: productName, count: 1, productCost: cost)

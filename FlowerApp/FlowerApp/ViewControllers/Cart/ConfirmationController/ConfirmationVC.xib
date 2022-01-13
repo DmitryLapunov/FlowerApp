@@ -17,7 +17,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ConfirmationVC" customModule="FlowerApp" customModuleProvider="target">
             <connections>
-                <outlet property="addressLabel" destination="cat-ON-Tzo" id="On3-bU-hBi"/>
+                <outlet property="addressLabel" destination="1L2-UG-boe" id="6Fu-I8-VEC"/>
                 <outlet property="backToPreviousButton" destination="XmV-q9-9ad" id="NiE-tS-APd"/>
                 <outlet property="collectionViewBackgroundView" destination="vcz-bo-Hku" id="Ix2-9O-bN5"/>
                 <outlet property="confirmationTopConstraint" destination="ksE-ob-hvc" id="4Zt-a6-NgG"/>

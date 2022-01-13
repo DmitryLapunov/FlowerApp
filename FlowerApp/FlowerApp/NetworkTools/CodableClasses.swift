@@ -12,17 +12,17 @@ struct ParsedJSON: Codable {
 }
 
 struct Product: Codable {
-    var itemName: String?
-    var itemLink: String?
+    var item_name: String?
+    var item_link: String?
     var cost: Double? {
         get {
-           return Double(costByn ?? "0.0")
+           return Double(cost_byn ?? "0.0")
         }
     }
     var photos: [String]?
     var description: ProductDescription?
     var category: String?
-    var costByn: String? 
+    var cost_byn: String? 
 }
 
 struct ProductDescription: Codable {

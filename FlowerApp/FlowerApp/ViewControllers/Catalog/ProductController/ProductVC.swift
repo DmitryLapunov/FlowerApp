@@ -92,7 +92,7 @@ class ProductVC: UIViewController {
             scrollViewHeightConstraint.constant = nameText.height(withConstrainedWidth: productNameLabel.frame.width, font: secondFont) + (productImagesBackgroundView.frame.width / 1.5) + compositionText.height(withConstrainedWidth: productCompositionLabel.frame.width, font: font) + packageText.height(withConstrainedWidth: productPackageLabel.frame.width, font: font) + sizeText.height(withConstrainedWidth: productSizeLabel.frame.width, font: font) + aboutItemText.height(withConstrainedWidth: productAboutItemLabel.frame.width, font: font) + 190
         }
         
-        guard let product = product, let productName = product.itemName, let productInCart = RealmManager.shared.checkInCart(productName: productName) else {
+        guard let product = product, let productName = product.item_name, let productInCart = RealmManager.shared.checkInCart(productName: productName) else {
             return
         }
         productAmount = productInCart.count
@@ -126,7 +126,7 @@ class ProductVC: UIViewController {
     
     @IBAction func addToCartAction(_ sender: Any) {
         if countView.isHidden == false {
-            guard let product = product, let productName = product.itemName, let amountText = productAmountField.text, let amount = Int(amountText), amount != 0, let cost = product.cost else {
+            guard let product = product, let productName = product.item_name, let amountText = productAmountField.text, let amount = Int(amountText), amount != 0, let cost = product.cost else {
                 return
             }
             let productToCart = CartProduct(productName: productName, count: amount, productCost: cost)
@@ -189,14 +189,14 @@ class ProductVC: UIViewController {
     }
     
     func setupProductPage(product: Product) {
-        productNameLabel.text = product.itemName
+        productNameLabel.text = product.item_name
         
         if let productPhotos = product.photos, productPhotos.count > 0 {
             productImageView.sd_setImage(with: URL(string: productPhotos[0]))
             productImages = productPhotos
         }
         
-        if let price = product.costByn, !price.isEmpty {
+        if let price = product.cost_byn, !price.isEmpty {
             productPriceLabel.text = price + " РУБ."
         }
         

@@ -14,7 +14,7 @@ class CatalogVC: UIViewController {
     @IBOutlet weak var catalogCollectionView: UICollectionView!
     
     let categories = CategoryType.allCases
-    var parsedJSON: ParsedJSON?
+    var parsedJSON: [Product]?
     var parsedDiscointJSON: [Discount]?
     var products: [Product] = []
     
@@ -33,7 +33,7 @@ class CatalogVC: UIViewController {
     
     private func writeGlobalArray() {
         if let parsedProducts = parsedJSON {
-            arrayGlobalProducts = parsedProducts.data
+            arrayGlobalProducts = parsedProducts
         }
     }
     
@@ -51,9 +51,9 @@ class CatalogVC: UIViewController {
         guard let url = URL(string: "https://strike-nonprod.s3.eu-central-1.amazonaws.com/vgosti/vgosti.json") else { return }
         guard let jsonData = try? Data(contentsOf: url) else { return }
         
-        parsedJSON = try? JSONDecoder().decode(ParsedJSON.self, from: jsonData)
+        parsedJSON = try? JSONDecoder().decode([Product].self, from: jsonData)
         if let parsedProducts = self.parsedJSON {
-            self.products = parsedProducts.data
+            self.products = parsedProducts
         }
     }
 }
