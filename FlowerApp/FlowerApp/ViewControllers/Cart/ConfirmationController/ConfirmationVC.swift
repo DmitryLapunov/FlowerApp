@@ -5,6 +5,8 @@
 //  Created by Дмитрий Лапунов on 28.12.21.
 //
 
+var globalDeliveryPrice = 0.0
+
 import UIKit
 import SDWebImage
 
@@ -34,11 +36,12 @@ class ConfirmationVC: UIViewController {
     var navBarHeight: CGFloat?
     weak var animationDelegate: ConfirmationVCDelegate?
     var totalCostByn = 0.0
+    var defaultDelivery = true
     var delivery = true
     var name = ""
     var phone = ""
     var email = ""
-    var adress = "Самовывоз"
+    var address = "Самовывоз"
     private var timer: Timer?
     
     override func viewDidLoad() {
@@ -54,9 +57,13 @@ class ConfirmationVC: UIViewController {
         sendOrderButton.addShadowAndTintColor()
         
         confirmationTopConstraint.constant = (UIScreen.main.bounds.width / 6) + 14
-        
-        totalCost.text = "Заказ на сумму: \(totalCostByn) РУБ."
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        totalCost.text = "Заказ на сумму: \(totalCostByn + globalDeliveryPrice) РУБ."
+    }
+    
     
     private func setupCollectionView() {
         let nib = UINib(nibName: String(describing: ProductCartCell.self), bundle: nil)
@@ -83,21 +90,27 @@ class ConfirmationVC: UIViewController {
         for item in cartProducts {
             totalCostByn += item.productCost * Double(item.count)
         }
+        if delivery == true {
+            if defaultDelivery == true {
+                if totalCostByn < 60 {
+                    globalDeliveryPrice = 5
+                } else {
+                    globalDeliveryPrice = 0
+                }
+            } else {
+                globalDeliveryPrice = 16
+            }
+        }
     }
     
     private func setupLabelView() {
         
-        if delivery {
-            deliveryAdressLabel.isHidden = false
-            addressLabel.isHidden = false
-        } else {
-            deliveryAdressLabel.isHidden = true
-            addressLabel.isHidden = true
-        }
+        deliveryAdressLabel.isHidden = !delivery
+        addressLabel.isHidden = !delivery
         
         nameLabel.text = name
         phoneLabel.text = phone
-        deliveryAdressLabel.text = adress
+        deliveryAdressLabel.text = address
         emailLabel.text = email
         
         labelView.addShadowAndCornerRadius()
@@ -107,6 +120,18 @@ class ConfirmationVC: UIViewController {
         guard let presentingVC = self.presentingViewController else { return }
         while (presentingVC.presentingViewController != nil) {
             presentingVC.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    private func checkDelivery() -> DeliveryType {
+        if delivery {
+            if defaultDelivery {
+                return .delivery
+            } else {
+                return .fastDelivery
+            }
+        } else {
+            return .pickup
         }
     }
     
@@ -120,14 +145,25 @@ class ConfirmationVC: UIViewController {
         for product in unselectedCartProducts {
             RealmManager.shared.deleteCartProduct(product: product)
         }
-        print(RealmManager.shared.getCart())
-        let user = User(name: name, phone: phone, address: adress, delivery: delivery ? .delivery : .pickup)
+//        print(RealmManager.shared.getCart())
+        let user = User(name: name, phone: phone, address: address, delivery: checkDelivery())
         let order = Order(user: user).params()
         print(order)
-        MailBuilder().sendOrderToOperator(order: Order(user: user))
+        
+        var arrayProduct: [String] = []
+        for nameProduct in RealmManager.shared.getCart() {
+            let product = "\(nameProduct.productName),\(nameProduct.count),\(Int(nameProduct.productCost))"
+            arrayProduct.append(product)
+        }
+        
+        NetworkManager.shared.sendToBot(itemImfo: arrayProduct, deliveryType: checkDelivery().rawValue, deliveryPrice: Double(globalDeliveryPrice), clientPhone: phone, clientName: name, deliveryAddress: address)
+        
+//        MailBuilder().sendOrderToOperator(order: Order(user: user))
+        
         for product in RealmManager.shared.getCart() {
             RealmManager.shared.deleteCartProduct(product: product)
         }
+
         print(RealmManager.shared.getCart())
         PopupController.showPopup(duration: 3.0, message: "Заказ успешно отправлен! В ближайшее время наш менеджер свяжется с вами для подтверждения")
         timer = Timer.scheduledTimer(withTimeInterval: 3.05, repeats: false, block: { [weak self] _ in
@@ -135,17 +171,24 @@ class ConfirmationVC: UIViewController {
             self.animationDelegate?.backToEmptyCart()
             NotificationCenter.default.post(name: NSNotification.Name("dismissPresented"), object: nil)
         })
+
     }
 }
 
 extension ConfirmationVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return productsInCart.count
+        if delivery == true {
+            return productsInCart.count + 1
+        } else {
+            return productsInCart.count
+        }
     }
+
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = productCollectionView.dequeueReusableCell(withReuseIdentifier: String(describing: ProductCartCell.self), for: indexPath)
         guard let productCartCell = cell as? ProductCartCell else { return cell}
+        
         
         if let url = productsInCart[indexPath.row].photos?.first {
             productCartCell.productImage.sd_setImage(with: URL(string: url), completed: nil)
@@ -153,9 +196,38 @@ extension ConfirmationVC: UICollectionViewDataSource {
         productCartCell.productName.text = productsInCart[indexPath.row].item_name
         if let cost = productsInCart[indexPath.row].cost {
             productCartCell.productPrice.text = "\(cost * Double(cartProducts[indexPath.row].count)) РУБ."
+            
+            if delivery == true {
+                
+                if indexPath.row == 0 {
+                    productCartCell.productImage.image = UIImage(systemName: "shippingbox")
+                    productCartCell.productImage.tintColor = .mainColor
+                    productCartCell.productName.text = "Доставка"
+                    productCartCell.productCountView.isHidden = true
+                    productCartCell.productPrice.text = "\(globalDeliveryPrice) РУБ"
+                } else {
+                    if let url = productsInCart[indexPath.row - 1].photos?.first {
+                        productCartCell.productImage.sd_setImage(with: URL(string: url), completed: nil)
+                    }
+                    productCartCell.productName.text = productsInCart[indexPath.row - 1].item_name
+                    if let cost = productsInCart[indexPath.row - 1].cost {
+                        productCartCell.productPrice.text = "\(cost * Double(cartProducts[indexPath.row - 1].count)) РУБ."
+                    }
+                    productCartCell.productCount.text = "\(cartProducts[indexPath.row - 1].count) ШТ."
+                    
+                    
+                }
+            } else {
+                if let url = productsInCart[indexPath.row].photos?.first {
+                    productCartCell.productImage.sd_setImage(with: URL(string: url), completed: nil)
+                }
+                productCartCell.productName.text = productsInCart[indexPath.row].item_name
+                if let cost = productsInCart[indexPath.row].cost {
+                    productCartCell.productPrice.text = "\(cost * Double(cartProducts[indexPath.row].count)) РУБ."
+                }
+                productCartCell.productCount.text = "\(cartProducts[indexPath.row].count) ШТ."
+            }
         }
-        productCartCell.productCount.text = "\(cartProducts[indexPath.row].count) ШТ."
-        
         return productCartCell
     }
 }

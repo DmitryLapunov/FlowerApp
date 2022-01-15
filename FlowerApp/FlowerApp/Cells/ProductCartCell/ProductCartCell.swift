@@ -13,6 +13,7 @@ class ProductCartCell: UICollectionViewCell {
     @IBOutlet weak var productName: UILabel!
     @IBOutlet weak var productPrice: UILabel!
     @IBOutlet weak var productCount: UILabel!
+    @IBOutlet weak var productCountView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

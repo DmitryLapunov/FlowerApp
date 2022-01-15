@@ -42,6 +42,7 @@ class ProductVC: UIViewController {
     var imageName = ""
     var productCart: [CartProduct] = []
     var alertDelegate: AlertShowerProduct?
+    var imageIndexFull = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,6 +78,10 @@ class ProductVC: UIViewController {
         addToCartBackgroundView.layer.shadowOffset = CGSize(width: 0, height: 2)
         
         imagePhotosUp.isHidden = true
+        
+        productImageView.isUserInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(fullImageOpen))
+        productImageView.addGestureRecognizer(tapGesture)
         
         guard let productItem = product else { return }
         setupProductPage(product: productItem)
@@ -178,7 +183,18 @@ class ProductVC: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    func setupCollectionView() {
+    @objc func fullImageOpen() {
+        let fullImageVC = FullImageController(nibName: String(describing: FullImageController.self), bundle: nil)
+        fullImageVC.modalPresentationStyle = .fullScreen
+        fullImageVC.count = imageIndexFull
+        if let productPhotos = product?.photos, productPhotos.count > 0 {
+            fullImageVC.photosArray = productPhotos
+        }
+        present(fullImageVC, animated: true, completion: nil)
+        
+    }
+    
+    private func setupCollectionView() {
         imagesCollectionView.dataSource = self
         imagesCollectionView.delegate = self
         imagesCollectionView.layer.cornerRadius = 10
@@ -211,7 +227,6 @@ class ProductVC: UIViewController {
             productAboutItemLabel.text = productDescription.aboutItem ?? "описание не указано"
         }
     }
-    
     
     private func setBadge() {
         let badge = RealmManager.shared.getCart().count
@@ -269,6 +284,7 @@ extension ProductVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLay
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         productImageView.sd_setImage(with: URL(string: productImages[indexPath.row]))
+        imageIndexFull = indexPath.row
         collectionView.reloadData()
     }
 }

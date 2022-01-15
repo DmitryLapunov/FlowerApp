@@ -66,6 +66,8 @@
 		89DBE9A82766DC3E00B7C96D /* FilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DBE9A62766DC3E00B7C96D /* FilterCell.swift */; };
 		89DBE9A92766DC3E00B7C96D /* FilterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89DBE9A72766DC3E00B7C96D /* FilterCell.xib */; };
 		9320364A2752A76F00E68921 /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932036492752A76F00E68921 /* UIApplication+Extensions.swift */; };
+		9336B1B22788E6DE001A7BE6 /* FullImageProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9336B1B02788E6DE001A7BE6 /* FullImageProductCell.swift */; };
+		9336B1B32788E6DE001A7BE6 /* FullImageProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9336B1B12788E6DE001A7BE6 /* FullImageProductCell.xib */; };
 		933EEC4227772C54007E482D /* UIColor + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933EEC4127772C54007E482D /* UIColor + Extension.swift */; };
 		933F0CD4273FBF8900482A9F /* FavouriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933F0CD2273FBF8900482A9F /* FavouriteVC.swift */; };
 		933F0CD5273FBF8900482A9F /* FavouriteVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 933F0CD3273FBF8900482A9F /* FavouriteVC.xib */; };
@@ -85,7 +87,11 @@
 		93A874D0276CD97900B95AEF /* SubDiscountCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93A874CE276CD97900B95AEF /* SubDiscountCell.xib */; };
 		93AD6D4B27515B6A00211D96 /* PopupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AD6D4927515B6A00211D96 /* PopupController.swift */; };
 		93AD6D4C27515B6A00211D96 /* PopupController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93AD6D4A27515B6A00211D96 /* PopupController.xib */; };
+		93CFDBB2278B1B0500C340E1 /* BackendAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CFDBB1278B1B0500C340E1 /* BackendAPI.swift */; };
+		93CFDBB6278B278200C340E1 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CFDBB5278B278200C340E1 /* NetworkManager.swift */; };
 		93D97C0F27711C14001CF716 /* DiscountCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D97C0E27711C14001CF716 /* DiscountCodable.swift */; };
+		93F5F54F2787011C00178F76 /* FullImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F5F54D2787011C00178F76 /* FullImageController.swift */; };
+		93F5F5502787011C00178F76 /* FullImageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93F5F54E2787011C00178F76 /* FullImageController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -152,6 +158,8 @@
 		89DBE9A62766DC3E00B7C96D /* FilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCell.swift; sourceTree = "<group>"; };
 		89DBE9A72766DC3E00B7C96D /* FilterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCell.xib; sourceTree = "<group>"; };
 		932036492752A76F00E68921 /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
+		9336B1B02788E6DE001A7BE6 /* FullImageProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullImageProductCell.swift; sourceTree = "<group>"; };
+		9336B1B12788E6DE001A7BE6 /* FullImageProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FullImageProductCell.xib; sourceTree = "<group>"; };
 		933EEC4127772C54007E482D /* UIColor + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extension.swift"; sourceTree = "<group>"; };
 		933F0CD2273FBF8900482A9F /* FavouriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteVC.swift; sourceTree = "<group>"; };
 		933F0CD3273FBF8900482A9F /* FavouriteVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavouriteVC.xib; sourceTree = "<group>"; };
@@ -171,7 +179,11 @@
 		93A874CE276CD97900B95AEF /* SubDiscountCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubDiscountCell.xib; sourceTree = "<group>"; };
 		93AD6D4927515B6A00211D96 /* PopupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupController.swift; sourceTree = "<group>"; };
 		93AD6D4A27515B6A00211D96 /* PopupController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopupController.xib; sourceTree = "<group>"; };
+		93CFDBB1278B1B0500C340E1 /* BackendAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackendAPI.swift; sourceTree = "<group>"; };
+		93CFDBB5278B278200C340E1 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		93D97C0E27711C14001CF716 /* DiscountCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountCodable.swift; sourceTree = "<group>"; };
+		93F5F54D2787011C00178F76 /* FullImageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullImageController.swift; sourceTree = "<group>"; };
+		93F5F54E2787011C00178F76 /* FullImageController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FullImageController.xib; sourceTree = "<group>"; };
 		AE8CB9B2E865292D811F91E2 /* Pods_FlowerApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlowerApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -255,8 +267,8 @@
 		7FC1AB962778EF88007495A3 /* DiscountCell */ = {
 			isa = PBXGroup;
 			children = (
-				7FC1AB972778EF88007495A3 /* DiscountCell.xib */,
 				7FC1AB982778EF88007495A3 /* DiscountCell.swift */,
+				7FC1AB972778EF88007495A3 /* DiscountCell.xib */,
 			);
 			path = DiscountCell;
 			sourceTree = "<group>";
@@ -305,6 +317,7 @@
 		893086F727471C96000339B0 /* ProductController */ = {
 			isa = PBXGroup;
 			children = (
+				93F5F54C278700E800178F76 /* FullImageController */,
 				893086F827471CBD000339B0 /* ProductVC.swift */,
 				893086F927471CBD000339B0 /* ProductVC.xib */,
 			);
@@ -377,6 +390,8 @@
 			children = (
 				8930869F27434851000339B0 /* CodableClasses.swift */,
 				93D97C0E27711C14001CF716 /* DiscountCodable.swift */,
+				93CFDBB1278B1B0500C340E1 /* BackendAPI.swift */,
+				93CFDBB5278B278200C340E1 /* NetworkManager.swift */,
 			);
 			path = NetworkTools;
 			sourceTree = "<group>";
@@ -384,6 +399,7 @@
 		8982F14D273F339200FB79E8 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				9336B1AF2788E6AE001A7BE6 /* FullImageProductCell */,
 				89969DF0277B6180001519F9 /* CartCell */,
 				9394AF19277BB8CD0018C6B3 /* ProductCartCell */,
 				89DBE9A52766DC2800B7C96D /* FilterCell */,
@@ -510,6 +526,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		9336B1AF2788E6AE001A7BE6 /* FullImageProductCell */ = {
+			isa = PBXGroup;
+			children = (
+				9336B1B02788E6DE001A7BE6 /* FullImageProductCell.swift */,
+				9336B1B12788E6DE001A7BE6 /* FullImageProductCell.xib */,
+			);
+			path = FullImageProductCell;
+			sourceTree = "<group>";
+		};
 		933EEC402775C01E007E482D /* DiscountCells */ = {
 			isa = PBXGroup;
 			children = (
@@ -605,6 +630,15 @@
 			path = "Popup Controller";
 			sourceTree = "<group>";
 		};
+		93F5F54C278700E800178F76 /* FullImageController */ = {
+			isa = PBXGroup;
+			children = (
+				93F5F54D2787011C00178F76 /* FullImageController.swift */,
+				93F5F54E2787011C00178F76 /* FullImageController.xib */,
+			);
+			path = FullImageController;
+			sourceTree = "<group>";
+		};
 		C54DA66551EAE16582D491DA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -686,6 +720,7 @@
 				935D8949274EB93F00106DE0 /* Main.storyboard in Resources */,
 				89DBE89727475C8C00B7C96D /* ContactsCell.xib in Resources */,
 				8982F1702740ADFB00FB79E8 /* CategoryCell.xib in Resources */,
+				9336B1B32788E6DE001A7BE6 /* FullImageProductCell.xib in Resources */,
 				7F224A14275F75DA000649BB /* ValidationTextField.xib in Resources */,
 				7FC3B2312778F7290095DEC0 /* OpenSans-VariableFont.ttf in Resources */,
 				7FC3B2302778F7290095DEC0 /* OCT56.otf in Resources */,
@@ -707,6 +742,7 @@
 				7FC3B22D2778F7290095DEC0 /* OCT55.otf in Resources */,
 				8930869E274340C6000339B0 /* vgosti.json in Resources */,
 				93AD6D4C27515B6A00211D96 /* PopupController.xib in Resources */,
+				93F5F5502787011C00178F76 /* FullImageController.xib in Resources */,
 				8930870027472838000339B0 /* ProductImageCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -792,6 +828,7 @@
 				89DBE9A32762C9D000B7C96D /* CompositionVC.swift in Sources */,
 				893086A927434B7B000339B0 /* ProductCell.swift in Sources */,
 				7F681B7F2765775E00C81EFA /* Order.swift in Sources */,
+				93F5F54F2787011C00178F76 /* FullImageController.swift in Sources */,
 				933F0CDC273FC05500482A9F /* ShoppingCartVC.swift in Sources */,
 				89969DEA277A7BD0001519F9 /* ConfirmationVC.swift in Sources */,
 				7F681B832766493C00C81EFA /* MailBuilder.swift in Sources */,
@@ -800,12 +837,14 @@
 				7F6C2DE7275FE38B00F3D849 /* CartProduct.swift in Sources */,
 				893086A027434851000339B0 /* CodableClasses.swift in Sources */,
 				7FC1AB9A2778EF88007495A3 /* DiscountCell.swift in Sources */,
+				9336B1B22788E6DE001A7BE6 /* FullImageProductCell.swift in Sources */,
 				8982F16F2740ADFB00FB79E8 /* CategoryCell.swift in Sources */,
 				89DBE9A82766DC3E00B7C96D /* FilterCell.swift in Sources */,
 				9396BC6227488F3300DA4FC8 /* RealmManager.swift in Sources */,
 				93D97C0F27711C14001CF716 /* DiscountCodable.swift in Sources */,
 				7F9B67DD275A8339009A742E /* CatalogVC+Configure.swift in Sources */,
 				7F224A16275F7722000649BB /* ValidationTextField.swift in Sources */,
+				93CFDBB6278B278200C340E1 /* NetworkManager.swift in Sources */,
 				93AD6D4B27515B6A00211D96 /* PopupController.swift in Sources */,
 				893086F6274715FC000339B0 /* Extensions.swift in Sources */,
 				89DBE917275059F000B7C96D /* FilterVC.swift in Sources */,
@@ -817,6 +856,7 @@
 				9396BC65274890C300DA4FC8 /* Product.swift in Sources */,
 				933EEC4227772C54007E482D /* UIColor + Extension.swift in Sources */,
 				8982F139273F328200FB79E8 /* SceneDelegate.swift in Sources */,
+				93CFDBB2278B1B0500C340E1 /* BackendAPI.swift in Sources */,
 				7F6C2DEA275FF68200F3D849 /* NotificationManager.swift in Sources */,
 				9394AF1C277BB8FD0018C6B3 /* ProductCartCell.swift in Sources */,
 				933F0CD8273FBFB900482A9F /* ContactsVC.swift in Sources */,
@@ -962,7 +1002,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 97L2996NM5;
+				DEVELOPMENT_TEAM = T8V9JXV542;
 				GENERATE_INFOPLIST_FILE = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -995,7 +1035,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "-21flowers";
+				PRODUCT_BUNDLE_IDENTIFIER = .21flowers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/FlowerApp/sendEmail_bridge.h";
@@ -1012,7 +1052,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 97L2996NM5;
+				DEVELOPMENT_TEAM = T8V9JXV542;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FlowerApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1027,7 +1067,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "-21flowers";
+				PRODUCT_BUNDLE_IDENTIFIER = .21flowers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/FlowerApp/sendEmail_bridge.h";
