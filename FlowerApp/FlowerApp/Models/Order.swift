@@ -16,9 +16,10 @@ class Order {
         self.user = user
         self.products = RealmManager.shared.getCart()
         self.totalCost = products.map({ $0.productCost * Double($0.count)}).reduce(0.0, +)
-        if user.delivery == .delivery {
-            self.totalCost += 5.0
-        }
+        // я думаю это уже не нужно, я к цене прибавляю стоимость доставки
+//        if user.delivery == .delivery {
+//            self.totalCost += 5.0
+//        }
     }
     
     /// Build order
@@ -26,7 +27,7 @@ class Order {
     func params() -> [String: Any] {
         var params = [String: Any]()
         params["user"] = self.user.params()
-        params["totalCost"] = self.totalCost
+        params["totalCost"] = self.totalCost + globalDeliveryPrice
         params["products"] = self.products
         return params
     }

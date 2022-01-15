@@ -13,8 +13,6 @@ import UIKit
 
 class TabViewController: UITabBarController {
     
-   
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.delegate = self
@@ -23,16 +21,14 @@ class TabViewController: UITabBarController {
         let navTabCatalog = UINavigationController(rootViewController: CatalogVC(nibName: String(describing: CatalogVC.self), bundle: nil))
         let navTabFavourite = UINavigationController(rootViewController: FavouriteVC(nibName: String(describing: FavouriteVC.self), bundle: nil))
         let navTabContacts = UINavigationController(rootViewController: ContactsVC(nibName: String(describing: ContactsVC.self), bundle: nil))
-//        let navTabShopping = UINavigationController(rootViewController: ShoppingCartVC(nibName: String(describing: ShoppingCartVC.self), bundle: nil))
-        let navTabShopping = UINavigationController(rootViewController: OrderVC(nibName: String(describing: OrderVC.self), bundle: nil))
+        let navTabShopping = UINavigationController(rootViewController: ShoppingCartVC(nibName: String(describing: ShoppingCartVC.self), bundle: nil))
         
         self.viewControllers = [navTabCatalog, navTabFavourite, navTabContacts, navTabShopping]
-                
+        
         navTabCatalog.tabBarItem = UITabBarItem(title: "Каталог", image: UIImage(named: "icon_flower"), tag: 0)
         navTabFavourite.tabBarItem = UITabBarItem(title: "Избранное", image: UIImage(named: "icon_bookmark"), tag: 1)
         navTabContacts.tabBarItem = UITabBarItem(title: "Контакты", image: UIImage(named: "icon_info"), tag: 2)
         navTabShopping.tabBarItem = UITabBarItem(title: "Корзина", image: UIImage(named: "icon_cart"), tag: 3)
-        
         
         self.tabBar.tintColor = UIColor.mainColor
         
@@ -75,11 +71,11 @@ class TabViewController: UITabBarController {
 extension TabViewController: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, animationControllerForTransitionFrom fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         
-        if isThisSwipe {    
+        if isThisSwipe {
             isThisSwipe = false
             return TabViewAnimation()
         }
-       return nil
+        return nil
     }
 }
 
@@ -87,7 +83,7 @@ class TabViewAnimation: NSObject, UIViewControllerAnimatedTransitioning {
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 0.3
     }
-
+    
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         guard let destination = transitionContext.view(forKey: .to) else { return }
         if translationXBool {
@@ -96,7 +92,7 @@ class TabViewAnimation: NSObject, UIViewControllerAnimatedTransitioning {
             destination.transform = CGAffineTransform(translationX: -destination.frame.width, y: 0)
         }
         transitionContext.containerView.addSubview(destination)
-
+        
         UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: {
             destination.transform = .identity
         }, completion: {

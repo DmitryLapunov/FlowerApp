@@ -53,6 +53,18 @@ class RealmManager {
         }
     }
     
+    func changeProductCount(product: CartProduct, count: Int) {
+        try! realm.write {
+            product.count = count
+        }
+    }
+    
+    func deleteCartProduct(product: CartProduct) {
+        try! realm.write {
+            realm.delete(product)
+        }
+    }
+    
     //    Error, eraze ALL DATA
     func clearCart() {
         try! realm.write {

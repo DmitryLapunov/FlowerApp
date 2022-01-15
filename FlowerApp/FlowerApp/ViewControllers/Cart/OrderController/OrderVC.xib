@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -12,9 +13,19 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OrderVC" customModule="FlowerApp" customModuleProvider="target">
             <connections>
                 <outlet property="adressField" destination="i4Q-Pq-xS4" id="cIg-sU-PM5"/>
+                <outlet property="backToOrderButton" destination="EFx-6U-yIg" id="Tkt-EX-QPM"/>
+                <outlet property="backgroundStackView" destination="KFa-DO-oO6" id="6ya-I7-aFZ"/>
+                <outlet property="buttonViewConstraintBottom" destination="f9F-hV-KQ3" id="oZe-qR-smA"/>
+                <outlet property="buttonViewConstraintTop" destination="otP-kC-4gW" id="1ON-hB-KCh"/>
+                <outlet property="createOrderButton" destination="PfB-qF-Z3O" id="s4z-pP-Gbg"/>
+                <outlet property="defaultDeliveryButton" destination="g1G-yU-zqU" id="KyJ-Ec-S0i"/>
+                <outlet property="deliveryChooseView" destination="fHe-7d-8CE" id="fDv-hl-oP2"/>
                 <outlet property="emailField" destination="6Fs-Wy-OdX" id="oZX-m6-tW5"/>
+                <outlet property="expressDeliveryButton" destination="YhT-mP-VIm" id="iez-MK-8SO"/>
                 <outlet property="nameField" destination="neK-89-g1V" id="cuc-8D-oGs"/>
+                <outlet property="orderTopConstraint" destination="Jqx-UC-DYp" id="RXU-5I-D0m"/>
                 <outlet property="phoneField" destination="p4S-hu-Daq" id="PR5-7r-CD3"/>
+                <outlet property="switcherDelivery" destination="TIV-N7-9au" id="xU8-Eg-1fD"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,93 +34,224 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="bEi-pr-cY3">
-                    <rect key="frame" x="0.0" y="44" width="414" height="400"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ym3-JG-6Gl">
+                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                    <color key="backgroundColor" name="TertiaryColor"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KFa-DO-oO6">
+                    <rect key="frame" x="10" y="44" width="394" height="538.5"/>
                     <subviews>
-                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="neK-89-g1V" customClass="ValidationTextField" customModule="FlowerApp" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Имя:"/>
-                                <userDefinedRuntimeAttribute type="string" keyPath="errorMessage" value="Имя введено некорректно"/>
-                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                    <color key="value" name="MainColor"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                        </view>
-                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p4S-hu-Daq" customClass="ValidationTextField" customModule="FlowerApp" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="100" width="414" height="100"/>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Номер телефона:"/>
-                                <userDefinedRuntimeAttribute type="string" keyPath="errorMessage" value="Номер телефона не корректен"/>
-                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                    <color key="value" name="MainColor"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                        </view>
-                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i4Q-Pq-xS4" customClass="ValidationTextField" customModule="FlowerApp" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="200" width="414" height="100"/>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Адрес:"/>
-                                <userDefinedRuntimeAttribute type="string" keyPath="errorMessage" value="Адрес введён неправильно"/>
-                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                    <color key="value" name="MainColor"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                        </view>
-                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Fs-Wy-OdX" customClass="ValidationTextField" customModule="FlowerApp" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="300" width="414" height="100"/>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Email:"/>
-                                <userDefinedRuntimeAttribute type="string" keyPath="errorMessage" value="Проверьте правильность email"/>
-                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                    <color key="value" name="MainColor"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                        </view>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="bEi-pr-cY3">
+                            <rect key="frame" x="0.0" y="61" width="394" height="467.5"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="neK-89-g1V" customClass="ValidationTextField" customModule="FlowerApp" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="394" height="100"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Имя:"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="errorMessage" value="Имя введено некорректно"/>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                            <color key="value" name="MainColor"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p4S-hu-Daq" customClass="ValidationTextField" customModule="FlowerApp" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="100" width="394" height="100.5"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Номер телефона:"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="errorMessage" value="Номер телефона не корректен"/>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                            <color key="value" name="MainColor"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i4Q-Pq-xS4" customClass="ValidationTextField" customModule="FlowerApp" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="200.5" width="394" height="100"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Адрес доставки:"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="errorMessage" value="Адрес введён неправильно"/>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                            <color key="value" name="MainColor"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fHe-7d-8CE">
+                                    <rect key="frame" x="0.0" y="300.5" width="394" height="67"/>
+                                    <subviews>
+                                        <button opaque="NO" tag="1000" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g1G-yU-zqU">
+                                            <rect key="frame" x="10" y="10" width="374" height="18.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" title="Обычная доставка - 5 BYN (Свыше 60 BYN - бесплатно)">
+                                                <color key="titleColor" name="MainLabelColor"/>
+                                                <imageReference key="image" image="square.fill" catalog="system" symbolScale="default" renderingMode="hierarchical-single">
+                                                    <hierarchicalColors>
+                                                        <color name="MainColor"/>
+                                                        <color systemColor="secondaryLabelColor"/>
+                                                        <color systemColor="tertiaryLabelColor"/>
+                                                    </hierarchicalColors>
+                                                </imageReference>
+                                            </state>
+                                            <connections>
+                                                <action selector="deliveryTypeAction:" destination="-1" eventType="touchUpInside" id="y8p-QO-VWO"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="1001" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YhT-mP-VIm">
+                                            <rect key="frame" x="10" y="38.5" width="374" height="18.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" title="Экспресс-доставка  - 16 BYN">
+                                                <color key="titleColor" name="MainLabelColor"/>
+                                                <imageReference key="image" image="square" catalog="system" renderingMode="hierarchical-single">
+                                                    <hierarchicalColors>
+                                                        <color name="MainColor"/>
+                                                        <color systemColor="secondaryLabelColor"/>
+                                                        <color systemColor="tertiaryLabelColor"/>
+                                                    </hierarchicalColors>
+                                                </imageReference>
+                                            </state>
+                                            <connections>
+                                                <action selector="deliveryTypeAction:" destination="-1" eventType="touchUpInside" id="IAZ-gy-tlT"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="g1G-yU-zqU" secondAttribute="trailing" constant="10" id="C3S-AL-3ZI"/>
+                                        <constraint firstAttribute="bottom" secondItem="YhT-mP-VIm" secondAttribute="bottom" constant="10" id="J5J-gB-zaB"/>
+                                        <constraint firstAttribute="trailing" secondItem="YhT-mP-VIm" secondAttribute="trailing" constant="10" id="Tkt-uK-dWT"/>
+                                        <constraint firstAttribute="height" constant="67" id="Y1a-0i-mdm"/>
+                                        <constraint firstItem="g1G-yU-zqU" firstAttribute="leading" secondItem="fHe-7d-8CE" secondAttribute="leading" constant="10" id="oRj-Dm-wiF"/>
+                                        <constraint firstItem="YhT-mP-VIm" firstAttribute="top" secondItem="g1G-yU-zqU" secondAttribute="bottom" constant="10" id="qcY-BQ-gO5"/>
+                                        <constraint firstItem="g1G-yU-zqU" firstAttribute="top" secondItem="fHe-7d-8CE" secondAttribute="top" constant="10" id="vrR-oZ-rEi"/>
+                                        <constraint firstItem="YhT-mP-VIm" firstAttribute="leading" secondItem="fHe-7d-8CE" secondAttribute="leading" constant="10" id="wAt-TT-zj7"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Fs-Wy-OdX" customClass="ValidationTextField" customModule="FlowerApp" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="367.5" width="394" height="100"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Email:"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="errorMessage" value="Проверьте правильность email"/>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                            <color key="value" name="MainColor"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" name="TertiaryColor"/>
+                        </stackView>
+                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="TIV-N7-9au">
+                            <rect key="frame" x="26" y="15" width="342" height="32"/>
+                            <color key="backgroundColor" name="MainColor"/>
+                            <segments>
+                                <segment title="Доставка"/>
+                                <segment title="Самовывоз"/>
+                            </segments>
+                            <connections>
+                                <action selector="switcherDelivery:" destination="-1" eventType="valueChanged" id="Bh8-nT-biD"/>
+                            </connections>
+                        </segmentedControl>
                     </subviews>
-                    <color key="backgroundColor" red="0.94117647059999998" green="0.60392156860000001" blue="0.602715373" alpha="1" colorSpace="calibratedRGB"/>
-                </stackView>
-                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PfB-qF-Z3O">
-                    <rect key="frame" x="20" y="464" width="374" height="31"/>
-                    <color key="backgroundColor" name="MainColor"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="31" id="oO2-bI-JBr"/>
+                        <constraint firstAttribute="trailing" secondItem="TIV-N7-9au" secondAttribute="trailing" constant="26" id="6Au-97-IOH"/>
+                        <constraint firstItem="TIV-N7-9au" firstAttribute="leading" secondItem="KFa-DO-oO6" secondAttribute="leading" constant="26" id="7jU-2g-uq0"/>
+                        <constraint firstAttribute="bottom" secondItem="bEi-pr-cY3" secondAttribute="bottom" constant="10" id="8ig-2r-zcw"/>
+                        <constraint firstItem="TIV-N7-9au" firstAttribute="top" secondItem="KFa-DO-oO6" secondAttribute="top" constant="15" id="CEF-bS-DaK"/>
+                        <constraint firstItem="bEi-pr-cY3" firstAttribute="top" secondItem="TIV-N7-9au" secondAttribute="bottom" constant="15" id="P0Q-H7-xB2"/>
+                        <constraint firstAttribute="trailing" secondItem="bEi-pr-cY3" secondAttribute="trailing" id="YXt-0f-U28"/>
+                        <constraint firstItem="bEi-pr-cY3" firstAttribute="leading" secondItem="KFa-DO-oO6" secondAttribute="leading" id="deC-hz-29d"/>
                     </constraints>
-                    <color key="tintColor" name="AccentColor"/>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="Оформить заказ"/>
-                    <connections>
-                        <action selector="createOrderAction:" destination="-1" eventType="touchUpInside" id="yjQ-6I-gYq"/>
-                    </connections>
-                </button>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zPn-uj-2hG">
+                    <rect key="frame" x="10" y="817.5" width="394" height="34.5"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="0AY-Ma-Nd5">
+                            <rect key="frame" x="0.0" y="0.0" width="394" height="34.5"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EFx-6U-yIg">
+                                    <rect key="frame" x="0.0" y="0.0" width="192" height="34.5"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="filled" title="Назад к заказу">
+                                        <fontDescription key="titleFontDescription" name="OpenSansRoman-CondensedRegular" family="Open Sans" pointSize="15"/>
+                                    </buttonConfiguration>
+                                    <connections>
+                                        <action selector="backToOrderAction:" destination="-1" eventType="touchUpInside" id="Fx6-fd-fqT"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PfB-qF-Z3O">
+                                    <rect key="frame" x="202" y="0.0" width="192" height="34.5"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="filled" title="Оформить заказ">
+                                        <fontDescription key="titleFontDescription" name="OpenSansRoman-CondensedRegular" family="Open Sans" pointSize="15"/>
+                                    </buttonConfiguration>
+                                    <connections>
+                                        <action selector="createOrderAction:" destination="-1" eventType="touchUpInside" id="yjQ-6I-gYq"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="34.5" id="Fij-wB-fT0"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="0AY-Ma-Nd5" firstAttribute="leading" secondItem="zPn-uj-2hG" secondAttribute="leading" id="0aU-Rv-c4X"/>
+                        <constraint firstAttribute="bottom" secondItem="0AY-Ma-Nd5" secondAttribute="bottom" id="DhI-EM-gus"/>
+                        <constraint firstItem="0AY-Ma-Nd5" firstAttribute="top" secondItem="zPn-uj-2hG" secondAttribute="top" id="gi5-EF-SyV"/>
+                        <constraint firstAttribute="trailing" secondItem="0AY-Ma-Nd5" secondAttribute="trailing" id="iV1-aN-lkp"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="PfB-qF-Z3O" secondAttribute="bottom" constant="20" id="9Fu-YD-KMr"/>
-                <constraint firstItem="PfB-qF-Z3O" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="LFu-ZV-Y8S"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bEi-pr-cY3" secondAttribute="trailing" id="MKI-ND-eFR"/>
-                <constraint firstItem="bEi-pr-cY3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ZdB-Dr-hQC"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="PfB-qF-Z3O" secondAttribute="trailing" constant="20" id="Zkv-mQ-PE7"/>
-                <constraint firstItem="PfB-qF-Z3O" firstAttribute="top" secondItem="bEi-pr-cY3" secondAttribute="bottom" constant="20" id="cIc-s3-PQW"/>
-                <constraint firstItem="bEi-pr-cY3" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="gTq-bt-tfL"/>
+                <constraint firstItem="ym3-JG-6Gl" firstAttribute="top" secondItem="KFa-DO-oO6" secondAttribute="top" id="1WC-D0-DHh"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="KFa-DO-oO6" secondAttribute="trailing" constant="10" id="4GR-cc-y0M"/>
+                <constraint firstItem="zPn-uj-2hG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="DWE-Pf-QPr"/>
+                <constraint firstItem="ym3-JG-6Gl" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="HtQ-BV-NeZ"/>
+                <constraint firstItem="KFa-DO-oO6" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Jqx-UC-DYp"/>
+                <constraint firstItem="KFa-DO-oO6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="Xut-sg-Ijh"/>
+                <constraint firstAttribute="bottom" secondItem="ym3-JG-6Gl" secondAttribute="bottom" id="afJ-Ln-zi4"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zPn-uj-2hG" secondAttribute="trailing" constant="10" id="c4X-oc-GNb"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="zPn-uj-2hG" secondAttribute="bottom" constant="10" id="f9F-hV-KQ3"/>
+                <constraint firstItem="zPn-uj-2hG" firstAttribute="top" secondItem="KFa-DO-oO6" secondAttribute="top" id="otP-kC-4gW"/>
+                <constraint firstItem="ym3-JG-6Gl" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="pNc-2v-hyy"/>
             </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="otP-kC-4gW"/>
+                </mask>
+            </variation>
             <point key="canvasLocation" x="-39.130434782608695" y="-11.383928571428571"/>
         </view>
     </objects>
     <resources>
-        <namedColor name="AccentColor">
-            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
+        <image name="square" catalog="system" width="128" height="114"/>
+        <image name="square.fill" catalog="system" width="128" height="114"/>
         <namedColor name="MainColor">
             <color red="0.40000000596046448" green="0.5220000147819519" blue="0.046999998390674591" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
+        <namedColor name="MainLabelColor">
+            <color red="0.29800000786781311" green="0.25499999523162842" blue="0.3449999988079071" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TertiaryColor">
+            <color red="0.95300000905990601" green="0.9570000171661377" blue="0.96799999475479126" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tertiaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

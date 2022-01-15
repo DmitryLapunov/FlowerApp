@@ -16,7 +16,7 @@ enum ValidationType: String {
     case phone = "^(\\+375|375)(29|25|44|33)(\\d{3})(\\d{2})(\\d{2})$"
     case name = "[\\S]{3,30}"
     case email = "^[A-z0-9_.+-]+@[A-z0-9-]+(\\.[A-z0-9-]{2,})+$"
-    case adress = "[\\S]{5,30}"
+    case adress = ".*[^A-Za-z0-9 ].*"
     case none = "[\\S]"
 }
  
@@ -82,6 +82,7 @@ enum ValidationType: String {
         inputField.addTarget(self, action: #selector(validateText), for: .editingChanged)
         inputField.layer.borderWidth = 0.35
         inputField.layer.cornerRadius = 5
+        
         errorLabel.text = ""
     }
 }

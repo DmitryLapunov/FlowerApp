@@ -82,16 +82,16 @@ extension FavouriteVC: UITableViewDataSource {
         
         for i in 0...arrayProductsObject.count - 1 {
            let name = arrayProductsObject[i].productName
-            if let product = arrayGlobalProducts.first(where: { $0.itemName == name}) {
+            if let product = arrayGlobalProducts.first(where: { $0.item_name == name}) {
                 arrayProducts.append(product)
             }
         }
         
-        if let price = arrayProducts[indexPath.row].costByn {
+        if let price = arrayProducts[indexPath.row].cost_byn {
             favouriteCell.priceLabel.text = price + " РУБ."
         }
        
-        favouriteCell.productNameLabel.text = arrayProducts[indexPath.row].itemName
+        favouriteCell.productNameLabel.text = arrayProducts[indexPath.row].item_name
         
         if let productDescription = arrayProducts[indexPath.row].description {
             favouriteCell.productDescriptionLabel.text = productDescription.aboutItem ?? "описание не указано"
@@ -101,7 +101,7 @@ extension FavouriteVC: UITableViewDataSource {
             favouriteCell.productImage.sd_setImage(with: URL(string: "\(productImages[0])"))
         }
         
-        let cartFilter = productCart.first { $0.productName == arrayProducts[indexPath.row].itemName }
+        let cartFilter = productCart.first { $0.productName == arrayProducts[indexPath.row].item_name }
         if cartFilter == nil {
             favouriteCell.addToCartButtonOutlet.setImage(UIImage(systemName: "cart.badge.plus"), for: .normal)
         } else {
@@ -123,7 +123,7 @@ extension FavouriteVC: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         let productVC = ProductVC(nibName: String(describing: ProductVC.self), bundle: nil)
         
-        let filterProduct = arrayGlobalProducts.first{ $0.itemName == arrayProductsObject[indexPath.row].productName}
+        let filterProduct = arrayGlobalProducts.first{ $0.item_name == arrayProductsObject[indexPath.row].productName}
         
         productVC.alertDelegate = self
         productVC.product = filterProduct

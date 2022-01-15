@@ -10,6 +10,7 @@ import Foundation
 enum DeliveryType: String, CaseIterable {
     case pickup = "Самовывоз, Гикало 7"
     case delivery = "Доставка"
+    case fastDelivery = "Экспресс-доставка"
 }
 
 class User {
