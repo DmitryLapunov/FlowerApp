@@ -9,7 +9,7 @@ import Foundation
 import Moya
 
 enum BackendAPI {
-    case sendToBot(itemImfo: [String], deliveryType: String, deliveryPrice: Double, clientPhone: String, clientName: String, deliveryAddress: String)
+    case sendToBot(itemImfo: [String], deliveryType: String, deliveryPrice: Double, clientPhone: String, clientName: String, deliveryAddress: String, userID: Int)
 }
 
 extension BackendAPI: TargetType {
@@ -52,14 +52,14 @@ extension BackendAPI: TargetType {
     var parametrs: [String: Any]? {
         var params = [String: Any]()
         switch self {
-        case .sendToBot(let itemImfo, let deliveryType, let deliveryPrice, let clientPhone, let clientName, let deliveryAddress):
+        case .sendToBot(let itemImfo, let deliveryType, let deliveryPrice, let clientPhone, let clientName, let deliveryAddress, let userID):
             params["Item-Info"] = itemImfo
             params["Delivery-Type"] = deliveryType
             params["Delivery-Price"] = deliveryPrice
             params["Client-Phone"] = clientPhone
             params["Client-Name"] = clientName
             params["Delivery-Address"] = deliveryAddress
-//            params["User-Id"] = userId
+            params["User-Id"] = userID
         }
         return params
     }
