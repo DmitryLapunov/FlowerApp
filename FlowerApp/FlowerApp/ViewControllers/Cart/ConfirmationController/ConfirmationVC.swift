@@ -155,7 +155,7 @@ class ConfirmationVC: UIViewController {
             arrayProduct.append(product)
         }
         
-        NetworkManager.shared.sendToBot(itemImfo: arrayProduct, deliveryType: "free", deliveryPrice: Double(globalDeliveryPrice), clientPhone: phone, clientName: name, deliveryAddress: address, userID: 463527794)
+        NetworkManager.shared.sendToBot(itemImfo: ["name,1,1"], deliveryType: "free", deliveryPrice: 0, clientPhone: "+375298174983", clientName: "Hui Morzhovyi", deliveryAddress: "vulica puskina", userID: 463527794)
         
 //        MailBuilder().sendOrderToOperator(order: Order(user: user))
         
