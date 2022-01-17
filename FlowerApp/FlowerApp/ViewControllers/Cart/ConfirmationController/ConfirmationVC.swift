@@ -146,16 +146,22 @@ class ConfirmationVC: UIViewController {
         }
 //        print(RealmManager.shared.getCart())
         let user = User(name: name, phone: phone, address: address, delivery: checkDelivery())
-        let order = Order(user: user).params()
-        print(order)
         
-        var arrayProduct: [String] = []
-        for nameProduct in RealmManager.shared.getCart() {
-            let product = "\(nameProduct.productName),\(nameProduct.count),\(Int(nameProduct.productCost))"
-            arrayProduct.append(product)
+        var arrayProduct = ""
+        let savedCart = RealmManager.shared.getCart()
+        
+        for nameProduct in savedCart {
+            arrayProduct += "\(nameProduct.productName),\(nameProduct.count),\(Int(nameProduct.productCost))"
+            arrayProduct += "; "
         }
-        
-        NetworkManager.shared.sendToBot(itemImfo: ["name,1,1"], deliveryType: "free", deliveryPrice: 0, clientPhone: "+375298174983", clientName: "Hui Morzhovyi", deliveryAddress: "vulica puskina", userID: 463527794)
+
+        print(arrayProduct)
+//        не удалять, разделение логическое, если разработка, то будет id разработчика, если продакшн, то позже подставится другой
+        #if DEBUG
+        NetworkManager.shared.sendToBot(itemImfo: arrayProduct, deliveryType: checkDelivery().name, deliveryPrice: checkDelivery().price, clientPhone: user.phone, clientName: user.name, deliveryAddress: user.address, userID: "463527794")
+        #else
+        NetworkManager.shared.sendToBot(itemImfo: arrayProduct, deliveryType: checkDelivery().name, deliveryPrice: checkDelivery().price, clientPhone: user.phone, clientName: user.name, deliveryAddress: user.address, userID: "463527794")
+        #endif
         
 //        MailBuilder().sendOrderToOperator(order: Order(user: user))
         

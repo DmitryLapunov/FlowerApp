@@ -9,7 +9,7 @@ import Foundation
 import Moya
 
 enum BackendAPI {
-    case sendToBot(itemImfo: [String], deliveryType: String, deliveryPrice: Double, clientPhone: String, clientName: String, deliveryAddress: String, userID: Int)
+    case sendToBot(itemImfo: String, deliveryType: String, deliveryPrice: String, clientPhone: String, clientName: String, deliveryAddress: String, userID: String)
 }
 
 extension BackendAPI: TargetType {
@@ -36,10 +36,33 @@ extension BackendAPI: TargetType {
     }
     
     var task: Task {
-        guard let params = parametrs else {
-            return .requestPlain
+        switch self {
+        case .sendToBot:
+            return .uploadMultipart(multipartBody)
         }
-        return .requestParameters(parameters: params, encoding: paramsEncoding)
+    }
+    
+    var multipartBody: [Moya.MultipartFormData] {
+        switch self {
+        case .sendToBot(let itemImfo, let deliveryType, let deliveryPrice, let clientPhone, let clientName, let deliveryAddress, let userID):
+            var params = [String: String]()
+            var multipartData = [MultipartFormData]()
+            params["Item-Info"] = ""
+            params["Delivery-Type"] = deliveryType
+            params["Delivery-Price"] = "\(deliveryPrice)"
+            params["Client-Phone"] = clientPhone
+            params["Client-Name"] = clientName
+            params["Delivery-Address"] = deliveryAddress
+            params["User-Id"] = "\(userID)"
+            
+            for (key, value) in params {
+                let formData = MultipartFormData(provider: .data(value.data(using: .utf8)!), name: key)
+                multipartData.append(formData)
+            }
+            
+            
+            return multipartData
+        }
     }
     
     var headers: [String : String]? {
@@ -47,21 +70,6 @@ extension BackendAPI: TargetType {
         case .sendToBot:
             return ["Key" : "dSjg^%xsS##Gtd8^%xsahud632eYF^S$@@Rf*&("]
         }
-    }
-    
-    var parametrs: [String: Any]? {
-        var params = [String: Any]()
-        switch self {
-        case .sendToBot(let itemImfo, let deliveryType, let deliveryPrice, let clientPhone, let clientName, let deliveryAddress, let userID):
-            params["Item-Info"] = itemImfo
-            params["Delivery-Type"] = deliveryType
-            params["Delivery-Price"] = deliveryPrice
-            params["Client-Phone"] = clientPhone
-            params["Client-Name"] = clientName
-            params["Delivery-Address"] = deliveryAddress
-            params["User-Id"] = userID
-        }
-        return params
     }
     
     var paramsEncoding: ParameterEncoding {

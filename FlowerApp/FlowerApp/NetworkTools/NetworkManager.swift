@@ -14,7 +14,7 @@ class NetworkManager {
     static let shared = NetworkManager()
     private init() {}
     
-    func sendToBot(itemImfo: [String], deliveryType: String, deliveryPrice: Double, clientPhone: String, clientName: String, deliveryAddress: String, userID: Int) {
+    func sendToBot(itemImfo: String, deliveryType: String, deliveryPrice: String, clientPhone: String, clientName: String, deliveryAddress: String, userID: String) {
         provider.request(.sendToBot(itemImfo: itemImfo, deliveryType: deliveryType, deliveryPrice: deliveryPrice, clientPhone: clientPhone, clientName: clientName, deliveryAddress: deliveryAddress, userID: userID)) { result in
             switch result {
             case .success(_):
