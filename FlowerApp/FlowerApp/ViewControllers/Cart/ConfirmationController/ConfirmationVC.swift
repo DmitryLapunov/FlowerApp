@@ -27,6 +27,8 @@ class ConfirmationVC: UIViewController {
     @IBOutlet weak var productCollectionView: UICollectionView!
     @IBOutlet weak var collectionViewBackgroundView: UIView!
     @IBOutlet weak var totalCost: UILabel!
+    @IBOutlet weak var discountLabel: UILabel!
+    @IBOutlet weak var crossCostLabel: UILabel!
     
     
     var cartProducts: [CartProduct] = []
@@ -41,6 +43,7 @@ class ConfirmationVC: UIViewController {
     var phone = ""
     var email = ""
     var address = "Самовывоз"
+    var paymentType = "Наличные"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,21 +52,30 @@ class ConfirmationVC: UIViewController {
         setupCollectionView()
         setupLabelView()
         collectionViewBackgroundView.addShadowAndCornerRadius()
-        configureProducts()
         
         backToPreviousButton.addShadowAndSecondaryTintColor()
         sendOrderButton.addShadowAndTintColor()
         
         confirmationTopConstraint.constant = (UIScreen.main.bounds.width / 6) + 14
         
-       
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        totalCost.text = "Заказ на сумму: \(totalCostByn + globalDeliveryPrice) РУБ."
+        configureProducts()
+        setupTotalCostLabel()
     }
     
+    private func setupTotalCostLabel() {
+        let attributeString: NSMutableAttributedString =  NSMutableAttributedString(string: "\(totalCostByn)")
+        attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 2, range: NSMakeRange(0, attributeString.length))
+        crossCostLabel.attributedText = attributeString
+    
+        totalCost.text = "\(totalCostByn * 0.9 + globalDeliveryPrice) РУБ."
+        
+        discountLabel.text = "Скидка: \(totalCostByn * 0.1) РУБ."
+    }
     
     private func setupCollectionView() {
         let nib = UINib(nibName: String(describing: ProductCartCell.self), bundle: nil)
@@ -126,7 +138,11 @@ class ConfirmationVC: UIViewController {
     private func checkDelivery() -> DeliveryType {
         if delivery {
             if defaultDelivery {
-                return .delivery
+                if totalCostByn < 60 {
+                    return .delivery
+                } else {
+                    return .freeDelivery
+                }
             } else {
                 return .fastDelivery
             }
@@ -144,31 +160,29 @@ class ConfirmationVC: UIViewController {
         for product in unselectedCartProducts {
             RealmManager.shared.deleteCartProduct(product: product)
         }
-//        print(RealmManager.shared.getCart())
+        
         let user = User(name: name, phone: phone, address: address, delivery: checkDelivery())
         
         var arrayProduct = ""
         let savedCart = RealmManager.shared.getCart()
         
         for nameProduct in savedCart {
-            arrayProduct += "\(nameProduct.productName),\(nameProduct.count),\(Int(nameProduct.productCost))"
+            arrayProduct += "\(nameProduct.productName), \(nameProduct.count), po\(Int(nameProduct.productCost))"
             arrayProduct += "; "
         }
-
-        print(arrayProduct)
-//        не удалять, разделение логическое, если разработка, то будет id разработчика, если продакшн, то позже подставится другой
-        #if DEBUG
-        NetworkManager.shared.sendToBot(itemImfo: arrayProduct, deliveryType: checkDelivery().name, deliveryPrice: checkDelivery().price, clientPhone: user.phone, clientName: user.name, deliveryAddress: user.address, userID: "463527794")
-        #else
-        NetworkManager.shared.sendToBot(itemImfo: arrayProduct, deliveryType: checkDelivery().name, deliveryPrice: checkDelivery().price, clientPhone: user.phone, clientName: user.name, deliveryAddress: user.address, userID: "463527794")
-        #endif
         
-//        MailBuilder().sendOrderToOperator(order: Order(user: user))
+        print(arrayProduct)
+        //        не удалять, разделение логическое, если разработка, то будет id разработчика, если продакшн, то позже подставится другой
+#if DEBUG
+        NetworkManager.shared.sendToBot(itemImfo: arrayProduct, deliveryType: checkDelivery().name, deliveryPrice: checkDelivery().price, clientPhone: user.phone, clientName: user.name, deliveryAddress: user.address, userID: "463527794", paymentType: paymentType)
+#else
+        NetworkManager.shared.sendToBot(itemImfo: arrayProduct, deliveryType: checkDelivery().name, deliveryPrice: checkDelivery().price, clientPhone: user.phone, clientName: user.name, deliveryAddress: user.address, userID: "463527794", paymentType: paymentType)
+#endif
         
         for product in RealmManager.shared.getCart() {
             RealmManager.shared.deleteCartProduct(product: product)
         }
-//        print(RealmManager.shared.getCart())
+        
         PopupController.showPopup(duration: 5.0, message: "Заказ успешно отправлен! В ближайшее время наш менеджер свяжется с Вами для подтверждения")
     }
 }
@@ -176,9 +190,9 @@ class ConfirmationVC: UIViewController {
 extension ConfirmationVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if delivery == true {
-            return productsInCart.count + 1
+            return cartProducts.count + 1
         } else {
-            return productsInCart.count
+            return cartProducts.count
         }
     }
     
@@ -203,8 +217,6 @@ extension ConfirmationVC: UICollectionViewDataSource {
                     productCartCell.productPrice.text = "\(cost * Double(cartProducts[indexPath.row - 1].count)) РУБ."
                 }
                 productCartCell.productCount.text = "\(cartProducts[indexPath.row - 1].count) ШТ."
-                
-                
             }
         } else {
             if let url = productsInCart[indexPath.row].photos?.first {
