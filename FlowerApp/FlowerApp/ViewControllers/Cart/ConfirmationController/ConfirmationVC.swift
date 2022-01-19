@@ -176,7 +176,7 @@ class ConfirmationVC: UIViewController {
         print(arrayProduct)
         //        не удалять, разделение логическое, если разработка, то будет id разработчика, если продакшн, то позже подставится другой
 #if DEBUG
-        NetworkManager.shared.sendToBot(itemImfo: arrayProduct, deliveryType: checkDelivery().name, deliveryPrice: checkDelivery().price, clientPhone: user.phone, clientName: user.name, deliveryAddress: user.address, userID: "463527794", paymentType: paymentType)
+        NetworkManager.shared.sendToBot(itemImfo: arrayProduct, deliveryType: checkDelivery().name, deliveryPrice: checkDelivery().price, clientPhone: user.phone, clientName: user.name, deliveryAddress: user.address, userID: "545281366", paymentType: paymentType)
 #else
         NetworkManager.shared.sendToBot(itemImfo: arrayProduct, deliveryType: checkDelivery().name, deliveryPrice: checkDelivery().price, clientPhone: user.phone, clientName: user.name, deliveryAddress: user.address, userID: "463527794", paymentType: paymentType)
 #endif
@@ -210,43 +210,23 @@ extension ConfirmationVC: UICollectionViewDataSource {
         let cell = productCollectionView.dequeueReusableCell(withReuseIdentifier: String(describing: ProductCartCell.self), for: indexPath)
         guard let productCartCell = cell as? ProductCartCell else { return cell}
         
-        
-        if let url = productsInCart[indexPath.row].photos?.first {
-            productCartCell.productImage.sd_setImage(with: URL(string: url), completed: nil)
-        }
-        productCartCell.productName.text = productsInCart[indexPath.row].item_name
-        if let cost = productsInCart[indexPath.row].cost {
-            productCartCell.productPrice.text = "\(cost * Double(cartProducts[indexPath.row].count)) РУБ."
+        if delivery == true {
             
-            if delivery == true {
-                
-                if indexPath.row == 0 {
-                    productCartCell.productImage.image = UIImage(systemName: "shippingbox")
-                    productCartCell.productImage.tintColor = .mainColor
-                    productCartCell.productName.text = "Доставка"
-                    productCartCell.productCountView.isHidden = true
-                    productCartCell.productPrice.text = "\(globalDeliveryPrice) РУБ"
-                } else {
-                    if let url = productsInCart[indexPath.row - 1].photos?.first {
-                        productCartCell.productImage.sd_setImage(with: URL(string: url), completed: nil)
-                    }
-                    productCartCell.productName.text = productsInCart[indexPath.row - 1].item_name
-                    if let cost = productsInCart[indexPath.row - 1].cost {
-                        productCartCell.productPrice.text = "\(cost * Double(cartProducts[indexPath.row - 1].count)) РУБ."
-                    }
-                    productCartCell.productCount.text = "\(cartProducts[indexPath.row - 1].count) ШТ."
-                    
-                    
-                }
+            if indexPath.row == 0 {
+                productCartCell.productImage.image = UIImage(systemName: "shippingbox")
+                productCartCell.productImage.tintColor = .mainColor
+                productCartCell.productName.text = "Доставка"
+                productCartCell.productCountView.isHidden = true
+                productCartCell.productPrice.text = "\(globalDeliveryPrice) РУБ"
             } else {
-                if let url = productsInCart[indexPath.row].photos?.first {
+                if let url = productsInCart[indexPath.row - 1].photos?.first {
                     productCartCell.productImage.sd_setImage(with: URL(string: url), completed: nil)
                 }
-                productCartCell.productName.text = productsInCart[indexPath.row].item_name
-                if let cost = productsInCart[indexPath.row].cost {
-                    productCartCell.productPrice.text = "\(cost * Double(cartProducts[indexPath.row].count)) РУБ."
+                productCartCell.productName.text = productsInCart[indexPath.row - 1].item_name
+                if let cost = productsInCart[indexPath.row - 1].cost {
+                    productCartCell.productPrice.text = "\(cost * Double(cartProducts[indexPath.row - 1].count)) РУБ."
                 }
-                productCartCell.productCount.text = "\(cartProducts[indexPath.row].count) ШТ."
+                productCartCell.productCount.text = "\(cartProducts[indexPath.row - 1].count) ШТ."
             }
         } else {
             if let url = productsInCart[indexPath.row].photos?.first {
@@ -255,8 +235,8 @@ extension ConfirmationVC: UICollectionViewDataSource {
             productCartCell.productName.text = productsInCart[indexPath.row].item_name
             if let cost = productsInCart[indexPath.row].cost {
                 productCartCell.productPrice.text = "\(cost * Double(cartProducts[indexPath.row].count)) РУБ."
-
             }
+            productCartCell.productCount.text = "\(cartProducts[indexPath.row].count) ШТ."
         }
         return productCartCell
     }
