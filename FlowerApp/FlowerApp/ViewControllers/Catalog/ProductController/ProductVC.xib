@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -190,19 +190,19 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Упаковка:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lF0-LA-fzF">
-                            <rect key="frame" x="30" y="454" width="78" height="22"/>
+                            <rect key="frame" x="30" y="454" width="77.5" height="22"/>
                             <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="16"/>
                             <color key="textColor" name="SecondaryLabelColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Размеры:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ffQ-J5-Db1">
-                            <rect key="frame" x="30" y="481" width="74" height="22"/>
+                            <rect key="frame" x="30" y="481" width="73.5" height="22"/>
                             <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="16"/>
                             <color key="textColor" name="SecondaryLabelColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="О букете:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JaK-ps-Rnu">
-                            <rect key="frame" x="30" y="508" width="73" height="22"/>
+                            <rect key="frame" x="30" y="508" width="72.5" height="22"/>
                             <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="16"/>
                             <color key="textColor" name="SecondaryLabelColor"/>
                             <nil key="highlightedColor"/>
@@ -260,7 +260,7 @@
                     <rect key="frame" x="10" y="807.5" width="394" height="44.5"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fv5-gC-l38">
-                            <rect key="frame" x="226" y="5" width="163" height="34.5"/>
+                            <rect key="frame" x="225.5" y="5" width="163.5" height="34.5"/>
                             <fontDescription key="fontDescription" name="OpenSansRoman-CondensedRegular" family="Open Sans" pointSize="15"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" title="  Добавить в корзину" image="cart.badge.plus" catalog="system"/>
@@ -272,7 +272,7 @@
                             </connections>
                         </button>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6hu-Q9-Hrn">
-                            <rect key="frame" x="0.0" y="0.0" width="226" height="44.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="225.5" height="44.5"/>
                             <subviews>
                                 <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uDM-7A-wQJ">
                                     <rect key="frame" x="94" y="5.5" width="38" height="34"/>
@@ -280,7 +280,7 @@
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R3b-6z-IbF">
-                                    <rect key="frame" x="132" y="7" width="41.5" height="31"/>
+                                    <rect key="frame" x="132" y="7" width="43.5" height="31"/>
                                     <color key="tintColor" name="MainLabelColor"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system"/>
@@ -289,7 +289,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nbd-pn-V9C">
-                                    <rect key="frame" x="52.5" y="7" width="41.5" height="31"/>
+                                    <rect key="frame" x="50.5" y="7" width="43.5" height="31"/>
                                     <color key="tintColor" name="MainLabelColor"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" image="minus" catalog="system"/>
@@ -309,7 +309,7 @@
                             </constraints>
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BZU-e1-bI4">
-                            <rect key="frame" x="226" y="5" width="163" height="34.5"/>
+                            <rect key="frame" x="225.5" y="5" width="163.5" height="34.5"/>
                             <fontDescription key="fontDescription" name="OpenSansRoman-CondensedRegular" family="Open Sans" pointSize="15"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" title="  Добавить в корзину" image="cart.badge.plus" catalog="system"/>

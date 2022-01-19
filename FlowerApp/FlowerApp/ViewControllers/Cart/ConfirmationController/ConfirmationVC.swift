@@ -167,8 +167,8 @@ class ConfirmationVC: UIViewController {
         let savedCart = RealmManager.shared.getCart()
         
         for nameProduct in savedCart {
-            arrayProduct += "\(nameProduct.productName), \(nameProduct.count), po\(Int(nameProduct.productCost))"
-            arrayProduct += "; "
+            arrayProduct += "\(nameProduct.productName), \(nameProduct.count), \(Int(nameProduct.productCost))"
+            arrayProduct += ";"
         }
         
         print(arrayProduct)

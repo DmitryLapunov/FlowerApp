@@ -14,7 +14,7 @@ enum BackendAPI {
 
 extension BackendAPI: TargetType {
     var baseURL: URL {
-        return URL(string: "http://46.175.171.141:8887")!
+        return URL(string: "http://195.201.138.66:5000")!
     }
     
     var path: String {
@@ -49,6 +49,8 @@ extension BackendAPI: TargetType {
             var multipartData = [MultipartFormData]()
             params["Item-Info"] = itemImfo
             params["Delivery-Type"] = deliveryType
+//            params["Delivery-Type"] = "free"
+
             params["Delivery-Price"] = "\(deliveryPrice)"
             params["Client-Phone"] = clientPhone
             params["Client-Name"] = clientName
@@ -60,7 +62,6 @@ extension BackendAPI: TargetType {
                 let formData = MultipartFormData(provider: .data(value.data(using: .utf8)!), name: key)
                 multipartData.append(formData)
             }
-            
             
             return multipartData
         }
