@@ -54,6 +54,7 @@
 		89969DEB277A7BD0001519F9 /* ConfirmationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89969DE9277A7BD0001519F9 /* ConfirmationVC.xib */; };
 		89969DF3277B6198001519F9 /* CartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89969DF1277B6198001519F9 /* CartCell.swift */; };
 		89969DF4277B6198001519F9 /* CartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89969DF2277B6198001519F9 /* CartCell.xib */; };
+		89969EAD2798CDBF001519F9 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89969EAC2798CDBF001519F9 /* UserDefaults.swift */; };
 		89DBE89227475C7C00B7C96D /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DBE89127475C7C00B7C96D /* TabBarController.swift */; };
 		89DBE89627475C8C00B7C96D /* ContactsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DBE89427475C8C00B7C96D /* ContactsCell.swift */; };
 		89DBE89727475C8C00B7C96D /* ContactsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89DBE89527475C8C00B7C96D /* ContactsCell.xib */; };
@@ -140,6 +141,7 @@
 		89969DE9277A7BD0001519F9 /* ConfirmationVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfirmationVC.xib; sourceTree = "<group>"; };
 		89969DF1277B6198001519F9 /* CartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCell.swift; sourceTree = "<group>"; };
 		89969DF2277B6198001519F9 /* CartCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartCell.xib; sourceTree = "<group>"; };
+		89969EAC2798CDBF001519F9 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		89DBE89127475C7C00B7C96D /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		89DBE89427475C8C00B7C96D /* ContactsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsCell.swift; sourceTree = "<group>"; };
 		89DBE89527475C8C00B7C96D /* ContactsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactsCell.xib; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 			children = (
 				7F6C2DE9275FF68200F3D849 /* NotificationManager.swift */,
 				7F681B822766493C00C81EFA /* MailBuilder.swift */,
+				89969EAC2798CDBF001519F9 /* UserDefaults.swift */,
 			);
 			path = Utilites;
 			sourceTree = "<group>";
@@ -818,6 +821,7 @@
 				933EEC4227772C54007E482D /* UIColor + Extension.swift in Sources */,
 				8982F139273F328200FB79E8 /* SceneDelegate.swift in Sources */,
 				7F6C2DEA275FF68200F3D849 /* NotificationManager.swift in Sources */,
+				89969EAD2798CDBF001519F9 /* UserDefaults.swift in Sources */,
 				9394AF1C277BB8FD0018C6B3 /* ProductCartCell.swift in Sources */,
 				933F0CD8273FBFB900482A9F /* ContactsVC.swift in Sources */,
 				93A874CF276CD97900B95AEF /* SubDiscountCell.swift in Sources */,
