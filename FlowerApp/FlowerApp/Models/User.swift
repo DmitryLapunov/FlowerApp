@@ -11,6 +11,33 @@ enum DeliveryType: String, CaseIterable {
     case pickup = "Самовывоз, Гикало 7"
     case delivery = "Доставка"
     case fastDelivery = "Экспресс-доставка"
+    case freeDelivery = "Бесплатная доставка"
+    
+    var name: String {
+        switch self {
+        case .delivery:
+            return "delivery"
+        case .fastDelivery:
+            return "fastDelivery"
+        case .pickup:
+            return "pickup"
+        case .freeDelivery:
+            return "freeDelivery"
+        }
+    }
+    
+    var price: String {
+        switch self {
+        case .delivery:
+            return "5"
+        case .fastDelivery:
+            return "16"
+        case .freeDelivery:
+            return "0"
+        case .pickup:
+            return "0"
+        }
+    }
 }
 
 class User {

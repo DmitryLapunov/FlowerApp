@@ -8,6 +8,7 @@
 import UIKit
 import GoogleMaps
 import SDWebImage
+import WebKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
@@ -22,6 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.makeKeyAndVisible()
         NotificationManager.requestAuthorization()
         configureCash()
+        clearWebCache()
     }
     
     private func configureTabBar() {
@@ -64,6 +66,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             UINavigationBar.appearance().compactAppearance = navigationBarAppearance
             UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
             UINavigationBar.appearance().tintColor = UIColor.mainColor
+        }
+    }
+    
+    private func clearWebCache() {
+        HTTPCookieStorage.shared.removeCookies(since: Date.distantPast)
+        
+        WKWebsiteDataStore.default().fetchDataRecords(ofTypes: WKWebsiteDataStore.allWebsiteDataTypes()) { records in
+            records.forEach { record in
+                WKWebsiteDataStore.default().removeData(ofTypes: record.dataTypes, for: [record], completionHandler: {})
+#if DEBUG
+                print("WKWebsiteDataStore record deleted:", record)
+#endif
+            }
         }
     }
     

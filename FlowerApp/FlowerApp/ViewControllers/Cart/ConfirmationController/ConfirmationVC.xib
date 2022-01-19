@@ -22,7 +22,9 @@
                 <outlet property="backToPreviousButton" destination="XmV-q9-9ad" id="NiE-tS-APd"/>
                 <outlet property="collectionViewBackgroundView" destination="vcz-bo-Hku" id="Ix2-9O-bN5"/>
                 <outlet property="confirmationTopConstraint" destination="ksE-ob-hvc" id="4Zt-a6-NgG"/>
+                <outlet property="crossCostLabel" destination="C7j-pM-eQ2" id="VoF-xh-gdF"/>
                 <outlet property="deliveryAdressLabel" destination="Luc-R8-Dgy" id="JsW-7F-Qeo"/>
+                <outlet property="discountLabel" destination="ooJ-vs-Db1" id="fA5-bJ-9bV"/>
                 <outlet property="emailLabel" destination="Oju-zj-7N4" id="xoC-Hl-Ika"/>
                 <outlet property="labelView" destination="enx-lF-zm8" id="cN7-Ma-43K"/>
                 <outlet property="nameLabel" destination="rw0-L0-tGl" id="lYW-cW-6IC"/>
@@ -151,12 +153,6 @@
                                 <constraint firstAttribute="trailing" secondItem="rZe-gS-XJG" secondAttribute="trailing" constant="5" id="hOt-4y-P00"/>
                             </constraints>
                         </view>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Общая цена: N" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gev-8p-ctQ">
-                            <rect key="frame" x="287" y="741.5" width="117" height="22"/>
-                            <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="16"/>
-                            <color key="textColor" name="MainLabelColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="wOi-Hf-oRt">
                             <rect key="frame" x="10" y="773.5" width="394" height="34.5"/>
                             <subviews>
@@ -182,25 +178,55 @@
                                 </button>
                             </subviews>
                         </stackView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Скидка" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ooJ-vs-Db1">
+                            <rect key="frame" x="353" y="745.5" width="45" height="18"/>
+                            <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="13"/>
+                            <color key="textColor" name="MainColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Перечеркнутая" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C7j-pM-eQ2">
+                            <rect key="frame" x="236.5" y="723.5" width="120" height="22"/>
+                            <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="16"/>
+                            <color key="textColor" name="MainLabelColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="К оплате:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SRO-8e-iGi">
+                            <rect key="frame" x="159" y="723.5" width="72.5" height="22"/>
+                            <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="16"/>
+                            <color key="textColor" name="MainLabelColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Итог" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gev-8p-ctQ">
+                            <rect key="frame" x="361.5" y="723.5" width="36.5" height="22"/>
+                            <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="16"/>
+                            <color key="textColor" name="MainLabelColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" name="TertiaryColor"/>
                     <constraints>
+                        <constraint firstItem="wOi-Hf-oRt" firstAttribute="top" secondItem="ooJ-vs-Db1" secondAttribute="bottom" constant="10" id="07T-oV-WTf"/>
                         <constraint firstItem="wOi-Hf-oRt" firstAttribute="leading" secondItem="cat-ON-Tzo" secondAttribute="leading" constant="10" id="0hH-fW-FFy"/>
                         <constraint firstAttribute="trailing" secondItem="2MO-Zp-8Md" secondAttribute="trailing" constant="20" id="1yz-1D-2cS"/>
+                        <constraint firstItem="SRO-8e-iGi" firstAttribute="centerY" secondItem="C7j-pM-eQ2" secondAttribute="centerY" id="5S2-zy-Icp"/>
                         <constraint firstItem="2MO-Zp-8Md" firstAttribute="top" secondItem="enx-lF-zm8" secondAttribute="bottom" constant="10" id="7og-kb-T7B"/>
-                        <constraint firstItem="wOi-Hf-oRt" firstAttribute="top" secondItem="Gev-8p-ctQ" secondAttribute="bottom" constant="10" id="JL1-fX-T4O"/>
                         <constraint firstAttribute="trailing" secondItem="wOi-Hf-oRt" secondAttribute="trailing" constant="10" id="Mbn-CF-9nc"/>
                         <constraint firstAttribute="trailing" secondItem="UIy-jX-u9c" secondAttribute="trailing" constant="20" id="Mk0-f1-Ff0"/>
+                        <constraint firstItem="Gev-8p-ctQ" firstAttribute="leading" secondItem="C7j-pM-eQ2" secondAttribute="trailing" constant="5" id="PGN-0y-TTn"/>
+                        <constraint firstItem="C7j-pM-eQ2" firstAttribute="leading" secondItem="SRO-8e-iGi" secondAttribute="trailing" constant="5" id="SKb-MJ-dnH"/>
                         <constraint firstItem="enx-lF-zm8" firstAttribute="top" secondItem="UIy-jX-u9c" secondAttribute="bottom" constant="10" id="SWU-ci-vIQ"/>
                         <constraint firstAttribute="trailing" secondItem="enx-lF-zm8" secondAttribute="trailing" constant="10" id="a15-Py-VvB"/>
                         <constraint firstItem="UIy-jX-u9c" firstAttribute="top" secondItem="cat-ON-Tzo" secondAttribute="top" constant="10" id="ckS-4b-JxE"/>
+                        <constraint firstItem="C7j-pM-eQ2" firstAttribute="centerY" secondItem="Gev-8p-ctQ" secondAttribute="centerY" id="cpM-od-uRa"/>
                         <constraint firstItem="vcz-bo-Hku" firstAttribute="leading" secondItem="cat-ON-Tzo" secondAttribute="leading" constant="10" id="e69-A4-mpV"/>
                         <constraint firstItem="UIy-jX-u9c" firstAttribute="leading" secondItem="cat-ON-Tzo" secondAttribute="leading" constant="20" id="fEH-Sf-RcT"/>
                         <constraint firstItem="enx-lF-zm8" firstAttribute="leading" secondItem="cat-ON-Tzo" secondAttribute="leading" constant="10" id="k7g-wV-XqM"/>
                         <constraint firstAttribute="trailing" secondItem="vcz-bo-Hku" secondAttribute="trailing" constant="10" id="k9Y-DM-HLf"/>
+                        <constraint firstItem="ooJ-vs-Db1" firstAttribute="top" secondItem="Gev-8p-ctQ" secondAttribute="bottom" id="nLi-e4-Ki3"/>
                         <constraint firstItem="vcz-bo-Hku" firstAttribute="top" secondItem="2MO-Zp-8Md" secondAttribute="bottom" constant="10" id="qeC-2l-UOF"/>
                         <constraint firstAttribute="bottom" secondItem="wOi-Hf-oRt" secondAttribute="bottom" constant="10" id="rvO-2Q-Mal"/>
-                        <constraint firstAttribute="trailing" secondItem="Gev-8p-ctQ" secondAttribute="trailing" constant="10" id="tte-Jr-Ae5"/>
+                        <constraint firstAttribute="trailing" secondItem="ooJ-vs-Db1" secondAttribute="trailing" constant="16" id="swh-u2-jDd"/>
+                        <constraint firstAttribute="trailing" secondItem="Gev-8p-ctQ" secondAttribute="trailing" constant="16" id="tte-Jr-Ae5"/>
                         <constraint firstItem="2MO-Zp-8Md" firstAttribute="leading" secondItem="cat-ON-Tzo" secondAttribute="leading" constant="20" id="xBy-fA-at2"/>
                     </constraints>
                 </view>
@@ -217,6 +243,9 @@
         </view>
     </objects>
     <resources>
+        <namedColor name="MainColor">
+            <color red="0.40000000596046448" green="0.5220000147819519" blue="0.046999998390674591" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <namedColor name="MainLabelColor">
             <color red="0.29800000786781311" green="0.25499999523162842" blue="0.3449999988079071" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
