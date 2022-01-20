@@ -52,7 +52,8 @@ class ConfirmationVC: UIViewController {
     var email = ""
     var address = "Самовывоз"
     private var timer: Timer?
-    var paymentType = PaymentMethod.cash
+//    var paymentType = PaymentMethod.cash
+    var paymentType: PaymentMethod?
 
     
     override func viewDidLoad() {
@@ -188,6 +189,11 @@ class ConfirmationVC: UIViewController {
     
     @IBAction func sendOrderAction(_ sender: Any) {
         timer?.invalidate()
+        guard let paymentType = paymentType else {
+            PopupController.showPopup(message: "Выберите способ оплаты")
+            return
+        }
+        
         for product in unselectedCartProducts {
             RealmManager.shared.deleteCartProduct(product: product)
         }
