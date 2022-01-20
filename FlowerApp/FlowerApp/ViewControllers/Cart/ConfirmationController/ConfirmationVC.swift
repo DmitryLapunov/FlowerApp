@@ -199,6 +199,7 @@ class ConfirmationVC: UIViewController {
         }
         
         let user = User(name: name, phone: phone, address: address, delivery: checkDelivery())
+        MailBuilder().sendOrderToOperator(order: Order(user: user))
         
         var arrayProduct = ""
         let savedCart = RealmManager.shared.getCart()
