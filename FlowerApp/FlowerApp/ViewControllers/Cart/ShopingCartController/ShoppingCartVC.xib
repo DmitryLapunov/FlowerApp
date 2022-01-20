@@ -52,7 +52,7 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Заказ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CVf-rJ-LO3">
-                    <rect key="frame" x="0.0" y="103" width="75" height="17.5"/>
+                    <rect key="frame" x="0.0" y="103" width="75" height="20.5"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="75" id="KuT-mz-m5o"/>
                     </constraints>
@@ -61,7 +61,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X2f-39-COe">
-                    <rect key="frame" x="110.5" y="820.5" width="193.5" height="31.5"/>
+                    <rect key="frame" x="130.5" y="817.5" width="153.5" height="34.5"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="filled" title="Перейти к оформлению">
                         <fontDescription key="titleFontDescription" name="OpenSansRoman-CondensedRegular" family="Open Sans" pointSize="15"/>
@@ -71,11 +71,11 @@
                     </connections>
                 </button>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="9iX-Og-0WP">
-                    <rect key="frame" x="0.0" y="128" width="414" height="682.5"/>
+                    <rect key="frame" x="0.0" y="128" width="414" height="679.5"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VF3-07-rsa">
-                    <rect key="frame" x="30" y="384.5" width="354" height="127.5"/>
+                    <rect key="frame" x="30" y="383" width="354" height="130.5"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchScreen" translatesAutoresizingMaskIntoConstraints="NO" id="YNH-qb-B7g">
                             <rect key="frame" x="142" y="10" width="70" height="70"/>
@@ -90,7 +90,7 @@
                             </userDefinedRuntimeAttributes>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Корзина пуста" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ijR-eR-5gH">
-                            <rect key="frame" x="10" y="90" width="334" height="17.5"/>
+                            <rect key="frame" x="10" y="90" width="334" height="20.5"/>
                             <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="15"/>
                             <color key="textColor" name="MainLabelColor"/>
                             <nil key="highlightedColor"/>

@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -17,9 +18,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ConfirmationVC" customModule="FlowerApp" customModuleProvider="target">
             <connections>
-                <outlet property="addressLabel" destination="1L2-UG-boe" id="6Fu-I8-VEC"/>
                 <outlet property="addressLabel" destination="1L2-UG-boe" id="FDl-I6-DQu"/>
                 <outlet property="backToPreviousButton" destination="XmV-q9-9ad" id="NiE-tS-APd"/>
+                <outlet property="cardPaymentButton" destination="bRe-Yt-tFp" id="di3-TA-sId"/>
+                <outlet property="cashPaymentButton" destination="ygY-PS-hHM" id="CDf-zU-Tzr"/>
                 <outlet property="collectionViewBackgroundView" destination="vcz-bo-Hku" id="Ix2-9O-bN5"/>
                 <outlet property="confirmationTopConstraint" destination="ksE-ob-hvc" id="4Zt-a6-NgG"/>
                 <outlet property="crossCostLabel" destination="C7j-pM-eQ2" id="VoF-xh-gdF"/>
@@ -184,14 +186,14 @@
                             <color key="textColor" name="MainColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Перечеркнутая" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C7j-pM-eQ2">
-                            <rect key="frame" x="236.5" y="723.5" width="120" height="22"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Без скидки" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C7j-pM-eQ2">
+                            <rect key="frame" x="272" y="723.5" width="84.5" height="22"/>
                             <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="16"/>
                             <color key="textColor" name="MainLabelColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="К оплате:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SRO-8e-iGi">
-                            <rect key="frame" x="159" y="723.5" width="72.5" height="22"/>
+                            <rect key="frame" x="194.5" y="723.5" width="72.5" height="22"/>
                             <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="16"/>
                             <color key="textColor" name="MainLabelColor"/>
                             <nil key="highlightedColor"/>
@@ -202,11 +204,51 @@
                             <color key="textColor" name="MainLabelColor"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" tag="1000" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ygY-PS-hHM">
+                            <rect key="frame" x="10" y="723.5" width="174.5" height="18.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                            <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Наличные">
+                                <color key="titleColor" name="MainLabelColor"/>
+                                <imageReference key="image" image="square.fill" catalog="system" renderingMode="hierarchical-single">
+                                    <hierarchicalColors>
+                                        <color name="MainColor"/>
+                                        <color systemColor="secondaryLabelColor"/>
+                                        <color systemColor="tertiaryLabelColor"/>
+                                    </hierarchicalColors>
+                                </imageReference>
+                            </state>
+                            <connections>
+                                <action selector="choosePaymentMethod:" destination="-1" eventType="touchUpInside" id="eZD-Kb-6q3"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="1001" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bRe-Yt-tFp">
+                            <rect key="frame" x="10" y="747" width="174.5" height="18.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                            <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Карта">
+                                <color key="titleColor" name="MainLabelColor"/>
+                                <imageReference key="image" image="square" catalog="system" renderingMode="hierarchical-single">
+                                    <hierarchicalColors>
+                                        <color name="MainColor"/>
+                                        <color systemColor="secondaryLabelColor"/>
+                                        <color systemColor="tertiaryLabelColor"/>
+                                    </hierarchicalColors>
+                                </imageReference>
+                            </state>
+                            <connections>
+                                <action selector="choosePaymentMethod:" destination="-1" eventType="touchUpInside" id="97h-oI-ffI"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" name="TertiaryColor"/>
                     <constraints>
                         <constraint firstItem="wOi-Hf-oRt" firstAttribute="top" secondItem="ooJ-vs-Db1" secondAttribute="bottom" constant="10" id="07T-oV-WTf"/>
+                        <constraint firstItem="bRe-Yt-tFp" firstAttribute="top" secondItem="ygY-PS-hHM" secondAttribute="bottom" constant="5" id="0B1-8L-8gS"/>
                         <constraint firstItem="wOi-Hf-oRt" firstAttribute="leading" secondItem="cat-ON-Tzo" secondAttribute="leading" constant="10" id="0hH-fW-FFy"/>
+                        <constraint firstItem="ygY-PS-hHM" firstAttribute="top" secondItem="SRO-8e-iGi" secondAttribute="top" id="1On-oB-d3f"/>
                         <constraint firstAttribute="trailing" secondItem="2MO-Zp-8Md" secondAttribute="trailing" constant="20" id="1yz-1D-2cS"/>
                         <constraint firstItem="SRO-8e-iGi" firstAttribute="centerY" secondItem="C7j-pM-eQ2" secondAttribute="centerY" id="5S2-zy-Icp"/>
                         <constraint firstItem="2MO-Zp-8Md" firstAttribute="top" secondItem="enx-lF-zm8" secondAttribute="bottom" constant="10" id="7og-kb-T7B"/>
@@ -220,9 +262,13 @@
                         <constraint firstItem="C7j-pM-eQ2" firstAttribute="centerY" secondItem="Gev-8p-ctQ" secondAttribute="centerY" id="cpM-od-uRa"/>
                         <constraint firstItem="vcz-bo-Hku" firstAttribute="leading" secondItem="cat-ON-Tzo" secondAttribute="leading" constant="10" id="e69-A4-mpV"/>
                         <constraint firstItem="UIy-jX-u9c" firstAttribute="leading" secondItem="cat-ON-Tzo" secondAttribute="leading" constant="20" id="fEH-Sf-RcT"/>
+                        <constraint firstItem="ygY-PS-hHM" firstAttribute="leading" secondItem="cat-ON-Tzo" secondAttribute="leading" constant="10" id="fe3-g5-Et0"/>
+                        <constraint firstItem="bRe-Yt-tFp" firstAttribute="leading" secondItem="ygY-PS-hHM" secondAttribute="leading" id="iIi-kR-Hvg"/>
                         <constraint firstItem="enx-lF-zm8" firstAttribute="leading" secondItem="cat-ON-Tzo" secondAttribute="leading" constant="10" id="k7g-wV-XqM"/>
                         <constraint firstAttribute="trailing" secondItem="vcz-bo-Hku" secondAttribute="trailing" constant="10" id="k9Y-DM-HLf"/>
                         <constraint firstItem="ooJ-vs-Db1" firstAttribute="top" secondItem="Gev-8p-ctQ" secondAttribute="bottom" id="nLi-e4-Ki3"/>
+                        <constraint firstItem="SRO-8e-iGi" firstAttribute="leading" secondItem="ygY-PS-hHM" secondAttribute="trailing" constant="10" id="oJp-iY-ROx"/>
+                        <constraint firstItem="bRe-Yt-tFp" firstAttribute="trailing" secondItem="ygY-PS-hHM" secondAttribute="trailing" id="pZl-fA-ccb"/>
                         <constraint firstItem="vcz-bo-Hku" firstAttribute="top" secondItem="2MO-Zp-8Md" secondAttribute="bottom" constant="10" id="qeC-2l-UOF"/>
                         <constraint firstAttribute="bottom" secondItem="wOi-Hf-oRt" secondAttribute="bottom" constant="10" id="rvO-2Q-Mal"/>
                         <constraint firstAttribute="trailing" secondItem="ooJ-vs-Db1" secondAttribute="trailing" constant="16" id="swh-u2-jDd"/>
@@ -243,6 +289,8 @@
         </view>
     </objects>
     <resources>
+        <image name="square" catalog="system" width="128" height="114"/>
+        <image name="square.fill" catalog="system" width="128" height="114"/>
         <namedColor name="MainColor">
             <color red="0.40000000596046448" green="0.5220000147819519" blue="0.046999998390674591" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
@@ -255,8 +303,14 @@
         <namedColor name="TertiaryColor">
             <color red="0.95300000905990601" green="0.9570000171661377" blue="0.96799999475479126" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tertiaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

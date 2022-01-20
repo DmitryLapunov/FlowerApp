@@ -15,6 +15,11 @@ protocol ConfirmationVCDelegate: AnyObject {
     func backToEmptyCart()
 }
 
+enum PaymentMethod: String, CaseIterable {
+    case cash = "Наличные"
+    case card = "Карта"
+}
+
 class ConfirmationVC: UIViewController {
     @IBOutlet weak var confirmationTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var backToPreviousButton: UIButton!
@@ -30,6 +35,8 @@ class ConfirmationVC: UIViewController {
     @IBOutlet weak var totalCost: UILabel!
     @IBOutlet weak var discountLabel: UILabel!
     @IBOutlet weak var crossCostLabel: UILabel!
+    @IBOutlet weak var cashPaymentButton: UIButton!
+    @IBOutlet weak var cardPaymentButton: UIButton!
     
     
     var cartProducts: [CartProduct] = []
@@ -45,7 +52,7 @@ class ConfirmationVC: UIViewController {
     var email = ""
     var address = "Самовывоз"
     private var timer: Timer?
-    var paymentType = "Наличные"
+    var paymentType = PaymentMethod.cash
 
     
     override func viewDidLoad() {
@@ -69,13 +76,16 @@ class ConfirmationVC: UIViewController {
     }
     
     private func setupTotalCostLabel() {
-        let attributeString: NSMutableAttributedString =  NSMutableAttributedString(string: "\(totalCostByn)")
+        let totalCostShortened = String(format: "%.2f", totalCostByn)
+        let attributeString: NSMutableAttributedString =  NSMutableAttributedString(string: "\(totalCostShortened)")
         attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 2, range: NSMakeRange(0, attributeString.length))
         crossCostLabel.attributedText = attributeString
-    
-        totalCost.text = "\(totalCostByn * 0.9 + globalDeliveryPrice) РУБ."
         
-        discountLabel.text = "Скидка: \(totalCostByn * 0.1) РУБ."
+        let totalCostDiscounted = totalCostByn * 0.9 + globalDeliveryPrice
+        totalCost.text = "\(String(format: "%.2f", totalCostDiscounted)) РУБ."
+        
+        let discount = totalCostByn * 0.1
+        discountLabel.text = "Скидка: \(String(format: "%.2f", discount)) РУБ."
     }
     
     private func setupCollectionView() {
@@ -152,6 +162,25 @@ class ConfirmationVC: UIViewController {
         }
     }
     
+    @IBAction func choosePaymentMethod(_ sender: UIButton) {
+        switch sender.tag {
+        case 1000:
+            paymentType = PaymentMethod.cash
+            cashPaymentButton.setImage(UIImage(systemName: "square.fill"), for: .normal)
+            cardPaymentButton.setImage(UIImage(systemName: "square"), for: .normal)
+            cashPaymentButton.tintColor = .mainColor
+            cardPaymentButton.tintColor = .mainColor
+        case 1001:
+            paymentType = PaymentMethod.card
+            cardPaymentButton.setImage(UIImage(systemName: "square.fill"), for: .normal)
+            cashPaymentButton.setImage(UIImage(systemName: "square"), for: .normal)
+            cashPaymentButton.tintColor = .mainColor
+            cardPaymentButton.tintColor = .mainColor
+        default:
+            break
+        }
+    }
+    
     @IBAction func backToPreviousAction(_ sender: Any) {
         animationDelegate?.backToStepTwo()
         self.dismiss(animated: true, completion: nil)
@@ -176,18 +205,17 @@ class ConfirmationVC: UIViewController {
         print(arrayProduct)
         //        не удалять, разделение логическое, если разработка, то будет id разработчика, если продакшн, то позже подставится другой
 #if DEBUG
-        NetworkManager.shared.sendToBot(itemImfo: arrayProduct, deliveryType: checkDelivery().name, deliveryPrice: checkDelivery().price, clientPhone: user.phone, clientName: user.name, deliveryAddress: user.address, userID: "545281366", paymentType: paymentType)
+        NetworkManager.shared.sendToBot(itemImfo: arrayProduct, deliveryType: checkDelivery().name, deliveryPrice: checkDelivery().price, clientPhone: user.phone, clientName: user.name, deliveryAddress: user.address, userID: "341135071", paymentType: paymentType.rawValue)
 #else
-        NetworkManager.shared.sendToBot(itemImfo: arrayProduct, deliveryType: checkDelivery().name, deliveryPrice: checkDelivery().price, clientPhone: user.phone, clientName: user.name, deliveryAddress: user.address, userID: "463527794", paymentType: paymentType)
+        NetworkManager.shared.sendToBot(itemImfo: arrayProduct, deliveryType: checkDelivery().name, deliveryPrice: checkDelivery().price, clientPhone: user.phone, clientName: user.name, deliveryAddress: user.address, userID: "341135071", paymentType: paymentType.rawValue)
 #endif
         
         for product in RealmManager.shared.getCart() {
             RealmManager.shared.deleteCartProduct(product: product)
         }
 
-
-        print(RealmManager.shared.getCart())
         PopupController.showPopup(duration: 3.0, message: "Заказ успешно отправлен! В ближайшее время наш менеджер свяжется с вами для подтверждения")
+        
         timer = Timer.scheduledTimer(withTimeInterval: 3.05, repeats: false, block: { [weak self] _ in
             guard let self = self else { return }
             self.animationDelegate?.backToEmptyCart()
@@ -198,20 +226,18 @@ class ConfirmationVC: UIViewController {
 
 extension ConfirmationVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if delivery == true {
+        if delivery {
             return cartProducts.count + 1
         } else {
             return cartProducts.count
         }
     }
-
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = productCollectionView.dequeueReusableCell(withReuseIdentifier: String(describing: ProductCartCell.self), for: indexPath)
         guard let productCartCell = cell as? ProductCartCell else { return cell}
         
-        if delivery == true {
-            
+        if delivery {
             if indexPath.row == 0 {
                 productCartCell.productImage.image = UIImage(systemName: "shippingbox")
                 productCartCell.productImage.tintColor = .mainColor
