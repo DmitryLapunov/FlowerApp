@@ -198,7 +198,7 @@ class ConfirmationVC: UIViewController {
             RealmManager.shared.deleteCartProduct(product: product)
         }
         
-        let user = User(name: name, phone: phone, address: address, delivery: checkDelivery())
+        let user = User(name: name, phone: phone, address: address, delivery: checkDelivery(), email: email)
         MailBuilder().sendOrderToOperator(order: Order(user: user))
         
         var arrayProduct = ""

@@ -20,10 +20,12 @@ class MailBuilder {
     }
     
     func sendOrderToOperator(order: Order) {
-        guard let address = MCOAddress(displayName: "Dmitro", mailbox: "diamondtheonly@gmail.com") else { return }
+        guard let address = MCOAddress(displayName: "Dmitro", mailbox: "zamok.tech@gmail.com") else { return }
+        
+        guard let client = MCOAddress(displayName: order.user.name, mailbox: order.user.email) else { return }
         
         let builder = MCOMessageBuilder()
-        builder.header.to = [address]
+        builder.header.to = [address, client]
         builder.header.from = MCOAddress(displayName: "Vgosti.by", mailbox: "Tumarev1c@yandex.ru")
         builder.header.subject = "Заказ от пользователя"
         

@@ -45,12 +45,14 @@ class User {
     var phone: String
     var address: String
     var delivery: DeliveryType
+    var email: String
     
-    init(name: String, phone: String, address: String, delivery: DeliveryType) {
+    init(name: String, phone: String, address: String, delivery: DeliveryType, email: String) {
         self.name = name
         self.phone = phone
         self.address = address
         self.delivery = delivery
+        self.email = email
     }
     
     /// Convert user information as params
