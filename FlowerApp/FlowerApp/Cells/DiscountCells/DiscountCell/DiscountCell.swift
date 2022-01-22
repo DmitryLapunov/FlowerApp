@@ -10,15 +10,21 @@ import UIKit
 class DiscountCell: UICollectionViewCell {
     
     @IBOutlet weak var discountCollectionView: UICollectionView!
+    @IBOutlet weak var pageControl: UIPageControl!
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        setupCollectionView()
+    }
+    
+    private func setupCollectionView() {
         discountCollectionView.dataSource = self
         discountCollectionView.delegate = self
         discountCollectionView.backgroundColor = UIColor.tertiaryColor
         let nib = UINib(nibName: String(describing: SubDiscountCell.self), bundle: nil)
         discountCollectionView.register(nib, forCellWithReuseIdentifier: String(describing: SubDiscountCell.self))
+        pageControl.isHidden = discounts.count == 1
     }
 }
 
@@ -59,9 +65,13 @@ extension DiscountCell: UICollectionViewDelegateFlowLayout {
         if application.canOpenURL(webURL) {
             application.open(webURL)
         }
-        
         discountCollectionView.reloadData()
-        
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        if scrollView == self.discountCollectionView {
+            pageControl.currentPage = Int(scrollView.contentOffset.x) /  Int(scrollView.frame.width)
+        }
     }
 }
 
