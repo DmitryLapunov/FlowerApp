@@ -210,11 +210,10 @@ class ConfirmationVC: UIViewController {
         }
         
         print(arrayProduct)
-        //        не удалять, разделение логическое, если разработка, то будет id разработчика, если продакшн, то позже подставится другой
 #if DEBUG
         NetworkManager.shared.sendToBot(itemImfo: arrayProduct, deliveryType: checkDelivery().name, deliveryPrice: checkDelivery().price, clientPhone: user.phone, clientName: user.name, deliveryAddress: user.address, userID: "341135071", paymentType: paymentType.rawValue)
 #else
-        NetworkManager.shared.sendToBot(itemImfo: arrayProduct, deliveryType: checkDelivery().name, deliveryPrice: checkDelivery().price, clientPhone: user.phone, clientName: user.name, deliveryAddress: user.address, userID: "341135071", paymentType: paymentType.rawValue)
+        NetworkManager.shared.sendToBot(itemImfo: arrayProduct, deliveryType: checkDelivery().name, deliveryPrice: checkDelivery().price, clientPhone: user.phone, clientName: user.name, deliveryAddress: user.address, userID: "495898353", paymentType: paymentType.rawValue)
 #endif
         
         for product in RealmManager.shared.getCart() {

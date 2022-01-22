@@ -20,7 +20,11 @@ class MailBuilder {
     }
     
     func sendOrderToOperator(order: Order) {
-        guard let address = MCOAddress(displayName: "Dmitro", mailbox: "zamok.tech@gmail.com") else { return }
+        #if DEBUG
+        guard let address = MCOAddress(displayName: "Operator", mailbox: "zamok.tech@gmail.com") else { return }
+        #else
+        guard let address = MCOAddress(displayName: "Operator", mailbox: "vgosti.by@yandex.ru") else { return }
+        #endif
         
         guard let client = MCOAddress(displayName: order.user.name, mailbox: order.user.email) else { return }
         
@@ -47,6 +51,9 @@ class MailBuilder {
         }
         
         bodyStr.append("<h3>Итого: \(order.totalCost) byn</h3>")
+        bodyStr.append("Письмо выслано автоматически, пожалуйста, не отвечаейте на него.")
+        
+        
         
         builder.htmlBody = bodyStr
         
