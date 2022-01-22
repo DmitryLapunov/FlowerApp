@@ -6,7 +6,7 @@
 //
 
 var arrayGlobalProducts: [Product] = []
-var discounts: [Discount] = [] 
+var discounts: [Discount] = []
 
 import UIKit
 
@@ -17,11 +17,13 @@ class CatalogVC: UIViewController {
     var parsedJSON: [Product]?
     var parsedDiscointJSON: [Discount]?
     var products: [Product] = []
+    var deliveryInfo: DeliveryInfo?
     
     override func loadView() {
         super.loadView()
         parsedDiscountJSON()
         parseJSON()
+        parseDeliveryJSON()
     }
     
     override func viewDidLoad() {
@@ -54,6 +56,17 @@ class CatalogVC: UIViewController {
         parsedJSON = try? JSONDecoder().decode([Product].self, from: jsonData)
         if let parsedProducts = self.parsedJSON {
             self.products = parsedProducts
+        }
+    }
+    
+    private func parseDeliveryJSON() {
+        guard let url = URL(string: "https://strike-nonprod.s3.eu-central-1.amazonaws.com/vgosti/vgosti_delivery.json") else { return }
+        guard let jsonData = try? Data(contentsOf: url) else { return }
+        
+        deliveryInfo = try? JSONDecoder().decode(DeliveryInfo.self, from: jsonData)
+        if let deliveryInfo = self.deliveryInfo {
+            UserDefaultsManager.delivery = deliveryInfo
+            print(deliveryInfo)
         }
     }
 }
