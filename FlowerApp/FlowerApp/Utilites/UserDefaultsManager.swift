@@ -18,13 +18,30 @@ class UserDefaultsManager {
         }
     }
     
-    class var delivery: DeliveryInfo {
+    class var deliveryGeneral: Int? {
         get {
-            let deliveryInfo = UserDefaults.standard.value(forKey: #function) as? DeliveryInfo
-            return deliveryInfo ?? DeliveryInfo()
+            return UserDefaults.standard.value(forKey: #function) as? Int
         }
         set {
-            UserDefaults.standard.setValue(newValue, forKey: #function)
+            UserDefaults.standard.set(newValue, forKey: #function)
+        }
+    }
+    
+    class var deliveryUrgent: Int? {
+        get {
+            return UserDefaults.standard.value(forKey: #function) as? Int
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: #function)
+        }
+    }
+    
+    class var deliveryFreeLimit: Int? {
+        get {
+            return UserDefaults.standard.value(forKey: #function) as? Int
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: #function)
         }
     }
 }

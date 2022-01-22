@@ -65,8 +65,9 @@ class CatalogVC: UIViewController {
         
         deliveryInfo = try? JSONDecoder().decode(DeliveryInfo.self, from: jsonData)
         if let deliveryInfo = self.deliveryInfo {
-            UserDefaultsManager.delivery = deliveryInfo
-            print(deliveryInfo)
+            UserDefaultsManager.deliveryGeneral = deliveryInfo.general
+            UserDefaultsManager.deliveryUrgent = deliveryInfo.urgent
+            UserDefaultsManager.deliveryFreeLimit = deliveryInfo.freeLimit
         }
     }
 }

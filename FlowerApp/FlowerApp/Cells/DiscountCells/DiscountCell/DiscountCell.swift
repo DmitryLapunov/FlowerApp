@@ -19,7 +19,6 @@ class DiscountCell: UICollectionViewCell {
         discountCollectionView.backgroundColor = UIColor.tertiaryColor
         let nib = UINib(nibName: String(describing: SubDiscountCell.self), bundle: nil)
         discountCollectionView.register(nib, forCellWithReuseIdentifier: String(describing: SubDiscountCell.self))
-       
     }
 }
 
