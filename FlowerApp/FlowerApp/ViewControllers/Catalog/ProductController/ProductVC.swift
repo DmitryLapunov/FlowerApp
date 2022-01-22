@@ -130,6 +130,10 @@ class ProductVC: UIViewController {
     
     
     @IBAction func addToCartAction(_ sender: Any) {
+        guard UserDefaultsManager.orderIsActive == false else {
+            PopupController.showPopup(duration: 3, message: "Завершите или отмените оформление текущего заказа, прежде чем добавлять новые товары в корзину")
+            return
+        }
         if countView.isHidden == false {
             guard let product = product, let productName = product.item_name, let amountText = productAmountField.text, let amount = Int(amountText), amount != 0, let cost = product.cost else {
                 return
@@ -143,7 +147,6 @@ class ProductVC: UIViewController {
             self.countView.isHidden = true
             self.cartView.backgroundColor = UIColor.white.withAlphaComponent(0)
         }
-        
     }
     
     @IBAction func productAmountIncrease(_ sender: Any) {
@@ -165,7 +168,9 @@ class ProductVC: UIViewController {
     }
     
     @IBAction func deleteFromCart(_ sender: Any) {
-        
+        guard UserDefaultsManager.orderIsActive == false else {
+            return
+        }
         guard let name = productNameLabel.text else { return }
         let alert = UIAlertController(title: "", message: "Вы действительно хотите удалить «\(name)» из корзины?", preferredStyle: .alert)
         let noAction = UIAlertAction(title: "Нет", style: .default, handler: nil)

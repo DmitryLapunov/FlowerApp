@@ -207,7 +207,7 @@
                         <button opaque="NO" tag="1000" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ygY-PS-hHM">
                             <rect key="frame" x="10" y="723.5" width="174.5" height="18.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                            <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" title="Наличные">
                                 <color key="titleColor" name="MainLabelColor"/>
@@ -226,7 +226,7 @@
                         <button opaque="NO" tag="1001" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bRe-Yt-tFp">
                             <rect key="frame" x="10" y="747" width="174.5" height="18.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                            <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" title="Карта">
                                 <color key="titleColor" name="MainLabelColor"/>

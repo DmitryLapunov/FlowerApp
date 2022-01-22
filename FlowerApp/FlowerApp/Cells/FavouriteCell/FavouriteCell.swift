@@ -20,7 +20,7 @@ protocol ReloadCellFavourite: AnyObject {
 import UIKit
 
 class FavouriteCell: UITableViewCell {
-
+    
     
     @IBOutlet weak var favouriteCellBackgroundView: UIView!
     @IBOutlet weak var priceLabel: UILabel!
@@ -37,9 +37,9 @@ class FavouriteCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         setupCell()
-       
+        
     }
-
+    
     func setupCell() {
         contentView.backgroundColor = UIColor.tertiaryColor
         
@@ -51,7 +51,7 @@ class FavouriteCell: UITableViewCell {
         priceBackground.layer.shadowOpacity = 0.25
         priceBackground.layer.shadowRadius = 3
         priceBackground.layer.shadowOffset = CGSize(width: 0, height: 2)
-                
+        
         favouriteCellBackgroundView.layer.shadowColor = UIColor.black.cgColor
         favouriteCellBackgroundView.layer.shadowOpacity = 0.15
         favouriteCellBackgroundView.layer.shadowRadius = 2
@@ -72,16 +72,20 @@ class FavouriteCell: UITableViewCell {
     }
     
     @IBAction func addToCart(_ sender: Any) {
-        if addToCartButtonOutlet.imageView?.image == UIImage(systemName: "cart.badge.plus") {
-        let filterProduct = arrayGlobalProducts.first{ $0.item_name == productNameLabel.text}
-        guard let product = filterProduct, let productName = product.item_name, let cost = product.cost else {
+        guard UserDefaultsManager.orderIsActive == false else {
+            PopupController.showPopup(duration: 3, message: "Завершите или отмените оформление текущего заказа, прежде чем добавлять новые товары в корзину")
             return
         }
-        let productToCart = CartProduct(productName: productName, count: 1, productCost: cost)
-        RealmManager.shared.writeCart(product: productToCart)
-        setBadge()
+        if addToCartButtonOutlet.imageView?.image == UIImage(systemName: "cart.badge.plus") {
+            let filterProduct = arrayGlobalProducts.first{ $0.item_name == productNameLabel.text}
+            guard let product = filterProduct, let productName = product.item_name, let cost = product.cost else {
+                return
+            }
+            let productToCart = CartProduct(productName: productName, count: 1, productCost: cost)
+            RealmManager.shared.writeCart(product: productToCart)
+            setBadge()
             self.delegate?.reloadCell()
-        PopupController.showPopup(message: "Товар добавлен в корзину")
+            PopupController.showPopup(message: "Товар добавлен в корзину")
         } else {
             guard let name = productNameLabel.text else { return }
             let alert = UIAlertController(title: "", message: "Вы действительно хотите удалить «\(name)» из корзины?", preferredStyle: .alert)

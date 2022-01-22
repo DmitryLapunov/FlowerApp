@@ -48,7 +48,6 @@ extension DiscountCell: UICollectionViewDataSource {
         if let discountName = discounts[indexPath.row].subtitle {
             subDiscountCell.discountName.text = discountName
         }
-        
         return subDiscountCell
     }
 }
@@ -59,7 +58,10 @@ extension DiscountCell: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let webString = discounts[indexPath.row].newsLink else { return }
+        guard let webString = discounts[indexPath.row].newsLink, !webString.isEmpty else {
+            discountCollectionView.reloadData()
+            return
+        }
         guard let webURL = URL(string: webString) else { return }
         let application = UIApplication.shared
         if application.canOpenURL(webURL) {
