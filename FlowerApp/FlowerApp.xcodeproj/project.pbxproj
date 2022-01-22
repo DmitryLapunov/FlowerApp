@@ -52,6 +52,8 @@
 		89969DEB277A7BD0001519F9 /* ConfirmationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89969DE9277A7BD0001519F9 /* ConfirmationVC.xib */; };
 		89969DF3277B6198001519F9 /* CartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89969DF1277B6198001519F9 /* CartCell.swift */; };
 		89969DF4277B6198001519F9 /* CartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89969DF2277B6198001519F9 /* CartCell.xib */; };
+		89AD3ADF279B8CE800127A11 /* DeliveryInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AD3ADE279B8CE800127A11 /* DeliveryInfo.swift */; };
+		89AD3AE1279B8E6600127A11 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AD3AE0279B8E6600127A11 /* UserDefaultsManager.swift */; };
 		89DBE89227475C7C00B7C96D /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DBE89127475C7C00B7C96D /* TabBarController.swift */; };
 		89DBE89627475C8C00B7C96D /* ContactsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DBE89427475C8C00B7C96D /* ContactsCell.swift */; };
 		89DBE89727475C8C00B7C96D /* ContactsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89DBE89527475C8C00B7C96D /* ContactsCell.xib */; };
@@ -142,6 +144,8 @@
 		89969DE9277A7BD0001519F9 /* ConfirmationVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfirmationVC.xib; sourceTree = "<group>"; };
 		89969DF1277B6198001519F9 /* CartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCell.swift; sourceTree = "<group>"; };
 		89969DF2277B6198001519F9 /* CartCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartCell.xib; sourceTree = "<group>"; };
+		89AD3ADE279B8CE800127A11 /* DeliveryInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryInfo.swift; sourceTree = "<group>"; };
+		89AD3AE0279B8E6600127A11 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		89DBE89127475C7C00B7C96D /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		89DBE89427475C8C00B7C96D /* ContactsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsCell.swift; sourceTree = "<group>"; };
 		89DBE89527475C8C00B7C96D /* ContactsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactsCell.xib; sourceTree = "<group>"; };
@@ -245,6 +249,7 @@
 			children = (
 				7F6C2DE9275FF68200F3D849 /* NotificationManager.swift */,
 				7F681B822766493C00C81EFA /* MailBuilder.swift */,
+				89AD3AE0279B8E6600127A11 /* UserDefaultsManager.swift */,
 			);
 			path = Utilites;
 			sourceTree = "<group>";
@@ -386,6 +391,7 @@
 				93D97C0E27711C14001CF716 /* DiscountCodable.swift */,
 				93CFDBB1278B1B0500C340E1 /* BackendAPI.swift */,
 				93CFDBB5278B278200C340E1 /* NetworkManager.swift */,
+				89AD3ADE279B8CE800127A11 /* DeliveryInfo.swift */,
 			);
 			path = NetworkTools;
 			sourceTree = "<group>";
@@ -822,6 +828,7 @@
 				7F681B7F2765775E00C81EFA /* Order.swift in Sources */,
 				93F5F54F2787011C00178F76 /* FullImageController.swift in Sources */,
 				933F0CDC273FC05500482A9F /* ShoppingCartVC.swift in Sources */,
+				89AD3ADF279B8CE800127A11 /* DeliveryInfo.swift in Sources */,
 				89969DEA277A7BD0001519F9 /* ConfirmationVC.swift in Sources */,
 				7F681B832766493C00C81EFA /* MailBuilder.swift in Sources */,
 				8982F137273F328200FB79E8 /* AppDelegate.swift in Sources */,
@@ -840,6 +847,7 @@
 				93AD6D4B27515B6A00211D96 /* PopupController.swift in Sources */,
 				893086F6274715FC000339B0 /* Extensions.swift in Sources */,
 				89DBE917275059F000B7C96D /* FilterVC.swift in Sources */,
+				89AD3AE1279B8E6600127A11 /* UserDefaultsManager.swift in Sources */,
 				933F0CD4273FBF8900482A9F /* FavouriteVC.swift in Sources */,
 				9396BC5F274881BB00DA4FC8 /* FavouriteCell.swift in Sources */,
 				7F224A10275F74C1000649BB /* OrderVC.swift in Sources */,
@@ -995,7 +1003,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = T8V9JXV542;
+				DEVELOPMENT_TEAM = 97L2996NM5;
 				GENERATE_INFOPLIST_FILE = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1028,7 +1036,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.romanenko.flowers;
+				PRODUCT_BUNDLE_IDENTIFIER = "-21.flowers";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1047,7 +1055,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = T8V9JXV542;
+				DEVELOPMENT_TEAM = 97L2996NM5;
 				GENERATE_INFOPLIST_FILE = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1079,7 +1087,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.romanenko.flowers;
+				PRODUCT_BUNDLE_IDENTIFIER = "-21.flowers";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;

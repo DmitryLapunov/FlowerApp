@@ -45,7 +45,7 @@ class OrderVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Детали заказа"
-        setupButtonChoose()
+        setupDeliveryButtons()
         setupStackView()
         setupValidationField()
         let keyboardTap = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
@@ -60,11 +60,14 @@ class OrderVC: UIViewController {
         calсulateConstraint()
     }
     
-    private func setupButtonChoose() {
+    private func setupDeliveryButtons() {
         defaultDeliveryButton.setImage(UIImage(systemName: "square.fill"), for: .normal)
         defaultDeliveryButton.tintColor = .mainColor
         expressDeliveryButton.setImage(UIImage(systemName: "square"), for: .normal)
         expressDeliveryButton.tintColor = .mainColor
+        
+        defaultDeliveryButton.setTitle("Доставка - \(UserDefaultsManager.deliveryGeneral ?? 5) РУБ. При заказе от \(UserDefaultsManager.deliveryFreeLimit ?? 60) РУБ. - бесплатно", for: .normal)
+        expressDeliveryButton.setTitle("Экспресс-доставка - \(UserDefaultsManager.deliveryUrgent ?? 15) РУБ.", for: .normal)
     }
     
     private func calсulateConstraint() {
@@ -87,7 +90,6 @@ class OrderVC: UIViewController {
                 if heightMove < 0 {
                     self.view.frame.origin.y += heightMove
                 }
-               
             }
         }
     }
@@ -139,6 +141,7 @@ class OrderVC: UIViewController {
         
         backgroundStackView.addShadowAndCornerRadius()
     }
+    
     @IBAction func deliveryTypeAction(_ sender: UIButton) {
         if sender.tag == 1000 {
             defaultDeliveryButton.setImage(UIImage(systemName: "square.fill"), for: .normal)
@@ -165,6 +168,7 @@ class OrderVC: UIViewController {
     
     @IBAction func backToOrderAction(_ sender: Any) {
         animationDelegate?.backToStepOne()
+        UserDefaultsManager.orderIsActive = false
         self.dismiss(animated: true, completion: nil)
     }
     

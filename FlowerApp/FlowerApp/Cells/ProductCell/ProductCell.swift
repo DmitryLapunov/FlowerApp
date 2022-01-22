@@ -67,6 +67,10 @@ class ProductCell: UITableViewCell {
     }
     
     @IBAction func addToCart(_ sender: Any) {
+        guard UserDefaultsManager.orderIsActive == false else {
+            PopupController.showPopup(duration: 3, message: "Завершите или отмените оформление текущего заказа, прежде чем добавлять новые товары в корзину")
+            return
+        }
         if addToCartButtonOutlet.imageView?.image == UIImage(systemName: "cart.badge.plus") {
             guard let product = productCart, let productName = product.item_name, let cost = product.cost else {
                 return

@@ -74,7 +74,6 @@ class ShoppingCartVC: UIViewController {
                 }
             }
         }
-        print(productsInCart.count)
     }
     
     private func checkIfCartIsEmpty() {
@@ -143,6 +142,8 @@ class ShoppingCartVC: UIViewController {
             
             orderVC.navBarHeight = self.navBarHeight
             orderVC.animationDelegate = self
+            
+            UserDefaultsManager.orderIsActive = true
             present(orderVC, animated: true, completion: nil)
         }
     }
@@ -188,7 +189,17 @@ extension ShoppingCartVC: OrderVCDelegate {
 }
 
 extension ShoppingCartVC: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let productVC = ProductVC(nibName: String(describing: ProductVC.self), bundle: nil)
+        
+        let productRealm = RealmManager.shared.getCart()
+        let filter = productRealm.first{ $0.productName == productsInCart[indexPath.row].item_name}
+        productVC.imageName = filter == nil ? "bookmark" : "bookmark.fill"
+        
+        productVC.alertDelegate = self
+        productVC.product = productsInCart[indexPath.row]
+        navigationController?.pushViewController(productVC, animated: true)
+    }
 }
 
 extension ShoppingCartVC: UITableViewDataSource {
@@ -216,5 +227,11 @@ extension ShoppingCartVC: UITableViewDataSource {
         
         cartCell.selectionStyle = .none
         return cartCell
+    }
+}
+
+extension ShoppingCartVC: AlertShowerProduct {
+    func showAlert(alert: UIAlertController) {
+        present(alert, animated: true, completion: nil)
     }
 }

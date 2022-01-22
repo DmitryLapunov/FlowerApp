@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,22 +21,29 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="izE-gl-Wmf">
                         <rect key="frame" x="5" y="5" width="380" height="181"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="oEE-bm-9Gk">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="oEE-bm-9Gk">
                                 <rect key="frame" x="0.0" y="0.0" width="380" height="181"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ycn-0r-6j3">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="ycn-0r-6j3">
                                     <size key="itemSize" width="390" height="171"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                             </collectionView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" translatesAutoresizingMaskIntoConstraints="NO" id="aFE-bR-9sG">
+                                <rect key="frame" x="121.5" y="168" width="137.5" height="26"/>
+                                <color key="pageIndicatorTintColor" name="SecondaryLabelColor"/>
+                                <color key="currentPageIndicatorTintColor" name="MainLabelColor"/>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="oEE-bm-9Gk" secondAttribute="trailing" id="Mee-1f-wRV"/>
                             <constraint firstItem="oEE-bm-9Gk" firstAttribute="top" secondItem="izE-gl-Wmf" secondAttribute="top" id="P6r-Cr-iFk"/>
                             <constraint firstItem="oEE-bm-9Gk" firstAttribute="leading" secondItem="izE-gl-Wmf" secondAttribute="leading" id="cv5-sg-dwr"/>
+                            <constraint firstAttribute="bottom" secondItem="aFE-bR-9sG" secondAttribute="bottom" constant="-13" id="fsl-dH-JUQ"/>
+                            <constraint firstItem="aFE-bR-9sG" firstAttribute="centerX" secondItem="izE-gl-Wmf" secondAttribute="centerX" id="sdu-js-DNS"/>
                             <constraint firstAttribute="bottom" secondItem="oEE-bm-9Gk" secondAttribute="bottom" id="yRl-jX-23w"/>
                         </constraints>
                     </view>
@@ -51,11 +59,18 @@
             <size key="customSize" width="562" height="191"/>
             <connections>
                 <outlet property="discountCollectionView" destination="oEE-bm-9Gk" id="Zpb-AQ-SSF"/>
+                <outlet property="pageControl" destination="aFE-bR-9sG" id="Mzi-xv-LXG"/>
             </connections>
             <point key="canvasLocation" x="504.34782608695656" y="126.89732142857142"/>
         </collectionViewCell>
     </objects>
     <resources>
+        <namedColor name="MainLabelColor">
+            <color red="0.29800000786781311" green="0.25499999523162842" blue="0.3449999988079071" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="SecondaryLabelColor">
+            <color red="0.66200000047683716" green="0.6589999794960022" blue="0.73299998044967651" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

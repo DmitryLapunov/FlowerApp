@@ -23,22 +23,21 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QMk-Bp-Ozp">
-                        <rect key="frame" x="5" y="5" width="670" height="385"/>
+                        <rect key="frame" x="0.0" y="0.0" width="680" height="385"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_christmas_and_new_year" translatesAutoresizingMaskIntoConstraints="NO" id="Eeu-G3-rGC">
-                                <rect key="frame" x="0.0" y="0.0" width="670" height="385"/>
+                                <rect key="frame" x="0.0" y="0.0" width="680" height="385"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GPL-PK-pJu">
-                                <rect key="frame" x="0.0" y="344.5" width="670" height="40.5"/>
+                                <rect key="frame" x="0.0" y="344.5" width="680" height="40.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vvK-pY-4PG">
-                                        <rect key="frame" x="16" y="10" width="638" height="20.5"/>
+                                        <rect key="frame" x="16" y="10" width="648" height="20.5"/>
                                         <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="15"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="highlightedColor" name="MainLabelColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="vvK-pY-4PG" secondAttribute="bottom" constant="10" id="YoK-cd-CHi"/>
                                     <constraint firstAttribute="trailing" secondItem="vvK-pY-4PG" secondAttribute="trailing" constant="16" id="hMU-N7-O2e"/>
@@ -62,10 +61,10 @@
             </view>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="QMk-Bp-Ozp" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="Hxb-mi-yXt"/>
-                <constraint firstItem="QMk-Bp-Ozp" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="daC-C8-iNP"/>
-                <constraint firstAttribute="bottom" secondItem="QMk-Bp-Ozp" secondAttribute="bottom" constant="5" id="iX0-Jk-KgC"/>
-                <constraint firstAttribute="trailing" secondItem="QMk-Bp-Ozp" secondAttribute="trailing" constant="5" id="nae-gI-ahz"/>
+                <constraint firstItem="QMk-Bp-Ozp" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Hxb-mi-yXt"/>
+                <constraint firstItem="QMk-Bp-Ozp" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="daC-C8-iNP"/>
+                <constraint firstAttribute="bottom" secondItem="QMk-Bp-Ozp" secondAttribute="bottom" constant="10" id="iX0-Jk-KgC"/>
+                <constraint firstAttribute="trailing" secondItem="QMk-Bp-Ozp" secondAttribute="trailing" id="nae-gI-ahz"/>
             </constraints>
             <size key="customSize" width="1063" height="402"/>
             <connections>

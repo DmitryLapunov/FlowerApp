@@ -83,7 +83,7 @@
                                         <button opaque="NO" tag="1000" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g1G-yU-zqU">
                                             <rect key="frame" x="10" y="10" width="374" height="18.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                            <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                             <state key="normal" title="Обычная доставка - 5 BYN (Свыше 60 BYN - бесплатно)">
                                                 <color key="titleColor" name="MainLabelColor"/>
@@ -102,7 +102,7 @@
                                         <button opaque="NO" tag="1001" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YhT-mP-VIm">
                                             <rect key="frame" x="10" y="38.5" width="374" height="18.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                            <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                             <state key="normal" title="Экспресс-доставка  - 16 BYN">
                                                 <color key="titleColor" name="MainLabelColor"/>
@@ -163,7 +163,7 @@
                         <constraint firstItem="TIV-N7-9au" firstAttribute="leading" secondItem="KFa-DO-oO6" secondAttribute="leading" constant="26" id="7jU-2g-uq0"/>
                         <constraint firstAttribute="bottom" secondItem="bEi-pr-cY3" secondAttribute="bottom" constant="10" id="8ig-2r-zcw"/>
                         <constraint firstItem="TIV-N7-9au" firstAttribute="top" secondItem="KFa-DO-oO6" secondAttribute="top" constant="15" id="CEF-bS-DaK"/>
-                        <constraint firstItem="bEi-pr-cY3" firstAttribute="top" secondItem="TIV-N7-9au" secondAttribute="bottom" constant="15" id="P0Q-H7-xB2"/>
+                        <constraint firstItem="bEi-pr-cY3" firstAttribute="top" secondItem="TIV-N7-9au" secondAttribute="bottom" constant="5" id="P0Q-H7-xB2"/>
                         <constraint firstAttribute="trailing" secondItem="bEi-pr-cY3" secondAttribute="trailing" id="YXt-0f-U28"/>
                         <constraint firstItem="bEi-pr-cY3" firstAttribute="leading" secondItem="KFa-DO-oO6" secondAttribute="leading" id="deC-hz-29d"/>
                     </constraints>

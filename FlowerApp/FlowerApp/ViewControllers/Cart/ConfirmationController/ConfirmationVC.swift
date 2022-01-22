@@ -150,7 +150,7 @@ class ConfirmationVC: UIViewController {
     private func checkDelivery() -> DeliveryType {
         if delivery {
             if defaultDelivery {
-                if totalCostByn < 60 {
+                if totalCostByn < Double(UserDefaultsManager.deliveryFreeLimit ?? 60) {
                     return .delivery
                 } else {
                     return .freeDelivery
@@ -226,6 +226,7 @@ class ConfirmationVC: UIViewController {
         timer = Timer.scheduledTimer(withTimeInterval: 3.05, repeats: false, block: { [weak self] _ in
             guard let self = self else { return }
             self.animationDelegate?.backToEmptyCart()
+            UserDefaultsManager.orderIsActive = false
             NotificationCenter.default.post(name: NSNotification.Name("dismissPresented"), object: nil)
         })
     }
