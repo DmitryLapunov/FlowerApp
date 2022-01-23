@@ -18,27 +18,27 @@ class UserDefaultsManager {
         }
     }
     
-    class var deliveryGeneral: Double? {
+    class var deliveryGeneral: Int? {
         get {
-            return UserDefaults.standard.value(forKey: #function) as? Double
+            return UserDefaults.standard.value(forKey: #function) as? Int
         }
         set {
             UserDefaults.standard.set(newValue, forKey: #function)
         }
     }
     
-    class var deliveryUrgent: Double? {
+    class var deliveryUrgent: Int? {
         get {
-            return UserDefaults.standard.value(forKey: #function) as? Double
+            return UserDefaults.standard.value(forKey: #function) as? Int
         }
         set {
             UserDefaults.standard.set(newValue, forKey: #function)
         }
     }
     
-    class var deliveryFreeLimit: Double? {
+    class var deliveryFreeLimit: Int? {
         get {
-            return UserDefaults.standard.value(forKey: #function) as? Double
+            return UserDefaults.standard.value(forKey: #function) as? Int
         }
         set {
             UserDefaults.standard.set(newValue, forKey: #function)

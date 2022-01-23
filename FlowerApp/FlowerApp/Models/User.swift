@@ -29,9 +29,15 @@ enum DeliveryType: String, CaseIterable {
     var price: Double {
         switch self {
         case .delivery:
-            return UserDefaultsManager.deliveryGeneral ?? 13
+            guard let deliveryGeneral = UserDefaultsManager.deliveryGeneral else {
+                return 13.0
+            }
+            return Double(deliveryGeneral)
         case .fastDelivery:
-            return UserDefaultsManager.deliveryUrgent ?? 25
+            guard let deliveryUrgent = UserDefaultsManager.deliveryUrgent else {
+                return 25.0
+            }
+            return Double(deliveryUrgent)
         case .freeDelivery:
             return 0
         case .pickup:

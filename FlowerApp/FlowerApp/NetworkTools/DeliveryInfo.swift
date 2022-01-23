@@ -8,7 +8,7 @@
 import Foundation
 
 class DeliveryInfo: Codable {
-    var general: Double?
-    var urgent: Double?
-    var freeLimit: Double?
+    var general: Int?
+    var urgent: Int?
+    var freeLimit: Int?
 }

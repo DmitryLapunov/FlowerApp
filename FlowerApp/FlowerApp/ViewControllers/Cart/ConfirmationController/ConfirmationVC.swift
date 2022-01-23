@@ -50,7 +50,6 @@ class ConfirmationVC: UIViewController {
     var email = ""
     var address = "Самовывоз"
     private var timer: Timer?
-//    var paymentType = PaymentMethod.cash
     var paymentType: PaymentMethod?
 
     
@@ -153,19 +152,17 @@ class ConfirmationVC: UIViewController {
     }
     
     @IBAction func choosePaymentMethod(_ sender: UIButton) {
+        cashPaymentButton.setImage(UIImage(systemName: "square"), for: .normal)
+        cardPaymentButton.setImage(UIImage(systemName: "square"), for: .normal)
+        cashPaymentButton.tintColor = .mainColor
+        cardPaymentButton.tintColor = .mainColor
         switch sender.tag {
         case 1000:
             paymentType = PaymentMethod.cash
-            cashPaymentButton.setImage(UIImage(systemName: "square.fill"), for: .normal)
-            cardPaymentButton.setImage(UIImage(systemName: "square"), for: .normal)
-            cashPaymentButton.tintColor = .mainColor
-            cardPaymentButton.tintColor = .mainColor
+            sender.setImage(UIImage(systemName: "square.fill"), for: .normal)
         case 1001:
             paymentType = PaymentMethod.card
-            cardPaymentButton.setImage(UIImage(systemName: "square.fill"), for: .normal)
-            cashPaymentButton.setImage(UIImage(systemName: "square"), for: .normal)
-            cashPaymentButton.tintColor = .mainColor
-            cardPaymentButton.tintColor = .mainColor
+            sender.setImage(UIImage(systemName: "square.fill"), for: .normal)
         default:
             break
         }
@@ -189,9 +186,8 @@ class ConfirmationVC: UIViewController {
         
         let user = User(name: name, phone: phone, address: address, delivery: checkDelivery(), email: email)
         let order = Order(user: user)
-        order.totalCost = totalCostByn
+        order.totalCost = Double(String(format: "%.2f", totalCostByn)) ?? totalCostByn
         MailBuilder().sendOrderToOperator(order: order)
-        
         
         var arrayProduct = ""
         let savedCart = RealmManager.shared.getCart()
