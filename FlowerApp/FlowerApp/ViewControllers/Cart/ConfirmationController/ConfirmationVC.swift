@@ -82,7 +82,8 @@ class ConfirmationVC: UIViewController {
         attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 2, range: NSMakeRange(0, attributeString.length))
         crossCostLabel.attributedText = attributeString
         
-        let totalCostDiscounted = totalCostByn * 0.9 + globalDeliveryPrice
+        guard let deliveryPrice = Double(checkDelivery().price) else { return }
+        let totalCostDiscounted = totalCostByn * 0.9 + deliveryPrice
         totalCost.text = "\(String(format: "%.2f", totalCostDiscounted)) РУБ."
         
         let discount = totalCostByn * 0.1
@@ -150,7 +151,7 @@ class ConfirmationVC: UIViewController {
     private func checkDelivery() -> DeliveryType {
         if delivery {
             if defaultDelivery {
-                if totalCostByn < Double(UserDefaultsManager.deliveryFreeLimit ?? 60) {
+                if totalCostByn < Double(UserDefaultsManager.deliveryFreeLimit ?? 70) {
                     return .delivery
                 } else {
                     return .freeDelivery
@@ -210,8 +211,12 @@ class ConfirmationVC: UIViewController {
         }
         
         print(arrayProduct)
+        
+        guard let deliveryPrice = Double(checkDelivery().price) else { return }
+        let cost = String(totalCostByn * 0.9 + deliveryPrice)
+        
 #if DEBUG
-        NetworkManager.shared.sendToBot(itemImfo: arrayProduct, deliveryType: checkDelivery().name, deliveryPrice: checkDelivery().price, clientPhone: user.phone, clientName: user.name, deliveryAddress: user.address, userID: "545281366", paymentType: paymentType.rawValue, cost: "\(totalCostByn)")
+        NetworkManager.shared.sendToBot(itemImfo: arrayProduct, deliveryType: checkDelivery().name, deliveryPrice: checkDelivery().price, clientPhone: user.phone, clientName: user.name, deliveryAddress: user.address, userID: "545281366", paymentType: paymentType.rawValue, cost: cost)
 #else
         NetworkManager.shared.sendToBot(itemImfo: arrayProduct, deliveryType: checkDelivery().name, deliveryPrice: checkDelivery().price, clientPhone: user.phone, clientName: user.name, deliveryAddress: user.address, userID: "495898353", paymentType: paymentType.rawValue)
 #endif
@@ -250,7 +255,9 @@ extension ConfirmationVC: UICollectionViewDataSource {
                 productCartCell.productImage.tintColor = .mainColor
                 productCartCell.productName.text = "Доставка"
                 productCartCell.productCountView.isHidden = true
-                productCartCell.productPrice.text = "\(globalDeliveryPrice) РУБ"
+                if let deliveryPrice = Double(checkDelivery().price) {
+                    productCartCell.productPrice.text = "\(deliveryPrice) РУБ"
+                }
             } else {
                 if let url = productsInCart[indexPath.row - 1].photos?.first {
                     productCartCell.productImage.sd_setImage(with: URL(string: url), completed: nil)
