@@ -94,6 +94,8 @@ func openApplication(application: ContactsType) {
             }
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         
+    case .workTime:
+        break
     }
 }
 }

@@ -9,7 +9,8 @@ import UIKit
 
 class ContactsVC: UIViewController {
   
-    let arrayOfEnum: [[ContactsType]] = [[.phoneGor, .phoneA1, .phoneMTS, .viber],
+    let arrayOfEnum: [[ContactsType]] = [[.workTime],
+                                         [.phoneGor, .phoneA1, .phoneMTS, .viber],
                                         [.vk, .telegram, .instagram, .facebook],
                                         [.googleMap]]
     
@@ -52,7 +53,7 @@ extension ContactsVC: UITableViewDataSource {
     }
         
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return ["Наши телефоны", "Мы в соцсетях", "Как добраться"][section]
+        return ["Режим работы салона", "Наши телефоны", "Мы в соцсетях", "Как добраться"][section]
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

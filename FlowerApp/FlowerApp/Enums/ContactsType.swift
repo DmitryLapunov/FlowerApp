@@ -19,6 +19,7 @@ enum ContactsType: String {
     case phoneA1
     case phoneMTS
     case googleMap
+    case workTime
     
     var image: UIImage {
         switch self {
@@ -34,13 +35,15 @@ enum ContactsType: String {
         case .vk:
             return UIImage(named: "icon_vkontakte")!
         case .phoneGor:
-            return UIImage(systemName: "phone")!
+            return UIImage(named: "icon_phone")!
         case .phoneA1:
             return UIImage(named: "icon_a1")!
         case .phoneMTS:
             return UIImage(named: "icon_mts")!
         case .googleMap:
             return UIImage(named: "icon_google_maps")!
+        case .workTime:
+            return UIImage(named: "icon_clock")!
         }
     }
     
@@ -64,6 +67,8 @@ enum ContactsType: String {
             return "+375(29)751-17-77"
         case .googleMap:
             return "Мы на карте"
+        case .workTime:
+            return "8:00-20:00 ежедневно"
         }
     }
 }

@@ -211,7 +211,7 @@ class ConfirmationVC: UIViewController {
         
         print(arrayProduct)
 #if DEBUG
-        NetworkManager.shared.sendToBot(itemImfo: arrayProduct, deliveryType: checkDelivery().name, deliveryPrice: checkDelivery().price, clientPhone: user.phone, clientName: user.name, deliveryAddress: user.address, userID: "341135071", paymentType: paymentType.rawValue)
+        NetworkManager.shared.sendToBot(itemImfo: arrayProduct, deliveryType: checkDelivery().name, deliveryPrice: checkDelivery().price, clientPhone: user.phone, clientName: user.name, deliveryAddress: user.address, userID: "545281366", paymentType: paymentType.rawValue, cost: "\(totalCostByn)")
 #else
         NetworkManager.shared.sendToBot(itemImfo: arrayProduct, deliveryType: checkDelivery().name, deliveryPrice: checkDelivery().price, clientPhone: user.phone, clientName: user.name, deliveryAddress: user.address, userID: "495898353", paymentType: paymentType.rawValue)
 #endif
