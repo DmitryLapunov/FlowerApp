@@ -35,7 +35,7 @@ class MailBuilder {
         
         var bodyStr = """
                 <p>Заказчик: \(order.user.name)<p>
-                <p>Тип доставки: \(order.user.delivery.name)</p>
+                <p>Тип доставки: \(order.user.delivery.rawValue)</p>
                 <p>Доставка: \(order.user.address).<p>
                 <p>Телефон: \(order.user.phone)</p>
                 <p>__________________________<p>

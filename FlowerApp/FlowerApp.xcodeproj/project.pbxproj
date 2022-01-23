@@ -1002,7 +1002,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = T8V9JXV542;
 				GENERATE_INFOPLIST_FILE = YES;
 				HEADER_SEARCH_PATHS = (
@@ -1024,6 +1024,7 @@
 					"\"${PODS_ROOT}/Headers/Public/mailcore2-ios/MailCore\"",
 				);
 				INFOPLIST_FILE = FlowerApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Vgosti.by;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Мы поможем вам спланировать маршрут";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -1055,7 +1056,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = T8V9JXV542;
 				GENERATE_INFOPLIST_FILE = YES;
 				HEADER_SEARCH_PATHS = (
@@ -1076,6 +1077,7 @@
 					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/Realm/Headers\"",
 				);
 				INFOPLIST_FILE = FlowerApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Vgosti.by;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Мы поможем вам спланировать маршрут";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
