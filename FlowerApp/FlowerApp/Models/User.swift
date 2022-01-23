@@ -16,26 +16,26 @@ enum DeliveryType: String, CaseIterable {
     var name: String {
         switch self {
         case .delivery:
-            return "delivery"
+            return "paid"
         case .fastDelivery:
-            return "fastDelivery"
+            return "urgent"
         case .pickup:
-            return "pickup"
+            return ""
         case .freeDelivery:
-            return "freeDelivery"
+            return "free"
         }
     }
     
-    var price: String {
+    var price: Double {
         switch self {
         case .delivery:
-            return "\(UserDefaultsManager.deliveryGeneral ?? 0)"
+            return UserDefaultsManager.deliveryGeneral ?? 13
         case .fastDelivery:
-            return "\(UserDefaultsManager.deliveryUrgent ?? 15)"
+            return UserDefaultsManager.deliveryUrgent ?? 25
         case .freeDelivery:
-            return "0"
+            return 0
         case .pickup:
-            return "0"
+            return 0
         }
     }
 }

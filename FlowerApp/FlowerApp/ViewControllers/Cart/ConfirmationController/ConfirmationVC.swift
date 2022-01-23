@@ -5,8 +5,6 @@
 //  Created by Дмитрий Лапунов on 28.12.21.
 //
 
-var globalDeliveryPrice = 0.0
-
 import UIKit
 import SDWebImage
 
@@ -77,16 +75,18 @@ class ConfirmationVC: UIViewController {
     }
     
     private func setupTotalCostLabel() {
-        let totalCostShortened = String(format: "%.2f", totalCostByn)
+        let totalCostShortened = String(format: "%.2f", totalCostByn + checkDelivery().price)
         let attributeString: NSMutableAttributedString =  NSMutableAttributedString(string: "\(totalCostShortened)")
         attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 2, range: NSMakeRange(0, attributeString.length))
         crossCostLabel.attributedText = attributeString
         
-        let totalCostDiscounted = totalCostByn * 0.9 + globalDeliveryPrice
+        let totalCostDiscounted = (totalCostByn  + checkDelivery().price) * 0.9
         totalCost.text = "\(String(format: "%.2f", totalCostDiscounted)) РУБ."
         
-        let discount = totalCostByn * 0.1
+        let discount = totalCostByn + checkDelivery().price - totalCostDiscounted
         discountLabel.text = "Скидка: \(String(format: "%.2f", discount)) РУБ."
+        
+        self.totalCostByn = totalCostDiscounted
     }
     
     private func setupCollectionView() {
@@ -113,17 +113,6 @@ class ConfirmationVC: UIViewController {
     private func configureProducts() {
         for item in cartProducts {
             totalCostByn += item.productCost * Double(item.count)
-        }
-        if delivery == true {
-            if defaultDelivery == true {
-                if totalCostByn < 60 {
-                    globalDeliveryPrice = 5
-                } else {
-                    globalDeliveryPrice = 0
-                }
-            } else {
-                globalDeliveryPrice = 16
-            }
         }
     }
     
@@ -199,7 +188,10 @@ class ConfirmationVC: UIViewController {
         }
         
         let user = User(name: name, phone: phone, address: address, delivery: checkDelivery(), email: email)
-        MailBuilder().sendOrderToOperator(order: Order(user: user))
+        let order = Order(user: user)
+        order.totalCost = totalCostByn
+        MailBuilder().sendOrderToOperator(order: order)
+        
         
         var arrayProduct = ""
         let savedCart = RealmManager.shared.getCart()
@@ -211,9 +203,10 @@ class ConfirmationVC: UIViewController {
         
         print(arrayProduct)
 #if DEBUG
-        NetworkManager.shared.sendToBot(itemImfo: arrayProduct, deliveryType: checkDelivery().name, deliveryPrice: checkDelivery().price, clientPhone: user.phone, clientName: user.name, deliveryAddress: user.address, userID: "545281366", paymentType: paymentType.rawValue, cost: "\(totalCostByn)")
+        NetworkManager.shared.sendToBot(itemImfo: arrayProduct, deliveryType: checkDelivery().name, deliveryPrice: "\(checkDelivery().price)", clientPhone: user.phone, clientName: user.name, deliveryAddress: user.address, userID: "463527794", paymentType: paymentType.rawValue, cost: totalCostByn)
 #else
-        NetworkManager.shared.sendToBot(itemImfo: arrayProduct, deliveryType: checkDelivery().name, deliveryPrice: checkDelivery().price, clientPhone: user.phone, clientName: user.name, deliveryAddress: user.address, userID: "495898353", paymentType: paymentType.rawValue)
+        //        НЕ МЕНЯТЬ ID В ЭТОЙ СЕКЦИИ
+        NetworkManager.shared.sendToBot(itemImfo: arrayProduct, deliveryType: checkDelivery().name, deliveryPrice: "\(checkDelivery().price)", clientPhone: user.phone, clientName: user.name, deliveryAddress: user.address, userID: "495898353", paymentType: paymentType.rawValue, cost: totalCostByn)
 #endif
         
         for product in RealmManager.shared.getCart() {
@@ -250,7 +243,7 @@ extension ConfirmationVC: UICollectionViewDataSource {
                 productCartCell.productImage.tintColor = .mainColor
                 productCartCell.productName.text = "Доставка"
                 productCartCell.productCountView.isHidden = true
-                productCartCell.productPrice.text = "\(globalDeliveryPrice) РУБ"
+                productCartCell.productPrice.text = "\(checkDelivery().price) РУБ"
             } else {
                 if let url = productsInCart[indexPath.row - 1].photos?.first {
                     productCartCell.productImage.sd_setImage(with: URL(string: url), completed: nil)

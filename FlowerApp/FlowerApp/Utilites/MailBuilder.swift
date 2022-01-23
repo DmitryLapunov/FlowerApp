@@ -12,8 +12,8 @@ class MailBuilder {
         let smtpSession = MCOSMTPSession()
         smtpSession.hostname = "smtp.yandex.ru"
         smtpSession.port = 465
-        smtpSession.username = "Tumarev1c@yandex.ru"
-        smtpSession.password = "jqmuoigymuxpoakm"
+        smtpSession.username = "vgostiby.bot@yandex.by"
+        smtpSession.password = "llhdzekqgobvprzu"
         smtpSession.connectionType = .TLS
         smtpSession.authType = .saslPlain
         return smtpSession
@@ -30,11 +30,12 @@ class MailBuilder {
         
         let builder = MCOMessageBuilder()
         builder.header.to = [address, client]
-        builder.header.from = MCOAddress(displayName: "Vgosti.by", mailbox: "Tumarev1c@yandex.ru")
-        builder.header.subject = "Заказ от пользователя"
+        builder.header.from = MCOAddress(displayName: "Vgosti.by bot", mailbox: "vgostiby.bot@yandex.by")
+        builder.header.subject = "Заказ пользователя \(order.user.name)"
         
         var bodyStr = """
                 <p>Заказчик: \(order.user.name)<p>
+                <p>Тип доставки: \(order.user.delivery.name)</p>
                 <p>Доставка: \(order.user.address).<p>
                 <p>Телефон: \(order.user.phone)</p>
                 <p>__________________________<p>

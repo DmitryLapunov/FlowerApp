@@ -24,11 +24,11 @@ class Order {
     
     /// Build order
     /// - Returns: full order with user information, total cost and products
-    func params() -> [String: Any] {
-        var params = [String: Any]()
-        params["user"] = self.user.params()
-        params["totalCost"] = self.totalCost + globalDeliveryPrice
-        params["products"] = self.products
-        return params
-    }
+//    func params() -> [String: Any] {
+//        var params = [String: Any]()
+//        params["user"] = self.user.params()
+//        params["totalCost"] = self.totalCost + globalDeliveryPrice
+//        params["products"] = self.products
+//        return params
+//    }
 }

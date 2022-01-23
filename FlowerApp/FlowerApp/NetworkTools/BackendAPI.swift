@@ -9,7 +9,7 @@ import Foundation
 import Moya
 
 enum BackendAPI {
-    case sendToBot(itemImfo: String, deliveryType: String, deliveryPrice: String, clientPhone: String, clientName: String, deliveryAddress: String, userID: String, paymentType: String, cost: String)
+    case sendToBot(itemImfo: String, deliveryType: String, deliveryPrice: String, clientPhone: String, clientName: String, deliveryAddress: String, userID: String, paymentType: String, cost: Double)
 }
 
 extension BackendAPI: TargetType {
@@ -57,7 +57,7 @@ extension BackendAPI: TargetType {
             params["Delivery-Address"] = deliveryAddress
             params["User-Id"] = "\(userID)"
             params["Payment-Type"] = paymentType
-            params["Cost"] = cost
+            params["Cost"] = "\(cost)"
             
             for (key, value) in params {
                 let formData = MultipartFormData(provider: .data(value.data(using: .utf8)!), name: key)
