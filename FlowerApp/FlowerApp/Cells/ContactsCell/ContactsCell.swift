@@ -43,7 +43,7 @@ func openApplication(application: ContactsType) {
         
     case .telegram:
         let application = UIApplication.shared
-        let appURL = URL(string: "tg://resolve?domain=VgostiByBot")!
+        let appURL = URL(string: "tg://resolve?domain=vgostiby")!
         if application.canOpenURL(appURL) {
             application.open(appURL, options: [:], completionHandler: nil)
         } else {

@@ -235,7 +235,7 @@ extension ConfirmationVC: UICollectionViewDataSource {
         
         if delivery {
             if indexPath.row == 0 {
-                productCartCell.productImage.image = UIImage(systemName: "shippingbox")
+                productCartCell.productImage.image = UIImage(named: "deliveryImage")
                 productCartCell.productImage.tintColor = .mainColor
                 productCartCell.productName.text = "Доставка"
                 productCartCell.productCountView.isHidden = true

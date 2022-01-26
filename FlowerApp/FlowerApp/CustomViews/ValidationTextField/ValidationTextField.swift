@@ -13,7 +13,7 @@ protocol ValidationTextFieldDelegate: AnyObject {
 }
 
 enum ValidationType: String {
-    case phone = "^(\\+375|375)(29|25|44|33)(\\d{3})(\\d{2})(\\d{2})$"
+    case phone = "[+0-9]{7,}"
     case name = "[\\S]{3,30}"
     case email = "^[A-z0-9_.+-]+@[A-z0-9-]+(\\.[A-z0-9-]{2,})+$"
     case adress = ".*[^A-Za-z0-9 ].*"
@@ -25,7 +25,6 @@ enum ValidationType: String {
     @IBOutlet weak var inputField: InsetsTextField!
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet var contentView: UIView!
-    
     @IBInspectable var placeholder: String? {
         set { placeholderLabel.text = newValue }
         get { return placeholderLabel.text }
