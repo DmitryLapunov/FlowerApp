@@ -22,6 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.rootViewController = TabViewController()
         window?.makeKeyAndVisible()
         NotificationManager.requestAuthorization()
+        UserDefaultsManager.orderIsActive = false
         configureCash()
         clearWebCache()
     }
