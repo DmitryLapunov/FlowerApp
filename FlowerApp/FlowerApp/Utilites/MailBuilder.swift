@@ -38,6 +38,9 @@ class MailBuilder {
                 <p>Тип доставки: \(order.user.delivery.rawValue)</p>
                 <p>Доставка: \(order.user.address).<p>
                 <p>Телефон: \(order.user.phone)</p>
+                <p>Дата доставки: \(order.user.date)</p>
+                <p>Время доставки: \(order.user.time)</p>
+                <p>Комментарий к заказу: \(order.user.commentToDelivery)</p>
                 <p>__________________________<p>
                 """
         

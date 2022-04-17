@@ -52,13 +52,20 @@ class User {
     var address: String
     var delivery: DeliveryType
     var email: String
+    var date: String
+    var time: String
+    var commentToDelivery: String
     
-    init(name: String, phone: String, address: String, delivery: DeliveryType, email: String) {
+    init(name: String, phone: String, address: String, delivery: DeliveryType, email: String, date: String, time: String, commentToDelivery: String) {
         self.name = name
         self.phone = phone
         self.address = address
         self.delivery = delivery
         self.email = email
+        self.date = date
+        self.time = time
+        self.commentToDelivery = commentToDelivery
+        
     }
     
     /// Convert user information as params

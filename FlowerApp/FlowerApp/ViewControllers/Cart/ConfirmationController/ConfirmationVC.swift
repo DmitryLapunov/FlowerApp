@@ -49,6 +49,9 @@ class ConfirmationVC: UIViewController {
     var phone = ""
     var email = ""
     var address = "Самовывоз"
+    var date = ""
+    var time = ""
+    var commentToDelivery = ""
     private var timer: Timer?
     var paymentType: PaymentMethod?
 
@@ -184,7 +187,7 @@ class ConfirmationVC: UIViewController {
             RealmManager.shared.deleteCartProduct(product: product)
         }
         
-        let user = User(name: name, phone: phone, address: address, delivery: checkDelivery(), email: email)
+        let user = User(name: name, phone: phone, address: address, delivery: checkDelivery(), email: email, date: date, time: time, commentToDelivery: commentToDelivery)
         let order = Order(user: user)
         order.totalCost = Double(String(format: "%.2f", totalCostByn)) ?? totalCostByn
         MailBuilder().sendOrderToOperator(order: order)
@@ -199,7 +202,7 @@ class ConfirmationVC: UIViewController {
         
         print(arrayProduct)
 #if DEBUG
-        NetworkManager.shared.sendToBot(itemImfo: arrayProduct, deliveryType: checkDelivery().name, deliveryPrice: "\(checkDelivery().price)", clientPhone: user.phone, clientName: user.name, deliveryAddress: user.address, userID: "463527794", paymentType: paymentType.rawValue, cost: totalCostByn)
+        NetworkManager.shared.sendToBot(itemImfo: arrayProduct, deliveryType: checkDelivery().name, deliveryPrice: "\(checkDelivery().price)", clientPhone: user.phone, clientName: user.name, deliveryAddress: user.address, userID: "463527794", paymentType: paymentType.rawValue, cost: totalCostByn, date: date, time: time, commentToDelivery: commentToDelivery)
 #else
         //        НЕ МЕНЯТЬ ID В ЭТОЙ СЕКЦИИ
         NetworkManager.shared.sendToBot(itemImfo: arrayProduct, deliveryType: checkDelivery().name, deliveryPrice: "\(checkDelivery().price)", clientPhone: user.phone, clientName: user.name, deliveryAddress: user.address, userID: "495898353", paymentType: paymentType.rawValue, cost: totalCostByn)
