@@ -92,9 +92,8 @@ class OrderVC: UIViewController {
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             
-            
             var difference = view.frame.maxY - backgroundStackView.frame.maxY - keyboardSize.minY
-            if scrollView.frame.maxY < backgroundStackView.frame.maxY {
+            if scrollView.frame.height < backgroundStackView.frame.height {
                 difference = view.frame.maxY - scrollView.frame.maxY - keyboardSize.height
             }
             
