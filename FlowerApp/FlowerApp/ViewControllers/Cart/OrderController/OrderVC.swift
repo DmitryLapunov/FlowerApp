@@ -92,23 +92,14 @@ class OrderVC: UIViewController {
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             
-            var difference = view.frame.maxY - backgroundStackView.frame.maxY - keyboardSize.minY
-            if scrollView.frame.height < backgroundStackView.frame.height {
-                difference = view.frame.maxY - scrollView.frame.maxY - keyboardSize.height
-            }
-            
-            if difference < 0, scrollViewStartY == 0  {
-                scrollViewStartY = self.scrollView.frame.origin.y
-                self.scrollView.frame.origin.y += difference
-            }
+            scrollView.contentInset.bottom = keyboardSize.height
+            let bottomOffset = CGPoint(x: 0, y: scrollView.contentSize.height - scrollView.bounds.height + scrollView.contentInset.bottom)
+            scrollView.setContentOffset(bottomOffset, animated: true)
         }
     }
     
     @objc func keyboardWillHide(notification: NSNotification) {
-        if scrollViewStartY != 0 {
-            self.scrollView.frame.origin.y = scrollViewStartY
-            scrollViewStartY = 0
-        }
+        scrollView.contentInset.bottom = 0
     }
     
     @objc func hideKeyboard() {
