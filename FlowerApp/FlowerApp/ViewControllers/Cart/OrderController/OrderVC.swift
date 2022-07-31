@@ -91,10 +91,8 @@ class OrderVC: UIViewController {
     
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-            
-            scrollView.contentInset.bottom = keyboardSize.height
-            let bottomOffset = CGPoint(x: 0, y: scrollView.contentSize.height - scrollView.bounds.height + scrollView.contentInset.bottom)
-            scrollView.setContentOffset(bottomOffset, animated: true)
+            let bottomSpace = view.frame.maxY - scrollView.frame.maxY
+            scrollView.contentInset.bottom = keyboardSize.height - bottomSpace
         }
     }
     
